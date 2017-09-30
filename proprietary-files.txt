@@ -170,7 +170,6 @@ vendor/lib64/hw/camera.qcom.so
 vendor/lib64/hw/com.qti.chi.override.so
 vendor/lib64/libFaceCenterAlgo.so
 vendor/lib64/libAF.so
-vendor/lib64/libI420colorconvert.so
 vendor/lib64/libSNPE.so
 vendor/lib64/libXMFaceFocus.so
 vendor/lib64/libalAILDC.so
