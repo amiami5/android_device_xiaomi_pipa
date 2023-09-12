@@ -11,7 +11,7 @@ DEVICE_PATH := device/xiaomi/pipa
 
 BUILD_BROKEN_DUP_RULES := true
 
-# Board Info
+# Board
 TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
 
 # Display
