@@ -34,6 +34,9 @@ vendor.audio_hal.period_multiplier=3
 # Bluetooth
 bluetooth.device.default_name=Xiaomi Pad 6
 
+# Audio hardware
+ro.hardware.audio.primary=pipa
+
 # Display
 ro.surface_flinger.set_display_power_timer_ms=1000
 ro.surface_flinger.set_idle_timer_ms=80
