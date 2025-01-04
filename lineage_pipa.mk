@@ -32,4 +32,4 @@ PRODUCT_SYSTEM_DEVICE := pipa
     TARGET_PRODUCT=$(PRODUCT_SYSTEM_NAME)
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
- BuildFingerprint=Xiaomi/pipa_global/pipa:14/UKQ1.230917.001/V816.0.12.0.UMZMIXM:user/release-keys
+ BuildFingerprint=Xiaomi/pipa_global/pipa:14/UKQ1.230917.001/V816.0.15.0.UMZMIXM:user/release-keys
