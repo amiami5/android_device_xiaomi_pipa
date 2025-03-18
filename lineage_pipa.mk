@@ -36,6 +36,7 @@ AXION_CPU_BIG_CORES := 4,5,6,7
 AXION_MAINTAINER := amisuke
 AXION_PROCESSOR := Qualcomm_Snapdragon_870
 TARGET_PREBUILT_BCR := false
+TARGET_INCLUDE_MATLOG := true
 PRODUCT_NO_CAMERA := false
 
 # Build Type
