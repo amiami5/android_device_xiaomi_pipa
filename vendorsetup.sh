@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Exit immediately if a command exits with a non-zero status.
-set -e
+# Do not exit on error
+#set -e
 
 # Function to clone if directory doesn't exist
 clone_if_missing() {
@@ -60,7 +60,7 @@ clean_clone() {
 
 # Git clones (using clone_if_missing by default, as it's generally safer for initial setup)
 echo "Setting up repositories..."
-clone_if_missing "https://github.com/glitch-wraith/android_device_xiaomi_sm8250-common" "15-qpr2" "device/xiaomi/sm8250-common"
+clone_if_missing "https://github.com/glitch-wraith/android_device_xiaomi_sm8250-common" "15.qpr2" "device/xiaomi/sm8250-common"
 clone_if_missing "https://github.com/glitch-wraith/android_kernel_xiaomi_sm8250" "axksu" "kernel/xiaomi/sm8250"
 clone_if_missing "https://github.com/glitch-wraith/proprietary_vendor_xiaomi_sm8250-common" "15.0" "vendor/xiaomi/sm8250-common"
 clone_if_missing "https://github.com/glitch-wraith/proprietary_vendor_xiaomi_pipa" "15.0" "vendor/xiaomi/pipa"
@@ -70,7 +70,7 @@ clone_if_missing "https://github.com/LineageOS/android_hardware_xiaomi" "lineage
 clone_if_missing "https://github.com/LineageOS/android_hardware_lineage_compat" "lineage-22.2" "hardware/lineage/compat"
 clone_if_missing "https://github.com/LineageOS/android_hardware_lineage_interfaces" "lineage-22.2" "hardware/lineage/interfaces"
 clone_if_missing "https://github.com/LineageOS/android_hardware_lineage_livedisplay" "lineage-22.2" "hardware/lineage/livedisplay"
-clone_if_missing "https://github.com/Matrixx-Devices/hardware_dolby.git" "sony-1.3" "hardware/dolby"
+clone_if_missing "https://github.com/glitch-wraith/hardware_dolby.git" "sony-1.3" "hardware/dolby"
 
 # Apply recovery patch
 apply_recovery_patch() {
@@ -110,6 +110,12 @@ apply_recovery_patch() {
     fi
 
     if $already_patched; then
+        echo "---------------------------------------------------------------------------------------------------"
+        echo "Hint: This patch appears to be already applied or is part of a previous setup."
+        echo "If this is your **first time setting up these trees**, it's generally recommended to apply the patch."
+        echo "If you have **previously run this setup and applied the patch**, you can safely skip re-application."
+        echo "Choosing 'y' (yes) will skip re-application; choosing 'N' (no) or pressing Enter will attempt to re-apply."
+        echo "---------------------------------------------------------------------------------------------------"
         read -p "Recovery patch already appears to be applied. Skip re-application? (y/N): " choice
         case "$choice" in
             [yY]|[yY][eE][sS])
@@ -164,37 +170,6 @@ apply_recovery_patch() {
     return 0
 }
 
-# Download and extract firmware
-setup_firmware() {
-    local root_dir=$(pwd)
-    local firmware_url="https://github.com/glitch-wraith/vendor_xiaomi_pipa/releases/download/fw-radio-OS2.0.3.0.UMZMIXM/vendor-pipa-fw-included.zip"
-    local target_dir="${root_dir}/vendor/xiaomi"
-    local temp_zip=$(mktemp /tmp/pipa_firmware_XXXXXX.zip) # Use mktemp for unique temp file
-    local radio_dir="${target_dir}/pipa/radio"
-    
-    # Check if firmware already exists by checking key files
-    if [ -d "$radio_dir" ] && [ -f "${radio_dir}/abl.img" ] && [ -f "${radio_dir}/xbl.img" ]; then
-        echo "Firmware already present, skipping download."
-        return 0
-    fi
-    
-    echo "Downloading firmware from $firmware_url..."
-    mkdir -p "$target_dir" || { echo "Error: Failed to create firmware target directory."; return 1; }
-    
-    curl -sL "$firmware_url" -o "$temp_zip"
-    if [ ! -s "$temp_zip" ]; then # Check if file exists and is not empty
-        echo "Error: Failed to download firmware from $firmware_url"
-        rm -f "$temp_zip"
-        return 1
-    fi
-    
-    echo "Extracting firmware to $target_dir..."
-    unzip -qo "$temp_zip" -d "$target_dir" || { echo "Error: Failed to extract firmware."; rm -f "$temp_zip"; return 1; }
-    rm -f "$temp_zip"
-    echo "Firmware setup complete."
-    return 0
-}
-
 # Main script execution
 ROOT_DIR=$(pwd)
 DEVICE_PATH="${ROOT_DIR}/device/xiaomi/pipa"
@@ -209,10 +184,7 @@ fi
 mkdir -p "${DEVICE_PATH}/source-patches" || { echo "Error: Failed to create source-patches directory."; exit 1; }
 
 # Apply patches
-apply_recovery_patch || { echo "Recovery patch application failed."; exit 1; }
-
-# Setup firmware
-setup_firmware || { echo "Firmware setup failed."; exit 1; }
+apply_recovery_patch || { echo "Recovery patch application 
 
 echo "-------------------------------------"
 echo "           Setup complete!           "
