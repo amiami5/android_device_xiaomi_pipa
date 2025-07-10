@@ -17,6 +17,10 @@ $(call inherit-product, device/xiaomi/pipa/device.mk)
 # Inherit keys
 $(call inherit-product, vendor/lineage-priv/keys/keys.mk)
 
+# Derpfest
+DERPFEST_BUILD_TYPE := Official
+WITH_GMS := true
+
 PRODUCT_NAME := lineage_pipa
 PRODUCT_DEVICE := pipa
 PRODUCT_MANUFACTURER := Xiaomi
