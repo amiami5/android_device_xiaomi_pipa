@@ -184,7 +184,10 @@ fi
 mkdir -p "${DEVICE_PATH}/source-patches" || { echo "Error: Failed to create source-patches directory."; exit 1; }
 
 # Apply patches
-apply_recovery_patch || { echo "Recovery patch application 
+apply_recovery_patch || {
+    echo "Error: Recovery patch application failed."
+    exit 1
+}
 
 echo "-------------------------------------"
 echo "           Setup complete!           "
