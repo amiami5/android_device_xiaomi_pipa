@@ -18,7 +18,7 @@ divider() { echo -e "${BOLD}─────────────────�
 
 # ──────────────────────────────────────────────────────────────
 # clone_if_missing + clean_clone
-# ──────────────────────────────────────────────────────────────
+# ──────────────────────────────────────────────
 clone_if_missing() {
     local repo_url=$1 branch=$2 target_dir=$3
     [ -z "$repo_url" ] || [ -z "$branch" ] || [ -z "$target_dir" ] && {
@@ -58,29 +58,29 @@ clean_clone() {
 
 # ──────────────────────────────────────────────────────────────
 # Kernel Repo (fixed to Normal Perf)
-# ──────────────────────────────────────────────────────────────
+# ──────────────────────────────────────────────
 divider
 info "Cloning kernel into kernel/xiaomi/sm8250..."
-clone_if_missing "https://github.com/glitch-wraith/android_kernel_xiaomi_sm8250" "bpf-ksu" "kernel/xiaomi/sm8250"
+clone_if_missing "https://github.com/sheoranpranshu/android_kernel_xiaomi_sm8250" "bpf-ksu" "kernel/xiaomi/sm8250"
 divider
 
 # ──────────────────────────────────────────────────────────────
 # Other Repos
-# ──────────────────────────────────────────────────────────────
+# ──────────────────────────────────────────────
 info "Setting up other repositories..."
-clone_if_missing "https://github.com/glitch-wraith/android_device_xiaomi_sm8250-common" "16.0" "device/xiaomi/sm8250-common"
-clone_if_missing "https://github.com/glitch-wraith/proprietary_vendor_xiaomi_sm8250-common" "16.0" "vendor/xiaomi/sm8250-common"
-clone_if_missing "https://github.com/glitch-wraith/proprietary_vendor_xiaomi_pipa" "16.0" "vendor/xiaomi/pipa"
-clone_if_missing "https://github.com/LineageOS/android_hardware_xiaomi" "lineage-23.0" "hardware/xiaomi"
+clone_if_missing "https://github.com/sheoranpranshu/android_device_xiaomi_sm8250-common" "16" "device/xiaomi/sm8250-common"
+clone_if_missing "https://github.com/sheoranpranshu/proprietary_vendor_xiaomi_sm8250-common" "16" "vendor/xiaomi/sm8250-common"
+clone_if_missing "https://github.com/sheoranpranshu/proprietary_vendor_xiaomi_pipa" "16" "vendor/xiaomi/pipa"
 clone_if_missing "https://github.com/LineageOS/android_hardware_lineage_compat" "lineage-23.0" "hardware/lineage/compat"
 clone_if_missing "https://github.com/LineageOS/android_hardware_lineage_interfaces" "lineage-23.0" "hardware/lineage/interfaces"
 clone_if_missing "https://github.com/LineageOS/android_hardware_lineage_livedisplay" "lineage-23.0" "hardware/lineage/livedisplay"
-clone_if_missing "https://github.com/glitch-wraith/hardware_dolby.git" "sony-1.3" "hardware/dolby"
+clean_clone "https://github.com/PocoF3Releases/hardware_xiaomi.git"  "aosp-16" "hardware/xiaomi"
+clean_clone "https://github.com/PocoF3Releases/packages_resources_devicesettings.git" "aosp-16" "packages/resources/devicesettings"
 divider
 
 # ──────────────────────────────────────────────────────────────
 # Apply Recovery Patch (non-fatal warning only)
-# ──────────────────────────────────────────────────────────────
+# ──────────────────────────────────────────────
 apply_recovery_patch() {
     local root_dir
     root_dir=$(pwd)
@@ -128,15 +128,126 @@ apply_recovery_patch() {
     cd "$root_dir"
 }
 
+# ──────────────────────────────────────────────────────────────
+# Setup firmware: download, extract, move whole 'radio' folder
+# (runs after apply_recovery_patch)
+# ──────────────────────────────────────────────
+setup_firmware() {
+    local root_dir
+    root_dir=$(pwd)
+    local target_dir="${root_dir}/vendor/xiaomi/pipa"
+    local firmware_url="https://github.com/SheoranPranshu/proprietary_vendor_xiaomi_pipa/releases/download/fw-radio-OS2.0.10.0.UMZCNXM-pipa/OS2.0.10.0.UMZCNXM-pipa.zip"
+    local tmp_zip="/tmp/OS2.0.10.0.UMZCNXM-pipa.zip"
+    local tmp_extract="/tmp/firmware_extract"
+
+    info "Setting up firmware..."
+
+    # Ensure target directory exists
+    mkdir -p "$target_dir" || {
+        error "Failed to create target directory: $target_dir"
+        return 1
+    }
+
+    # Remove old radio folder if present
+    if [ -d "$target_dir/radio" ]; then
+        warn "Removing existing radio folder..."
+        rm -rf "$target_dir/radio" || {
+            error "Failed to remove existing $target_dir/radio"
+            return 1
+        }
+    fi
+
+    # Download firmware zip
+    if command -v curl >/dev/null 2>&1; then
+        info "Downloading firmware (curl)..."
+        curl -L --fail -o "$tmp_zip" "$firmware_url" || {
+            error "Failed to download firmware with curl."
+            [ -f "$tmp_zip" ] && rm -f "$tmp_zip"
+            return 1
+        }
+    elif command -v wget >/dev/null 2>&1; then
+        info "Downloading firmware (wget)..."
+        wget -q -O "$tmp_zip" "$firmware_url" || {
+            error "Failed to download firmware with wget."
+            [ -f "$tmp_zip" ] && rm -f "$tmp_zip"
+            return 1
+        }
+    else
+        error "Neither curl nor wget found. Cannot download firmware."
+        return 1
+    fi
+
+    # Prepare temp extract dir
+    rm -rf "$tmp_extract"
+    mkdir -p "$tmp_extract" || {
+        error "Failed to create temp extract dir: $tmp_extract"
+        rm -f "$tmp_zip"
+        return 1
+    }
+
+    # Extract to temp dir
+    if command -v unzip >/dev/null 2>&1; then
+        info "Extracting firmware into temporary location..."
+        unzip -q -o "$tmp_zip" -d "$tmp_extract" || {
+            error "Extraction failed with unzip."
+            rm -f "$tmp_zip"
+            rm -rf "$tmp_extract"
+            return 1
+        }
+    elif command -v bsdtar >/dev/null 2>&1; then
+        info "Extracting firmware with bsdtar..."
+        bsdtar -xf "$tmp_zip" -C "$tmp_extract" || {
+            error "Extraction failed with bsdtar."
+            rm -f "$tmp_zip"
+            rm -rf "$tmp_extract"
+            return 1
+        }
+    else
+        error "No extractor (unzip or bsdtar) available."
+        rm -f "$tmp_zip"
+        rm -rf "$tmp_extract"
+        return 1
+    fi
+
+    # Find the radio directory inside the extracted tree
+    local radio_dir
+    radio_dir=$(find "$tmp_extract" -type d -name radio -print -quit)
+
+    if [ -z "$radio_dir" ]; then
+        error "No 'radio' directory found inside the extracted firmware."
+        rm -f "$tmp_zip"
+        rm -rf "$tmp_extract"
+        return 1
+    fi
+
+    # Move the whole radio directory into target_dir
+    info "Moving radio directory into $target_dir..."
+    mv "$radio_dir" "$target_dir"/ || {
+        error "Failed to move radio directory to $target_dir"
+        rm -f "$tmp_zip"
+        rm -rf "$tmp_extract"
+        return 1
+    }
+
+    # Cleanup leftover extracted files (the moved radio dir is no longer in tmp_extract)
+    rm -f "$tmp_zip"
+    rm -rf "$tmp_extract"
+
+    success "Firmware setup complete: moved 'radio' directory to $target_dir/radio"
+}
 
 # ──────────────────────────────────────────────────────────────
 # Run Patch Setup
-# ──────────────────────────────────────────────────────────────
+# ──────────────────────────────────────────────
 ROOT_DIR=$(pwd)
 DEVICE_PATH="${ROOT_DIR}/device/xiaomi/pipa"
 mkdir -p "$DEVICE_PATH/source-patches"
 
+# Apply patch for white screen recovery issue
 apply_recovery_patch
+
+# Download fw and place it correctly
+setup_firmware
 
 echo "-------------------------------------"
 echo "           Setup complete!           "
