@@ -17,8 +17,26 @@ error()   { echo -e "${RED}${BOLD}✖${NC} ${RED}$1${NC}"; }
 divider() { echo -e "${BOLD}──────────────────────────────────────────────${NC}"; }
 
 # ──────────────────────────────────────────────────────────────
+# Prompt for Axion Patch
+# ──────────────────────────────────────────────────────────────
+read -p "Do you want to apply the axion patch? (yes/no): " APPLY_AXION
+if [ "$APPLY_AXION" == "yes" ]; then
+    info "Applying axion patch..."
+    cd device/xiaomi/pipa || exit
+    git am patches/axion.patch || {
+        error "Failed to apply axion patch."
+        exit 1
+    }
+    cd - || exit
+    success "Axion patch applied successfully."
+    KERNEL_BRANCH="16" # Use 16 branch for kernel if axion patch is applied
+else
+    KERNEL_BRANCH="16.ksun" # Default to 16.ksun branch
+fi
+
+# ──────────────────────────────────────────────────────────────
 # clone_if_missing + clean_clone
-# ──────────────────────────────────────────────
+# ──────────────────────────────────────────────────────────────
 clone_if_missing() {
     local repo_url=$1 branch=$2 target_dir=$3
     [ -z "$repo_url" ] || [ -z "$branch" ] || [ -z "$target_dir" ] && {
@@ -57,35 +75,34 @@ clean_clone() {
 }
 
 # ──────────────────────────────────────────────────────────────
-# Kernel Repo (fixed to Normal Perf)
-# ──────────────────────────────────────────────
+# Kernel Repo (using dynamic branch selection)
+# ──────────────────────────────────────────────────────────────
 divider
 info "Cloning kernel into kernel/xiaomi/sm8250..."
-clone_if_missing "https://github.com/sheoranpranshu/android_kernel_xiaomi_sm8250" "bpf-ksu" "kernel/xiaomi/sm8250"
+clean_clone "https://github.com/sheoranpranshu/android_kernel_xiaomi_sm8250" "$KERNEL_BRANCH" "kernel/xiaomi/sm8250"
 divider
 
 # ──────────────────────────────────────────────────────────────
 # Other Repos
-# ──────────────────────────────────────────────
+# ──────────────────────────────────────────────────────────────
 info "Setting up other repositories..."
 clone_if_missing "https://github.com/sheoranpranshu/android_device_xiaomi_sm8250-common" "16" "device/xiaomi/sm8250-common"
 clone_if_missing "https://github.com/sheoranpranshu/proprietary_vendor_xiaomi_sm8250-common" "16" "vendor/xiaomi/sm8250-common"
 clone_if_missing "https://github.com/sheoranpranshu/proprietary_vendor_xiaomi_pipa" "16" "vendor/xiaomi/pipa"
-clone_if_missing "https://github.com/LineageOS/android_hardware_lineage_compat" "lineage-23.0" "hardware/lineage/compat"
-clone_if_missing "https://github.com/LineageOS/android_hardware_lineage_interfaces" "lineage-23.0" "hardware/lineage/interfaces"
-clone_if_missing "https://github.com/LineageOS/android_hardware_lineage_livedisplay" "lineage-23.0" "hardware/lineage/livedisplay"
-clean_clone "https://github.com/PocoF3Releases/hardware_xiaomi.git"  "aosp-16" "hardware/xiaomi"
+clone_if_missing "https://github.com/PocoF3Releases/vendor_qcom_wfd.git" "bka" "vendor/qcom/wfd"
+clone_if_missing "https://github.com/PocoF3Releases/device_qcom_wfd.git" "bka" "device/qcom/wfd"
+clean_clone "https://github.com/gensis01/hardware_xiaomi.git"  "aosp-16" "hardware/xiaomi"
 clean_clone "https://github.com/PocoF3Releases/packages_resources_devicesettings.git" "aosp-16" "packages/resources/devicesettings"
 divider
 
 # ──────────────────────────────────────────────────────────────
 # Apply Recovery Patch (non-fatal warning only)
-# ──────────────────────────────────────────────
+# ──────────────────────────────────────────────────────────────
 apply_recovery_patch() {
     local root_dir
     root_dir=$(pwd)
     local target_dir="bootable/recovery"
-    local patch_file="$root_dir/device/xiaomi/pipa/source-patches/atomic-recovery.diff"
+    local patch_file="$root_dir/device/xiaomi/pipa/patches/atomic-recovery.diff"
     local temp_patch="/tmp/atomic-recovery.patch"
 
     info "Attempting to apply recovery patch..."
@@ -129,15 +146,65 @@ apply_recovery_patch() {
 }
 
 # ──────────────────────────────────────────────────────────────
+# Apply Tablet FW Patch (similar to apply_recovery_patch)
+# ──────────────────────────────────────────────────────────────
+apply_tablet_patch() {
+    local root_dir
+    root_dir=$(pwd)
+    local target_dir="frameworks/base"
+    local patch_file="$root_dir/device/xiaomi/pipa/patches/tablet-fwb.patch"
+    local temp_patch="/tmp/tablet-fwb.patch"
+
+    info "Attempting to apply tablet-fwb.patch..."
+
+    if [ ! -f "$patch_file" ]; then
+        warn "Patch file not found, skipping: $patch_file"
+        return
+    fi
+
+    if ! cd "$target_dir"; then
+        warn "Could not enter $target_dir, skipping patch."
+        return
+    fi
+
+    # Clean DOS line endings from the patch file
+    tr -d '\r' < "$patch_file" > "$temp_patch"
+
+    # Check if the patch is already applied by looking for its commit
+    local patch_fingerprint
+    patch_fingerprint=$(sha1sum "$temp_patch" | awk '{print $1}')
+    if git log -1 --pretty=%B | grep -q "$patch_fingerprint"; then
+        warn "Tablet patch seems to be already applied. Skipping."
+        rm -f "$temp_patch"
+        cd "$root_dir"
+        return
+    fi
+
+    # Attempt to apply the patch. If it fails, warn the user and continue.
+    if git apply --check --ignore-whitespace "$temp_patch" >/dev/null 2>&1; then
+        git apply --ignore-whitespace "$temp_patch"
+        git add .
+        git commit -m "Apply tablet patch: $patch_fingerprint" -q
+        success "Tablet patch applied successfully."
+    else
+        warn "Tablet patch is skipped, may cause issues."
+    fi
+
+    # Cleanup and return to the original directory
+    rm -f "$temp_patch"
+    cd "$root_dir"
+}
+
+# ──────────────────────────────────────────────────────────────
 # Setup firmware: download, extract, move whole 'radio' folder
 # (runs after apply_recovery_patch)
-# ──────────────────────────────────────────────
+# ──────────────────────────────────────────────────────────────
 setup_firmware() {
     local root_dir
     root_dir=$(pwd)
     local target_dir="${root_dir}/vendor/xiaomi/pipa"
-    local firmware_url="https://github.com/SheoranPranshu/proprietary_vendor_xiaomi_pipa/releases/download/fw-radio-OS2.0.10.0.UMZCNXM-pipa/OS2.0.10.0.UMZCNXM-pipa.zip"
-    local tmp_zip="/tmp/OS2.0.10.0.UMZCNXM-pipa.zip"
+    local firmware_url="https://github.com/SheoranPranshu/proprietary_vendor_xiaomi_pipa/releases/download/fw-radio-OS2.0.11.0.UMZCNXM-pipa/OS2.0.11.0.UMZCNXM-pipa.zip"
+    local tmp_zip="/tmp/OS2.0.11.0.UMZCNXM-pipa.zip"
     local tmp_extract="/tmp/firmware_extract"
 
     info "Setting up firmware..."
@@ -238,13 +305,16 @@ setup_firmware() {
 
 # ──────────────────────────────────────────────────────────────
 # Run Patch Setup
-# ──────────────────────────────────────────────
+# ──────────────────────────────────────────────────────────────
 ROOT_DIR=$(pwd)
 DEVICE_PATH="${ROOT_DIR}/device/xiaomi/pipa"
-mkdir -p "$DEVICE_PATH/source-patches"
+mkdir -p "$DEVICE_PATH/patches"
 
 # Apply patch for white screen recovery issue
 apply_recovery_patch
+
+# Apply tablet patch
+apply_tablet_patch
 
 # Download fw and place it correctly
 setup_firmware
