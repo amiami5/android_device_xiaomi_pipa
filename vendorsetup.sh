@@ -16,26 +16,50 @@ warn()    { echo -e "${YELLOW}${BOLD}!${NC} ${YELLOW}$1${NC}"; }
 error()   { echo -e "${RED}${BOLD}✖${NC} ${RED}$1${NC}"; }
 divider() { echo -e "${BOLD}──────────────────────────────────────────────${NC}"; }
 
+# Ensure script is run from repo root
+ROOT_DIR=$(pwd)
+
 # ──────────────────────────────────────────────────────────────
 # Prompt for Axion Patch
 # ──────────────────────────────────────────────────────────────
 read -p "Do you want to apply the axion patch? (yes/no): " APPLY_AXION
 if [ "$APPLY_AXION" == "yes" ]; then
-    info "Applying axion patch..."
-    cd device/xiaomi/pipa || exit
-    git am patches/axion.patch || {
-        error "Failed to apply axion patch."
-        exit 1
-    }
-    cd - || exit
-    success "Axion patch applied successfully."
-    KERNEL_BRANCH="16" # Use 16 branch for kernel if axion patch is applied
+    KERNEL_BRANCH="16"
+    info "Attempting to apply axion patch..."
+    if cd device/xiaomi/pipa 2>/dev/null; then
+        patch_file="patches/axion.patch"
+        tmp_patch="/tmp/axion.patch.$$"
+
+        if [ ! -f "$patch_file" ]; then
+            warn "Axion patch file not found at: $patch_file -- skipping."
+        else
+            tr -d '\r' < "$patch_file" > "$tmp_patch"
+            if git apply --check "$tmp_patch" >/dev/null 2>&1; then
+                if git apply --ignore-whitespace "$tmp_patch" >/dev/null 2>&1; then
+                    git add .
+                    git commit -m "Apply axion patch: $(sha1sum "$tmp_patch" | awk '{print $1}')" -q || true
+                    success "Axion patch applied successfully."
+                else
+                    warn "Failed to apply axion patch cleanly. Aborting changes and continuing."
+                    git reset --hard HEAD >/dev/null 2>&1 || true
+                    git clean -fd >/dev/null 2>&1 || true
+                    warn "Axion Bringup seems done already!!!"
+                fi
+            else
+                warn "Axion Bringup seems done already!!!"
+            fi
+            rm -f "$tmp_patch"
+        fi
+        cd "$ROOT_DIR" || exit
+    else
+        warn "Could not enter device/xiaomi/pipa; skipping axion patch."
+    fi
 else
-    KERNEL_BRANCH="16.ksun" # Default to 16.ksun branch
+    KERNEL_BRANCH="16.ksun" # Default branch if not applying axion patch
 fi
 
 # ──────────────────────────────────────────────────────────────
-# clone_if_missing + clean_clone
+# clone_if_missing + clean_clone (with depth=2)
 # ──────────────────────────────────────────────────────────────
 clone_if_missing() {
     local repo_url=$1 branch=$2 target_dir=$3
@@ -46,7 +70,7 @@ clone_if_missing() {
 
     if [ ! -d "$target_dir" ]; then
         info "Cloning $target_dir..."
-        git clone "$repo_url" -b "$branch" "$target_dir" -q \
+        git clone --depth=2 "$repo_url" -b "$branch" "$target_dir" -q \
             && success "Done cloning $target_dir." || {
             error "Failed to clone $repo_url."
             return 1
@@ -66,7 +90,7 @@ clean_clone() {
 
     info "Fresh cloning $target_dir from $branch..."
     [ -d "$target_dir" ] && rm -rf "$target_dir" && success "Removed $target_dir."
-    git clone "$repo_url" -b "$branch" "$target_dir" -q && \
+    git clone --depth=2 "$repo_url" -b "$branch" "$target_dir" -q && \
         success "Cloned $target_dir." || {
         error "Clone failed."
         return 1
@@ -117,36 +141,28 @@ apply_recovery_patch() {
         return
     fi
     
-    # Clean DOS line endings from the patch file
     tr -d '\r' < "$patch_file" > "$temp_patch"
 
-    # Check if the patch is already applied by looking for its commit
-    local patch_fingerprint
-    patch_fingerprint=$(sha1sum "$temp_patch" | awk '{print $1}')
-    if git log -1 --pretty=%B | grep -q "$patch_fingerprint"; then
-        warn "Recovery patch seems to be already applied. Skipping."
-        rm -f "$temp_patch"
-        cd "$root_dir"
-        return
-    fi
-
-    # Attempt to apply the patch. If it fails, warn the user and continue.
     if git apply --check --ignore-whitespace "$temp_patch" >/dev/null 2>&1; then
-        git apply --ignore-whitespace "$temp_patch"
-        git add .
-        git commit -m "Apply recovery patch: $patch_fingerprint" -q
-        success "Recovery patch applied successfully."
+        if git apply --ignore-whitespace "$temp_patch" >/dev/null 2>&1; then
+            git add .
+            git commit -m "Apply recovery patch: $(sha1sum "$temp_patch" | awk '{print $1}')" -q || true
+            success "Recovery patch applied successfully."
+        else
+            warn "Recovery patch failed to apply cleanly; skipping."
+            git reset --hard HEAD >/dev/null 2>&1 || true
+            git clean -fd >/dev/null 2>&1 || true
+        fi
     else
-        warn "White recovery patch is skipped, may cause problems in recovery."
+        warn "Recovery patch is already applied or not applicable; skipping."
     fi
 
-    # Cleanup and return to the original directory
     rm -f "$temp_patch"
     cd "$root_dir"
 }
 
 # ──────────────────────────────────────────────────────────────
-# Apply Tablet FW Patch (similar to apply_recovery_patch)
+# Apply Tablet FW Patch (git apply; no git am)
 # ──────────────────────────────────────────────────────────────
 apply_tablet_patch() {
     local root_dir
@@ -167,37 +183,28 @@ apply_tablet_patch() {
         return
     fi
 
-    # Clean DOS line endings from the patch file
     tr -d '\r' < "$patch_file" > "$temp_patch"
 
-    # Check if the patch is already applied by looking for its commit
-    local patch_fingerprint
-    patch_fingerprint=$(sha1sum "$temp_patch" | awk '{print $1}')
-    if git log -1 --pretty=%B | grep -q "$patch_fingerprint"; then
-        warn "Tablet patch seems to be already applied. Skipping."
-        rm -f "$temp_patch"
-        cd "$root_dir"
-        return
-    fi
-
-    # Attempt to apply the patch. If it fails, warn the user and continue.
     if git apply --check --ignore-whitespace "$temp_patch" >/dev/null 2>&1; then
-        git apply --ignore-whitespace "$temp_patch"
-        git add .
-        git commit -m "Apply tablet patch: $patch_fingerprint" -q
-        success "Tablet patch applied successfully."
+        if git apply --ignore-whitespace "$temp_patch" >/dev/null 2>&1; then
+            git add .
+            git commit -m "Apply tablet patch: $(sha1sum "$temp_patch" | awk '{print $1}')" -q || true
+            success "Tablet patch applied successfully."
+        else
+            warn "Tablet patch failed to apply cleanly; skipping."
+            git reset --hard HEAD >/dev/null 2>&1 || true
+            git clean -fd >/dev/null 2>&1 || true
+        fi
     else
-        warn "Tablet patch is skipped, may cause issues."
+        warn "Tablet patch seems to be already applied or not applicable; skipping."
     fi
 
-    # Cleanup and return to the original directory
     rm -f "$temp_patch"
     cd "$root_dir"
 }
 
 # ──────────────────────────────────────────────────────────────
-# Setup firmware: download, extract, move whole 'radio' folder
-# (runs after apply_recovery_patch)
+# Setup firmware
 # ──────────────────────────────────────────────────────────────
 setup_firmware() {
     local root_dir
@@ -209,13 +216,11 @@ setup_firmware() {
 
     info "Setting up firmware..."
 
-    # Ensure target directory exists
     mkdir -p "$target_dir" || {
         error "Failed to create target directory: $target_dir"
         return 1
     }
 
-    # Remove old radio folder if present
     if [ -d "$target_dir/radio" ]; then
         warn "Removing existing radio folder..."
         rm -rf "$target_dir/radio" || {
@@ -224,7 +229,6 @@ setup_firmware() {
         }
     fi
 
-    # Download firmware zip
     if command -v curl >/dev/null 2>&1; then
         info "Downloading firmware (curl)..."
         curl -L --fail -o "$tmp_zip" "$firmware_url" || {
@@ -244,7 +248,6 @@ setup_firmware() {
         return 1
     fi
 
-    # Prepare temp extract dir
     rm -rf "$tmp_extract"
     mkdir -p "$tmp_extract" || {
         error "Failed to create temp extract dir: $tmp_extract"
@@ -252,7 +255,6 @@ setup_firmware() {
         return 1
     }
 
-    # Extract to temp dir
     if command -v unzip >/dev/null 2>&1; then
         info "Extracting firmware into temporary location..."
         unzip -q -o "$tmp_zip" -d "$tmp_extract" || {
@@ -276,7 +278,6 @@ setup_firmware() {
         return 1
     fi
 
-    # Find the radio directory inside the extracted tree
     local radio_dir
     radio_dir=$(find "$tmp_extract" -type d -name radio -print -quit)
 
@@ -287,7 +288,6 @@ setup_firmware() {
         return 1
     fi
 
-    # Move the whole radio directory into target_dir
     info "Moving radio directory into $target_dir..."
     mv "$radio_dir" "$target_dir"/ || {
         error "Failed to move radio directory to $target_dir"
@@ -296,7 +296,6 @@ setup_firmware() {
         return 1
     }
 
-    # Cleanup leftover extracted files (the moved radio dir is no longer in tmp_extract)
     rm -f "$tmp_zip"
     rm -rf "$tmp_extract"
 
@@ -306,17 +305,11 @@ setup_firmware() {
 # ──────────────────────────────────────────────────────────────
 # Run Patch Setup
 # ──────────────────────────────────────────────────────────────
-ROOT_DIR=$(pwd)
 DEVICE_PATH="${ROOT_DIR}/device/xiaomi/pipa"
 mkdir -p "$DEVICE_PATH/patches"
 
-# Apply patch for white screen recovery issue
 apply_recovery_patch
-
-# Apply tablet patch
 apply_tablet_patch
-
-# Download fw and place it correctly
 setup_firmware
 
 echo "-------------------------------------"
