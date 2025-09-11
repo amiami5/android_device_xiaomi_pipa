@@ -103,16 +103,16 @@ clean_clone() {
 # ──────────────────────────────────────────────────────────────
 divider
 info "Cloning kernel into kernel/xiaomi/sm8250..."
-clean_clone "https://github.com/sheoranpranshu/android_kernel_xiaomi_sm8250" "$KERNEL_BRANCH" "kernel/xiaomi/sm8250"
+clone_if_missing "https://github.com/Xiaomi-Pad6/kernel_xiaomi_sm8250" "$KERNEL_BRANCH" "kernel/xiaomi/sm8250"
 divider
 
 # ──────────────────────────────────────────────────────────────
 # Other Repos
 # ──────────────────────────────────────────────────────────────
 info "Setting up other repositories..."
-clone_if_missing "https://github.com/sheoranpranshu/android_device_xiaomi_sm8250-common" "16" "device/xiaomi/sm8250-common"
-clone_if_missing "https://github.com/sheoranpranshu/proprietary_vendor_xiaomi_sm8250-common" "16" "vendor/xiaomi/sm8250-common"
-clone_if_missing "https://github.com/sheoranpranshu/proprietary_vendor_xiaomi_pipa" "16" "vendor/xiaomi/pipa"
+clone_if_missing "https://github.com/Xiaomi-Pad6/device_xiaomi_sm8250-common" "16" "device/xiaomi/sm8250-common"
+clone_if_missing "https://github.com/Xiaomi-Pad6/vendor_xiaomi_sm8250-common" "16" "vendor/xiaomi/sm8250-common"
+clone_if_missing "https://github.com/Xiaomi-Pad6/vendor_xiaomi_pipa" "16" "vendor/xiaomi/pipa"
 clone_if_missing "https://github.com/PocoF3Releases/vendor_qcom_wfd.git" "bka" "vendor/qcom/wfd"
 clone_if_missing "https://github.com/PocoF3Releases/device_qcom_wfd.git" "bka" "device/qcom/wfd"
 clean_clone "https://github.com/gensis01/hardware_xiaomi.git"  "aosp-16" "hardware/xiaomi"
