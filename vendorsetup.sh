@@ -120,49 +120,7 @@ clean_clone "https://github.com/PocoF3Releases/packages_resources_devicesettings
 divider
 
 # ──────────────────────────────────────────────────────────────
-# Apply Recovery Patch (non-fatal warning only)
-# ──────────────────────────────────────────────────────────────
-apply_recovery_patch() {
-    local root_dir
-    root_dir=$(pwd)
-    local target_dir="bootable/recovery"
-    local patch_file="$root_dir/device/xiaomi/pipa/patches/atomic-recovery.diff"
-    local temp_patch="/tmp/atomic-recovery.patch"
-
-    info "Attempting to apply recovery patch..."
-
-    if [ ! -f "$patch_file" ]; then
-        warn "Patch file not found, skipping: $patch_file"
-        return
-    fi
-
-    if ! cd "$target_dir"; then
-        warn "Could not enter $target_dir, skipping patch."
-        return
-    fi
-    
-    tr -d '\r' < "$patch_file" > "$temp_patch"
-
-    if git apply --check --ignore-whitespace "$temp_patch" >/dev/null 2>&1; then
-        if git apply --ignore-whitespace "$temp_patch" >/dev/null 2>&1; then
-            git add .
-            git commit -m "Apply recovery patch: $(sha1sum "$temp_patch" | awk '{print $1}')" -q || true
-            success "Recovery patch applied successfully."
-        else
-            warn "Recovery patch failed to apply cleanly; skipping."
-            git reset --hard HEAD >/dev/null 2>&1 || true
-            git clean -fd >/dev/null 2>&1 || true
-        fi
-    else
-        warn "Recovery patch is already applied or not applicable; skipping."
-    fi
-
-    rm -f "$temp_patch"
-    cd "$root_dir"
-}
-
-# ──────────────────────────────────────────────────────────────
-# Apply Tablet FW Patch (git apply; no git am)
+# Apply Tablet FW Patch
 # ──────────────────────────────────────────────────────────────
 apply_tablet_patch() {
     local root_dir
@@ -210,8 +168,8 @@ setup_firmware() {
     local root_dir
     root_dir=$(pwd)
     local target_dir="${root_dir}/vendor/xiaomi/pipa"
-    local firmware_url="https://github.com/SheoranPranshu/proprietary_vendor_xiaomi_pipa/releases/download/fw-radio-OS2.0.11.0.UMZCNXM-pipa/OS2.0.11.0.UMZCNXM-pipa.zip"
-    local tmp_zip="/tmp/OS2.0.11.0.UMZCNXM-pipa.zip"
+    local firmware_url="https://github.com/Xiaomi-Pad6/vendor_xiaomi_pipa/releases/download/pipa-2.0.8.0-MI/pipa-2.0.8.0-MI.zip"
+    local tmp_zip="/tmp/pipa-2.0.8.0-MI.zip"
     local tmp_extract="/tmp/firmware_extract"
 
     info "Setting up firmware..."
@@ -308,7 +266,6 @@ setup_firmware() {
 DEVICE_PATH="${ROOT_DIR}/device/xiaomi/pipa"
 mkdir -p "$DEVICE_PATH/patches"
 
-apply_recovery_patch
 apply_tablet_patch
 setup_firmware
 

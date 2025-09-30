@@ -1,37 +1,40 @@
-From 6ec3b606eccb9af623d45c5c9793a128eedf9553 Mon Sep 17 00:00:00 2001
+From 28eddd59637e02cee5020e188e6ac4cd8dd4c849 Mon Sep 17 00:00:00 2001
 From: SheoranPranshu <sheoranpranshu@gmail.com>
 Date: Sat, 23 Aug 2025 09:14:36 +0530
 Subject: [PATCH] pipa: Bringup Axion OS
 
 ---
- lineage_pipa.mk                               | 15 ++++++++++++---
+ lineage_pipa.mk                               | 18 +++++++++++++++---
  .../apps/Settings/res/values/derp_strings.xml | 19 -------------------
- 2 files changed, 12 insertions(+), 22 deletions(-)
+ 2 files changed, 15 insertions(+), 22 deletions(-)
  delete mode 100644 overlay-lineage/packages/apps/Settings/res/values/derp_strings.xml
 
 diff --git a/lineage_pipa.mk b/lineage_pipa.mk
-index f2cdb4b..ab9a85f 100644
+index d89e9de..deea878 100644
 --- a/lineage_pipa.mk
 +++ b/lineage_pipa.mk
-@@ -17,9 +17,18 @@ $(call inherit-product, device/xiaomi/pipa/device.mk)
+@@ -17,9 +17,21 @@ $(call inherit-product, device/xiaomi/pipa/device.mk)
  # Inherit keys
  $(call inherit-product, vendor/lineage-priv/keys/keys.mk)
  
 -# Derpfest
 -DERPFEST_BUILD_TYPE := Official
 -WITH_GMS := true
-+#EPPE
++# Blur
++TARGET_ENABLE_BLUR := true
++
++# EPPE
 +TARGET_DISABLE_EPPE := true
 +
-+#Axion Specific
++# Axion Specific
 +AXION_CAMERA_REAR_INFO := 13
 +AXION_CAMERA_FRONT_INFO := 8
 +AXION_CPU_SMALL_CORES := 0,1,2,3
 +AXION_CPU_BIG_CORES := 4,5,6,7
 +AXION_MAINTAINER := Pranshu Sheoran
 +AXION_PROCESSOR := Qualcomm_Snapdragon_870
++TORCH_STR_SUPPORTED := true
 +BYPASS_CHARGE_SUPPORTED := true
-+TARGET_ENABLE_BLUR := true
  
  PRODUCT_NAME := lineage_pipa
  PRODUCT_DEVICE := pipa
@@ -61,5 +64,5 @@ index 16368d1..0000000
 -
 -</resources> 
 -- 
-2.51.0
+2.39.5
 
