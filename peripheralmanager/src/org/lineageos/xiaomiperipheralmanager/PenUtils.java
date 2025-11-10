@@ -79,9 +79,13 @@ public class PenUtils {
         SystemProperties.set("persist.vendor.parts.pen", "18");
         
         // Apply refresh rate constraints if stylus mode is enabled
-        if (mRefreshUtils != null && mPreferences.getBoolean(STYLUS_MODE_KEY, false)) {
+        // Force Stylus only bypasses pen detection, doesn't enforce refresh rates
+        boolean stylusModeEnabled = mPreferences.getBoolean(STYLUS_MODE_KEY, false);
+        if (mRefreshUtils != null && stylusModeEnabled) {
             mRefreshUtils.setPenRefreshRate();
             logInfo("Applied pen refresh rate constraints (60-120Hz)");
+        } else {
+            logInfo("Pen hardware enabled without refresh rate constraints");
         }
     }
 
@@ -97,8 +101,9 @@ public class PenUtils {
         // Clear system property
         SystemProperties.set("persist.vendor.parts.pen", "2");
         
-        // Restore default refresh rates
-        if (mRefreshUtils != null) {
+        // Restore default refresh rates only if they were being enforced
+        boolean stylusModeEnabled = mPreferences.getBoolean(STYLUS_MODE_KEY, false);
+        if (mRefreshUtils != null && stylusModeEnabled) {
             mRefreshUtils.setDefaultRefreshRate();
             logInfo("Restored default refresh rates");
         }
@@ -126,15 +131,17 @@ public class PenUtils {
         boolean shouldEnablePen = (stylusModeEnabled && (penDetected || forceRecognize)) || forceRecognize;
         
         if (shouldEnablePen) {
-            logInfo("Pen mode should be enabled - Detected: " + penDetected + ", Force: " + forceRecognize);
+            logInfo("Pen mode should be enabled - Detected: " + penDetected + 
+                   ", Stylus mode: " + stylusModeEnabled + ", Force: " + forceRecognize);
             enablePenMode();
         } else {
-            logInfo("Pen mode should be disabled - Detected: " + penDetected + ", Stylus mode: " + stylusModeEnabled);
+            logInfo("Pen mode should be disabled - Detected: " + penDetected + 
+                   ", Stylus mode: " + stylusModeEnabled);
             disablePenMode();
         }
     }
 
-     // Checks if an input device is the Xiaomi pen based on vendor and product IDs.
+    // Checks if an input device is the Xiaomi pen based on vendor and product IDs.
     private static boolean isDeviceXiaomiPen(int id) {
         try {
             InputDevice inputDevice = mInputManager.getInputDevice(id);
@@ -154,7 +161,7 @@ public class PenUtils {
         }
     }
 
-     // InputDeviceListener to handle pen connection/disconnection events.
+    // InputDeviceListener to handle pen connection/disconnection events.
     private static InputDeviceListener mInputDeviceListener = new InputDeviceListener() {
         @Override
         public void onInputDeviceAdded(int id) {
@@ -194,17 +201,17 @@ public class PenUtils {
         refreshPenMode();
     }
 
-     // Physical pen connected?
+    // Physical pen connected?
     public static boolean isPenConnected() {
         return mIsPenConnected;
     }
 
-     // Pen mode enabled?
+    // Pen mode enabled?
     public static boolean isPenModeEnabled() {
         return mPenModeEnabled;
     }
 
-     // Cleanup method to unregister listeners.
+    // Cleanup method to unregister listeners.
     public static void cleanup() {
         if (mInputManager != null && mInputDeviceListener != null) {
             mInputManager.unregisterInputDeviceListener(mInputDeviceListener);
