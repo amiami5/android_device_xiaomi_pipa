@@ -12,6 +12,7 @@
     <string name="stylus_title">Stylus</string>
     <string name="stylus_summary">Stylus Settings</string>
     <string name="stylus_switch_title">Stylus Mode</string>
+    <string name="stylus_tile_label">Stylus Mode</string>
     <string name="force_stylus_switch_title">Force recognize stylus</string>
     <string name="force_stylus_switch_summary">Allows the official stylus to work without Bluetooth and enables support for third-party pens. Also forces the display to operate at 60/120 Hz even when no pen is connected.</string>
     <string name="stylus_refresh_rate_title">Refresh rate</string>
