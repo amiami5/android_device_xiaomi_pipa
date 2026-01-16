@@ -43,9 +43,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/android.hardware.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.midi.xml
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
+PRODUCT_PACKAGES += \
+    ApertureOverlayDevice \
+    FrameworkResOverlayDevice \
+    LineageSettingsOverlayDevice \
+    LineageSystemUIOverlayDevice \
+    SystemUIOverlayDevice
 
 # Peripheral Manager
 PRODUCT_PACKAGES += \
