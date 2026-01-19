@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023-2025 The LineageOS Project
+ * Copyright (C) 2023-2026 The LineageOS Project
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,8 +7,11 @@
 package org.lineageos.xiaomiperipheralmanager;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.hardware.input.InputManager;
 import android.os.SystemProperties;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.InputDevice;
 
@@ -24,6 +27,7 @@ public class KeyboardUtils {
 
     private static final String TAG = "XiaomiKeyboard";
     private static boolean DEBUG = SystemProperties.getBoolean("persist.xiaomi.keyboard.debug", false);
+    private static final String KEYBOARD_MODE_KEY = "keyboard_mode_key";
 
     // Xiaomi keyboard identifiers
     private static final int KEYBOARD_VENDOR_ID = 5593;
@@ -42,9 +46,49 @@ public class KeyboardUtils {
             if (mInputManager == null) {
                 mInputManager = (InputManager) context.getSystemService(Context.INPUT_SERVICE);
             }
+            
+            // Check if keyboard monitoring is enabled in preferences
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+            boolean keyboardEnabled = prefs.getBoolean(KEYBOARD_MODE_KEY, false);
+            
+            if (!keyboardEnabled) {
+                logInfo("Keyboard monitoring disabled by user - skipping setup");
+                return;
+            }
+            
             setKeyboardEnabled(false);
         } catch (Exception e) {
             logError("Error setting up keyboard utils: " + e.getMessage());
+        }
+    }
+
+    /**
+     * Enable or disable keyboard monitoring service
+     * @param context Application context
+     * @param enabled Whether keyboard monitoring should be enabled
+     */
+    public static void setKeyboardMonitoringEnabled(Context context, boolean enabled) {
+        logInfo("Setting keyboard monitoring: " + enabled);
+        
+        try {
+            // Save preference
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+            prefs.edit().putBoolean(KEYBOARD_MODE_KEY, enabled).apply();
+            
+            // Send broadcast to native service to start/stop monitoring
+            Intent intent = new Intent("org.lineageos.xiaomiperipheralmanager.KEYBOARD_MODE_CHANGED");
+            intent.putExtra("enabled", enabled);
+            context.sendBroadcast(intent);
+            
+            if (enabled) {
+                logInfo("Keyboard monitoring enabled - native service will start");
+            } else {
+                logInfo("Keyboard monitoring disabled - native service will stop");
+                // Ensure keyboard is disabled when monitoring is turned off
+                setKeyboardEnabled(false);
+            }
+        } catch (Exception e) {
+            logError("Error setting keyboard monitoring: " + e.getMessage());
         }
     }
 

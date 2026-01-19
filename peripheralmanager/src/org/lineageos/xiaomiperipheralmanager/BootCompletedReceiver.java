@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023-2025 The LineageOS Project
+ * Copyright (C) 2023-2026 The LineageOS Project
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,7 +9,9 @@ package org.lineageos.xiaomiperipheralmanager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.SystemProperties;
+import android.preference.PreferenceManager;
 import android.util.Log;
 
 import java.text.SimpleDateFormat;
@@ -23,6 +25,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
 
     private static final String TAG = "XiaomiPeripheralManager";
     private static final boolean DEBUG = SystemProperties.getBoolean("persist.xiaomi.peripherals.debug", false);
+    private static final String KEYBOARD_MODE_KEY = "keyboard_mode_key";
 
     @Override
     public void onReceive(final Context context, Intent intent) {
@@ -32,11 +35,19 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         
         logInfo("Device boot completed, initializing peripheral services");
         
-        try {
-            KeyboardUtils.setup(context);
-            logInfo("Keyboard service initialized");
-        } catch (Exception e) {
-            logError("Failed to initialize keyboard service: " + e.getMessage());
+        // Check if keyboard monitoring is enabled
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        boolean keyboardEnabled = prefs.getBoolean(KEYBOARD_MODE_KEY, false);
+        
+        if (keyboardEnabled) {
+            try {
+                KeyboardUtils.setup(context);
+                logInfo("Keyboard service initialized (user enabled)");
+            } catch (Exception e) {
+                logError("Failed to initialize keyboard service: " + e.getMessage());
+            }
+        } else {
+            logInfo("Keyboard service skipped (user disabled)");
         }
         
         try {
