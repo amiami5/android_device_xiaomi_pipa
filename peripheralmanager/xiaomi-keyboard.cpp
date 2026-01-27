@@ -5,6 +5,7 @@
  */
 
 #include <android/log.h>
+#include <ctype.h>
 #include <cutils/properties.h>
 #include <dirent.h>
 #include <errno.h>
