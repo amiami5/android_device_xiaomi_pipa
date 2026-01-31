@@ -528,4 +528,6 @@
     <!-- Flag indicating device support for EAP SIM, AKA, AKA' -->
     <bool name="config_eap_sim_based_auth_supported">false</bool>
 
+    <!-- Limit for the number of fingerprint templates per user -->
+    <integer name="config_fingerprintMaxTemplatesPerUser">0</integer>
 </resources>
