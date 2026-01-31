@@ -20,45 +20,6 @@ divider() { echo -e "${BOLD}─────────────────�
 ROOT_DIR=$(pwd)
 
 # ──────────────────────────────────────────────────────────────
-# Prompt for Axion Patch
-# ──────────────────────────────────────────────────────────────
-read -p "Do you want to apply the axion patch? (yes/no): " APPLY_AXION
-if [ "$APPLY_AXION" == "yes" ]; then
-    KERNEL_BRANCH="16"
-    info "Attempting to apply axion patch..."
-    if cd device/xiaomi/pipa 2>/dev/null; then
-        patch_file="patches/axion.patch"
-        tmp_patch="/tmp/axion.patch.$$"
-
-        if [ ! -f "$patch_file" ]; then
-            warn "Axion patch file not found at: $patch_file -- skipping."
-        else
-            tr -d '\r' < "$patch_file" > "$tmp_patch"
-            if git apply --check "$tmp_patch" >/dev/null 2>&1; then
-                if git apply --ignore-whitespace "$tmp_patch" >/dev/null 2>&1; then
-                    git add .
-                    git commit -m "Apply axion patch: $(sha1sum "$tmp_patch" | awk '{print $1}')" -q || true
-                    success "Axion patch applied successfully."
-                else
-                    warn "Failed to apply axion patch cleanly. Aborting changes and continuing."
-                    git reset --hard HEAD >/dev/null 2>&1 || true
-                    git clean -fd >/dev/null 2>&1 || true
-                    warn "Axion Bringup seems done already!!!"
-                fi
-            else
-                warn "Axion Bringup seems done already!!!"
-            fi
-            rm -f "$tmp_patch"
-        fi
-        cd "$ROOT_DIR" || exit
-    else
-        warn "Could not enter device/xiaomi/pipa; skipping axion patch."
-    fi
-else
-    KERNEL_BRANCH="16.ksun" # Default branch if not applying axion patch
-fi
-
-# ──────────────────────────────────────────────────────────────
 # clone_if_missing + clean_clone (with depth=2)
 # ──────────────────────────────────────────────────────────────
 clone_if_missing() {
@@ -99,21 +60,21 @@ clean_clone() {
 }
 
 # ──────────────────────────────────────────────────────────────
-# Kernel Repo (using dynamic branch selection)
+# Kernel Repo
 # ──────────────────────────────────────────────────────────────
 divider
 info "Cloning kernel into kernel/xiaomi/sm8250..."
-clone_if_missing "https://github.com/Xiaomi-Pad6/kernel_xiaomi_sm8250" "$KERNEL_BRANCH" "kernel/xiaomi/sm8250"
+clone_if_missing "https://github.com/Xiaomi-Pad6/kernel_xiaomi_sm8250" "16" "kernel/xiaomi/sm8250"
 divider
 
 # ──────────────────────────────────────────────────────────────
 # Other Repos
 # ──────────────────────────────────────────────────────────────
 info "Setting up other repositories..."
-clone_if_missing "https://github.com/Xiaomi-Pad6/device_xiaomi_sm8250-common" "16" "device/xiaomi/sm8250-common"
+clone_if_missing "https://github.com/nullpointer1101/android_device_xiaomi_sm8250-common" "16" "device/xiaomi/sm8250-common"
 clone_if_missing "https://github.com/Xiaomi-Pad6/vendor_xiaomi_sm8250-common" "16" "vendor/xiaomi/sm8250-common"
 clone_if_missing "https://github.com/Xiaomi-Pad6/vendor_xiaomi_pipa" "16" "vendor/xiaomi/pipa"
-clean_clone "https://github.com/gensis01/hardware_xiaomi.git"  "aosp-16" "hardware/xiaomi"
+clean_clone "https://github.com/mufasaxz/hardware_xiaomi.git"  "16" "hardware/xiaomi"
 clean_clone "https://github.com/PocoF3Releases/packages_resources_devicesettings.git" "aosp-16" "packages/resources/devicesettings"
 divider
 

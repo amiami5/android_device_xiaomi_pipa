@@ -15,11 +15,45 @@ $(call inherit-product, vendor/lineage/config/common_full_tablet_wifionly.mk)
 $(call inherit-product, device/xiaomi/pipa/device.mk)
 
 # Inherit keys
-$(call inherit-product, vendor/lineage/signing/keys/keys.mk)
+$(call inherit-product, vendor/lineage-priv/keys/keys.mk)
 
-# Derpfest
-DERPFEST_BUILD_TYPE := Official
-WITH_GMS := true
+# Charging
+BYPASS_CHARGE_SUPPORTED := true
+BYPASS_CHARGE_TOGGLE_PATH := /sys/class/power_supply/battery/input_suspend
+
+# CPU / performance
+PERF_GOV_SUPPORTED := true
+PERF_DEFAULT_GOV := schedutil
+PERF_ANIM_OVERRIDE := false
+
+# Device  Info
+AXION_CAMERA_REAR_INFO := 13
+AXION_CAMERA_FRONT_INFO := 8
+AXION_PROCESSOR := Qualcomm_Snapdragon_870
+
+# Display
+TARGET_SUPPORTED_REFRESH_RATES := 30,48,50,60,90,120,144
+
+# GPU
+GPU_FREQS_PATH := /sys/class/kgsl/kgsl-3d0/freq_table_mhz
+GPU_MIN_FREQ_PATH := /sys/class/kgsl/kgsl-3d0/min_clock_mhz
+
+# High Brightness Mode (HBM)
+HBM_SUPPORTED := false
+
+# Maintainer
+AXION_MAINTAINER := nullpointer1101
+
+# Power / memory
+TARGET_IS_LOW_RAM ?= false
+TARGET_NEEDS_DOZE_FIX := false
+
+# UI / features
+TARGET_ENABLE_BLUR := true
+TARGET_INCLUDE_VIPERFX := false
+TARGET_INCLUDES_LOS_PREBUILTS := false
+TARGET_SUPPORTS_QUICK_TAP := false
+TORCH_STR_SUPPORTED := false
 
 PRODUCT_NAME := lineage_pipa
 PRODUCT_DEVICE := pipa
@@ -28,7 +62,6 @@ PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Pad 6
 
 PRODUCT_CHARACTERISTICS := tablet
-TARGET_SUPPORTS_QUICK_TAP := false
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
