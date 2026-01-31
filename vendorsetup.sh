@@ -113,8 +113,6 @@ info "Setting up other repositories..."
 clone_if_missing "https://github.com/Xiaomi-Pad6/device_xiaomi_sm8250-common" "16" "device/xiaomi/sm8250-common"
 clone_if_missing "https://github.com/Xiaomi-Pad6/vendor_xiaomi_sm8250-common" "16" "vendor/xiaomi/sm8250-common"
 clone_if_missing "https://github.com/Xiaomi-Pad6/vendor_xiaomi_pipa" "16" "vendor/xiaomi/pipa"
-clone_if_missing "https://github.com/PocoF3Releases/vendor_qcom_wfd.git" "bka" "vendor/qcom/wfd"
-clone_if_missing "https://github.com/PocoF3Releases/device_qcom_wfd.git" "bka" "device/qcom/wfd"
 clean_clone "https://github.com/gensis01/hardware_xiaomi.git"  "aosp-16" "hardware/xiaomi"
 clean_clone "https://github.com/PocoF3Releases/packages_resources_devicesettings.git" "aosp-16" "packages/resources/devicesettings"
 divider
