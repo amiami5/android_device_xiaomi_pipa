@@ -12,11 +12,11 @@ import android.os.Bundle;
 import android.os.SystemProperties;
 import android.util.Log;
 
-import android.preference.PreferenceManager;
+import androidx.preference.PreferenceManager;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
-import androidx.preference.PreferenceFragment;
+import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.SwitchPreference;
 import com.android.settingslib.widget.MainSwitchPreference;
 
@@ -30,7 +30,7 @@ import android.provider.Settings;
  * Settings fragment for lid configuration
  * Allows users to manually enable/disable the smart cover
  */
-public class LidSettingsFragment extends PreferenceFragment implements
+public class LidSettingsFragment extends PreferenceFragmentCompat implements
         SharedPreferences.OnSharedPreferenceChangeListener {
 
     private static final String TAG = "XiaomiLidSettings";

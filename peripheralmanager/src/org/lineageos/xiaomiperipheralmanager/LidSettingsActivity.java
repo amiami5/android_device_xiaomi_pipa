@@ -26,7 +26,7 @@ public class LidSettingsActivity extends CollapsingToolbarBaseActivity {
         
         Log.i(TAG, "Opening lid settings");
         
-        getFragmentManager().beginTransaction().replace(
+        getSupportFragmentManager().beginTransaction().replace(
             com.android.settingslib.collapsingtoolbar.R.id.content_frame,
                 new LidSettingsFragment(), TAG_LID).commit();
     }
