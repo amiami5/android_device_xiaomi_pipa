@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Gestor de perifèrics Xiaomi</string>
+
+    
+    <string name="stylus_title">Stylus</string>
+    <string name="stylus_summary">Configuració del llapis</string>
+    <string name="stylus_switch_title">Mode llapis</string>
+    <string name="stylus_tile_label">Mode llapis</string>
+    <string name="force_stylus_switch_title">Força el reconeixement del llapis</string>
+    <string name="force_stylus_switch_summary">Permet que el llapis oficial funcioni sense Bluetooth i admet llapis de tercers. També obliga la pantalla a funcionar a 60/120 Hz fins i tot quan no hi ha cap llapis connectat.</string>
+    <string name="stylus_refresh_rate_title">Freqüència d\'actualització</string>
+    <string name="stylus_refresh_rate_summary">Seleccioneu la freqüència d\'actualització de la pantalla per al mode llapis</string>
+    <string name="stylus_more_info">El mode de llapis activa les taxes d\'actualització compatibles amb el llapis quan es connecta un llapis compatible. La pantalla canvia a 60 Hz o 120 Hz només mentre el llapis està connectat.</string>
+
+    
+    <string name="refresh_rate_dynamic">Dinàmic (60/120 Hz)</string>
+    <string name="refresh_rate_60hz">Fixa 60 Hz</string>
+    <string name="refresh_rate_120hz">Fixa 120 Hz</string>
+
+    
+    <string name="stylus_status_active">Actius</string>
+    <string name="stylus_status_inactive">Inactiu</string>
+    <string name="stylus_footer_status">Estat: %s</string>
+    <string name="stylus_footer_refresh_rate">Freqüència d\'actualització: %s</string>
+
+    
+    <string name="lid_title">Smart Cover</string>
+    <string name="lid_summary">Configuració de la coberta intel·ligent</string>
+    <string name="lid_switch_title">Commuta el comportament de Smart Cover</string>
+    <string name="lid_switch_summary">Això canvia el comportament de la tapa intel·ligent</string>
+
+    
+    <string name="keyboard_title">Teclat intel·ligent</string>
+    <string name="keyboard_summary">Configuració del teclat intel·ligent</string>
+    <string name="keyboard_switch_title">Suport de teclat</string>
+    <string name="keyboard_more_info">Activeu-ho només si teniu el teclat intel·ligent Xiaomi. Quan estigui activat, el sistema detectarà automàticament la connexió del teclat i gestionarà els estats d\'alimentació. En desactivar-ho, s\'estalvia bateria i recursos del sistema.\n\nNota: això és independent dels teclats Bluetooth, que funcionen sense aquesta configuració.</string>
+    <string name="keyboard_status_enabled">Monitorització del teclat activada</string>
+    <string name="keyboard_status_disabled">Monitorització del teclat desactivada</string>
+    <string name="keyboard_footer_status">Estat: %s</string>
+
+</resources>

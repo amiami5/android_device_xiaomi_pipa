@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">מנהל היקפי של שיאומי</string>
+
+    
+    <string name="stylus_title">חֶרֶט</string>
+    <string name="stylus_summary">הגדרות סטיילוס</string>
+    <string name="stylus_switch_title">מצב סטיילוס</string>
+    <string name="stylus_tile_label">מצב סטיילוס</string>
+    <string name="force_stylus_switch_title">הכריח לזהות חרט</string>
+    <string name="force_stylus_switch_summary">מאפשר לחרט הרשמי לעבוד ללא Bluetooth ומאפשר תמיכה בעטים של צד שלישי. גם מאלץ את התצוגה לפעול ב-60/120 הרץ גם כאשר אין עט מחובר.</string>
+    <string name="stylus_refresh_rate_title">קצב רענון</string>
+    <string name="stylus_refresh_rate_summary">בחר קצב רענון תצוגה עבור מצב סטיילוס</string>
+    <string name="stylus_more_info">מצב סטיילוס מאפשר קצבי רענון תואמים בעט כאשר מחברים חרט נתמך. התצוגה עוברת ל-60 הרץ או 120 הרץ רק כשהעט מחובר.</string>
+
+    
+    <string name="refresh_rate_dynamic">דינמי (60/120 הרץ)</string>
+    <string name="refresh_rate_60hz">60Hz קבוע</string>
+    <string name="refresh_rate_120hz">120Hz קבוע</string>
+
+    
+    <string name="stylus_status_active">פָּעִיל</string>
+    <string name="stylus_status_inactive">לֹא פָּעִיל</string>
+    <string name="stylus_footer_status">סטָטוּס: %s</string>
+    <string name="stylus_footer_refresh_rate">קצב רענון: %s</string>
+
+    
+    <string name="lid_title">כיסוי חכם</string>
+    <string name="lid_summary">הגדרות כיסוי חכם</string>
+    <string name="lid_switch_title">החלף מצב של התנהגות כיסוי חכם</string>
+    <string name="lid_switch_summary">זה משנה את התנהגות המכסה החכם</string>
+
+    
+    <string name="keyboard_title">מקלדת חכמה</string>
+    <string name="keyboard_summary">הגדרות מקלדת חכמה</string>
+    <string name="keyboard_switch_title">תמיכה במקלדת</string>
+    <string name="keyboard_more_info">הפעל זאת רק אם אתה הבעלים של המקלדת החכמה של Xiaomi. כאשר מופעל, המערכת (בתקווה) תזהה אוטומטית חיבור למקלדת ותנהל מצבי הפעלה. השבתה זו חוסכת בסוללה ובמשאבי מערכת.\n\nהערה: זה נפרד ממקלדות Bluetooth, שפועלות ללא הגדרה זו.</string>
+    <string name="keyboard_status_enabled">ניטור מקלדת מופעל</string>
+    <string name="keyboard_status_disabled">ניטור מקלדת מושבת</string>
+    <string name="keyboard_footer_status">סטָטוּס: %s</string>
+
+</resources>

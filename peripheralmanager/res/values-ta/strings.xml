@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi புற மேலாளர்</string>
+
+    
+    <string name="stylus_title">ஸ்டைலஸ்</string>
+    <string name="stylus_summary">ஸ்டைலஸ் அமைப்புகள்</string>
+    <string name="stylus_switch_title">ஸ்டைலஸ் பயன்முறை</string>
+    <string name="stylus_tile_label">ஸ்டைலஸ் பயன்முறை</string>
+    <string name="force_stylus_switch_title">ஸ்டைலஸை கட்டாயம் அடையாளம் காணவும்</string>
+    <string name="force_stylus_switch_summary">அதிகாரப்பூர்வ ஸ்டைலஸை புளூடூத் இல்லாமல் வேலை செய்ய அனுமதிக்கிறது மற்றும் மூன்றாம் தரப்பு பேனாக்களுக்கான ஆதரவை செயல்படுத்துகிறது. பேனா இணைக்கப்படாவிட்டாலும் 60/120 ஹெர்ட்ஸ் வேகத்தில் டிஸ்பிளே செயல்படும்.</string>
+    <string name="stylus_refresh_rate_title">புதுப்பிப்பு விகிதம்</string>
+    <string name="stylus_refresh_rate_summary">ஸ்டைலஸ் பயன்முறைக்கான காட்சி புதுப்பிப்பு வீதத்தைத் தேர்ந்தெடுக்கவும்</string>
+    <string name="stylus_more_info">ஆதரிக்கப்படும் ஸ்டைலஸ் இணைக்கப்பட்டிருக்கும் போது ஸ்டைலஸ் பயன்முறையானது பேனா-இணக்கமான புதுப்பிப்பு விகிதங்களை செயல்படுத்துகிறது. பேனா இணைக்கப்பட்டிருக்கும் போது மட்டுமே காட்சி 60 ஹெர்ட்ஸ் அல்லது 120 ஹெர்ட்ஸ்க்கு மாறுகிறது.</string>
+
+    
+    <string name="refresh_rate_dynamic">டைனமிக் (60/120Hz)</string>
+    <string name="refresh_rate_60hz">நிலையான 60Hz</string>
+    <string name="refresh_rate_120hz">நிலையான 120Hz</string>
+
+    
+    <string name="stylus_status_active">செயலில்</string>
+    <string name="stylus_status_inactive">செயலற்றது</string>
+    <string name="stylus_footer_status">நிலை: %s</string>
+    <string name="stylus_footer_refresh_rate">புதுப்பிப்பு விகிதம்: %s</string>
+
+    
+    <string name="lid_title">ஸ்மார்ட் கவர்</string>
+    <string name="lid_summary">ஸ்மார்ட் கவர் அமைப்புகள்</string>
+    <string name="lid_switch_title">ஸ்மார்ட் கவர் நடத்தையை நிலைமாற்று</string>
+    <string name="lid_switch_summary">இது ஸ்மார்ட் மூடியின் நடத்தையை மாற்றுகிறது</string>
+
+    
+    <string name="keyboard_title">ஸ்மார்ட் கீபோர்டு</string>
+    <string name="keyboard_summary">ஸ்மார்ட் கீபோர்டு அமைப்புகள்</string>
+    <string name="keyboard_switch_title">விசைப்பலகை ஆதரவு</string>
+    <string name="keyboard_more_info">Xiaomi Smart Keyboard உங்களிடம் இருந்தால் மட்டுமே இதை இயக்கவும். இயக்கப்பட்டால், கணினி (வட்டம்) தானாகவே விசைப்பலகை இணைப்பைக் கண்டறிந்து சக்தி நிலைகளை நிர்வகிக்கும். இதை முடக்குவது பேட்டரி மற்றும் கணினி வளங்களைச் சேமிக்கிறது.\n\nகுறிப்பு: இது புளூடூத் விசைப்பலகைகளிலிருந்து வேறுபட்டது, இந்த அமைப்பு இல்லாமல் வேலை செய்யும்.</string>
+    <string name="keyboard_status_enabled">விசைப்பலகை கண்காணிப்பு இயக்கப்பட்டது</string>
+    <string name="keyboard_status_disabled">விசைப்பலகை கண்காணிப்பு முடக்கப்பட்டுள்ளது</string>
+    <string name="keyboard_footer_status">நிலை: %s</string>
+
+</resources>

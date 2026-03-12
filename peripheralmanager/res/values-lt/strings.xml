@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">„Xiaomi“ periferinių įrenginių tvarkyklė</string>
+
+    
+    <string name="stylus_title">Rašiklis</string>
+    <string name="stylus_summary">Rašiklio nustatymai</string>
+    <string name="stylus_switch_title">Rašiklio režimas</string>
+    <string name="stylus_tile_label">Rašiklio režimas</string>
+    <string name="force_stylus_switch_title">Priverstinai atpažinti rašiklį</string>
+    <string name="force_stylus_switch_summary">Leidžia oficialiam rašikliui veikti be „Bluetooth“ ir palaiko trečiųjų šalių rašiklius. Taip pat priverčia ekraną veikti 60/120 Hz, net kai nėra prijungtas rašiklis.</string>
+    <string name="stylus_refresh_rate_title">Atnaujinimo dažnis</string>
+    <string name="stylus_refresh_rate_summary">Pasirinkite ekrano atnaujinimo dažnį rašiklio režimui</string>
+    <string name="stylus_more_info">Rašiklio režimas įgalina su rašikliu suderinamus atnaujinimo dažnius, kai prijungtas palaikomas rašiklis. Ekranas persijungia į 60 Hz arba 120 Hz tik tada, kai rašiklis yra prijungtas.</string>
+
+    
+    <string name="refresh_rate_dynamic">Dinaminis (60/120 Hz)</string>
+    <string name="refresh_rate_60hz">Fiksuotas 60Hz</string>
+    <string name="refresh_rate_120hz">Fiksuotas 120Hz</string>
+
+    
+    <string name="stylus_status_active">Aktyvus</string>
+    <string name="stylus_status_inactive">Neaktyvus</string>
+    <string name="stylus_footer_status">Būsena: %s</string>
+    <string name="stylus_footer_refresh_rate">Atnaujinimo dažnis: %s</string>
+
+    
+    <string name="lid_title">Išmanusis dangtelis</string>
+    <string name="lid_summary">Išmaniojo dangtelio nustatymai</string>
+    <string name="lid_switch_title">Perjungti „Smart Cover“ elgseną</string>
+    <string name="lid_switch_summary">Tai perjungia išmaniojo dangčio veikimą</string>
+
+    
+    <string name="keyboard_title">Išmanioji klaviatūra</string>
+    <string name="keyboard_summary">Išmaniosios klaviatūros nustatymai</string>
+    <string name="keyboard_switch_title">Klaviatūros palaikymas</string>
+    <string name="keyboard_more_info">Įjunkite tai tik tuo atveju, jei turite „Xiaomi Smart Keyboard“. Kai įjungta, sistema (tikiuosi) automatiškai aptiks klaviatūros ryšį ir valdys maitinimo būsenas. Tai išjungus taupoma baterija ir sistemos ištekliai.\n\nPastaba: tai yra atskirai nuo „Bluetooth“ klaviatūrų, kurios veikia be šio nustatymo.</string>
+    <string name="keyboard_status_enabled">Klaviatūros stebėjimas įjungtas</string>
+    <string name="keyboard_status_disabled">Klaviatūros stebėjimas išjungtas</string>
+    <string name="keyboard_footer_status">Būsena: %s</string>
+
+</resources>

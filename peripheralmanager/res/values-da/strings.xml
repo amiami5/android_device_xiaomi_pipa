@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi Peripheral Manager</string>
+
+    
+    <string name="stylus_title">Stylus</string>
+    <string name="stylus_summary">Indstillinger for stylus</string>
+    <string name="stylus_switch_title">Stylus-tilstand</string>
+    <string name="stylus_tile_label">Stylus-tilstand</string>
+    <string name="force_stylus_switch_title">Tving genkendelse af pennen</string>
+    <string name="force_stylus_switch_summary">Tillader den officielle stylus at arbejde uden Bluetooth og muliggør understøttelse af tredjeparts penne. Tvinger også skærmen til at fungere ved 60/120 Hz, selv når der ikke er tilsluttet en pen.</string>
+    <string name="stylus_refresh_rate_title">Opdateringshastighed</string>
+    <string name="stylus_refresh_rate_summary">Vælg skærmens opdateringshastighed for stylus-tilstand</string>
+    <string name="stylus_more_info">Stylus Mode muliggør pen-kompatible opdateringshastigheder, når en understøttet stylus er tilsluttet. Displayet skifter kun til 60 Hz eller 120 Hz, mens pennen er tilsluttet.</string>
+
+    
+    <string name="refresh_rate_dynamic">Dynamisk (60/120Hz)</string>
+    <string name="refresh_rate_60hz">Fast 60Hz</string>
+    <string name="refresh_rate_120hz">Fast 120Hz</string>
+
+    
+    <string name="stylus_status_active">Aktiv</string>
+    <string name="stylus_status_inactive">Inaktiv</string>
+    <string name="stylus_footer_status">Status: %s</string>
+    <string name="stylus_footer_refresh_rate">Opdateringshastighed: %s</string>
+
+    
+    <string name="lid_title">Smart Cover</string>
+    <string name="lid_summary">Smart Cover-indstillinger</string>
+    <string name="lid_switch_title">Slå Smart Cover-adfærd til/fra</string>
+    <string name="lid_switch_summary">Dette skifter funktionaliteten af ​​det smarte låg</string>
+
+    
+    <string name="keyboard_title">Smart tastatur</string>
+    <string name="keyboard_summary">Smart Keyboard-indstillinger</string>
+    <string name="keyboard_switch_title">Tastaturstøtte</string>
+    <string name="keyboard_more_info">Aktiver kun dette, hvis du ejer Xiaomi Smart Keyboard. Når det er aktiveret, vil systemet (forhåbentlig) automatisk registrere tastaturforbindelse og administrere strømtilstande. Deaktivering af dette sparer batteri- og systemressourcer.\n\nBemærk: Dette er adskilt fra Bluetooth-tastaturer, som fungerer uden denne indstilling.</string>
+    <string name="keyboard_status_enabled">Tastaturovervågning aktiveret</string>
+    <string name="keyboard_status_disabled">Tastaturovervågning deaktiveret</string>
+    <string name="keyboard_footer_status">Status: %s</string>
+
+</resources>

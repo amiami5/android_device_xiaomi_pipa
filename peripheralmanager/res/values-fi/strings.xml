@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi Peripheral Manager</string>
+
+    
+    <string name="stylus_title">Stylus</string>
+    <string name="stylus_summary">Kynän asetukset</string>
+    <string name="stylus_switch_title">Stylus-tila</string>
+    <string name="stylus_tile_label">Stylus-tila</string>
+    <string name="force_stylus_switch_title">Pakota tunnistuskynä</string>
+    <string name="force_stylus_switch_summary">Antaa virallisen kynän toimia ilman Bluetoothia ja mahdollistaa tuen kolmansien osapuolien kynille. Pakottaa myös näytön toimimaan taajuudella 60/120 Hz, vaikka kynää ei olisi kytketty.</string>
+    <string name="stylus_refresh_rate_title">Päivitystaajuus</string>
+    <string name="stylus_refresh_rate_summary">Valitse näytön virkistystaajuus kynätilaa varten</string>
+    <string name="stylus_more_info">Stylus Mode mahdollistaa kynän kanssa yhteensopivat virkistystaajuudet, kun tuettu kynä on kytketty. Näyttö vaihtuu 60 Hz:iin tai 120 Hz:iin vain kynän ollessa kytkettynä.</string>
+
+    
+    <string name="refresh_rate_dynamic">Dynaaminen (60/120 Hz)</string>
+    <string name="refresh_rate_60hz">Kiinteä 60Hz</string>
+    <string name="refresh_rate_120hz">Kiinteä 120Hz</string>
+
+    
+    <string name="stylus_status_active">Aktiivinen</string>
+    <string name="stylus_status_inactive">Ei-aktiivinen</string>
+    <string name="stylus_footer_status">Tila: %s</string>
+    <string name="stylus_footer_refresh_rate">Päivitystaajuus: %s</string>
+
+    
+    <string name="lid_title">Älykäs kansi</string>
+    <string name="lid_summary">Smart Cover -asetukset</string>
+    <string name="lid_switch_title">Ota Smart Cover -toiminto käyttöön</string>
+    <string name="lid_switch_summary">Tämä vaihtaa älykkään kannen toimintaa</string>
+
+    
+    <string name="keyboard_title">Älykäs näppäimistö</string>
+    <string name="keyboard_summary">Älykkään näppäimistön asetukset</string>
+    <string name="keyboard_switch_title">Näppäimistön tuki</string>
+    <string name="keyboard_more_info">Ota tämä käyttöön vain, jos omistat Xiaomi Smart Keyboardin. Kun tämä on käytössä, järjestelmä havaitsee (toivottavasti) automaattisesti näppäimistöyhteyden ja hallitsee virtatiloja. Tämän poistaminen käytöstä säästää akkua ja järjestelmäresursseja.\n\nHuomaa: Tämä on erillinen Bluetooth-näppäimistöistä, jotka toimivat ilman tätä asetusta.</string>
+    <string name="keyboard_status_enabled">Näppäimistön valvonta käytössä</string>
+    <string name="keyboard_status_disabled">Näppäimistön valvonta pois käytöstä</string>
+    <string name="keyboard_footer_status">Tila: %s</string>
+
+</resources>

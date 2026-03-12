@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi Perifere Bestuurder</string>
+
+    
+    <string name="stylus_title">Stylus</string>
+    <string name="stylus_summary">Stylus-instellings</string>
+    <string name="stylus_switch_title">Stylusmodus</string>
+    <string name="stylus_tile_label">Stylusmodus</string>
+    <string name="force_stylus_switch_title">Dwing om stylus te herken</string>
+    <string name="force_stylus_switch_summary">Laat die amptelike stylus toe om sonder Bluetooth te werk en maak ondersteuning vir derdeparty-penne moontlik. Dwing ook die skerm om teen 60/120 Hz te werk, selfs wanneer geen pen gekoppel is nie.</string>
+    <string name="stylus_refresh_rate_title">Verfristempo</string>
+    <string name="stylus_refresh_rate_summary">Kies vertoonverfrissingstempo vir stylusmodus</string>
+    <string name="stylus_more_info">Stylus-modus aktiveer pen-versoenbare verversingstempo\'s wanneer \'n ondersteunde stylus gekoppel is. Die skerm skakel net oor na 60 Hz of 120 Hz terwyl die pen gekoppel is.</string>
+
+    
+    <string name="refresh_rate_dynamic">Dinamies (60/120Hz)</string>
+    <string name="refresh_rate_60hz">Vaste 60Hz</string>
+    <string name="refresh_rate_120hz">Vaste 120Hz</string>
+
+    
+    <string name="stylus_status_active">Aktief</string>
+    <string name="stylus_status_inactive">Onaktief</string>
+    <string name="stylus_footer_status">Status: %s</string>
+    <string name="stylus_footer_refresh_rate">Herlaaitempo: %s</string>
+
+    
+    <string name="lid_title">Smart Cover</string>
+    <string name="lid_summary">Smart Cover-instellings</string>
+    <string name="lid_switch_title">Wissel Smart Cover-gedrag</string>
+    <string name="lid_switch_summary">Dit verander die gedrag van die slim deksel</string>
+
+    
+    <string name="keyboard_title">Slim sleutelbord</string>
+    <string name="keyboard_summary">Slim sleutelbordinstellings</string>
+    <string name="keyboard_switch_title">Sleutelbord Ondersteuning</string>
+    <string name="keyboard_more_info">Aktiveer dit slegs as jy die Xiaomi Smart Keyboard besit. Wanneer dit geaktiveer is, sal die stelsel (hopelik) outomaties sleutelbordverbinding opspoor en kragtoestande bestuur. As u dit deaktiveer, bespaar u battery- en stelselhulpbronne.\n\nLet wel: Dit is apart van Bluetooth-sleutelborde, wat sonder hierdie instelling werk.</string>
+    <string name="keyboard_status_enabled">Sleutelbordmonitering geaktiveer</string>
+    <string name="keyboard_status_disabled">Sleutelbordmonitering gedeaktiveer</string>
+    <string name="keyboard_footer_status">Status: %s</string>
+
+</resources>

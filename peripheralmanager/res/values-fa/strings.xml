@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">مدیر لوازم جانبی شیائومی</string>
+
+    
+    <string name="stylus_title">قلم</string>
+    <string name="stylus_summary">تنظیمات قلم</string>
+    <string name="stylus_switch_title">حالت قلم</string>
+    <string name="stylus_tile_label">حالت قلم</string>
+    <string name="force_stylus_switch_title">تشخیص اجباری قلم</string>
+    <string name="force_stylus_switch_summary">به قلم رسمی اجازه می دهد بدون بلوتوث کار کند و پشتیبانی از قلم های شخص ثالث را فعال می کند. همچنین نمایشگر را مجبور می‌کند تا با فرکانس 60/120 هرتز حتی زمانی که هیچ قلمی متصل نیست، کار کند.</string>
+    <string name="stylus_refresh_rate_title">نرخ تازه سازی</string>
+    <string name="stylus_refresh_rate_summary">نرخ نوسازی نمایشگر را برای حالت قلم انتخاب کنید</string>
+    <string name="stylus_more_info">حالت قلم هنگامی که قلم پشتیبانی شده متصل است، نرخ تازه سازی سازگار با قلم را فعال می کند. صفحه نمایش تنها زمانی که قلم وصل است به 60 هرتز یا 120 هرتز تغییر می کند.</string>
+
+    
+    <string name="refresh_rate_dynamic">پویا (60/120 هرتز)</string>
+    <string name="refresh_rate_60hz">ثابت 60 هرتز</string>
+    <string name="refresh_rate_120hz">ثابت 120 هرتز</string>
+
+    
+    <string name="stylus_status_active">فعال</string>
+    <string name="stylus_status_inactive">غیر فعال</string>
+    <string name="stylus_footer_status">وضعیت: %s</string>
+    <string name="stylus_footer_refresh_rate">نرخ تازه سازی: %s</string>
+
+    
+    <string name="lid_title">کاور هوشمند</string>
+    <string name="lid_summary">تنظیمات پوشش هوشمند</string>
+    <string name="lid_switch_title">تغییر وضعیت رفتار پوشش هوشمند</string>
+    <string name="lid_switch_summary">این رفتار درب هوشمند را تغییر می دهد</string>
+
+    
+    <string name="keyboard_title">صفحه کلید هوشمند</string>
+    <string name="keyboard_summary">تنظیمات صفحه کلید هوشمند</string>
+    <string name="keyboard_switch_title">پشتیبانی از صفحه کلید</string>
+    <string name="keyboard_more_info">این را فقط در صورتی فعال کنید که صاحب صفحه کلید هوشمند شیائومی باشید. هنگامی که فعال شود، سیستم (امیدواریم) به طور خودکار اتصال صفحه کلید را تشخیص داده و حالت های برق را مدیریت می کند. غیرفعال کردن این باعث صرفه جویی در منابع باتری و سیستم می شود.\n\nنکته: این جدا از صفحه کلیدهای بلوتوث است که بدون این تنظیم کار می کنند.</string>
+    <string name="keyboard_status_enabled">نظارت بر صفحه کلید فعال شد</string>
+    <string name="keyboard_status_disabled">نظارت بر صفحه کلید غیرفعال است</string>
+    <string name="keyboard_footer_status">وضعیت: %s</string>
+
+</resources>

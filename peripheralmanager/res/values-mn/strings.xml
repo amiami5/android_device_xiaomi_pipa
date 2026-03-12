@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi захын менежер</string>
+
+    
+    <string name="stylus_title">Зүүг</string>
+    <string name="stylus_summary">Stylus тохиргоо</string>
+    <string name="stylus_switch_title">Stylus горим</string>
+    <string name="stylus_tile_label">Stylus горим</string>
+    <string name="force_stylus_switch_title">Зүүг хүчээр таних</string>
+    <string name="force_stylus_switch_summary">Албан ёсны зүүг Bluetoothгүйгээр ажиллахыг зөвшөөрч, гуравдагч талын үзэгний дэмжлэгийг идэвхжүүлнэ. Мөн үзэг холбогдоогүй байсан ч дэлгэцийг 60/120 Гц давтамжтайгаар ажиллуулах боломжийг олгодог.</string>
+    <string name="stylus_refresh_rate_title">Сэргээх хурд</string>
+    <string name="stylus_refresh_rate_summary">Зүүг горимд дэлгэцийн сэргээх хурдыг сонгоно уу</string>
+    <string name="stylus_more_info">Зүүгний горим нь дэмжигдсэн зүү холбогдсон үед үзэгний тохирох сэргээх хурдыг идэвхжүүлдэг. Үзэг холбогдсон үед л дэлгэц нь 60 Гц эсвэл 120 Гц руу шилждэг.</string>
+
+    
+    <string name="refresh_rate_dynamic">Динамик (60/120 Гц)</string>
+    <string name="refresh_rate_60hz">60 Гц тогтмол</string>
+    <string name="refresh_rate_120hz">120 Гц тогтмол</string>
+
+    
+    <string name="stylus_status_active">Идэвхтэй</string>
+    <string name="stylus_status_inactive">Идэвхгүй</string>
+    <string name="stylus_footer_status">Статус: %s</string>
+    <string name="stylus_footer_refresh_rate">Сэргээх хурд: %s</string>
+
+    
+    <string name="lid_title">Ухаалаг бүрхэвч</string>
+    <string name="lid_summary">Ухаалаг бүрхүүлийн тохиргоо</string>
+    <string name="lid_switch_title">Ухаалаг хавтасны үйлдлийг сэлгэх</string>
+    <string name="lid_switch_summary">Энэ нь ухаалаг тагны үйл ажиллагааг өөрчилдөг</string>
+
+    
+    <string name="keyboard_title">Ухаалаг гар</string>
+    <string name="keyboard_summary">Ухаалаг гарны тохиргоо</string>
+    <string name="keyboard_switch_title">Гарны дэмжлэг</string>
+    <string name="keyboard_more_info">Хэрэв та Xiaomi ухаалаг гарыг эзэмшдэг бол үүнийг идэвхжүүлнэ үү. Идэвхжүүлсэн үед систем гарны холболтыг автоматаар илрүүлж, тэжээлийн төлөвийг удирдах болно (найдаж байна). Үүнийг идэвхгүй болгосноор батарей болон системийн нөөцийг хэмнэнэ.\n\nТэмдэглэл: Энэ нь Bluetooth гарнаас тусдаа бөгөөд энэ тохиргоогүйгээр ажилладаг.</string>
+    <string name="keyboard_status_enabled">Гарын хяналтыг идэвхжүүлсэн</string>
+    <string name="keyboard_status_disabled">Гарын хяналтыг идэвхгүй болгосон</string>
+    <string name="keyboard_footer_status">Статус: %s</string>
+
+</resources>

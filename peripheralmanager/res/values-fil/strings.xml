@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi Peripheral Manager</string>
+
+    
+    <string name="stylus_title">Stylus</string>
+    <string name="stylus_summary">Mga Setting ng Stylus</string>
+    <string name="stylus_switch_title">Stylus Mode</string>
+    <string name="stylus_tile_label">Stylus Mode</string>
+    <string name="force_stylus_switch_title">Piliting kilalanin ang stylus</string>
+    <string name="force_stylus_switch_summary">Nagbibigay-daan sa opisyal na stylus na gumana nang walang Bluetooth at nagbibigay-daan sa suporta para sa mga third-party na panulat. Pinipilit din ang display na gumana sa 60/120 Hz kahit na walang panulat na nakakonekta.</string>
+    <string name="stylus_refresh_rate_title">Refresh rate</string>
+    <string name="stylus_refresh_rate_summary">Piliin ang display refresh rate para sa stylus mode</string>
+    <string name="stylus_more_info">Ang Stylus Mode ay nagbibigay-daan sa mga rate ng pag-refresh ng pen-compatible kapag nakakonekta ang isang sinusuportahang stylus. Ang display ay lumilipat sa 60 Hz o 120 Hz lamang habang ang panulat ay konektado.</string>
+
+    
+    <string name="refresh_rate_dynamic">Dynamic (60/120Hz)</string>
+    <string name="refresh_rate_60hz">Nakapirming 60Hz</string>
+    <string name="refresh_rate_120hz">Nakapirming 120Hz</string>
+
+    
+    <string name="stylus_status_active">Aktibo</string>
+    <string name="stylus_status_inactive">Hindi aktibo</string>
+    <string name="stylus_footer_status">Katayuan: %s</string>
+    <string name="stylus_footer_refresh_rate">Refresh Rate: %s</string>
+
+    
+    <string name="lid_title">Smart Cover</string>
+    <string name="lid_summary">Mga Setting ng Smart Cover</string>
+    <string name="lid_switch_title">I-toggle ang gawi ng Smart Cover</string>
+    <string name="lid_switch_summary">I-toggle nito ang gawi ng smart lid</string>
+
+    
+    <string name="keyboard_title">Smart Keyboard</string>
+    <string name="keyboard_summary">Mga Setting ng Smart Keyboard</string>
+    <string name="keyboard_switch_title">Suporta sa Keyboard</string>
+    <string name="keyboard_more_info">I-enable lang ito kung pagmamay-ari mo ang Xiaomi Smart Keyboard. Kapag pinagana, ang system ay (sana) ay awtomatikong makakita ng koneksyon sa keyboard at mamamahala sa mga estado ng kapangyarihan. Ang pag-disable nito ay nakakatipid ng baterya at mga mapagkukunan ng system.\n\nTandaan: Hiwalay ito sa mga Bluetooth na keyboard, na gumagana nang walang ganitong setting.</string>
+    <string name="keyboard_status_enabled">Pinagana ang pagsubaybay sa keyboard</string>
+    <string name="keyboard_status_disabled">Hindi pinagana ang pagsubaybay sa keyboard</string>
+    <string name="keyboard_footer_status">Katayuan: %s</string>
+
+</resources>

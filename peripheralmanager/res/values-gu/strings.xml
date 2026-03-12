@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi પેરિફેરલ મેનેજર</string>
+
+    
+    <string name="stylus_title">સ્ટાઈલસ</string>
+    <string name="stylus_summary">સ્ટાઈલસ સેટિંગ્સ</string>
+    <string name="stylus_switch_title">સ્ટાઈલસ મોડ</string>
+    <string name="stylus_tile_label">સ્ટાઈલસ મોડ</string>
+    <string name="force_stylus_switch_title">સ્ટાઈલસને ઓળખવા દબાણ કરો</string>
+    <string name="force_stylus_switch_summary">સત્તાવાર સ્ટાઈલસને બ્લૂટૂથ વિના કામ કરવાની મંજૂરી આપે છે અને તૃતીય-પક્ષ પેન માટે સમર્થન સક્ષમ કરે છે. જ્યારે કોઈ પેન કનેક્ટ ન હોય ત્યારે પણ ડિસ્પ્લેને 60/120 Hz પર કામ કરવા દબાણ કરે છે.</string>
+    <string name="stylus_refresh_rate_title">તાજું દર</string>
+    <string name="stylus_refresh_rate_summary">સ્ટાઈલસ મોડ માટે ડિસ્પ્લે રિફ્રેશ રેટ પસંદ કરો</string>
+    <string name="stylus_more_info">જ્યારે સપોર્ટેડ સ્ટાઈલસ કનેક્ટ થયેલ હોય ત્યારે સ્ટાઈલસ મોડ પેન-સુસંગત રીફ્રેશ રેટને સક્ષમ કરે છે. જ્યારે પેન જોડાયેલ હોય ત્યારે જ ડિસ્પ્લે 60 Hz અથવા 120 Hz પર સ્વિચ થાય છે.</string>
+
+    
+    <string name="refresh_rate_dynamic">ડાયનેમિક (60/120Hz)</string>
+    <string name="refresh_rate_60hz">સ્થિર 60Hz</string>
+    <string name="refresh_rate_120hz">સ્થિર 120Hz</string>
+
+    
+    <string name="stylus_status_active">સક્રિય</string>
+    <string name="stylus_status_inactive">નિષ્ક્રિય</string>
+    <string name="stylus_footer_status">સ્થિતિ: %s</string>
+    <string name="stylus_footer_refresh_rate">તાજું દર: %s</string>
+
+    
+    <string name="lid_title">સ્માર્ટ કવર</string>
+    <string name="lid_summary">સ્માર્ટ કવર સેટિંગ્સ</string>
+    <string name="lid_switch_title">સ્માર્ટ કવર વર્તનને ટૉગલ કરો</string>
+    <string name="lid_switch_summary">આ સ્માર્ટ લિડની વર્તણૂકને ટૉગલ કરે છે</string>
+
+    
+    <string name="keyboard_title">સ્માર્ટ કીબોર્ડ</string>
+    <string name="keyboard_summary">સ્માર્ટ કીબોર્ડ સેટિંગ્સ</string>
+    <string name="keyboard_switch_title">કીબોર્ડ સપોર્ટ</string>
+    <string name="keyboard_more_info">જો તમારી પાસે Xiaomi સ્માર્ટ કીબોર્ડ હોય તો જ આને સક્ષમ કરો. જ્યારે સક્ષમ હોય, ત્યારે સિસ્ટમ (આશા છે કે) કીબોર્ડ કનેક્શનને આપમેળે શોધી કાઢશે અને પાવર સ્ટેટ્સનું સંચાલન કરશે. આને અક્ષમ કરવાથી બેટરી અને સિસ્ટમ સંસાધનોની બચત થાય છે.\n\nનોંધ: આ બ્લૂટૂથ કીબોર્ડ્સથી અલગ છે, જે આ સેટિંગ વિના કાર્ય કરે છે.</string>
+    <string name="keyboard_status_enabled">કીબોર્ડ મોનિટરિંગ સક્ષમ</string>
+    <string name="keyboard_status_disabled">કીબોર્ડ મોનિટરિંગ અક્ષમ છે</string>
+    <string name="keyboard_footer_status">સ્થિતિ: %s</string>
+
+</resources>

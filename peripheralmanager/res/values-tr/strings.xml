@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi Çevre Birim Yöneticisi</string>
+
+    
+    <string name="stylus_title">Kalem</string>
+    <string name="stylus_summary">Kalem Ayarları</string>
+    <string name="stylus_switch_title">Kalem Modu</string>
+    <string name="stylus_tile_label">Kalem Modu</string>
+    <string name="force_stylus_switch_title">Kalemi tanımaya zorla</string>
+    <string name="force_stylus_switch_summary">Resmi kalemin Bluetooth olmadan çalışmasına olanak tanır ve üçüncü taraf kalemler için destek sağlar. Ayrıca, kalem bağlı olmadığında bile ekranı 60/120 Hz\'de çalışmaya zorlar.</string>
+    <string name="stylus_refresh_rate_title">Yenileme hızı</string>
+    <string name="stylus_refresh_rate_summary">Ekran kalemi modu için ekran yenileme hızını seçin</string>
+    <string name="stylus_more_info">Ekran Kalemi Modu, desteklenen bir ekran kalemi bağlandığında kalemle uyumlu yenileme hızlarını etkinleştirir. Ekran yalnızca kalem bağlıyken 60 Hz veya 120 Hz\'ye geçer.</string>
+
+    
+    <string name="refresh_rate_dynamic">Dinamik (60/120Hz)</string>
+    <string name="refresh_rate_60hz">Sabit 60Hz</string>
+    <string name="refresh_rate_120hz">Sabit 120Hz</string>
+
+    
+    <string name="stylus_status_active">Aktif</string>
+    <string name="stylus_status_inactive">Etkin değil</string>
+    <string name="stylus_footer_status">Durum: %s</string>
+    <string name="stylus_footer_refresh_rate">Yenileme Hızı: %s</string>
+
+    
+    <string name="lid_title">Akıllı Kapak</string>
+    <string name="lid_summary">Akıllı Kapak Ayarları</string>
+    <string name="lid_switch_title">Akıllı Kapak davranışını değiştir</string>
+    <string name="lid_switch_summary">Bu, akıllı kapağın davranışını değiştirir</string>
+
+    
+    <string name="keyboard_title">Akıllı Klavye</string>
+    <string name="keyboard_summary">Akıllı Klavye Ayarları</string>
+    <string name="keyboard_switch_title">Klavye Desteği</string>
+    <string name="keyboard_more_info">Bunu yalnızca Xiaomi Akıllı Klavyeniz varsa etkinleştirin. Etkinleştirildiğinde, sistem (umarız) klavye bağlantısını otomatik olarak algılayacak ve güç durumlarını yönetecektir. Bunun devre dışı bırakılması pil ve sistem kaynaklarından tasarruf sağlar.\n\nNot: Bu, bu ayar olmadan çalışan Bluetooth klavyelerden farklıdır.</string>
+    <string name="keyboard_status_enabled">Klavye izleme etkin</string>
+    <string name="keyboard_status_disabled">Klavye izleme devre dışı</string>
+    <string name="keyboard_footer_status">Durum: %s</string>
+
+</resources>

@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+
+    <string name="app_name">小米外設管理員</string>
+
+    <string name="stylus_title">觸控筆</string>
+    <string name="stylus_summary">觸控筆設定</string>
+    <string name="stylus_switch_title">觸控筆模式</string>
+    <string name="stylus_tile_label">觸控筆模式</string>
+    <string name="force_stylus_switch_title">強制識別觸控筆</string>
+    <string name="force_stylus_switch_summary">允許官方觸控筆在不使用藍牙的情況下運作，並啟用對第三方手寫筆的支援。即使沒有連接手寫筆，也會強制螢幕以 60/120 Hz 運作。</string>
+    <string name="stylus_refresh_rate_title">更新率</string>
+    <string name="stylus_refresh_rate_summary">為觸控筆模式選擇螢幕更新率</string>
+    <string name="stylus_more_info">觸控筆模式在連接受支援的觸控筆時，啟用與手寫筆相容的更新率。螢幕僅在連接手寫筆時切換至 60 Hz 或 120 Hz。</string>
+
+    <string name="refresh_rate_dynamic">動態（60/120Hz）</string>
+    <string name="refresh_rate_60hz">固定 60Hz</string>
+    <string name="refresh_rate_120hz">固定 120Hz</string>
+
+    <string name="stylus_status_active">已啟用</string>
+    <string name="stylus_status_inactive">未啟用</string>
+    <string name="stylus_footer_status">狀態：%s</string>
+    <string name="stylus_footer_refresh_rate">更新率：%s</string>
+
+    <string name="lid_title">智慧保護殼</string>
+    <string name="lid_summary">智慧保護殼設定</string>
+    <string name="lid_switch_title">切換智慧保護殼行為</string>
+    <string name="lid_switch_summary">切換智慧保護殼蓋的行為</string>
+
+    <string name="keyboard_title">智慧鍵盤</string>
+    <string name="keyboard_summary">智慧鍵盤設定</string>
+    <string name="keyboard_switch_title">鍵盤支援</string>
+    <string name="keyboard_more_info">僅當您擁有小米智慧鍵盤時才啟用此功能。啟用後，系統將（有望）自動偵測鍵盤連線並管理電源狀態。停用此功能可節省電池與系統資源。\n\n注意：這與藍牙鍵盤無關，藍牙鍵盤無需此設定即可正常使用。</string>
+    <string name="keyboard_status_enabled">鍵盤監控已啟用</string>
+    <string name="keyboard_status_disabled">鍵盤監控已停用</string>
+    <string name="keyboard_footer_status">狀態：%s</string>
+
+</resources>

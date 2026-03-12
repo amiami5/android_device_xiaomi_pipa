@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+
+    <string name="app_name">Gerenciador de Periféricos Xiaomi</string>
+
+    <string name="stylus_title">Caneta</string>
+    <string name="stylus_summary">Configurações da caneta</string>
+    <string name="stylus_switch_title">Modo caneta</string>
+    <string name="stylus_tile_label">Modo caneta</string>
+    <string name="force_stylus_switch_title">Forçar reconhecimento da caneta</string>
+    <string name="force_stylus_switch_summary">Permite que a caneta oficial funcione sem Bluetooth e habilita suporte para canetas de terceiros. Também força a tela a operar em 60/120 Hz mesmo quando nenhuma caneta está conectada.</string>
+    <string name="stylus_refresh_rate_title">Taxa de atualização</string>
+    <string name="stylus_refresh_rate_summary">Selecione a taxa de atualização da tela para o modo caneta</string>
+    <string name="stylus_more_info">O modo caneta ativa taxas de atualização compatíveis com caneta quando uma caneta suportada está conectada. A tela muda para 60 Hz ou 120 Hz somente enquanto a caneta está conectada.</string>
+
+    <string name="refresh_rate_dynamic">Dinâmica (60/120Hz)</string>
+    <string name="refresh_rate_60hz">Fixo 60Hz</string>
+    <string name="refresh_rate_120hz">Fixo 120Hz</string>
+
+    <string name="stylus_status_active">Ativo</string>
+    <string name="stylus_status_inactive">Inativo</string>
+    <string name="stylus_footer_status">Status: %s</string>
+    <string name="stylus_footer_refresh_rate">Taxa de atualização: %s</string>
+
+    <string name="lid_title">Capa inteligente</string>
+    <string name="lid_summary">Configurações da capa inteligente</string>
+    <string name="lid_switch_title">Alternar comportamento da capa inteligente</string>
+    <string name="lid_switch_summary">Altera o comportamento da tampa inteligente</string>
+
+    <string name="keyboard_title">Teclado inteligente</string>
+    <string name="keyboard_summary">Configurações do teclado inteligente</string>
+    <string name="keyboard_switch_title">Suporte ao teclado</string>
+    <string name="keyboard_more_info">Ative somente se você possuir o Teclado Inteligente Xiaomi. Quando ativado, o sistema irá (com sorte) detectar automaticamente a conexão do teclado e gerenciar os estados de energia. Desativar isso economiza bateria e recursos do sistema.\n\nObservação: isso é separado dos teclados Bluetooth, que funcionam sem essa configuração.</string>
+    <string name="keyboard_status_enabled">Monitoramento do teclado ativado</string>
+    <string name="keyboard_status_disabled">Monitoramento do teclado desativado</string>
+    <string name="keyboard_footer_status">Status: %s</string>
+
+</resources>

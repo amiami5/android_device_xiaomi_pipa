@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Pengurus Peranti Xiaomi</string>
+
+    
+    <string name="stylus_title">Stylus</string>
+    <string name="stylus_summary">Tetapan Stylus</string>
+    <string name="stylus_switch_title">Mod Stylus</string>
+    <string name="stylus_tile_label">Mod Stylus</string>
+    <string name="force_stylus_switch_title">Mengecam stylus secara paksa</string>
+    <string name="force_stylus_switch_summary">Membenarkan stylus rasmi berfungsi tanpa Bluetooth dan membolehkan sokongan untuk pen pihak ketiga. Juga memaksa paparan untuk beroperasi pada 60/120 Hz walaupun tiada pen disambungkan.</string>
+    <string name="stylus_refresh_rate_title">Kadar muat semula</string>
+    <string name="stylus_refresh_rate_summary">Pilih kadar segar semula paparan untuk mod stilus</string>
+    <string name="stylus_more_info">Mod Stylus mendayakan kadar penyegaran serasi pen apabila stylus yang disokong disambungkan. Paparan bertukar kepada 60 Hz atau 120 Hz sahaja semasa pen disambungkan.</string>
+
+    
+    <string name="refresh_rate_dynamic">Dinamik (60/120Hz)</string>
+    <string name="refresh_rate_60hz">60Hz tetap</string>
+    <string name="refresh_rate_120hz">120Hz tetap</string>
+
+    
+    <string name="stylus_status_active">Aktif</string>
+    <string name="stylus_status_inactive">Tidak aktif</string>
+    <string name="stylus_footer_status">Status: %s</string>
+    <string name="stylus_footer_refresh_rate">Kadar Segar Semula: %s</string>
+
+    
+    <string name="lid_title">Penutup Pintar</string>
+    <string name="lid_summary">Tetapan Penutup Pintar</string>
+    <string name="lid_switch_title">Togol kelakuan Smart Cover</string>
+    <string name="lid_switch_summary">Ini menogol tingkah laku tudung pintar</string>
+
+    
+    <string name="keyboard_title">Papan Kekunci Pintar</string>
+    <string name="keyboard_summary">Tetapan Papan Kekunci Pintar</string>
+    <string name="keyboard_switch_title">Sokongan Papan Kekunci</string>
+    <string name="keyboard_more_info">Dayakan ini hanya jika anda memiliki Papan Kekunci Pintar Xiaomi. Apabila didayakan, sistem akan (mudah-mudahan) secara automatik mengesan sambungan papan kekunci dan mengurus keadaan kuasa. Melumpuhkan ini menjimatkan sumber bateri dan sistem.\n\nNota: Ini berasingan daripada papan kekunci Bluetooth, yang berfungsi tanpa tetapan ini.</string>
+    <string name="keyboard_status_enabled">Pemantauan papan kekunci didayakan</string>
+    <string name="keyboard_status_disabled">Pemantauan papan kekunci dilumpuhkan</string>
+    <string name="keyboard_footer_status">Status: %s</string>
+
+</resources>

@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Manager de periferice Xiaomi</string>
+
+    
+    <string name="stylus_title">Stylus</string>
+    <string name="stylus_summary">Setări stylus</string>
+    <string name="stylus_switch_title">Mod Stylus</string>
+    <string name="stylus_tile_label">Mod Stylus</string>
+    <string name="force_stylus_switch_title">Stilul de recunoaștere forțată</string>
+    <string name="force_stylus_switch_summary">Permite stylus-ului oficial să funcționeze fără Bluetooth și permite suport pentru stilouri terțe. De asemenea, forțează afișajul să funcționeze la 60/120 Hz chiar și atunci când nu este conectat niciun stilou.</string>
+    <string name="stylus_refresh_rate_title">Rata de reîmprospătare</string>
+    <string name="stylus_refresh_rate_summary">Selectați rata de reîmprospătare a afișajului pentru modul stylus</string>
+    <string name="stylus_more_info">Modul Stylus permite rate de reîmprospătare compatibile cu creionul atunci când este conectat un stylus compatibil. Afișajul comută la 60 Hz sau 120 Hz numai când stiloul este conectat.</string>
+
+    
+    <string name="refresh_rate_dynamic">Dinamic (60/120Hz)</string>
+    <string name="refresh_rate_60hz">Fix 60Hz</string>
+    <string name="refresh_rate_120hz">Fix 120Hz</string>
+
+    
+    <string name="stylus_status_active">Activ</string>
+    <string name="stylus_status_inactive">Inactiv</string>
+    <string name="stylus_footer_status">Stare: %s</string>
+    <string name="stylus_footer_refresh_rate">Rata de reîmprospătare: %s</string>
+
+    
+    <string name="lid_title">Husă inteligentă</string>
+    <string name="lid_summary">Setări Smart Cover</string>
+    <string name="lid_switch_title">Comutați comportamentul Smart Cover</string>
+    <string name="lid_switch_summary">Aceasta comută comportamentul capacului inteligent</string>
+
+    
+    <string name="keyboard_title">Tastatură inteligentă</string>
+    <string name="keyboard_summary">Setări tastatură inteligentă</string>
+    <string name="keyboard_switch_title">Suport pentru tastatură</string>
+    <string name="keyboard_more_info">Activați acest lucru numai dacă dețineți tastatura inteligentă Xiaomi. Când este activat, sistemul va detecta (sperăm) automat conexiunea tastaturii și va gestiona stările de alimentare. Dezactivarea acesteia economisește bateria și resursele de sistem.\n\nNotă: aceasta este separată de tastaturile Bluetooth, care funcționează fără această setare.</string>
+    <string name="keyboard_status_enabled">Monitorizarea tastaturii este activată</string>
+    <string name="keyboard_status_disabled">Monitorizarea tastaturii este dezactivată</string>
+    <string name="keyboard_footer_status">Stare: %s</string>
+
+</resources>

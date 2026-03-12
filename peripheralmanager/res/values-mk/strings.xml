@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Периферен менаџер на Xiaomi</string>
+
+    
+    <string name="stylus_title">Пенкало</string>
+    <string name="stylus_summary">Поставки за пенкало</string>
+    <string name="stylus_switch_title">Режим на игла</string>
+    <string name="stylus_tile_label">Режим на игла</string>
+    <string name="force_stylus_switch_title">Присилно препознавање на игла</string>
+    <string name="force_stylus_switch_summary">Овозможува официјалното пенкало да работи без Bluetooth и овозможува поддршка за пенкала од трети страни. Исто така, го принудува екранот да работи на 60/120 Hz дури и кога нема поврзано пенкало.</string>
+    <string name="stylus_refresh_rate_title">Стапка на освежување</string>
+    <string name="stylus_refresh_rate_summary">Изберете стапка на освежување на екранот за режимот на игла</string>
+    <string name="stylus_more_info">Режимот на пенкало овозможува стапки на освежување компатибилни со пенкало кога е поврзано поддржано игла. Екранот се префрла на 60 Hz или 120 Hz само додека пенкалото е поврзано.</string>
+
+    
+    <string name="refresh_rate_dynamic">Динамична (60/120Hz)</string>
+    <string name="refresh_rate_60hz">Фиксни 60 Hz</string>
+    <string name="refresh_rate_120hz">Фиксни 120 Hz</string>
+
+    
+    <string name="stylus_status_active">Активен</string>
+    <string name="stylus_status_inactive">Неактивен</string>
+    <string name="stylus_footer_status">Статус: %s</string>
+    <string name="stylus_footer_refresh_rate">Стапка на освежување: %s</string>
+
+    
+    <string name="lid_title">Паметна обвивка</string>
+    <string name="lid_summary">Поставки за паметна корица</string>
+    <string name="lid_switch_title">Вклучете го однесувањето на Smart Cover</string>
+    <string name="lid_switch_summary">Ова го менува однесувањето на паметниот капак</string>
+
+    
+    <string name="keyboard_title">Паметна тастатура</string>
+    <string name="keyboard_summary">Поставки за паметна тастатура</string>
+    <string name="keyboard_switch_title">Поддршка за тастатура</string>
+    <string name="keyboard_more_info">Овозможете го ова само ако ја поседувате паметната тастатура Xiaomi. Кога е овозможено, системот (се надеваме) автоматски ќе открие поврзување со тастатурата и ќе управува со состојбите на напојување. Оневозможувањето на ова заштедува батерија и системски ресурси.\n\nЗабелешка: ова е одвоено од тастатурите со Bluetooth, кои работат без оваа поставка.</string>
+    <string name="keyboard_status_enabled">Овозможено е следење на тастатурата</string>
+    <string name="keyboard_status_disabled">Следењето на тастатурата е оневозможено</string>
+    <string name="keyboard_footer_status">Статус: %s</string>
+
+</resources>

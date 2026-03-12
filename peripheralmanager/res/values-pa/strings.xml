@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi ਪੈਰੀਫਿਰਲ ਮੈਨੇਜਰ</string>
+
+    
+    <string name="stylus_title">ਸਟਾਈਲਸ</string>
+    <string name="stylus_summary">ਸਟਾਈਲਸ ਸੈਟਿੰਗਾਂ</string>
+    <string name="stylus_switch_title">ਸਟਾਈਲਸ ਮੋਡ</string>
+    <string name="stylus_tile_label">ਸਟਾਈਲਸ ਮੋਡ</string>
+    <string name="force_stylus_switch_title">ਸਟਾਈਲਸ ਨੂੰ ਪਛਾਣਨ ਲਈ ਜ਼ੋਰ ਦਿਓ</string>
+    <string name="force_stylus_switch_summary">ਅਧਿਕਾਰਤ ਸਟਾਈਲਸ ਨੂੰ ਬਲੂਟੁੱਥ ਤੋਂ ਬਿਨਾਂ ਕੰਮ ਕਰਨ ਦੀ ਇਜਾਜ਼ਤ ਦਿੰਦਾ ਹੈ ਅਤੇ ਤੀਜੀ-ਧਿਰ ਪੈਨਾਂ ਲਈ ਸਮਰਥਨ ਨੂੰ ਸਮਰੱਥ ਬਣਾਉਂਦਾ ਹੈ। ਡਿਸਪਲੇਅ ਨੂੰ 60/120 Hz \'ਤੇ ਕੰਮ ਕਰਨ ਲਈ ਮਜਬੂਰ ਕਰਦਾ ਹੈ ਭਾਵੇਂ ਕੋਈ ਪੈੱਨ ਕਨੈਕਟ ਨਾ ਹੋਵੇ।</string>
+    <string name="stylus_refresh_rate_title">ਤਾਜ਼ਾ ਦਰ</string>
+    <string name="stylus_refresh_rate_summary">ਸਟਾਈਲਸ ਮੋਡ ਲਈ ਡਿਸਪਲੇ ਰਿਫ੍ਰੈਸ਼ ਰੇਟ ਚੁਣੋ</string>
+    <string name="stylus_more_info">ਸਟਾਈਲਸ ਮੋਡ ਪੈੱਨ-ਅਨੁਕੂਲ ਰਿਫਰੈਸ਼ ਦਰਾਂ ਨੂੰ ਸਮਰੱਥ ਬਣਾਉਂਦਾ ਹੈ ਜਦੋਂ ਇੱਕ ਸਮਰਥਿਤ ਸਟਾਈਲਸ ਕਨੈਕਟ ਹੁੰਦਾ ਹੈ। ਡਿਸਪਲੇ 60 Hz ਜਾਂ 120 Hz \'ਤੇ ਸਵਿਚ ਕਰਦਾ ਹੈ ਜਦੋਂ ਪੈੱਨ ਕਨੈਕਟ ਹੁੰਦਾ ਹੈ।</string>
+
+    
+    <string name="refresh_rate_dynamic">ਡਾਇਨਾਮਿਕ (60/120Hz)</string>
+    <string name="refresh_rate_60hz">ਸਥਿਰ 60Hz</string>
+    <string name="refresh_rate_120hz">ਸਥਿਰ 120Hz</string>
+
+    
+    <string name="stylus_status_active">ਕਿਰਿਆਸ਼ੀਲ</string>
+    <string name="stylus_status_inactive">ਅਕਿਰਿਆਸ਼ੀਲ</string>
+    <string name="stylus_footer_status">ਸਥਿਤੀ: %s</string>
+    <string name="stylus_footer_refresh_rate">ਤਾਜ਼ਾ ਦਰ: %s</string>
+
+    
+    <string name="lid_title">ਸਮਾਰਟ ਕਵਰ</string>
+    <string name="lid_summary">ਸਮਾਰਟ ਕਵਰ ਸੈਟਿੰਗਾਂ</string>
+    <string name="lid_switch_title">ਸਮਾਰਟ ਕਵਰ ਵਿਵਹਾਰ ਨੂੰ ਟੌਗਲ ਕਰੋ</string>
+    <string name="lid_switch_summary">ਇਹ ਸਮਾਰਟ ਲਿਡ ਦੇ ਵਿਵਹਾਰ ਨੂੰ ਟੌਗਲ ਕਰਦਾ ਹੈ</string>
+
+    
+    <string name="keyboard_title">ਸਮਾਰਟ ਕੀਬੋਰਡ</string>
+    <string name="keyboard_summary">ਸਮਾਰਟ ਕੀਬੋਰਡ ਸੈਟਿੰਗਾਂ</string>
+    <string name="keyboard_switch_title">ਕੀਬੋਰਡ ਸਪੋਰਟ</string>
+    <string name="keyboard_more_info">ਇਸਨੂੰ ਸਿਰਫ਼ ਤਾਂ ਹੀ ਚਾਲੂ ਕਰੋ ਜੇਕਰ ਤੁਸੀਂ Xiaomi ਸਮਾਰਟ ਕੀਬੋਰਡ ਦੇ ਮਾਲਕ ਹੋ। ਜਦੋਂ ਸਮਰੱਥ ਕੀਤਾ ਜਾਂਦਾ ਹੈ, ਤਾਂ ਸਿਸਟਮ (ਉਮੀਦ ਹੈ) ਆਪਣੇ ਆਪ ਕੀਬੋਰਡ ਕਨੈਕਸ਼ਨ ਦਾ ਪਤਾ ਲਗਾ ਲਵੇਗਾ ਅਤੇ ਪਾਵਰ ਸਥਿਤੀਆਂ ਦਾ ਪ੍ਰਬੰਧਨ ਕਰੇਗਾ। ਇਸਨੂੰ ਅਯੋਗ ਕਰਨ ਨਾਲ ਬੈਟਰੀ ਅਤੇ ਸਿਸਟਮ ਸਰੋਤ ਬਚਦੇ ਹਨ।\n\nਨੋਟ: ਇਹ ਬਲੂਟੁੱਥ ਕੀਬੋਰਡਾਂ ਤੋਂ ਵੱਖਰਾ ਹੈ, ਜੋ ਇਸ ਸੈਟਿੰਗ ਤੋਂ ਬਿਨਾਂ ਕੰਮ ਕਰਦੇ ਹਨ।</string>
+    <string name="keyboard_status_enabled">ਕੀਬੋਰਡ ਨਿਗਰਾਨੀ ਨੂੰ ਸਮਰੱਥ ਬਣਾਇਆ ਗਿਆ</string>
+    <string name="keyboard_status_disabled">ਕੀਬੋਰਡ ਨਿਗਰਾਨੀ ਅਸਮਰਥਿਤ ਹੈ</string>
+    <string name="keyboard_footer_status">ਸਥਿਤੀ: %s</string>
+
+</resources>

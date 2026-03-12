@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi Peripheral Manager</string>
+
+    
+    <string name="stylus_title">Стилус</string>
+    <string name="stylus_summary">Подешавања оловке</string>
+    <string name="stylus_switch_title">Режим оловке</string>
+    <string name="stylus_tile_label">Режим оловке</string>
+    <string name="force_stylus_switch_title">Присилно препознати оловку</string>
+    <string name="force_stylus_switch_summary">Омогућава званичној оловци да ради без Блуетоотх-а и омогућава подршку за оловке других произвођача. Такође приморава екран да ради на 60/120 Хз чак и када није повезана оловка.</string>
+    <string name="stylus_refresh_rate_title">Стопа освежавања</string>
+    <string name="stylus_refresh_rate_summary">Изаберите брзину освежавања екрана за режим оловке</string>
+    <string name="stylus_more_info">Режим оловке омогућава стопе освежавања компатибилне са оловком када је повезана подржана оловка. Екран се пребацује на 60 Хз или 120 Хз само док је оловка повезана.</string>
+
+    
+    <string name="refresh_rate_dynamic">динамички (60/120Хз)</string>
+    <string name="refresh_rate_60hz">Фиксно 60Хз</string>
+    <string name="refresh_rate_120hz">Фиксно 120Хз</string>
+
+    
+    <string name="stylus_status_active">Активан</string>
+    <string name="stylus_status_inactive">Неактиван</string>
+    <string name="stylus_footer_status">Статус: %s</string>
+    <string name="stylus_footer_refresh_rate">Брзина освежавања: %s</string>
+
+    
+    <string name="lid_title">Smart Cover</string>
+    <string name="lid_summary">Smart Cover Сеттингс</string>
+    <string name="lid_switch_title">Укључи/искључи понашање Smart Cover</string>
+    <string name="lid_switch_summary">Ово пребацује понашање паметног поклопца</string>
+
+    
+    <string name="keyboard_title">Smart Keyboard</string>
+    <string name="keyboard_summary">Подешавања паметне тастатуре</string>
+    <string name="keyboard_switch_title">Подршка за тастатуру</string>
+    <string name="keyboard_more_info">Омогућите ово само ако поседујете Ксиаоми Smart Keyboard. Када је омогућено, систем ће (надамо се) аутоматски открити везу са тастатуром и управљати стањима напајања. Онемогућавање овога штеди батерију и системске ресурсе.\n\nНапомена: Ово је одвојено од Блуетоотх тастатура, које раде без овог подешавања.</string>
+    <string name="keyboard_status_enabled">Надзор тастатуре је омогућен</string>
+    <string name="keyboard_status_disabled">Надзор тастатуре је онемогућен</string>
+    <string name="keyboard_footer_status">Статус: %s</string>
+
+</resources>

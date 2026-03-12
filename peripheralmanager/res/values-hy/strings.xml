@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi ծայրամասային մենեջեր</string>
+
+    
+    <string name="stylus_title">Ստիլուս</string>
+    <string name="stylus_summary">Ստիլուսի կարգավորումներ</string>
+    <string name="stylus_switch_title">Ստիլուսի ռեժիմ</string>
+    <string name="stylus_tile_label">Ստիլուսի ռեժիմ</string>
+    <string name="force_stylus_switch_title">Ստիպել ճանաչել գրիչը</string>
+    <string name="force_stylus_switch_summary">Թույլ է տալիս պաշտոնական գրիչին աշխատել առանց Bluetooth-ի և թույլ է տալիս աջակցել երրորդ կողմի գրիչներին: Նաև ստիպում է էկրանին աշխատել 60/120 Հց հաճախականությամբ, նույնիսկ երբ գրիչ միացված չէ:</string>
+    <string name="stylus_refresh_rate_title">Թարմացման արագությունը</string>
+    <string name="stylus_refresh_rate_summary">Ընտրեք էկրանի թարմացման արագությունը ստիլուսի ռեժիմի համար</string>
+    <string name="stylus_more_info">Stylus Mode-ը հնարավորություն է տալիս գրչի հետ համատեղելի թարմացման արագություն, երբ աջակցվող գրիչը միացված է: Ցուցադրումն անցնում է 60 Հց կամ 120 Հց հաճախականության միայն այն ժամանակ, երբ գրիչը միացված է:</string>
+
+    
+    <string name="refresh_rate_dynamic">Դինամիկ (60/120 Հց)</string>
+    <string name="refresh_rate_60hz">Հաստատուն 60 Հց</string>
+    <string name="refresh_rate_120hz">Հաստատուն 120 Հց</string>
+
+    
+    <string name="stylus_status_active">Ակտիվ</string>
+    <string name="stylus_status_inactive">Ոչ ակտիվ</string>
+    <string name="stylus_footer_status">Կարգավիճակը: %s</string>
+    <string name="stylus_footer_refresh_rate">Թարմացման արագություն. %s</string>
+
+    
+    <string name="lid_title">Smart Cover</string>
+    <string name="lid_summary">Խելացի ծածկույթի կարգավորումներ</string>
+    <string name="lid_switch_title">Միացնել Smart Cover-ի վարքը</string>
+    <string name="lid_switch_summary">Սա փոխում է խելացի կափարիչի պահվածքը</string>
+
+    
+    <string name="keyboard_title">Խելացի ստեղնաշար</string>
+    <string name="keyboard_summary">Խելացի ստեղնաշարի կարգավորումներ</string>
+    <string name="keyboard_switch_title">Ստեղնաշարի աջակցություն</string>
+    <string name="keyboard_more_info">Միացրեք սա միայն այն դեպքում, եթե դուք ունեք Xiaomi խելացի ստեղնաշար: Երբ միացված է, համակարգը (հուսով ենք) ավտոմատ կերպով կհայտնաբերի ստեղնաշարի միացումը և կկառավարի էներգիայի վիճակները: Սա անջատելը խնայում է մարտկոցի և համակարգի ռեսուրսները:\n\nՆշում. սա անջատված է Bluetooth ստեղնաշարերից, որոնք աշխատում են առանց այս պարամետրի:</string>
+    <string name="keyboard_status_enabled">Ստեղնաշարի մոնիտորինգը միացված է</string>
+    <string name="keyboard_status_disabled">Ստեղնաշարի մոնիտորինգն անջատված է</string>
+    <string name="keyboard_footer_status">Կարգավիճակը: %s</string>
+
+</resources>

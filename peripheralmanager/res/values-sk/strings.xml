@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Správca periférnych zariadení Xiaomi</string>
+
+    
+    <string name="stylus_title">Stylus</string>
+    <string name="stylus_summary">Nastavenia dotykového pera</string>
+    <string name="stylus_switch_title">Režim dotykového pera</string>
+    <string name="stylus_tile_label">Režim dotykového pera</string>
+    <string name="force_stylus_switch_title">Vynútiť rozpoznanie dotykového pera</string>
+    <string name="force_stylus_switch_summary">Umožňuje oficiálnemu stylusu pracovať bez Bluetooth a umožňuje podporu pre perá tretích strán. Tiež núti displej pracovať pri frekvencii 60/120 Hz, aj keď nie je pripojené žiadne pero.</string>
+    <string name="stylus_refresh_rate_title">Obnovovacia frekvencia</string>
+    <string name="stylus_refresh_rate_summary">Vyberte obnovovaciu frekvenciu displeja pre režim dotykového pera</string>
+    <string name="stylus_more_info">Režim dotykového pera umožňuje obnovovacie frekvencie kompatibilné s perom, keď je pripojené podporované dotykové pero. Displej sa prepne na 60 Hz alebo 120 Hz len vtedy, keď je pripojené pero.</string>
+
+    
+    <string name="refresh_rate_dynamic">Dynamický (60/120 Hz)</string>
+    <string name="refresh_rate_60hz">Pevná frekvencia 60 Hz</string>
+    <string name="refresh_rate_120hz">Pevná frekvencia 120 Hz</string>
+
+    
+    <string name="stylus_status_active">Aktívne</string>
+    <string name="stylus_status_inactive">Neaktívne</string>
+    <string name="stylus_footer_status">Stav: %s</string>
+    <string name="stylus_footer_refresh_rate">Obnovovacia frekvencia: %s</string>
+
+    
+    <string name="lid_title">Smart Cover</string>
+    <string name="lid_summary">Nastavenia inteligentného krytu</string>
+    <string name="lid_switch_title">Prepnúť správanie Smart Cover</string>
+    <string name="lid_switch_summary">Tým sa prepína správanie inteligentného veka</string>
+
+    
+    <string name="keyboard_title">Inteligentná klávesnica</string>
+    <string name="keyboard_summary">Nastavenia inteligentnej klávesnice</string>
+    <string name="keyboard_switch_title">Podpora klávesnice</string>
+    <string name="keyboard_more_info">Povoľte to, iba ak vlastníte klávesnicu Xiaomi Smart Keyboard. Keď je aktivovaný, systém (dúfajme) automaticky zistí pripojenie klávesnice a bude spravovať stavy napájania. Vypnutím tejto možnosti šetríte batériu a systémové zdroje.\n\nPoznámka: Toto je oddelené od klávesníc Bluetooth, ktoré fungujú bez tohto nastavenia.</string>
+    <string name="keyboard_status_enabled">Monitorovanie klávesnice je povolené</string>
+    <string name="keyboard_status_disabled">Monitorovanie klávesnice je vypnuté</string>
+    <string name="keyboard_footer_status">Stav: %s</string>
+
+</resources>

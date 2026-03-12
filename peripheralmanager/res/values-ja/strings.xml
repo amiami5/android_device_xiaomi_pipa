@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi ペリフェラル マネージャー</string>
+
+    
+    <string name="stylus_title">スタイラス</string>
+    <string name="stylus_summary">スタイラスの設定</string>
+    <string name="stylus_switch_title">スタイラスモード</string>
+    <string name="stylus_tile_label">スタイラスモード</string>
+    <string name="force_stylus_switch_title">スタイラスを強制的に認識する</string>
+    <string name="force_stylus_switch_summary">Bluetooth なしで公式スタイラスが動作できるようにし、サードパーティのペンのサポートを有効にします。また、ペンが接続されていない場合でも、ディスプレイを強制的に 60/120 Hz で動作させます。</string>
+    <string name="stylus_refresh_rate_title">リフレッシュレート</string>
+    <string name="stylus_refresh_rate_summary">スタイラスモードの表示リフレッシュレートを選択します</string>
+    <string name="stylus_more_info">スタイラス モードでは、サポートされているスタイラスが接続されている場合に、ペン互換のリフレッシュ レートが有効になります。ペンが接続されている間のみ、表示が 60 Hz または 120 Hz に切り替わります。</string>
+
+    
+    <string name="refresh_rate_dynamic">ダイナミック(60/120Hz)</string>
+    <string name="refresh_rate_60hz">60Hz固定</string>
+    <string name="refresh_rate_120hz">120Hz固定</string>
+
+    
+    <string name="stylus_status_active">アクティブ</string>
+    <string name="stylus_status_inactive">非アクティブ</string>
+    <string name="stylus_footer_status">状態： %s</string>
+    <string name="stylus_footer_refresh_rate">リフレッシュレート: %s</string>
+
+    
+    <string name="lid_title">スマートカバー</string>
+    <string name="lid_summary">スマートカバーの設定</string>
+    <string name="lid_switch_title">スマート カバーの動作を切り替えます</string>
+    <string name="lid_switch_summary">これにより、スマート蓋の動作が切り替わります。</string>
+
+    
+    <string name="keyboard_title">スマートキーボード</string>
+    <string name="keyboard_summary">スマートキーボード設定</string>
+    <string name="keyboard_switch_title">キーボードのサポート</string>
+    <string name="keyboard_more_info">Xiaomi Smart Keyboard を所有している場合にのみ、これを有効にします。有効にすると、システムは (おそらく) 自動的にキーボード接続を検出し、電源状態を管理します。これを無効にすると、バッテリーとシステム リソースが節約されます。\n\n注: これは、この設定なしで動作する Bluetooth キーボードとは別のものです。</string>
+    <string name="keyboard_status_enabled">キーボードモニタリングが有効になっている</string>
+    <string name="keyboard_status_disabled">キーボードモニタリングが無効になっています</string>
+    <string name="keyboard_footer_status">状態： %s</string>
+
+</resources>

@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Gestore periferiche Xiaomi</string>
+
+    
+    <string name="stylus_title">Stilo</string>
+    <string name="stylus_summary">Impostazioni dello stilo</string>
+    <string name="stylus_switch_title">Modalità stilo</string>
+    <string name="stylus_tile_label">Modalità stilo</string>
+    <string name="force_stylus_switch_title">Forza il riconoscimento dello stilo</string>
+    <string name="force_stylus_switch_summary">Consente allo stilo ufficiale di funzionare senza Bluetooth e abilita il supporto per penne di terze parti. Inoltre forza il display a funzionare a 60/120 Hz anche quando non è collegata alcuna penna.</string>
+    <string name="stylus_refresh_rate_title">Frequenza di aggiornamento</string>
+    <string name="stylus_refresh_rate_summary">Seleziona la frequenza di aggiornamento del display per la modalità stilo</string>
+    <string name="stylus_more_info">La modalità stilo consente frequenze di aggiornamento compatibili con la penna quando è collegato uno stilo supportato. Il display passa a 60 Hz o 120 Hz solo mentre la penna è collegata.</string>
+
+    
+    <string name="refresh_rate_dynamic">Dinamico (60/120 Hz)</string>
+    <string name="refresh_rate_60hz">Fisso 60Hz</string>
+    <string name="refresh_rate_120hz">Fisso 120Hz</string>
+
+    
+    <string name="stylus_status_active">Attivo</string>
+    <string name="stylus_status_inactive">Inattivo</string>
+    <string name="stylus_footer_status">Stato: %s</string>
+    <string name="stylus_footer_refresh_rate">Frequenza di aggiornamento: %s</string>
+
+    
+    <string name="lid_title">Copertura intelligente</string>
+    <string name="lid_summary">Impostazioni della copertina intelligente</string>
+    <string name="lid_switch_title">Attiva/disattiva il comportamento Smart Cover</string>
+    <string name="lid_switch_summary">Questo attiva/disattiva il comportamento del coperchio intelligente</string>
+
+    
+    <string name="keyboard_title">Tastiera intelligente</string>
+    <string name="keyboard_summary">Impostazioni della tastiera intelligente</string>
+    <string name="keyboard_switch_title">Supporto per tastiera</string>
+    <string name="keyboard_more_info">Abilitalo solo se possiedi la Xiaomi Smart Keyboard. Se abilitato, il sistema rileverà (si spera) automaticamente la connessione della tastiera e gestirà gli stati di alimentazione. Disabilitandolo si risparmia batteria e risorse di sistema.\n\nNota: questo è separato dalle tastiere Bluetooth, che funzionano senza questa impostazione.</string>
+    <string name="keyboard_status_enabled">Monitoraggio della tastiera abilitato</string>
+    <string name="keyboard_status_disabled">Monitoraggio della tastiera disabilitato</string>
+    <string name="keyboard_footer_status">Stato: %s</string>
+
+</resources>

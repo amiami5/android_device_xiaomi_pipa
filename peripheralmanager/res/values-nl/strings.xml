@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi-randapparatuurbeheer</string>
+
+    
+    <string name="stylus_title">Stylus</string>
+    <string name="stylus_summary">Stylus-instellingen</string>
+    <string name="stylus_switch_title">Stylus-modus</string>
+    <string name="stylus_tile_label">Stylus-modus</string>
+    <string name="force_stylus_switch_title">Forceer stylus herkennen</string>
+    <string name="force_stylus_switch_summary">Zorgt ervoor dat de officiële stylus zonder Bluetooth werkt en maakt ondersteuning voor pennen van derden mogelijk. Dwingt het display ook om op 60/120 Hz te werken, zelfs als er geen pen is aangesloten.</string>
+    <string name="stylus_refresh_rate_title">Vernieuwingsfrequentie</string>
+    <string name="stylus_refresh_rate_summary">Selecteer de vernieuwingsfrequentie van het scherm voor de stylusmodus</string>
+    <string name="stylus_more_info">De Stylus-modus maakt pen-compatibele vernieuwingsfrequenties mogelijk wanneer een ondersteunde stylus is aangesloten. Het display schakelt alleen naar 60 Hz of 120 Hz als de pen is aangesloten.</string>
+
+    
+    <string name="refresh_rate_dynamic">Dynamisch (60/120 Hz)</string>
+    <string name="refresh_rate_60hz">Vaste 60 Hz</string>
+    <string name="refresh_rate_120hz">Vast 120 Hz</string>
+
+    
+    <string name="stylus_status_active">Actief</string>
+    <string name="stylus_status_inactive">Inactief</string>
+    <string name="stylus_footer_status">Status: %s</string>
+    <string name="stylus_footer_refresh_rate">Vernieuwingsfrequentie: %s</string>
+
+    
+    <string name="lid_title">Slimme dekking</string>
+    <string name="lid_summary">Smart Cover-instellingen</string>
+    <string name="lid_switch_title">Schakel Smart Cover-gedrag in of uit</string>
+    <string name="lid_switch_summary">Hiermee schakelt u het gedrag van het slimme deksel in of uit</string>
+
+    
+    <string name="keyboard_title">Slim toetsenbord</string>
+    <string name="keyboard_summary">Slimme toetsenbordinstellingen</string>
+    <string name="keyboard_switch_title">Toetsenbordondersteuning</string>
+    <string name="keyboard_more_info">Schakel dit alleen in als u over het Xiaomi Smart Keyboard beschikt. Indien ingeschakeld, zal het systeem (hopelijk) automatisch de toetsenbordverbinding detecteren en de energiestatus beheren. Als u dit uitschakelt, bespaart u batterij- en systeembronnen.\n\nOpmerking: dit staat los van Bluetooth-toetsenborden, die zonder deze instelling werken.</string>
+    <string name="keyboard_status_enabled">Toetsenbordmonitoring ingeschakeld</string>
+    <string name="keyboard_status_disabled">Toetsenbordbewaking uitgeschakeld</string>
+    <string name="keyboard_footer_status">Status: %s</string>
+
+</resources>

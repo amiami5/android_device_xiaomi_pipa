@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi Peripheral Manager</string>
+
+    
+    <string name="stylus_title">ສະໄຕລັດ</string>
+    <string name="stylus_summary">ການຕັ້ງຄ່າສະໄຕລັດ</string>
+    <string name="stylus_switch_title">ໂໝດສະໄຕລັສ</string>
+    <string name="stylus_tile_label">ໂໝດສະໄຕລັສ</string>
+    <string name="force_stylus_switch_title">ບັງຄັບໃຫ້ຮັບຮູ້ສະໄຕລັດ</string>
+    <string name="force_stylus_switch_summary">ອະ​ນຸ​ຍາດ​ໃຫ້​ສະ​ໄຕ​ລັດ​ເປັນ​ທາງ​ການ​ເຮັດ​ວຽກ​ໂດຍ​ບໍ່​ມີ Bluetooth ແລະ​ເຮັດ​ໃຫ້​ການ​ສະ​ຫນັບ​ສະ​ຫນູນ pens ພາກ​ສ່ວນ​ທີ​ສາມ​. ຍັງບັງຄັບໃຫ້ຈໍສະແດງຜົນເຮັດວຽກຢູ່ທີ່ 60/120 Hz ເຖິງແມ່ນວ່າບໍ່ມີປາກກາເຊື່ອມຕໍ່ກໍຕາມ.</string>
+    <string name="stylus_refresh_rate_title">ອັດຕາການໂຫຼດຂໍ້ມູນຄືນໃໝ່</string>
+    <string name="stylus_refresh_rate_summary">ເລືອກອັດຕາການໂຫຼດຫນ້າຈໍຄືນສໍາລັບໂຫມດ stylus</string>
+    <string name="stylus_more_info">ໂໝດສະໄຕລັສເປີດໃຫ້ອັດຕາການໂຫຼດຂໍ້ມູນຄືນໃໝ່ທີ່ເຂົ້າກັນໄດ້ກັບປາກກາ ເມື່ອເຊື່ອມຕໍ່ສະໄຕລັສທີ່ຮອງຮັບ. ຈໍສະແດງຜົນປ່ຽນເປັນ 60 Hz ຫຼື 120 Hz ພຽງແຕ່ໃນຂະນະທີ່ປາກກາຖືກເຊື່ອມຕໍ່.</string>
+
+    
+    <string name="refresh_rate_dynamic">ໄດນາມິກ (60/120Hz)</string>
+    <string name="refresh_rate_60hz">ຄົງທີ່ 60Hz</string>
+    <string name="refresh_rate_120hz">ຄົງທີ່ 120Hz</string>
+
+    
+    <string name="stylus_status_active">ເຄື່ອນໄຫວ</string>
+    <string name="stylus_status_inactive">ບໍ່ເຄື່ອນໄຫວ</string>
+    <string name="stylus_footer_status">ສະຖານະ: %s</string>
+    <string name="stylus_footer_refresh_rate">ອັດຕາການໂຫຼດຂໍ້ມູນຄືນໃໝ່: %s</string>
+
+    
+    <string name="lid_title">ການປົກຫຸ້ມຂອງອັດສະລິຍະ</string>
+    <string name="lid_summary">ການຕັ້ງຄ່າການປົກປິດອັດສະລິຍະ</string>
+    <string name="lid_switch_title">ສະຫຼັບພຶດຕິກຳ Smart Cover</string>
+    <string name="lid_switch_summary">ອັນນີ້ສະຫຼັບພຶດຕິກຳຂອງຝາອັດສະລິຍະ</string>
+
+    
+    <string name="keyboard_title">ແປ້ນພິມອັດສະລິຍະ</string>
+    <string name="keyboard_summary">ການຕັ້ງຄ່າແປ້ນພິມອັດສະລິຍະ</string>
+    <string name="keyboard_switch_title">ຮອງຮັບແປ້ນພິມ</string>
+    <string name="keyboard_more_info">ເປີດໃຊ້ງານນີ້ພຽງແຕ່ຖ້າທ່ານເປັນເຈົ້າຂອງ Xiaomi Smart Keyboard. ເມື່ອເປີດໃຊ້ງານ, ລະບົບຈະ (ຫວັງວ່າ) ຈະກວດພົບການເຊື່ອມຕໍ່ແປ້ນພິມໂດຍອັດຕະໂນມັດ ແລະຈັດການສະຖານະພະລັງງານ. ການປິດການນຳໃຊ້ອັນນີ້ຈະຊ່ວຍປະຫຍັດແບັດເຕີຣີ ແລະຊັບພະຍາກອນຂອງລະບົບ.\n\n ໝາຍເຫດ: ອັນນີ້ແມ່ນແຍກອອກຈາກແປ້ນພິມ Bluetooth, ເຊິ່ງເຮັດວຽກໂດຍບໍ່ມີການຕັ້ງຄ່ານີ້.</string>
+    <string name="keyboard_status_enabled">ເປີດໃຊ້ການຕິດຕາມແປ້ນພິມແລ້ວ</string>
+    <string name="keyboard_status_disabled">ການກວດສອບແປ້ນພິມຖືກປິດໃຊ້ງານ</string>
+    <string name="keyboard_footer_status">ສະຖານະ: %s</string>
+
+</resources>

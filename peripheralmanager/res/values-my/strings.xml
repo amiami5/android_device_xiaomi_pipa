@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi Peripheral Manager</string>
+
+    
+    <string name="stylus_title">Stylus</string>
+    <string name="stylus_summary">Stylus ဆက်တင်များ</string>
+    <string name="stylus_switch_title">Stylus မုဒ်</string>
+    <string name="stylus_tile_label">Stylus မုဒ်</string>
+    <string name="force_stylus_switch_title">stylus ကို အသိအမှတ်ပြုရန် အတင်းလုပ်ပါ။</string>
+    <string name="force_stylus_switch_summary">တရားဝင် stylus ကို Bluetooth မပါဘဲ အလုပ်လုပ်ခွင့်ပြုပြီး ပြင်ပကုမ္ပဏီ ဖောင်တိန်များအတွက် ပံ့ပိုးမှုပေးသည်။ ဘောပင်ကို ချိတ်ဆက်မထားသော်လည်း မျက်နှာပြင်အား 60/120 Hz တွင်လည်ပတ်စေရန်လည်း တွန်းအားပေးပါသည်။</string>
+    <string name="stylus_refresh_rate_title">ပြန်လည်ဆန်းသစ်မှုနှုန်း</string>
+    <string name="stylus_refresh_rate_summary">stylus မုဒ်အတွက် ဖန်သားပြင်ပြသမှုနှုန်းကို ရွေးပါ။</string>
+    <string name="stylus_more_info">Stylus မုဒ်သည် ပံ့ပိုးထားသော stylus ကို ချိတ်ဆက်ထားသောအခါတွင် ဘောပင်-သဟဇာတ ပြန်လည်ဆန်းသစ်မှုနှုန်းများကို ဖွင့်ပေးသည်။ ဘောပင်ကို ချိတ်ဆက်ထားစဉ်တွင်သာ မျက်နှာပြင်သည် 60 Hz သို့မဟုတ် 120 Hz သို့ပြောင်းသည်။</string>
+
+    
+    <string name="refresh_rate_dynamic">ဒိုင်းနမစ် (60/120Hz)</string>
+    <string name="refresh_rate_60hz">60Hz ပုံသေ</string>
+    <string name="refresh_rate_120hz">120Hz ပုံသေ</string>
+
+    
+    <string name="stylus_status_active">အသက်ဝင်သည်။</string>
+    <string name="stylus_status_inactive">မလှုပ်မရှား</string>
+    <string name="stylus_footer_status">အခြေအနေ- %s</string>
+    <string name="stylus_footer_refresh_rate">ပြန်လည်စတင်မှုနှုန်း- %s</string>
+
+    
+    <string name="lid_title">စမတ်ကာဗာ</string>
+    <string name="lid_summary">Smart Cover ဆက်တင်များ</string>
+    <string name="lid_switch_title">Smart Cover အပြုအမူကို ပြောင်းပါ။</string>
+    <string name="lid_switch_summary">၎င်းသည် စမတ်အဖုံး၏ အပြုအမူကို ပြောင်းပေးသည်။</string>
+
+    
+    <string name="keyboard_title">စမတ်ကီးဘုတ်</string>
+    <string name="keyboard_summary">စမတ်ကီးဘုတ် ဆက်တင်များ</string>
+    <string name="keyboard_switch_title">ကီးဘုတ်ပံ့ပိုးမှု</string>
+    <string name="keyboard_more_info">Xiaomi Smart Keyboard ပိုင်ဆိုင်မှသာ ၎င်းကိုဖွင့်ပါ။ ဖွင့်ထားသောအခါ၊ စနစ်သည် ကီးဘုတ်ချိတ်ဆက်မှုကို အလိုအလျောက်သိရှိနိုင်ပြီး ပါဝါအခြေအနေများကို စီမံခန့်ခွဲမည်ဖြစ်သည်။ ၎င်းကိုပိတ်ထားခြင်းဖြင့် ဘက်ထရီနှင့် စနစ်အရင်းအမြစ်များကို သက်သာစေပါသည်။\n\n မှတ်ချက်- ဤဆက်တင်မပါဘဲ အလုပ်လုပ်သော ဘလူးတုသ်ကီးဘုတ်များနှင့် သီးခြားဖြစ်သည်။</string>
+    <string name="keyboard_status_enabled">ကီးဘုတ်စောင့်ကြည့်ခြင်းကို ဖွင့်ထားသည်။</string>
+    <string name="keyboard_status_disabled">ကီးဘုတ်စောင့်ကြည့်ခြင်းကို ပိတ်ထားသည်။</string>
+    <string name="keyboard_footer_status">အခြေအနေ- %s</string>
+
+</resources>

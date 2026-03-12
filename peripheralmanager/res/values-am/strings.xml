@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi Peripheral አስተዳዳሪ</string>
+
+    
+    <string name="stylus_title">ስታይለስ</string>
+    <string name="stylus_summary">Stylus ቅንብሮች</string>
+    <string name="stylus_switch_title">የስታይለስ ሁነታ</string>
+    <string name="stylus_tile_label">የስታይለስ ሁነታ</string>
+    <string name="force_stylus_switch_title">ስቲለስን አስገድዱ</string>
+    <string name="force_stylus_switch_summary">ኦፊሴላዊው ስታይለስ ያለ ብሉቱዝ እንዲሰራ ያስችለዋል እና የሶስተኛ ወገን እስክሪብቶ ድጋፍን ያስችላል። እንዲሁም ምንም እስክሪብቶ ባይገናኝም ማሳያው በ60/120 Hz እንዲሰራ ያስገድደዋል።</string>
+    <string name="stylus_refresh_rate_title">የማደስ መጠን</string>
+    <string name="stylus_refresh_rate_summary">ለስታይለስ ሁነታ የማሳያ እድሳት መጠንን ይምረጡ</string>
+    <string name="stylus_more_info">የስቲለስ ሁነታ የሚደገፍ ብዕር ሲገናኝ ብዕር-ተኳሃኝ የማደሻ ተመኖችን ያስችላል። ብዕሩ ሲገናኝ ብቻ ማሳያው ወደ 60 Hz ወይም 120 Hz ይቀየራል።</string>
+
+    
+    <string name="refresh_rate_dynamic">ተለዋዋጭ (60/120Hz)</string>
+    <string name="refresh_rate_60hz">ቋሚ 60Hz</string>
+    <string name="refresh_rate_120hz">ቋሚ 120Hz</string>
+
+    
+    <string name="stylus_status_active">ንቁ</string>
+    <string name="stylus_status_inactive">እንቅስቃሴ-አልባ</string>
+    <string name="stylus_footer_status">ሁኔታ፡ %s</string>
+    <string name="stylus_footer_refresh_rate">የማደስ መጠን፡ %s</string>
+
+    
+    <string name="lid_title">ብልጥ ሽፋን</string>
+    <string name="lid_summary">የስማርት ሽፋን ቅንብሮች</string>
+    <string name="lid_switch_title">የስማርት ሽፋን ባህሪን ቀይር</string>
+    <string name="lid_switch_summary">ይህ የስማርት ክዳን ባህሪን ይቀያየራል።</string>
+
+    
+    <string name="keyboard_title">ስማርት ቁልፍ ሰሌዳ</string>
+    <string name="keyboard_summary">ዘመናዊ የቁልፍ ሰሌዳ ቅንብሮች</string>
+    <string name="keyboard_switch_title">የቁልፍ ሰሌዳ ድጋፍ</string>
+    <string name="keyboard_more_info">ይህንን ያንቁት የXiaomi Smart Keyboard ባለቤት ከሆኑ ብቻ ነው። ሲነቃ ስርዓቱ (በተስፋ) የቁልፍ ሰሌዳ ግንኙነትን በራስ-ሰር ያገኝ እና የኃይል ሁኔታዎችን ያስተዳድራል። ይህንን ማሰናከል የባትሪ እና የሲስተም ሀብቶችን ይቆጥባል።\n\nማስታወሻ፡ ይህ ያለዚህ ቅንብር ከሚሰሩ የብሉቱዝ ቁልፍ ሰሌዳዎች የተለየ ነው።</string>
+    <string name="keyboard_status_enabled">የቁልፍ ሰሌዳ ክትትል ነቅቷል።</string>
+    <string name="keyboard_status_disabled">የቁልፍ ሰሌዳ ክትትል ተሰናክሏል።</string>
+    <string name="keyboard_footer_status">ሁኔታ፡ %s</string>
+
+</resources>

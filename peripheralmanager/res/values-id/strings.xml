@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Manajer Periferal Xiaomi</string>
+
+    
+    <string name="stylus_title">stilus</string>
+    <string name="stylus_summary">Pengaturan stilus</string>
+    <string name="stylus_switch_title">Modus Stylus</string>
+    <string name="stylus_tile_label">Modus Stylus</string>
+    <string name="force_stylus_switch_title">Paksa mengenali stylus</string>
+    <string name="force_stylus_switch_summary">Memungkinkan stylus resmi berfungsi tanpa Bluetooth dan mengaktifkan dukungan untuk pena pihak ketiga. Juga memaksa layar untuk beroperasi pada 60/120 Hz meskipun tidak ada pena yang tersambung.</string>
+    <string name="stylus_refresh_rate_title">Kecepatan penyegaran</string>
+    <string name="stylus_refresh_rate_summary">Pilih kecepatan refresh tampilan untuk mode stylus</string>
+    <string name="stylus_more_info">Mode Stylus mengaktifkan kecepatan refresh yang kompatibel dengan pena saat stylus yang didukung tersambung. Layar beralih ke 60 Hz atau 120 Hz hanya saat pena tersambung.</string>
+
+    
+    <string name="refresh_rate_dynamic">Dinamis (60/120Hz)</string>
+    <string name="refresh_rate_60hz">Tetap 60Hz</string>
+    <string name="refresh_rate_120hz">Tetap 120Hz</string>
+
+    
+    <string name="stylus_status_active">Aktif</string>
+    <string name="stylus_status_inactive">Tidak aktif</string>
+    <string name="stylus_footer_status">Status: %s</string>
+    <string name="stylus_footer_refresh_rate">Kecepatan Penyegaran: %s</string>
+
+    
+    <string name="lid_title">Penutup Cerdas</string>
+    <string name="lid_summary">Pengaturan Sampul Cerdas</string>
+    <string name="lid_switch_title">Alihkan perilaku Smart Cover</string>
+    <string name="lid_switch_summary">Ini mengubah perilaku smart lid</string>
+
+    
+    <string name="keyboard_title">Papan Ketik Cerdas</string>
+    <string name="keyboard_summary">Pengaturan Papan Ketik Cerdas</string>
+    <string name="keyboard_switch_title">Dukungan Papan Ketik</string>
+    <string name="keyboard_more_info">Aktifkan ini hanya jika Anda memiliki Xiaomi Smart Keyboard. Saat diaktifkan, sistem (mudah-mudahan) akan secara otomatis mendeteksi koneksi keyboard dan mengelola status daya. Menonaktifkan ini akan menghemat baterai dan sumber daya sistem.\n\nCatatan: Ini terpisah dari keyboard Bluetooth, yang berfungsi tanpa pengaturan ini.</string>
+    <string name="keyboard_status_enabled">Pemantauan keyboard diaktifkan</string>
+    <string name="keyboard_status_disabled">Pemantauan keyboard dinonaktifkan</string>
+    <string name="keyboard_footer_status">Status: %s</string>
+
+</resources>

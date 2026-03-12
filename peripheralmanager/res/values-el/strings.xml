@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Περιφερειακός διαχειριστής Xiaomi</string>
+
+    
+    <string name="stylus_title">Κονδύλι</string>
+    <string name="stylus_summary">Ρυθμίσεις γραφίδας</string>
+    <string name="stylus_switch_title">Λειτουργία γραφίδας</string>
+    <string name="stylus_tile_label">Λειτουργία γραφίδας</string>
+    <string name="force_stylus_switch_title">Αναγκαστική αναγνώριση γραφίδας</string>
+    <string name="force_stylus_switch_summary">Επιτρέπει στην επίσημη γραφίδα να λειτουργεί χωρίς Bluetooth και επιτρέπει την υποστήριξη για στυλό τρίτων κατασκευαστών. Επίσης αναγκάζει την οθόνη να λειτουργεί στα 60/120 Hz ακόμα και όταν δεν είναι συνδεδεμένο στυλό.</string>
+    <string name="stylus_refresh_rate_title">Ρυθμός ανανέωσης</string>
+    <string name="stylus_refresh_rate_summary">Επιλέξτε ρυθμό ανανέωσης οθόνης για τη λειτουργία γραφίδας</string>
+    <string name="stylus_more_info">Η λειτουργία γραφίδας επιτρέπει ρυθμούς ανανέωσης συμβατούς με στυλό όταν είναι συνδεδεμένη μια υποστηριζόμενη γραφίδα. Η οθόνη αλλάζει στα 60 Hz ή 120 Hz μόνο όταν είναι συνδεδεμένη η πένα.</string>
+
+    
+    <string name="refresh_rate_dynamic">Δυναμική (60/120Hz)</string>
+    <string name="refresh_rate_60hz">Σταθερά 60Hz</string>
+    <string name="refresh_rate_120hz">Σταθερά 120Hz</string>
+
+    
+    <string name="stylus_status_active">Ενεργός</string>
+    <string name="stylus_status_inactive">Αδρανής</string>
+    <string name="stylus_footer_status">Κατάσταση: %s</string>
+    <string name="stylus_footer_refresh_rate">Ρυθμός ανανέωσης: %s</string>
+
+    
+    <string name="lid_title">Έξυπνο κάλυμμα</string>
+    <string name="lid_summary">Ρυθμίσεις Smart Cover</string>
+    <string name="lid_switch_title">Εναλλαγή συμπεριφοράς Smart Cover</string>
+    <string name="lid_switch_summary">Αυτό αλλάζει τη συμπεριφορά του έξυπνου καπακιού</string>
+
+    
+    <string name="keyboard_title">Έξυπνο πληκτρολόγιο</string>
+    <string name="keyboard_summary">Ρυθμίσεις έξυπνου πληκτρολογίου</string>
+    <string name="keyboard_switch_title">Υποστήριξη πληκτρολογίου</string>
+    <string name="keyboard_more_info">Ενεργοποιήστε αυτό μόνο εάν έχετε το έξυπνο πληκτρολόγιο Xiaomi. Όταν είναι ενεργοποιημένο, το σύστημα (ελπίζουμε) να ανιχνεύει αυτόματα τη σύνδεση πληκτρολογίου και να διαχειρίζεται τις καταστάσεις ισχύος. Η απενεργοποίησή της εξοικονομεί πόρους μπαταρίας και συστήματος.\n\nΣημείωση: Αυτό είναι ξεχωριστό από τα πληκτρολόγια Bluetooth, τα οποία λειτουργούν χωρίς αυτήν τη ρύθμιση.</string>
+    <string name="keyboard_status_enabled">Η παρακολούθηση πληκτρολογίου ενεργοποιήθηκε</string>
+    <string name="keyboard_status_disabled">Η παρακολούθηση πληκτρολογίου είναι απενεργοποιημένη</string>
+    <string name="keyboard_footer_status">Κατάσταση: %s</string>
+
+</resources>

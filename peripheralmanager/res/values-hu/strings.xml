@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi Periféria Manager</string>
+
+    
+    <string name="stylus_title">Stylus</string>
+    <string name="stylus_summary">Toll beállításai</string>
+    <string name="stylus_switch_title">Stylus mód</string>
+    <string name="stylus_tile_label">Stylus mód</string>
+    <string name="force_stylus_switch_title">A toll felismerésének kényszerítése</string>
+    <string name="force_stylus_switch_summary">Lehetővé teszi a hivatalos ceruza Bluetooth nélküli működését, és lehetővé teszi a harmadik féltől származó tollak támogatását. Arra is kényszeríti a kijelzőt, hogy 60/120 Hz-en működjön, még akkor is, ha nincs toll csatlakoztatva.</string>
+    <string name="stylus_refresh_rate_title">Frissítési gyakoriság</string>
+    <string name="stylus_refresh_rate_summary">Válassza ki a képernyő frissítési gyakoriságát az érintőceruza módhoz</string>
+    <string name="stylus_more_info">A Stylus Mode lehetővé teszi a tollal kompatibilis frissítési gyakoriságot, ha támogatott ceruzát csatlakoztat. A kijelző csak akkor vált 60 Hz-re vagy 120 Hz-re, ha a toll csatlakoztatva van.</string>
+
+    
+    <string name="refresh_rate_dynamic">Dinamikus (60/120 Hz)</string>
+    <string name="refresh_rate_60hz">Fix 60 Hz</string>
+    <string name="refresh_rate_120hz">Fix 120 Hz</string>
+
+    
+    <string name="stylus_status_active">Aktív</string>
+    <string name="stylus_status_inactive">Inaktív</string>
+    <string name="stylus_footer_status">Állapot: %s</string>
+    <string name="stylus_footer_refresh_rate">Frissítési gyakoriság: %s</string>
+
+    
+    <string name="lid_title">Smart Cover</string>
+    <string name="lid_summary">Smart Cover beállítások</string>
+    <string name="lid_switch_title">Kapcsolja be az Intelligens burkolat viselkedését</string>
+    <string name="lid_switch_summary">Ez átkapcsolja az intelligens fedél viselkedését</string>
+
+    
+    <string name="keyboard_title">Intelligens billentyűzet</string>
+    <string name="keyboard_summary">Intelligens billentyűzet beállításai</string>
+    <string name="keyboard_switch_title">Billentyűzet támogatás</string>
+    <string name="keyboard_more_info">Csak akkor engedélyezze ezt, ha Ön a Xiaomi Smart Keyboard tulajdonosa. Ha engedélyezve van, a rendszer (remélhetőleg) automatikusan észleli a billentyűzet csatlakozását és kezeli az áramellátást. Ennek letiltása akkumulátor- és rendszererőforrást takarít meg.\n\nMegjegyzés: Ez különálló a Bluetooth-billentyűzetektől, amelyek e beállítás nélkül is működnek.</string>
+    <string name="keyboard_status_enabled">A billentyűzet figyelése engedélyezve</string>
+    <string name="keyboard_status_disabled">A billentyűzet figyelése letiltva</string>
+    <string name="keyboard_footer_status">Állapot: %s</string>
+
+</resources>

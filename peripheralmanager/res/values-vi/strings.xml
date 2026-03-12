@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Quản lý ngoại vi Xiaomi</string>
+
+    
+    <string name="stylus_title">bút cảm ứng</string>
+    <string name="stylus_summary">Cài đặt bút cảm ứng</string>
+    <string name="stylus_switch_title">Chế độ bút cảm ứng</string>
+    <string name="stylus_tile_label">Chế độ bút cảm ứng</string>
+    <string name="force_stylus_switch_title">Buộc nhận dạng bút cảm ứng</string>
+    <string name="force_stylus_switch_summary">Cho phép bút cảm ứng chính thức hoạt động mà không cần Bluetooth và hỗ trợ bút của bên thứ ba. Đồng thời buộc màn hình hoạt động ở tần số 60/120 Hz ngay cả khi không kết nối bút.</string>
+    <string name="stylus_refresh_rate_title">Tốc độ làm mới</string>
+    <string name="stylus_refresh_rate_summary">Chọn tốc độ làm mới màn hình cho chế độ bút cảm ứng</string>
+    <string name="stylus_more_info">Chế độ bút cảm ứng cho phép tốc độ làm mới tương thích với bút khi kết nối bút cảm ứng được hỗ trợ. Màn hình chỉ chuyển sang 60 Hz hoặc 120 Hz khi bút được kết nối.</string>
+
+    
+    <string name="refresh_rate_dynamic">Động (60/120Hz)</string>
+    <string name="refresh_rate_60hz">Cố định 60Hz</string>
+    <string name="refresh_rate_120hz">Cố định 120Hz</string>
+
+    
+    <string name="stylus_status_active">Đang hoạt động</string>
+    <string name="stylus_status_inactive">Không hoạt động</string>
+    <string name="stylus_footer_status">Trạng thái: %s</string>
+    <string name="stylus_footer_refresh_rate">Tốc độ làm mới: %s</string>
+
+    
+    <string name="lid_title">Vỏ thông minh</string>
+    <string name="lid_summary">Cài đặt bìa thông minh</string>
+    <string name="lid_switch_title">Chuyển đổi hành vi của Smart Cover</string>
+    <string name="lid_switch_summary">Điều này chuyển đổi hoạt động của nắp thông minh</string>
+
+    
+    <string name="keyboard_title">Bàn phím thông minh</string>
+    <string name="keyboard_summary">Cài đặt bàn phím thông minh</string>
+    <string name="keyboard_switch_title">Hỗ trợ bàn phím</string>
+    <string name="keyboard_more_info">Chỉ kích hoạt tính năng này nếu bạn sở hữu Bàn phím thông minh Xiaomi. Khi được bật, hệ thống (hy vọng) sẽ tự động phát hiện kết nối bàn phím và quản lý trạng thái nguồn. Việc tắt tính năng này sẽ tiết kiệm pin và tài nguyên hệ thống.\n\nLưu ý: Bàn phím này tách biệt với bàn phím Bluetooth, hoạt động mà không cần cài đặt này.</string>
+    <string name="keyboard_status_enabled">Đã bật giám sát bàn phím</string>
+    <string name="keyboard_status_disabled">Đã tắt giám sát bàn phím</string>
+    <string name="keyboard_footer_status">Trạng thái: %s</string>
+
+</resources>

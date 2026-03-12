@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">អ្នកគ្រប់គ្រងគ្រឿងកុំព្យូទ័រ Xiaomi</string>
+
+    
+    <string name="stylus_title">ស្ទីលស</string>
+    <string name="stylus_summary">ការកំណត់ស្ទីល</string>
+    <string name="stylus_switch_title">របៀបស្ទីលស</string>
+    <string name="stylus_tile_label">របៀបស្ទីលស</string>
+    <string name="force_stylus_switch_title">បង្ខំឱ្យស្គាល់ស្ទីលឡូស</string>
+    <string name="force_stylus_switch_summary">អនុញ្ញាតឱ្យស្ទីលស្ទីលផ្លូវការដំណើរការដោយគ្មានប៊្លូធូស និងបើកការគាំទ្រសម្រាប់ប៊ិចភាគីទីបី។ ក៏បង្ខំឱ្យអេក្រង់ដំណើរការនៅ 60/120 Hz ទោះបីជាគ្មានប៊ិចត្រូវបានភ្ជាប់ក៏ដោយ។</string>
+    <string name="stylus_refresh_rate_title">អត្រាធ្វើឱ្យស្រស់</string>
+    <string name="stylus_refresh_rate_summary">ជ្រើសរើសអត្រាធ្វើឱ្យស្រស់បង្ហាញសម្រាប់ទម្រង់ស្ទីល</string>
+    <string name="stylus_more_info">របៀបស្ទីលុសបើកអត្រាធ្វើឱ្យស្រស់ដែលត្រូវគ្នានឹងប៊ិច នៅពេលដែលស្ទីលដែលគាំទ្រត្រូវបានភ្ជាប់។ ការបង្ហាញប្តូរទៅ 60 Hz ឬ 120 Hz ខណៈពេលដែលប៊ិចត្រូវបានភ្ជាប់។</string>
+
+    
+    <string name="refresh_rate_dynamic">ថាមវន្ត (60/120Hz)</string>
+    <string name="refresh_rate_60hz">ថេរ 60Hz</string>
+    <string name="refresh_rate_120hz">ថេរ 120Hz</string>
+
+    
+    <string name="stylus_status_active">សកម្ម</string>
+    <string name="stylus_status_inactive">អសកម្ម</string>
+    <string name="stylus_footer_status">ស្ថានភាព៖ %s</string>
+    <string name="stylus_footer_refresh_rate">អត្រាធ្វើឱ្យស្រស់៖ %s</string>
+
+    
+    <string name="lid_title">គម្របឆ្លាតវៃ</string>
+    <string name="lid_summary">ការកំណត់គម្របឆ្លាតវៃ</string>
+    <string name="lid_switch_title">បិទ/បើក​ឥរិយាបថ Smart Cover</string>
+    <string name="lid_switch_summary">វាបិទបើកដំណើរការនៃគម្របឆ្លាតវៃ</string>
+
+    
+    <string name="keyboard_title">ក្តារចុចឆ្លាតវៃ</string>
+    <string name="keyboard_summary">ការកំណត់ក្តារចុចឆ្លាតវៃ</string>
+    <string name="keyboard_switch_title">ការគាំទ្រក្តារចុច</string>
+    <string name="keyboard_more_info">បើកដំណើរការនេះលុះត្រាតែអ្នកជាម្ចាស់ក្តារចុច Xiaomi Smart ។ នៅពេលបើកដំណើរការ ប្រព័ន្ធនឹង (សង្ឃឹមថា) រកឃើញការភ្ជាប់ក្តារចុចដោយស្វ័យប្រវត្តិ និងគ្រប់គ្រងស្ថានភាពថាមពល។ ការបិទវាជួយសន្សំសំចៃថ្ម និងធនធានប្រព័ន្ធ។\n\n ចំណាំ៖ វាដាច់ដោយឡែកពីក្តារចុចប៊្លូធូស ដែលដំណើរការដោយគ្មានការកំណត់នេះ។</string>
+    <string name="keyboard_status_enabled">បានបើកការត្រួតពិនិត្យក្តារចុច</string>
+    <string name="keyboard_status_disabled">ការត្រួតពិនិត្យក្តារចុចត្រូវបានបិទ</string>
+    <string name="keyboard_footer_status">ស្ថានភាព៖ %s</string>
+
+</resources>

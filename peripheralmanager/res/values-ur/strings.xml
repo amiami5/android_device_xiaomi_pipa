@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi پیریفرل مینیجر</string>
+
+    
+    <string name="stylus_title">اسٹائلس</string>
+    <string name="stylus_summary">اسٹائلس کی ترتیبات</string>
+    <string name="stylus_switch_title">اسٹائلس موڈ</string>
+    <string name="stylus_tile_label">اسٹائلس موڈ</string>
+    <string name="force_stylus_switch_title">زبردستی اسٹائلس کو پہچانیں۔</string>
+    <string name="force_stylus_switch_summary">آفیشل اسٹائلس کو بلوٹوتھ کے بغیر کام کرنے کی اجازت دیتا ہے اور فریق ثالث کے قلم کے لیے سپورٹ کو فعال کرتا ہے۔ نیز ڈسپلے کو 60/120 ہرٹز پر کام کرنے پر مجبور کرتا ہے یہاں تک کہ جب کوئی قلم منسلک نہ ہو۔</string>
+    <string name="stylus_refresh_rate_title">ریفریش ریٹ</string>
+    <string name="stylus_refresh_rate_summary">اسٹائلس موڈ کے لیے ڈسپلے ریفریش ریٹ منتخب کریں۔</string>
+    <string name="stylus_more_info">سٹائلس موڈ قلم کے ساتھ مطابقت پذیر ریفریش ریٹس کو فعال کرتا ہے جب ایک معاون اسٹائلس منسلک ہوتا ہے۔ ڈسپلے صرف 60 ہرٹز یا 120 ہرٹز پر سوئچ کرتا ہے جب قلم منسلک ہوتا ہے۔</string>
+
+    
+    <string name="refresh_rate_dynamic">متحرک (60/120Hz)</string>
+    <string name="refresh_rate_60hz">فکسڈ 60Hz</string>
+    <string name="refresh_rate_120hz">فکسڈ 120Hz</string>
+
+    
+    <string name="stylus_status_active">فعال</string>
+    <string name="stylus_status_inactive">غیر فعال</string>
+    <string name="stylus_footer_status">حیثیت: %s</string>
+    <string name="stylus_footer_refresh_rate">ریفریش ریٹ: %s</string>
+
+    
+    <string name="lid_title">اسمارٹ کور</string>
+    <string name="lid_summary">اسمارٹ کور کی ترتیبات</string>
+    <string name="lid_switch_title">سمارٹ کور کے رویے کو ٹوگل کریں۔</string>
+    <string name="lid_switch_summary">یہ سمارٹ ڑککن کے رویے کو ٹوگل کرتا ہے۔</string>
+
+    
+    <string name="keyboard_title">اسمارٹ کی بورڈ</string>
+    <string name="keyboard_summary">اسمارٹ کی بورڈ کی ترتیبات</string>
+    <string name="keyboard_switch_title">کی بورڈ سپورٹ</string>
+    <string name="keyboard_more_info">اسے صرف اس صورت میں فعال کریں جب آپ Xiaomi اسمارٹ کی بورڈ کے مالک ہوں۔ فعال ہونے پر، سسٹم (امید ہے کہ) خود بخود کی بورڈ کنکشن کا پتہ لگائے گا اور پاور اسٹیٹس کا نظم کرے گا۔ اسے غیر فعال کرنے سے بیٹری اور سسٹم کے وسائل کی بچت ہوتی ہے۔\n\nنوٹ: یہ بلوٹوتھ کی بورڈز سے الگ ہے، جو اس ترتیب کے بغیر کام کرتے ہیں۔</string>
+    <string name="keyboard_status_enabled">کی بورڈ مانیٹرنگ فعال ہے۔</string>
+    <string name="keyboard_status_disabled">کی بورڈ مانیٹرنگ غیر فعال ہے۔</string>
+    <string name="keyboard_footer_status">حیثیت: %s</string>
+
+</resources>

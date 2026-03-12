@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi perifērijas pārvaldnieks</string>
+
+    
+    <string name="stylus_title">Irbulis</string>
+    <string name="stylus_summary">Irbuļa iestatījumi</string>
+    <string name="stylus_switch_title">Irbuļa režīms</string>
+    <string name="stylus_tile_label">Irbuļa režīms</string>
+    <string name="force_stylus_switch_title">Piespiedu atpazīšanas irbuli</string>
+    <string name="force_stylus_switch_summary">Ļauj oficiālajam irbulim darboties bez Bluetooth un nodrošina atbalstu trešo pušu pildspalvām. Piespiež arī displeju darboties ar 60/120 Hz pat tad, ja nav pievienota pildspalva.</string>
+    <string name="stylus_refresh_rate_title">Atsvaidzes intensitāte</string>
+    <string name="stylus_refresh_rate_summary">Irbulas režīmam atlasiet displeja atsvaidzes intensitāti</string>
+    <string name="stylus_more_info">Irbuļa režīms nodrošina ar pildspalvu saderīgu atsvaidzes intensitāti, kad ir pievienots atbalstīts irbulis. Displejs pārslēdzas uz 60 Hz vai 120 Hz tikai tad, kad pildspalva ir pievienota.</string>
+
+    
+    <string name="refresh_rate_dynamic">Dinamisks (60/120 Hz)</string>
+    <string name="refresh_rate_60hz">Fiksētais 60Hz</string>
+    <string name="refresh_rate_120hz">Fiksēts 120Hz</string>
+
+    
+    <string name="stylus_status_active">Aktīvs</string>
+    <string name="stylus_status_inactive">Neaktīvs</string>
+    <string name="stylus_footer_status">Statuss: %s</string>
+    <string name="stylus_footer_refresh_rate">Atsvaidzināšanas biežums: %s</string>
+
+    
+    <string name="lid_title">Smart Cover</string>
+    <string name="lid_summary">Smart Cover iestatījumi</string>
+    <string name="lid_switch_title">Pārslēgt Smart Cover darbību</string>
+    <string name="lid_switch_summary">Tas pārslēdz viedā vāka darbību</string>
+
+    
+    <string name="keyboard_title">Viedā tastatūra</string>
+    <string name="keyboard_summary">Viedās tastatūras iestatījumi</string>
+    <string name="keyboard_switch_title">Tastatūras atbalsts</string>
+    <string name="keyboard_more_info">Iespējojiet to tikai tad, ja jums pieder Xiaomi viedtastatūra. Kad tas ir iespējots, sistēma (cerams) automātiski noteiks tastatūras savienojumu un pārvaldīs barošanas stāvokļus. Atspējojot šo funkciju, tiek ietaupīti akumulatora un sistēmas resursi.\n\nPiezīme. Tas ir atsevišķi no Bluetooth tastatūrām, kuras darbojas bez šī iestatījuma.</string>
+    <string name="keyboard_status_enabled">Tastatūras uzraudzība ir iespējota</string>
+    <string name="keyboard_status_disabled">Tastatūras uzraudzība ir atspējota</string>
+    <string name="keyboard_footer_status">Statuss: %s</string>
+
+</resources>

@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi periferik menejeri</string>
+
+    
+    <string name="stylus_title">Stylus</string>
+    <string name="stylus_summary">Stylus sozlamalari</string>
+    <string name="stylus_switch_title">Stylus rejimi</string>
+    <string name="stylus_tile_label">Stylus rejimi</string>
+    <string name="force_stylus_switch_title">Stylusni tanib olish</string>
+    <string name="force_stylus_switch_summary">Rasmiy stilusga Bluetoothsiz ishlashga ruxsat beradi va uchinchi tomon qalamlarini qo\'llab-quvvatlaydi. Bundan tashqari, qalam ulanmagan bo\'lsa ham displeyni 60/120 Gts chastotada ishlashga majbur qiladi.</string>
+    <string name="stylus_refresh_rate_title">Yangilanish tezligi</string>
+    <string name="stylus_refresh_rate_summary">Stylus rejimi uchun displey yangilanish tezligini tanlang</string>
+    <string name="stylus_more_info">Stylus rejimi qo\'llab-quvvatlanadigan stilus ulanganda qalamga mos keladigan yangilanish tezligini ta\'minlaydi. Displey 60 Gts yoki 120 Gts chastotaga faqat qalam ulanganda o\'tadi.</string>
+
+    
+    <string name="refresh_rate_dynamic">Dinamik (60/120Hz)</string>
+    <string name="refresh_rate_60hz">Ruxsat etilgan 60Hz</string>
+    <string name="refresh_rate_120hz">Ruxsat etilgan 120Hz</string>
+
+    
+    <string name="stylus_status_active">Faol</string>
+    <string name="stylus_status_inactive">Faol emas</string>
+    <string name="stylus_footer_status">Holati: %s</string>
+    <string name="stylus_footer_refresh_rate">Yangilanish tezligi: %s</string>
+
+    
+    <string name="lid_title">Smart qopqoq</string>
+    <string name="lid_summary">Smart qopqoq sozlamalari</string>
+    <string name="lid_switch_title">Smart Cover harakatini o‘zgartirish</string>
+    <string name="lid_switch_summary">Bu aqlli qopqoqning harakatini o\'zgartiradi</string>
+
+    
+    <string name="keyboard_title">Smart klaviatura</string>
+    <string name="keyboard_summary">Smart klaviatura sozlamalari</string>
+    <string name="keyboard_switch_title">Klaviaturani qo\'llab-quvvatlash</string>
+    <string name="keyboard_more_info">Buni faqat Xiaomi Smart klaviaturasiga ega bo‘lsangiz yoqing. Yoqilganda tizim (umid qilamanki) avtomatik ravishda klaviatura ulanishini aniqlaydi va quvvat holatini boshqaradi. Buni oʻchirib qoʻyish batareya va tizim resurslarini tejash imkonini beradi.\n\nIzoh: Bu sozlamasiz ishlaydigan Bluetooth klaviaturalaridan alohida.</string>
+    <string name="keyboard_status_enabled">Klaviatura monitoringi yoqilgan</string>
+    <string name="keyboard_status_disabled">Klaviatura monitoringi o‘chirilgan</string>
+    <string name="keyboard_footer_status">Holati: %s</string>
+
+</resources>

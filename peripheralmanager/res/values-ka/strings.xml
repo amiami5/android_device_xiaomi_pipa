@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi პერიფერიული მენეჯერი</string>
+
+    
+    <string name="stylus_title">სტილუსი</string>
+    <string name="stylus_summary">სტილუსის პარამეტრები</string>
+    <string name="stylus_switch_title">სტილუსის რეჟიმი</string>
+    <string name="stylus_tile_label">სტილუსის რეჟიმი</string>
+    <string name="force_stylus_switch_title">სტილუსის იძულებით ამოცნობა</string>
+    <string name="force_stylus_switch_summary">საშუალებას აძლევს ოფიციალურ სტილუსს იმუშაოს Bluetooth-ის გარეშე და უზრუნველყოფს მესამე მხარის კალმების მხარდაჭერას. ასევე აიძულებს ეკრანს იმუშაოს 60/120 ჰც სიხშირით მაშინაც კი, როცა კალამი არ არის დაკავშირებული.</string>
+    <string name="stylus_refresh_rate_title">განახლების სიჩქარე</string>
+    <string name="stylus_refresh_rate_summary">აირჩიეთ ეკრანის განახლების სიჩქარე სტილუსის რეჟიმისთვის</string>
+    <string name="stylus_more_info">Stylus Mode იძლევა კალმებთან თავსებად განახლების სიხშირეს, როდესაც მხარდაჭერილი სტილუსი არის დაკავშირებული. ეკრანი გადადის 60 ჰც ან 120 ჰც სიხშირეზე მხოლოდ მაშინ, როცა კალამი არის დაკავშირებული.</string>
+
+    
+    <string name="refresh_rate_dynamic">დინამიური (60/120Hz)</string>
+    <string name="refresh_rate_60hz">ფიქსირებული 60 ჰც</string>
+    <string name="refresh_rate_120hz">ფიქსირებული 120 ჰც</string>
+
+    
+    <string name="stylus_status_active">აქტიური</string>
+    <string name="stylus_status_inactive">არააქტიური</string>
+    <string name="stylus_footer_status">სტატუსი: %s</string>
+    <string name="stylus_footer_refresh_rate">განახლების სიჩქარე: %s</string>
+
+    
+    <string name="lid_title">ჭკვიანი საფარი</string>
+    <string name="lid_summary">ჭკვიანი საფარის პარამეტრები</string>
+    <string name="lid_switch_title">Smart Cover-ის ქცევის გადართვა</string>
+    <string name="lid_switch_summary">ეს ცვლის ჭკვიანი სახურავის ქცევას</string>
+
+    
+    <string name="keyboard_title">ჭკვიანი კლავიატურა</string>
+    <string name="keyboard_summary">ჭკვიანი კლავიატურის პარამეტრები</string>
+    <string name="keyboard_switch_title">კლავიატურის მხარდაჭერა</string>
+    <string name="keyboard_more_info">ჩართეთ ეს მხოლოდ იმ შემთხვევაში, თუ თქვენ ფლობთ Xiaomi Smart Keyboard-ს. როდესაც ჩართულია, სისტემა (იმედია) ავტომატურად ამოიცნობს კლავიატურის კავშირს და მართავს დენის მდგომარეობას. ამის გამორთვა დაზოგავს ბატარეისა და სისტემის რესურსებს.\n\nშენიშვნა: ეს ცალკეა Bluetooth კლავიატურებისგან, რომლებიც მუშაობენ ამ პარამეტრის გარეშე.</string>
+    <string name="keyboard_status_enabled">კლავიატურის მონიტორინგი ჩართულია</string>
+    <string name="keyboard_status_disabled">კლავიატურის მონიტორინგი გამორთულია</string>
+    <string name="keyboard_footer_status">სტატუსი: %s</string>
+
+</resources>

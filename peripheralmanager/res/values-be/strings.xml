@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi Peripheral Manager</string>
+
+    
+    <string name="stylus_title">Стылус</string>
+    <string name="stylus_summary">Налады стылуса</string>
+    <string name="stylus_switch_title">Рэжым пяра</string>
+    <string name="stylus_tile_label">Рэжым пяра</string>
+    <string name="force_stylus_switch_title">Прымусовае распазнаванне пяра</string>
+    <string name="force_stylus_switch_summary">Дазваляе афіцыйнаму стылусу працаваць без Bluetooth і падтрымлівае ручкі іншых вытворцаў. Таксама прымушае дысплей працаваць з частатой 60/120 Гц, нават калі ручка не падключана.</string>
+    <string name="stylus_refresh_rate_title">Частата абнаўлення</string>
+    <string name="stylus_refresh_rate_summary">Выберыце частату абнаўлення дысплея для рэжыму пяра</string>
+    <string name="stylus_more_info">Рэжым пяра дазваляе частату абнаўлення, сумяшчальную з ручкай, калі падключаны стылус, які падтрымліваецца. Дысплей пераключаецца на 60 Гц або 120 Гц толькі пры падключэнні ручкі.</string>
+
+    
+    <string name="refresh_rate_dynamic">Дынамічны (60/120 Гц)</string>
+    <string name="refresh_rate_60hz">Фіксаваныя 60 Гц</string>
+    <string name="refresh_rate_120hz">Фіксаваныя 120 Гц</string>
+
+    
+    <string name="stylus_status_active">Актыўны</string>
+    <string name="stylus_status_inactive">Неактыўны</string>
+    <string name="stylus_footer_status">Статус: %s</string>
+    <string name="stylus_footer_refresh_rate">Частата абнаўлення: %s</string>
+
+    
+    <string name="lid_title">Разумная вокладка</string>
+    <string name="lid_summary">Налады Smart Cover</string>
+    <string name="lid_switch_title">Пераключыць паводзіны Smart Cover</string>
+    <string name="lid_switch_summary">Гэта змяняе паводзіны разумнай вечка</string>
+
+    
+    <string name="keyboard_title">Разумная клавіятура</string>
+    <string name="keyboard_summary">Налады разумнай клавіятуры</string>
+    <string name="keyboard_switch_title">Падтрымка клавіятуры</string>
+    <string name="keyboard_more_info">Уключыце гэта, толькі калі ў вас ёсць разумная клавіятура Xiaomi. Пры ўключэнні сістэма (спадзяюся) аўтаматычна вызначае падключэнне клавіятуры і будзе кіраваць станамі харчавання. Адключэнне дазваляе зэканоміць батарэю і сістэмныя рэсурсы.\n\nЗаўвага: гэта асобна ад клавіятур Bluetooth, якія працуюць без гэтай налады.</string>
+    <string name="keyboard_status_enabled">Маніторынг клавіятуры ўключаны</string>
+    <string name="keyboard_status_disabled">Маніторынг клавіятуры адключаны</string>
+    <string name="keyboard_footer_status">Статус: %s</string>
+
+</resources>

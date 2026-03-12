@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi පර්යන්ත කළමනාකරු</string>
+
+    
+    <string name="stylus_title">ස්ටයිලස්</string>
+    <string name="stylus_summary">ස්ටයිලස් සැකසුම්</string>
+    <string name="stylus_switch_title">ස්ටයිලස් මාදිලිය</string>
+    <string name="stylus_tile_label">ස්ටයිලස් මාදිලිය</string>
+    <string name="force_stylus_switch_title">බලෙන් ස්ටයිලස් හඳුනා ගන්න</string>
+    <string name="force_stylus_switch_summary">නිල ශෛලයට බ්ලූටූත් නොමැතිව ක්‍රියා කිරීමට ඉඩ ලබා දෙන අතර තෙවන පාර්ශවීය පෑන් සඳහා සහය සබල කරයි. පෑනක් සම්බන්ධ නොවූ විට පවා 60/120 Hz හි ක්‍රියා කිරීමට සංදර්ශකය බල කරයි.</string>
+    <string name="stylus_refresh_rate_title">නැවුම් කිරීමේ අනුපාතය</string>
+    <string name="stylus_refresh_rate_summary">ස්ටයිලස් මාදිලිය සඳහා සංදර්ශක නැවුම් කිරීමේ අනුපාතය තෝරන්න</string>
+    <string name="stylus_more_info">සහාය දක්වන ස්ටයිලස් සම්බන්ධ වූ විට ස්ටයිලස් ප්‍රකාරය පෑන-අනුකූල නැවුම් කිරීමේ අනුපාත සබල කරයි. තිරය ​​60 Hz හෝ 120 Hz වෙත මාරු වන්නේ පෑන සම්බන්ධ කර ඇති විට පමණි.</string>
+
+    
+    <string name="refresh_rate_dynamic">ගතික (60/120Hz)</string>
+    <string name="refresh_rate_60hz">ස්ථාවර 60Hz</string>
+    <string name="refresh_rate_120hz">ස්ථාවර 120Hz</string>
+
+    
+    <string name="stylus_status_active">ක්රියාකාරී</string>
+    <string name="stylus_status_inactive">අක්රියයි</string>
+    <string name="stylus_footer_status">තත්ත්වය: %s</string>
+    <string name="stylus_footer_refresh_rate">නැවුම් කිරීමේ අනුපාතය: %s</string>
+
+    
+    <string name="lid_title">ස්මාර්ට් කවරය</string>
+    <string name="lid_summary">ස්මාර්ට් ආවරණ සැකසීම්</string>
+    <string name="lid_switch_title">ස්මාර්ට් ආවරණ හැසිරීම ටොගල් කරන්න</string>
+    <string name="lid_switch_summary">මෙය ස්මාර්ට් පියනේ හැසිරීම ටොගල් කරයි</string>
+
+    
+    <string name="keyboard_title">ස්මාර්ට් යතුරු පුවරුව</string>
+    <string name="keyboard_summary">ස්මාර්ට් යතුරුපුවරු සැකසුම්</string>
+    <string name="keyboard_switch_title">යතුරුපුවරු සහාය</string>
+    <string name="keyboard_more_info">Xiaomi Smart Keyboard ඔබ සතු නම් පමණක් මෙය සබල කරන්න. සක්‍රීය කළ විට, පද්ධතිය (බලාපොරොත්තුවෙන්) යතුරුපුවරු සම්බන්ධතාව ස්වයංක්‍රීයව හඳුනාගෙන බල තත්ත්වයන් කළමනාකරණය කරයි. මෙය අක්‍රිය කිරීමෙන් බැටරි සහ පද්ධති සම්පත් ඉතිරි වේ.\n\nසටහන: මෙය බ්ලූටූත් යතුරුපුවරු වලින් වෙන් වූ අතර, මෙම සැකසුම නොමැතිව ක්‍රියා කරයි.</string>
+    <string name="keyboard_status_enabled">යතුරුපුවරු අධීක්ෂණය සබල කර ඇත</string>
+    <string name="keyboard_status_disabled">යතුරුපුවරු අධීක්‍ෂණය අබල කර ඇත</string>
+    <string name="keyboard_footer_status">තත්ත්වය: %s</string>
+
+</resources>

@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi välisseadmete haldur</string>
+
+    
+    <string name="stylus_title">Pliiats</string>
+    <string name="stylus_summary">Pliiatsi sätted</string>
+    <string name="stylus_switch_title">Pliiatsi režiim</string>
+    <string name="stylus_tile_label">Pliiatsi režiim</string>
+    <string name="force_stylus_switch_title">Sundige pliiats tuvastama</string>
+    <string name="force_stylus_switch_summary">Võimaldab ametlikul pliiatsil töötada ilma Bluetoothita ja toetab kolmandate osapoolte pliiatseid. Samuti sunnib ekraani töötama 60/120 Hz isegi siis, kui pliiatsit pole ühendatud.</string>
+    <string name="stylus_refresh_rate_title">Värskendussagedus</string>
+    <string name="stylus_refresh_rate_summary">Valige pliiatsirežiimi jaoks ekraani värskendussagedus</string>
+    <string name="stylus_more_info">Pliiatsi režiim võimaldab pliiatsiga ühilduvaid värskendussagedusi, kui ühendatud on toetatud pliiats. Ekraan lülitub sagedusele 60 Hz või 120 Hz ainult siis, kui pliiats on ühendatud.</string>
+
+    
+    <string name="refresh_rate_dynamic">Dünaamiline (60/120 Hz)</string>
+    <string name="refresh_rate_60hz">Fikseeritud 60Hz</string>
+    <string name="refresh_rate_120hz">Fikseeritud 120Hz</string>
+
+    
+    <string name="stylus_status_active">Aktiivne</string>
+    <string name="stylus_status_inactive">Mitteaktiivne</string>
+    <string name="stylus_footer_status">Olek: %s</string>
+    <string name="stylus_footer_refresh_rate">Värskendussagedus: %s</string>
+
+    
+    <string name="lid_title">Nutikas kate</string>
+    <string name="lid_summary">Nutika kaane seaded</string>
+    <string name="lid_switch_title">Lülitage Smart Cover käitumine sisse/välja</string>
+    <string name="lid_switch_summary">See lülitab nutika kaane käitumise sisse</string>
+
+    
+    <string name="keyboard_title">Nutikas klaviatuur</string>
+    <string name="keyboard_summary">Nutika klaviatuuri sätted</string>
+    <string name="keyboard_switch_title">Klaviatuuri tugi</string>
+    <string name="keyboard_more_info">Lubage see ainult siis, kui teil on Xiaomi nutika klaviatuur. Kui see on lubatud, tuvastab süsteem (loodetavasti) automaatselt klaviatuuriühenduse ja haldab toiteolekuid. Selle keelamine säästab akut ja süsteemiressursse.\n\nMärkus. See on eraldi Bluetoothi ​​klaviatuuridest, mis töötavad ilma selle sätteta.</string>
+    <string name="keyboard_status_enabled">Klaviatuuri jälgimine on lubatud</string>
+    <string name="keyboard_status_disabled">Klaviatuuri jälgimine on keelatud</string>
+    <string name="keyboard_footer_status">Olek: %s</string>
+
+</resources>

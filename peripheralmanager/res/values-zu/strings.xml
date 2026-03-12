@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Umphathi we-Xiaomi Peripheral</string>
+
+    
+    <string name="stylus_title">Isitayela</string>
+    <string name="stylus_summary">Izilungiselelo ze-Stylus</string>
+    <string name="stylus_switch_title">Imodi ye-Stylus</string>
+    <string name="stylus_tile_label">Imodi ye-Stylus</string>
+    <string name="force_stylus_switch_title">Phoqa ukuqaphela i-stylus</string>
+    <string name="force_stylus_switch_summary">Ivumela i-stylus esemthethweni ukuthi isebenze ngaphandle kwe-Bluetooth futhi yenza usekelo lwamapeni ezinkampani zangaphandle. Futhi iphoqa isibonisi ukuthi sisebenze ku-60/120 Hz nanoma lingekho ipeni elixhunyiwe.</string>
+    <string name="stylus_refresh_rate_title">Izinga lokuvuselela</string>
+    <string name="stylus_refresh_rate_summary">Khetha izinga lokuvuselela lokubonisa lemodi ye-stylus</string>
+    <string name="stylus_more_info">Imodi ye-Stylus inika amandla izilinganiso zokuvuselela ezihambisana nepeni uma kuxhunywe upende osekelwayo. Isibonisi sishintshela ku-60 Hz noma ku-120 Hz kuphela ngenkathi ipeni lixhunyiwe.</string>
+
+    
+    <string name="refresh_rate_dynamic">I-Dynamic (60/120Hz)</string>
+    <string name="refresh_rate_60hz">Kulungiswe i-60Hz</string>
+    <string name="refresh_rate_120hz">Kulungiswe i-120Hz</string>
+
+    
+    <string name="stylus_status_active">Iyasebenza</string>
+    <string name="stylus_status_inactive">Ayisebenzi</string>
+    <string name="stylus_footer_status">Isimo: %s</string>
+    <string name="stylus_footer_refresh_rate">Isilinganiso Sokuvuselela: %s</string>
+
+    
+    <string name="lid_title">Ikhava ehlakaniphile</string>
+    <string name="lid_summary">Izilungiselelo Zekhava Ehlakaniphile</string>
+    <string name="lid_switch_title">Guqula ukuziphatha kwekhava ehlakaniphile</string>
+    <string name="lid_switch_summary">Lokhu kushintsha ukuziphatha kwesivalo esihlakaniphile</string>
+
+    
+    <string name="keyboard_title">Ikhibhodi Ehlakaniphile</string>
+    <string name="keyboard_summary">Izilungiselelo zekhibhodi ehlakaniphile</string>
+    <string name="keyboard_switch_title">Ukusekela ikhibhodi</string>
+    <string name="keyboard_more_info">Nika amandla lokhu kuphela uma ungumnikazi wekhibhodi ye-Xiaomi Smart. Uma inikwe amandla, isistimu (ngethemba) izothola ngokuzenzakalelayo uxhumo lwekhibhodi futhi ilawule izimo zamandla. Ukukhubaza lokhu kusindisa ibhethri nezinsiza zesistimu.\n\nQaphela: Lokhu kuhlukile kumakhibhodi e-Bluetooth, asebenza ngaphandle kwalokhu kulungiselelwa.</string>
+    <string name="keyboard_status_enabled">Ukuqapha kwekhibhodi kunikwe amandla</string>
+    <string name="keyboard_status_disabled">Ukuqapha kwekhibhodi kukhutshaziwe</string>
+    <string name="keyboard_footer_status">Isimo: %s</string>
+
+</resources>

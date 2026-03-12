@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi পেরিফেরাল ম্যানেজার</string>
+
+    
+    <string name="stylus_title">লেখনী</string>
+    <string name="stylus_summary">স্টাইলাস সেটিংস</string>
+    <string name="stylus_switch_title">স্টাইলাস মোড</string>
+    <string name="stylus_tile_label">স্টাইলাস মোড</string>
+    <string name="force_stylus_switch_title">লেখনী চিনতে বাধ্য করুন</string>
+    <string name="force_stylus_switch_summary">অফিসিয়াল স্টাইলাসকে ব্লুটুথ ছাড়া কাজ করার অনুমতি দেয় এবং তৃতীয় পক্ষের কলমগুলির জন্য সমর্থন সক্ষম করে৷ এছাড়াও কোনো কলম সংযুক্ত না থাকলেও ডিসপ্লেকে 60/120 Hz-এ কাজ করতে বাধ্য করে।</string>
+    <string name="stylus_refresh_rate_title">রিফ্রেশ হার</string>
+    <string name="stylus_refresh_rate_summary">স্টাইলাস মোডের জন্য প্রদর্শন রিফ্রেশ হার নির্বাচন করুন</string>
+    <string name="stylus_more_info">স্টাইলাস মোড কলম-সামঞ্জস্যপূর্ণ রিফ্রেশ হার সক্ষম করে যখন একটি সমর্থিত লেখনী সংযুক্ত থাকে। ডিসপ্লেটি 60 Hz বা 120 Hz এ সুইচ করে যখন পেনটি সংযুক্ত থাকে।</string>
+
+    
+    <string name="refresh_rate_dynamic">গতিশীল (60/120Hz)</string>
+    <string name="refresh_rate_60hz">স্থির 60Hz</string>
+    <string name="refresh_rate_120hz">120Hz স্থির</string>
+
+    
+    <string name="stylus_status_active">সক্রিয়</string>
+    <string name="stylus_status_inactive">নিষ্ক্রিয়</string>
+    <string name="stylus_footer_status">অবস্থা: %s</string>
+    <string name="stylus_footer_refresh_rate">রিফ্রেশ রেট: %s</string>
+
+    
+    <string name="lid_title">স্মার্ট কভার</string>
+    <string name="lid_summary">স্মার্ট কভার সেটিংস</string>
+    <string name="lid_switch_title">স্মার্ট কভার আচরণ টগল করুন</string>
+    <string name="lid_switch_summary">এটি স্মার্ট ঢাকনার আচরণকে টগল করে</string>
+
+    
+    <string name="keyboard_title">স্মার্ট কীবোর্ড</string>
+    <string name="keyboard_summary">স্মার্ট কীবোর্ড সেটিংস</string>
+    <string name="keyboard_switch_title">কীবোর্ড সমর্থন</string>
+    <string name="keyboard_more_info">আপনি Xiaomi স্মার্ট কীবোর্ডের মালিক হলেই এটি সক্ষম করুন৷ সক্রিয় করা হলে, সিস্টেম স্বয়ংক্রিয়ভাবে কীবোর্ড সংযোগ শনাক্ত করবে এবং পাওয়ার স্টেট পরিচালনা করবে। এটি নিষ্ক্রিয় করা ব্যাটারি এবং সিস্টেম সম্পদ সংরক্ষণ করে।\n\nদ্রষ্টব্য: এটি ব্লুটুথ কীবোর্ড থেকে আলাদা, যা এই সেটিং ছাড়াই কাজ করে।</string>
+    <string name="keyboard_status_enabled">কীবোর্ড পর্যবেক্ষণ সক্ষম</string>
+    <string name="keyboard_status_disabled">কীবোর্ড মনিটরিং অক্ষম</string>
+    <string name="keyboard_footer_status">অবস্থা: %s</string>
+
+</resources>

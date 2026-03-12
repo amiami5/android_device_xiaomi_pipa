@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi periferikoen kudeatzailea</string>
+
+    
+    <string name="stylus_title">Stylus</string>
+    <string name="stylus_summary">Stylus ezarpenak</string>
+    <string name="stylus_switch_title">Stylus modua</string>
+    <string name="stylus_tile_label">Stylus modua</string>
+    <string name="force_stylus_switch_title">Behartu arkatza ezagutzeko</string>
+    <string name="force_stylus_switch_summary">Arkatza ofizialari Bluetoothik gabe funtzionatzea ahalbidetzen du eta hirugarrenen boligrafoak onartzen ditu. Era berean, pantaila 60/120 Hz-en funtzionatzera behartzen du luma konektaturik ez dagoen arren.</string>
+    <string name="stylus_refresh_rate_title">Freskatze tasa</string>
+    <string name="stylus_refresh_rate_summary">Hautatu pantailaren freskatze-abiadura arkatza modurako</string>
+    <string name="stylus_more_info">Stylus moduak boligrafoarekin bateragarriak diren freskatze tasak gaitzen ditu onartzen den arkatza konektatuta dagoenean. Pantaila 60 Hz edo 120 Hz-ra aldatzen da boligrafoa konektatuta dagoen bitartean.</string>
+
+    
+    <string name="refresh_rate_dynamic">Dinamika (60/120Hz)</string>
+    <string name="refresh_rate_60hz">60Hz finkoa</string>
+    <string name="refresh_rate_120hz">120Hz finkoa</string>
+
+    
+    <string name="stylus_status_active">Aktiboa</string>
+    <string name="stylus_status_inactive">Inaktibo</string>
+    <string name="stylus_footer_status">Egoera: %s</string>
+    <string name="stylus_footer_refresh_rate">Freskatze-tasa: %s</string>
+
+    
+    <string name="lid_title">Estalki adimenduna</string>
+    <string name="lid_summary">Smart Cover Ezarpenak</string>
+    <string name="lid_switch_title">Aldatu Smart Cover portaera</string>
+    <string name="lid_switch_summary">Horrek estalki adimendunaren portaera aldatzen du</string>
+
+    
+    <string name="keyboard_title">Teklatu adimenduna</string>
+    <string name="keyboard_summary">Teklatu adimendunaren ezarpenak</string>
+    <string name="keyboard_switch_title">Teklatuaren euskarria</string>
+    <string name="keyboard_more_info">Gaitu hau Xiaomi Smart Keyboard-aren jabea bazara soilik. Gaituta dagoenean, sistemak (espero) automatikoki detektatuko du teklatuaren konexioa eta potentzia-egoerak kudeatuko ditu. Hau desgaituz gero, bateria eta sistemaren baliabideak aurrezten dira.\n\nOharra: ezarpen hau gabe funtzionatzen duten Bluetooth teklatuetatik bereizten da.</string>
+    <string name="keyboard_status_enabled">Teklatuaren monitorizazioa gaituta dago</string>
+    <string name="keyboard_status_disabled">Teklatuaren monitorizazioa desgaituta dago</string>
+    <string name="keyboard_footer_status">Egoera: %s</string>
+
+</resources>

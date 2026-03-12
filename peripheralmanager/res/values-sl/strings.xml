@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi Peripheral Manager</string>
+
+    
+    <string name="stylus_title">Pisalo</string>
+    <string name="stylus_summary">Nastavitve pisala</string>
+    <string name="stylus_switch_title">Način pisala</string>
+    <string name="stylus_tile_label">Način pisala</string>
+    <string name="force_stylus_switch_title">Prisilno prepoznavanje pisala</string>
+    <string name="force_stylus_switch_summary">Omogoča uradnemu pisalu, da deluje brez povezave Bluetooth, in omogoča podporo za pisala drugih proizvajalcev. Prav tako prisili zaslon, da deluje pri 60/120 Hz, tudi če ni priključeno pero.</string>
+    <string name="stylus_refresh_rate_title">Hitrost osveževanja</string>
+    <string name="stylus_refresh_rate_summary">Izberite hitrost osveževanja zaslona za način pisala</string>
+    <string name="stylus_more_info">Način pisala omogoča stopnje osveževanja, združljive s peresom, ko je priključeno podprto pisalo. Zaslon preklopi na 60 Hz ali 120 Hz le, ko je pero priključeno.</string>
+
+    
+    <string name="refresh_rate_dynamic">Dinamično (60/120Hz)</string>
+    <string name="refresh_rate_60hz">Fiksno 60Hz</string>
+    <string name="refresh_rate_120hz">Fiksno 120Hz</string>
+
+    
+    <string name="stylus_status_active">Aktiven</string>
+    <string name="stylus_status_inactive">Neaktiven</string>
+    <string name="stylus_footer_status">Status: %s</string>
+    <string name="stylus_footer_refresh_rate">Hitrost osveževanja: %s</string>
+
+    
+    <string name="lid_title">Smart Cover</string>
+    <string name="lid_summary">Nastavitve pametnega pokrova</string>
+    <string name="lid_switch_title">Preklopi vedenje Smart Cover</string>
+    <string name="lid_switch_summary">To preklopi vedenje pametnega pokrova</string>
+
+    
+    <string name="keyboard_title">Pametna tipkovnica</string>
+    <string name="keyboard_summary">Nastavitve pametne tipkovnice</string>
+    <string name="keyboard_switch_title">Podpora za tipkovnico</string>
+    <string name="keyboard_more_info">Omogočite to samo, če imate pametno tipkovnico Xiaomi. Ko je omogočeno, bo sistem (upajmo) samodejno zaznal povezavo tipkovnice in upravljal stanja napajanja. Če to onemogočite, prihranite baterijo in sistemske vire.\n\nOpomba: To je ločeno od tipkovnic Bluetooth, ki delujejo brez te nastavitve.</string>
+    <string name="keyboard_status_enabled">Spremljanje tipkovnice omogočeno</string>
+    <string name="keyboard_status_disabled">Spremljanje tipkovnice onemogočeno</string>
+    <string name="keyboard_footer_status">Status: %s</string>
+
+</resources>

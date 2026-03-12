@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi പെരിഫറൽ മാനേജർ</string>
+
+    
+    <string name="stylus_title">സ്റ്റൈലസ്</string>
+    <string name="stylus_summary">സ്റ്റൈലസ് ക്രമീകരണങ്ങൾ</string>
+    <string name="stylus_switch_title">സ്റ്റൈലസ് മോഡ്</string>
+    <string name="stylus_tile_label">സ്റ്റൈലസ് മോഡ്</string>
+    <string name="force_stylus_switch_title">സ്റ്റൈലസ് തിരിച്ചറിയുക</string>
+    <string name="force_stylus_switch_summary">ബ്ലൂടൂത്ത് ഇല്ലാതെ പ്രവർത്തിക്കാൻ ഔദ്യോഗിക സ്റ്റൈലസിനെ അനുവദിക്കുകയും മൂന്നാം കക്ഷി പേനകൾക്കുള്ള പിന്തുണ പ്രവർത്തനക്ഷമമാക്കുകയും ചെയ്യുന്നു. പേന കണക്‌റ്റ് ചെയ്‌തിട്ടില്ലെങ്കിൽപ്പോലും 60/120 Hz-ൽ പ്രവർത്തിക്കാൻ ഡിസ്‌പ്ലേയെ നിർബന്ധിക്കുന്നു.</string>
+    <string name="stylus_refresh_rate_title">പുതുക്കിയ നിരക്ക്</string>
+    <string name="stylus_refresh_rate_summary">സ്റ്റൈലസ് മോഡിനായി ഡിസ്പ്ലേ പുതുക്കൽ നിരക്ക് തിരഞ്ഞെടുക്കുക</string>
+    <string name="stylus_more_info">പിന്തുണയ്‌ക്കുന്ന സ്റ്റൈലസ് കണക്‌റ്റ് ചെയ്‌തിരിക്കുമ്പോൾ സ്‌റ്റൈലസ് മോഡ് പെൻ-അനുയോജ്യമായ പുതുക്കൽ നിരക്കുകൾ പ്രവർത്തനക്ഷമമാക്കുന്നു. പേന കണക്ട് ചെയ്യുമ്പോൾ മാത്രമേ ഡിസ്പ്ലേ 60 Hz അല്ലെങ്കിൽ 120 Hz ലേക്ക് മാറുകയുള്ളൂ.</string>
+
+    
+    <string name="refresh_rate_dynamic">ഡൈനാമിക് (60/120Hz)</string>
+    <string name="refresh_rate_60hz">നിശ്ചിത 60Hz</string>
+    <string name="refresh_rate_120hz">നിശ്ചിത 120Hz</string>
+
+    
+    <string name="stylus_status_active">സജീവമാണ്</string>
+    <string name="stylus_status_inactive">നിഷ്ക്രിയം</string>
+    <string name="stylus_footer_status">നില: %s</string>
+    <string name="stylus_footer_refresh_rate">പുതുക്കൽ നിരക്ക്: %s</string>
+
+    
+    <string name="lid_title">സ്മാർട്ട് കവർ</string>
+    <string name="lid_summary">സ്മാർട്ട് കവർ ക്രമീകരണങ്ങൾ</string>
+    <string name="lid_switch_title">സ്മാർട്ട് കവർ പെരുമാറ്റം ടോഗിൾ ചെയ്യുക</string>
+    <string name="lid_switch_summary">ഇത് സ്മാർട്ട് ലിഡിൻ്റെ സ്വഭാവത്തെ മാറ്റുന്നു</string>
+
+    
+    <string name="keyboard_title">സ്മാർട്ട് കീബോർഡ്</string>
+    <string name="keyboard_summary">സ്മാർട്ട് കീബോർഡ് ക്രമീകരണങ്ങൾ</string>
+    <string name="keyboard_switch_title">കീബോർഡ് പിന്തുണ</string>
+    <string name="keyboard_more_info">Xiaomi സ്മാർട്ട് കീബോർഡ് നിങ്ങളുടേതാണെങ്കിൽ മാത്രം ഇത് പ്രവർത്തനക്ഷമമാക്കുക. പ്രവർത്തനക്ഷമമാക്കുമ്പോൾ, സിസ്റ്റം (പ്രതീക്ഷയോടെ) കീബോർഡ് കണക്ഷൻ സ്വയമേവ കണ്ടെത്തുകയും പവർ സ്റ്റേറ്റുകൾ നിയന്ത്രിക്കുകയും ചെയ്യും. ഇത് പ്രവർത്തനരഹിതമാക്കുന്നത് ബാറ്ററിയും സിസ്റ്റം വിഭവങ്ങളും ലാഭിക്കുന്നു.\n\nശ്രദ്ധിക്കുക: ഈ ക്രമീകരണം കൂടാതെ പ്രവർത്തിക്കുന്ന ബ്ലൂടൂത്ത് കീബോർഡുകളിൽ നിന്ന് ഇത് വ്യത്യസ്‌തമാണ്.</string>
+    <string name="keyboard_status_enabled">കീബോർഡ് നിരീക്ഷണം പ്രവർത്തനക്ഷമമാക്കി</string>
+    <string name="keyboard_status_disabled">കീബോർഡ് നിരീക്ഷണം പ്രവർത്തനരഹിതമാക്കി</string>
+    <string name="keyboard_footer_status">നില: %s</string>
+
+</resources>

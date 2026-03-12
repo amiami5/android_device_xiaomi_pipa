@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi Peripheral Manager</string>
+
+    
+    <string name="stylus_title">Stylus</string>
+    <string name="stylus_summary">Postavke olovke</string>
+    <string name="stylus_switch_title">Stylus Mode</string>
+    <string name="stylus_tile_label">Stylus Mode</string>
+    <string name="force_stylus_switch_title">Prisilno prepoznati olovku</string>
+    <string name="force_stylus_switch_summary">Omogućava službenoj olovci da radi bez Bluetootha i omogućava podršku za olovke trećih strana. Takođe prisiljava ekran da radi na 60/120 Hz čak i kada nije povezana olovka.</string>
+    <string name="stylus_refresh_rate_title">Brzina osvježavanja</string>
+    <string name="stylus_refresh_rate_summary">Odaberite brzinu osvježavanja ekrana za način rada olovke</string>
+    <string name="stylus_more_info">Režim olovke omogućava stope osvježavanja kompatibilne s olovkom kada je povezana podržana olovka. Displej se prebacuje na 60 Hz ili 120 Hz samo dok je olovka povezana.</string>
+
+    
+    <string name="refresh_rate_dynamic">dinamički (60/120Hz)</string>
+    <string name="refresh_rate_60hz">Fiksno 60Hz</string>
+    <string name="refresh_rate_120hz">Fiksno 120Hz</string>
+
+    
+    <string name="stylus_status_active">Aktivan</string>
+    <string name="stylus_status_inactive">Neaktivan</string>
+    <string name="stylus_footer_status">Status: %s</string>
+    <string name="stylus_footer_refresh_rate">Brzina osvježavanja: %s</string>
+
+    
+    <string name="lid_title">Smart Cover</string>
+    <string name="lid_summary">Smart Cover Settings</string>
+    <string name="lid_switch_title">Uključi/isključi ponašanje Smart Cover</string>
+    <string name="lid_switch_summary">Ovo prebacuje ponašanje pametnog poklopca</string>
+
+    
+    <string name="keyboard_title">Smart Keyboard</string>
+    <string name="keyboard_summary">Postavke pametne tastature</string>
+    <string name="keyboard_switch_title">Podrška za tastaturu</string>
+    <string name="keyboard_more_info">Omogućite ovo samo ako posjedujete Xiaomi Smart Keyboard. Kada je omogućeno, sistem će (nadajmo se) automatski otkriti vezu sa tastaturom i upravljati stanjima napajanja. Onemogućavanje štedi bateriju i sistemske resurse.\n\nNapomena: Ovo je odvojeno od Bluetooth tastatura, koje rade bez ove postavke.</string>
+    <string name="keyboard_status_enabled">Nadzor tastature je omogućen</string>
+    <string name="keyboard_status_disabled">Nadzor tastature je onemogućen</string>
+    <string name="keyboard_footer_status">Status: %s</string>
+
+</resources>

@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi పెరిఫెరల్ మేనేజర్</string>
+
+    
+    <string name="stylus_title">స్టైలస్</string>
+    <string name="stylus_summary">స్టైలస్ సెట్టింగ్‌లు</string>
+    <string name="stylus_switch_title">స్టైలస్ మోడ్</string>
+    <string name="stylus_tile_label">స్టైలస్ మోడ్</string>
+    <string name="force_stylus_switch_title">స్టైలస్‌ని బలవంతంగా గుర్తించండి</string>
+    <string name="force_stylus_switch_summary">బ్లూటూత్ లేకుండా పని చేయడానికి అధికారిక స్టైలస్‌ని అనుమతిస్తుంది మరియు థర్డ్-పార్టీ పెన్‌లకు సపోర్ట్‌ని ఎనేబుల్ చేస్తుంది. పెన్ కనెక్ట్ చేయబడనప్పటికీ కూడా డిస్ప్లే 60/120 Hz వద్ద పనిచేయడానికి బలవంతం చేస్తుంది.</string>
+    <string name="stylus_refresh_rate_title">రిఫ్రెష్ రేట్</string>
+    <string name="stylus_refresh_rate_summary">స్టైలస్ మోడ్ కోసం డిస్ప్లే రిఫ్రెష్ రేట్‌ని ఎంచుకోండి</string>
+    <string name="stylus_more_info">మద్దతు ఉన్న స్టైలస్ కనెక్ట్ చేయబడినప్పుడు స్టైలస్ మోడ్ పెన్-అనుకూల రిఫ్రెష్ రేట్లను ప్రారంభిస్తుంది. పెన్ కనెక్ట్ చేయబడినప్పుడు మాత్రమే డిస్ప్లే 60 Hz లేదా 120 Hzకి మారుతుంది.</string>
+
+    
+    <string name="refresh_rate_dynamic">డైనమిక్ (60/120Hz)</string>
+    <string name="refresh_rate_60hz">స్థిర 60Hz</string>
+    <string name="refresh_rate_120hz">స్థిర 120Hz</string>
+
+    
+    <string name="stylus_status_active">చురుకుగా</string>
+    <string name="stylus_status_inactive">నిష్క్రియ</string>
+    <string name="stylus_footer_status">స్థితి: %s</string>
+    <string name="stylus_footer_refresh_rate">రిఫ్రెష్ రేట్: %s</string>
+
+    
+    <string name="lid_title">స్మార్ట్ కవర్</string>
+    <string name="lid_summary">స్మార్ట్ కవర్ సెట్టింగ్‌లు</string>
+    <string name="lid_switch_title">స్మార్ట్ కవర్ ప్రవర్తనను టోగుల్ చేయండి</string>
+    <string name="lid_switch_summary">ఇది స్మార్ట్ మూత యొక్క ప్రవర్తనను టోగుల్ చేస్తుంది</string>
+
+    
+    <string name="keyboard_title">స్మార్ట్ కీబోర్డ్</string>
+    <string name="keyboard_summary">స్మార్ట్ కీబోర్డ్ సెట్టింగ్‌లు</string>
+    <string name="keyboard_switch_title">కీబోర్డ్ మద్దతు</string>
+    <string name="keyboard_more_info">మీరు Xiaomi స్మార్ట్ కీబోర్డ్‌ను కలిగి ఉంటే మాత్రమే దీన్ని ప్రారంభించండి. ప్రారంభించబడినప్పుడు, సిస్టమ్ (ఆశాజనక) స్వయంచాలకంగా కీబోర్డ్ కనెక్షన్‌ని గుర్తిస్తుంది మరియు పవర్ స్టేట్‌లను నిర్వహిస్తుంది. దీన్ని నిలిపివేయడం వలన బ్యాటరీ మరియు సిస్టమ్ వనరులు ఆదా అవుతాయి.\n\nగమనిక: ఈ సెట్టింగ్ లేకుండా పని చేసే బ్లూటూత్ కీబోర్డ్‌ల నుండి ఇది వేరు.</string>
+    <string name="keyboard_status_enabled">కీబోర్డ్ పర్యవేక్షణ ప్రారంభించబడింది</string>
+    <string name="keyboard_status_disabled">కీబోర్డ్ పర్యవేక్షణ నిలిపివేయబడింది</string>
+    <string name="keyboard_footer_status">స్థితి: %s</string>
+
+</resources>

@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi Peripheral Manager</string>
+
+    
+    <string name="stylus_title">Стилус</string>
+    <string name="stylus_summary">Настройки на стилуса</string>
+    <string name="stylus_switch_title">Режим стилус</string>
+    <string name="stylus_tile_label">Режим стилус</string>
+    <string name="force_stylus_switch_title">Принудително разпознаване на стилуса</string>
+    <string name="force_stylus_switch_summary">Позволява на официалния стилус да работи без Bluetooth и позволява поддръжка за писалки на трети страни. Също така принуждава дисплея да работи на 60/120 Hz дори когато не е свързана писалка.</string>
+    <string name="stylus_refresh_rate_title">Честота на опресняване</string>
+    <string name="stylus_refresh_rate_summary">Изберете честота на опресняване на дисплея за режим на стилус</string>
+    <string name="stylus_more_info">Режимът Stylus позволява честоти на опресняване, съвместими с писалка, когато е свързан поддържан стилус. Дисплеят превключва на 60 Hz или 120 Hz само докато писалката е свързана.</string>
+
+    
+    <string name="refresh_rate_dynamic">Динамичен (60/120Hz)</string>
+    <string name="refresh_rate_60hz">Фиксирани 60Hz</string>
+    <string name="refresh_rate_120hz">Фиксирани 120Hz</string>
+
+    
+    <string name="stylus_status_active">Активен</string>
+    <string name="stylus_status_inactive">Неактивен</string>
+    <string name="stylus_footer_status">Статус: %s</string>
+    <string name="stylus_footer_refresh_rate">Честота на опресняване: %s</string>
+
+    
+    <string name="lid_title">Smart Cover</string>
+    <string name="lid_summary">Настройки на Smart Cover</string>
+    <string name="lid_switch_title">Превключване на поведението на Smart Cover</string>
+    <string name="lid_switch_summary">Това превключва поведението на интелигентния капак</string>
+
+    
+    <string name="keyboard_title">Смарт клавиатура</string>
+    <string name="keyboard_summary">Настройки на интелигентната клавиатура</string>
+    <string name="keyboard_switch_title">Поддръжка на клавиатура</string>
+    <string name="keyboard_more_info">Активирайте това само ако притежавате Xiaomi Smart Keyboard. Когато е активирана, системата (надявам се) автоматично ще открие връзката на клавиатурата и ще управлява състоянията на захранване. Деактивирането на това спестява батерия и системни ресурси.\n\nЗабележка: Това е отделно от Bluetooth клавиатурите, които работят без тази настройка.</string>
+    <string name="keyboard_status_enabled">Мониторингът на клавиатурата е активиран</string>
+    <string name="keyboard_status_disabled">Наблюдението на клавиатурата е деактивирано</string>
+    <string name="keyboard_footer_status">Статус: %s</string>
+
+</resources>

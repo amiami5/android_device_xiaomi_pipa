@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi Periferal Manager</string>
+
+    
+    <string name="stylus_title">Nål</string>
+    <string name="stylus_summary">Stylusinställningar</string>
+    <string name="stylus_switch_title">Stylusläge</string>
+    <string name="stylus_tile_label">Stylusläge</string>
+    <string name="force_stylus_switch_title">Tvinga igen pennan</string>
+    <string name="force_stylus_switch_summary">Låter den officiella pennan fungera utan Bluetooth och möjliggör stöd för pennor från tredje part. Tvingar även displayen att arbeta vid 60/120 Hz även när ingen penna är ansluten.</string>
+    <string name="stylus_refresh_rate_title">Uppdateringshastighet</string>
+    <string name="stylus_refresh_rate_summary">Välj skärmens uppdateringsfrekvens för stylusläge</string>
+    <string name="stylus_more_info">Stylus Mode möjliggör pennkompatibla uppdateringsfrekvenser när en pekpenna som stöds är ansluten. Displayen växlar till 60 Hz eller 120 Hz endast när pennan är ansluten.</string>
+
+    
+    <string name="refresh_rate_dynamic">Dynamisk (60/120Hz)</string>
+    <string name="refresh_rate_60hz">Fast 60Hz</string>
+    <string name="refresh_rate_120hz">Fast 120Hz</string>
+
+    
+    <string name="stylus_status_active">Aktiv</string>
+    <string name="stylus_status_inactive">Inaktiv</string>
+    <string name="stylus_footer_status">Status: %s</string>
+    <string name="stylus_footer_refresh_rate">Uppdateringshastighet: %s</string>
+
+    
+    <string name="lid_title">Smart Cover</string>
+    <string name="lid_summary">Smart Cover-inställningar</string>
+    <string name="lid_switch_title">Växla Smart Cover-beteende</string>
+    <string name="lid_switch_summary">Detta växlar beteendet hos det smarta locket</string>
+
+    
+    <string name="keyboard_title">Smart tangentbord</string>
+    <string name="keyboard_summary">Inställningar för smart tangentbord</string>
+    <string name="keyboard_switch_title">Tangentbordsstöd</string>
+    <string name="keyboard_more_info">Aktivera detta endast om du äger Xiaomi Smart Keyboard. När det är aktiverat kommer systemet (förhoppningsvis) automatiskt att upptäcka tangentbordsanslutning och hantera strömtillstånd. Om du inaktiverar detta sparar du batteri- och systemresurser.\n\nObs: Detta är separat från Bluetooth-tangentbord, som fungerar utan denna inställning.</string>
+    <string name="keyboard_status_enabled">Tangentbordsövervakning aktiverad</string>
+    <string name="keyboard_status_disabled">Tangentbordsövervakning inaktiverad</string>
+    <string name="keyboard_footer_status">Status: %s</string>
+
+</resources>

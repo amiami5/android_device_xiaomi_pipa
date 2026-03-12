@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Gestionnaire de périphériques Xiaomi</string>
+
+    
+    <string name="stylus_title">Style</string>
+    <string name="stylus_summary">Paramètres du stylet</string>
+    <string name="stylus_switch_title">Mode stylet</string>
+    <string name="stylus_tile_label">Mode stylet</string>
+    <string name="force_stylus_switch_title">Forcer la reconnaissance du stylet</string>
+    <string name="force_stylus_switch_summary">Permet au stylet officiel de fonctionner sans Bluetooth et prend en charge les stylets tiers. Force également l\'écran à fonctionner à 60/120 Hz même lorsqu\'aucun stylet n\'est connecté.</string>
+    <string name="stylus_refresh_rate_title">Taux de rafraîchissement</string>
+    <string name="stylus_refresh_rate_summary">Sélectionnez le taux de rafraîchissement de l\'affichage pour le mode stylet</string>
+    <string name="stylus_more_info">Le mode Stylet permet des taux de rafraîchissement compatibles avec le stylet lorsqu\'un stylet pris en charge est connecté. L\'écran passe à 60 Hz ou 120 Hz uniquement lorsque le stylet est connecté.</string>
+
+    
+    <string name="refresh_rate_dynamic">Dynamique (60/120 Hz)</string>
+    <string name="refresh_rate_60hz">Fixe 60 Hz</string>
+    <string name="refresh_rate_120hz">Fixe 120 Hz</string>
+
+    
+    <string name="stylus_status_active">Actif</string>
+    <string name="stylus_status_inactive">Inactif</string>
+    <string name="stylus_footer_status">Statut: %s</string>
+    <string name="stylus_footer_refresh_rate">Taux de rafraîchissement : %s</string>
+
+    
+    <string name="lid_title">Couverture intelligente</string>
+    <string name="lid_summary">Paramètres de la couverture intelligente</string>
+    <string name="lid_switch_title">Activer/Désactiver le comportement de Smart Cover</string>
+    <string name="lid_switch_summary">Cela change le comportement du couvercle intelligent</string>
+
+    
+    <string name="keyboard_title">Clavier intelligent</string>
+    <string name="keyboard_summary">Paramètres du clavier intelligent</string>
+    <string name="keyboard_switch_title">Prise en charge du clavier</string>
+    <string name="keyboard_more_info">Activez cette option uniquement si vous possédez le clavier intelligent Xiaomi. Lorsqu\'il est activé, le système détectera (espérons-le) automatiquement la connexion du clavier et gérera les états d\'alimentation. La désactivation de cette option permet d\'économiser la batterie et les ressources du système.\n\nRemarque : Ceci est distinct des claviers Bluetooth, qui fonctionnent sans ce paramètre.</string>
+    <string name="keyboard_status_enabled">Surveillance du clavier activée</string>
+    <string name="keyboard_status_disabled">Surveillance du clavier désactivée</string>
+    <string name="keyboard_footer_status">Statut: %s</string>
+
+</resources>

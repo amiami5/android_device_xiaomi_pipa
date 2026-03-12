@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">مدير الأجهزة الطرفية لشاومي</string>
+
+    
+    <string name="stylus_title">قلم</string>
+    <string name="stylus_summary">إعدادات القلم</string>
+    <string name="stylus_switch_title">وضع القلم</string>
+    <string name="stylus_tile_label">وضع القلم</string>
+    <string name="force_stylus_switch_title">قوة التعرف على القلم</string>
+    <string name="force_stylus_switch_summary">يسمح للقلم الرسمي بالعمل بدون Bluetooth ويتيح الدعم لأقلام الطرف الثالث. كما يجبر الشاشة على العمل عند 60/120 هرتز حتى في حالة عدم توصيل أي قلم.</string>
+    <string name="stylus_refresh_rate_title">معدل التحديث</string>
+    <string name="stylus_refresh_rate_summary">حدد معدل تحديث العرض لوضع القلم</string>
+    <string name="stylus_more_info">يعمل وضع القلم على تمكين معدلات التحديث المتوافقة مع القلم عند توصيل قلم مدعوم. تتحول الشاشة إلى 60 هرتز أو 120 هرتز فقط أثناء توصيل القلم.</string>
+
+    
+    <string name="refresh_rate_dynamic">ديناميكي (60/120 هرتز)</string>
+    <string name="refresh_rate_60hz">ثابت 60 هرتز</string>
+    <string name="refresh_rate_120hz">ثابت 120 هرتز</string>
+
+    
+    <string name="stylus_status_active">نشيط</string>
+    <string name="stylus_status_inactive">غير نشط</string>
+    <string name="stylus_footer_status">حالة: %s</string>
+    <string name="stylus_footer_refresh_rate">معدل التحديث: %s</string>
+
+    
+    <string name="lid_title">الغطاء الذكي</string>
+    <string name="lid_summary">إعدادات الغطاء الذكي</string>
+    <string name="lid_switch_title">تبديل سلوك الغطاء الذكي</string>
+    <string name="lid_switch_summary">يؤدي هذا إلى تبديل سلوك الغطاء الذكي</string>
+
+    
+    <string name="keyboard_title">لوحة المفاتيح الذكية</string>
+    <string name="keyboard_summary">إعدادات لوحة المفاتيح الذكية</string>
+    <string name="keyboard_switch_title">دعم لوحة المفاتيح</string>
+    <string name="keyboard_more_info">قم بتمكين هذا فقط إذا كنت تمتلك لوحة مفاتيح Xiaomi Smart Keyboard. عند التمكين، (نأمل) أن يكتشف النظام تلقائيًا اتصال لوحة المفاتيح ويدير حالات الطاقة. يؤدي تعطيل هذا إلى توفير موارد البطارية والنظام. \n\nملاحظة: هذا منفصل عن لوحات مفاتيح Bluetooth، التي تعمل بدون هذا الإعداد.</string>
+    <string name="keyboard_status_enabled">تم تمكين مراقبة لوحة المفاتيح</string>
+    <string name="keyboard_status_disabled">تم تعطيل مراقبة لوحة المفاتيح</string>
+    <string name="keyboard_footer_status">حالة: %s</string>
+
+</resources>

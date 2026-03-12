@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi jaðarstjóri</string>
+
+    
+    <string name="stylus_title">Stylus</string>
+    <string name="stylus_summary">Stillingar penna</string>
+    <string name="stylus_switch_title">Stylus stillingu</string>
+    <string name="stylus_tile_label">Stylus stillingu</string>
+    <string name="force_stylus_switch_title">Þvingaðu kennsl á penna</string>
+    <string name="force_stylus_switch_summary">Leyfir opinbera pennanum að virka án Bluetooth og gerir stuðning fyrir þriðja aðila penna. Þvingar einnig skjáinn til að virka á 60/120 Hz jafnvel þegar enginn penni er tengdur.</string>
+    <string name="stylus_refresh_rate_title">Endurnýjunartíðni</string>
+    <string name="stylus_refresh_rate_summary">Veldu endurnýjunartíðni skjás fyrir stíl stíl</string>
+    <string name="stylus_more_info">Stylus Mode gerir pennasamhæfan endurnýjunartíðni kleift þegar studdur penni er tengdur. Skjárinn skiptir aðeins yfir í 60 Hz eða 120 Hz á meðan penninn er tengdur.</string>
+
+    
+    <string name="refresh_rate_dynamic">Dynamic (60/120Hz)</string>
+    <string name="refresh_rate_60hz">Fast 60Hz</string>
+    <string name="refresh_rate_120hz">Fast 120Hz</string>
+
+    
+    <string name="stylus_status_active">Virkur</string>
+    <string name="stylus_status_inactive">Óvirkt</string>
+    <string name="stylus_footer_status">Staða: %s</string>
+    <string name="stylus_footer_refresh_rate">Endurnýjunartíðni: %s</string>
+
+    
+    <string name="lid_title">Smart Cover</string>
+    <string name="lid_summary">Smart Cover Stillingar</string>
+    <string name="lid_switch_title">Skiptu um hegðun Smart Cover</string>
+    <string name="lid_switch_summary">Þetta breytir hegðun snjallloksins</string>
+
+    
+    <string name="keyboard_title">Snjallt lyklaborð</string>
+    <string name="keyboard_summary">Stillingar snjalllyklaborðs</string>
+    <string name="keyboard_switch_title">Stuðningur við lyklaborð</string>
+    <string name="keyboard_more_info">Virkjaðu þetta aðeins ef þú átt Xiaomi Smart Keyboard. Þegar það er virkt mun kerfið (vonandi) sjálfkrafa greina lyklaborðstengingu og stjórna aflstöðu. Slökkt er á þessu sparar rafhlöðu og kerfisauðlindir.\n\nAthugið: Þetta er aðskilið frá Bluetooth lyklaborðum, sem virka án þessarar stillingar.</string>
+    <string name="keyboard_status_enabled">Lyklaborðseftirlit virkt</string>
+    <string name="keyboard_status_disabled">Lyklaborðseftirlit óvirkt</string>
+    <string name="keyboard_footer_status">Staða: %s</string>
+
+</resources>

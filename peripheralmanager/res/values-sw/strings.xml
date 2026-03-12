@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Meneja wa pembeni wa Xiaomi</string>
+
+    
+    <string name="stylus_title">Stylus</string>
+    <string name="stylus_summary">Mipangilio ya Stylus</string>
+    <string name="stylus_switch_title">Hali ya Stylus</string>
+    <string name="stylus_tile_label">Hali ya Stylus</string>
+    <string name="force_stylus_switch_title">Lazimisha kutambua stylus</string>
+    <string name="force_stylus_switch_summary">Huruhusu kalamu rasmi kufanya kazi bila Bluetooth na kuwezesha usaidizi kwa kalamu za watu wengine. Pia hulazimisha onyesho kufanya kazi kwa 60/120 Hz hata wakati hakuna kalamu iliyounganishwa.</string>
+    <string name="stylus_refresh_rate_title">Kiwango cha kuonyesha upya</string>
+    <string name="stylus_refresh_rate_summary">Chagua kiwango cha kuonyesha upya kwa hali ya stylus</string>
+    <string name="stylus_more_info">Hali ya Stylus huwezesha viwango vya kuonyesha upya vinavyooana na kalamu wakati kalamu inayotumika imeunganishwa. Onyesho hubadilika hadi 60 Hz au 120 Hz pekee wakati kalamu imeunganishwa.</string>
+
+    
+    <string name="refresh_rate_dynamic">Inayobadilika (60/120Hz)</string>
+    <string name="refresh_rate_60hz">Imewekwa 60Hz</string>
+    <string name="refresh_rate_120hz">Imewekwa 120Hz</string>
+
+    
+    <string name="stylus_status_active">Inayotumika</string>
+    <string name="stylus_status_inactive">Isiyotumika</string>
+    <string name="stylus_footer_status">Hali: %s</string>
+    <string name="stylus_footer_refresh_rate">Kiwango cha Kuonyesha upya: %s</string>
+
+    
+    <string name="lid_title">Jalada la Smart</string>
+    <string name="lid_summary">Mipangilio ya Jalada Mahiri</string>
+    <string name="lid_switch_title">Geuza tabia ya Jalada Mahiri</string>
+    <string name="lid_switch_summary">Hii hugeuza tabia ya kifuniko mahiri</string>
+
+    
+    <string name="keyboard_title">Kibodi Mahiri</string>
+    <string name="keyboard_summary">Mipangilio ya Kibodi Mahiri</string>
+    <string name="keyboard_switch_title">Usaidizi wa Kibodi</string>
+    <string name="keyboard_more_info">Washa hii ikiwa tu unamiliki Kibodi Mahiri ya Xiaomi. Ukiwashwa, mfumo (tunatumaini) utagundua kiotomatiki muunganisho wa kibodi na kudhibiti hali za nishati. Kuzima hii huokoa rasilimali za betri na mfumo.\n\nKumbuka: Hii ni tofauti na kibodi za Bluetooth, ambazo hufanya kazi bila mpangilio huu.</string>
+    <string name="keyboard_status_enabled">Ufuatiliaji wa kibodi umewezeshwa</string>
+    <string name="keyboard_status_disabled">Ufuatiliaji wa kibodi umezimwa</string>
+    <string name="keyboard_footer_status">Hali: %s</string>
+
+</resources>

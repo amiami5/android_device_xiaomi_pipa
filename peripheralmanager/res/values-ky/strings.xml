@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi перифериялык менеджери</string>
+
+    
+    <string name="stylus_title">Стилус</string>
+    <string name="stylus_summary">Стилус орнотуулары</string>
+    <string name="stylus_switch_title">Стилус режими</string>
+    <string name="stylus_tile_label">Стилус режими</string>
+    <string name="force_stylus_switch_title">Стилусту күч менен таануу</string>
+    <string name="force_stylus_switch_summary">Расмий стилуска Bluetoothсуз иштөөгө мүмкүндүк берет жана үчүнчү тараптын калемдерин колдоого алат. Ошондой эле, калем туташкан жок болсо да дисплейди 60/120 Гц иштөөгө мажбурлайт.</string>
+    <string name="stylus_refresh_rate_title">Жаңыртуу ылдамдыгы</string>
+    <string name="stylus_refresh_rate_summary">Стилус режими үчүн дисплей жаңыртуу ылдамдыгын тандаңыз</string>
+    <string name="stylus_more_info">Стилус режими колдоого алынган стилус туташтырылганда калемге туура келген жаңыртуу ылдамдыгын иштетет. Калем туташтырылганда гана дисплей 60 Гц же 120 Гц жыштыгына которулат.</string>
+
+    
+    <string name="refresh_rate_dynamic">Динамикалык (60/120Гц)</string>
+    <string name="refresh_rate_60hz">60 Гц такталган</string>
+    <string name="refresh_rate_120hz">120 Гц такталган</string>
+
+    
+    <string name="stylus_status_active">Активдүү</string>
+    <string name="stylus_status_inactive">Жигерсиз</string>
+    <string name="stylus_footer_status">Статусу: %s</string>
+    <string name="stylus_footer_refresh_rate">Жаңыртуу ылдамдыгы: %s</string>
+
+    
+    <string name="lid_title">Smart Cover</string>
+    <string name="lid_summary">Smart Cover Орнотуулар</string>
+    <string name="lid_switch_title">Smart Cover аракетин өчүрүү/күйгүзүү</string>
+    <string name="lid_switch_summary">Бул акылдуу капкактын жүрүм-турумун өзгөртөт</string>
+
+    
+    <string name="keyboard_title">Акылдуу клавиатура</string>
+    <string name="keyboard_summary">Акылдуу баскычтоптун жөндөөлөрү</string>
+    <string name="keyboard_switch_title">Баскычтоп колдоо</string>
+    <string name="keyboard_more_info">Муну сиз Xiaomi Smart клавиатурасына ээ болсоңуз гана иштетиңиз. Иштетилгенде, система клавиатура байланышын автоматтык түрдө аныктайт жана кубат абалын башкарат. Муну өчүрүү батареяны жана тутум ресурстарын үнөмдөйт.\n\nЭскертүү: Бул жөндөөсүз иштеген Bluetooth клавиатураларынан өзүнчө.</string>
+    <string name="keyboard_status_enabled">Баскычтоп көзөмөлдөө иштетилди</string>
+    <string name="keyboard_status_disabled">Баскычтоп көзөмөлдөө өчүрүлгөн</string>
+    <string name="keyboard_footer_status">Статусу: %s</string>
+
+</resources>

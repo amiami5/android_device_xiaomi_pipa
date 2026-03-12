@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Administrador de periféricos Xiaomi</string>
+
+    
+    <string name="stylus_title">Aguja</string>
+    <string name="stylus_summary">Configuración del lápiz óptico</string>
+    <string name="stylus_switch_title">Modo lápiz</string>
+    <string name="stylus_tile_label">Modo lápiz</string>
+    <string name="force_stylus_switch_title">Forzar el reconocimiento del lápiz</string>
+    <string name="force_stylus_switch_summary">Permite que el lápiz oficial funcione sin Bluetooth y habilita la compatibilidad con lápices de terceros. También obliga a la pantalla a funcionar a 60/120 Hz incluso cuando no hay ningún lápiz conectado.</string>
+    <string name="stylus_refresh_rate_title">Frecuencia de actualización</string>
+    <string name="stylus_refresh_rate_summary">Seleccione la frecuencia de actualización de la pantalla para el modo lápiz</string>
+    <string name="stylus_more_info">El modo lápiz habilita frecuencias de actualización compatibles con lápiz cuando se conecta un lápiz compatible. La pantalla cambia a 60 Hz o 120 Hz sólo mientras el lápiz está conectado.</string>
+
+    
+    <string name="refresh_rate_dynamic">Dinámico (60/120 Hz)</string>
+    <string name="refresh_rate_60hz">Fijo 60Hz</string>
+    <string name="refresh_rate_120hz">Fijo 120Hz</string>
+
+    
+    <string name="stylus_status_active">Activo</string>
+    <string name="stylus_status_inactive">Inactivo</string>
+    <string name="stylus_footer_status">Estado: %s</string>
+    <string name="stylus_footer_refresh_rate">Frecuencia de actualización: %s</string>
+
+    
+    <string name="lid_title">Cubierta inteligente</string>
+    <string name="lid_summary">Configuración de cubierta inteligente</string>
+    <string name="lid_switch_title">Alternar comportamiento de Smart Cover</string>
+    <string name="lid_switch_summary">Esto alterna el comportamiento de la tapa inteligente.</string>
+
+    
+    <string name="keyboard_title">Teclado inteligente</string>
+    <string name="keyboard_summary">Configuración del teclado inteligente</string>
+    <string name="keyboard_switch_title">Soporte de teclado</string>
+    <string name="keyboard_more_info">Habilite esto solo si posee el teclado inteligente Xiaomi. Cuando esté habilitado, el sistema (con suerte) detectará automáticamente la conexión del teclado y administrará los estados de energía. Deshabilitar esto ahorra batería y recursos del sistema.\n\nNota: Esto es independiente de los teclados Bluetooth, que funcionan sin esta configuración.</string>
+    <string name="keyboard_status_enabled">Monitoreo de teclado habilitado</string>
+    <string name="keyboard_status_disabled">Monitoreo de teclado deshabilitado</string>
+    <string name="keyboard_footer_status">Estado: %s</string>
+
+</resources>

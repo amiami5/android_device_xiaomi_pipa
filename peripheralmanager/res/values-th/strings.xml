@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">ผู้จัดการอุปกรณ์ต่อพ่วง Xiaomi</string>
+
+    
+    <string name="stylus_title">สไตลัส</string>
+    <string name="stylus_summary">การตั้งค่าสไตลัส</string>
+    <string name="stylus_switch_title">โหมดสไตลัส</string>
+    <string name="stylus_tile_label">โหมดสไตลัส</string>
+    <string name="force_stylus_switch_title">บังคับจดจำสไตลัส</string>
+    <string name="force_stylus_switch_summary">อนุญาตให้สไตลัสอย่างเป็นทางการทำงานโดยไม่ต้องใช้บลูทูธ และเปิดใช้งานการรองรับปากกาของบุคคลที่สาม นอกจากนี้ยังบังคับให้จอแสดงผลทำงานที่ 60/120 Hz แม้ว่าจะไม่ได้เชื่อมต่อปากกาก็ตาม</string>
+    <string name="stylus_refresh_rate_title">อัตราการรีเฟรช</string>
+    <string name="stylus_refresh_rate_summary">เลือกอัตราการรีเฟรชการแสดงผลสำหรับโหมดสไตลัส</string>
+    <string name="stylus_more_info">โหมดสไตลัสเปิดใช้งานอัตราการรีเฟรชที่เข้ากันได้กับปากกาเมื่อเชื่อมต่อสไตลัสที่รองรับ จอแสดงผลจะเปลี่ยนเป็น 60 Hz หรือ 120 Hz เฉพาะในขณะที่เชื่อมต่อปากกาเท่านั้น</string>
+
+    
+    <string name="refresh_rate_dynamic">ไดนามิก (60/120Hz)</string>
+    <string name="refresh_rate_60hz">คงที่ 60Hz</string>
+    <string name="refresh_rate_120hz">คงที่ 120Hz</string>
+
+    
+    <string name="stylus_status_active">คล่องแคล่ว</string>
+    <string name="stylus_status_inactive">ไม่ได้ใช้งาน</string>
+    <string name="stylus_footer_status">สถานะ: %s</string>
+    <string name="stylus_footer_refresh_rate">อัตราการรีเฟรช: %s</string>
+
+    
+    <string name="lid_title">ปกอัจฉริยะ</string>
+    <string name="lid_summary">การตั้งค่าปกอัจฉริยะ</string>
+    <string name="lid_switch_title">สลับลักษณะการทำงานของปกอัจฉริยะ</string>
+    <string name="lid_switch_summary">สิ่งนี้จะสลับการทำงานของฝาอัจฉริยะ</string>
+
+    
+    <string name="keyboard_title">คีย์บอร์ดอัจฉริยะ</string>
+    <string name="keyboard_summary">การตั้งค่าคีย์บอร์ดอัจฉริยะ</string>
+    <string name="keyboard_switch_title">รองรับคีย์บอร์ด</string>
+    <string name="keyboard_more_info">เปิดใช้งานสิ่งนี้เฉพาะเมื่อคุณเป็นเจ้าของ Xiaomi Smart Keyboard เมื่อเปิดใช้งาน ระบบจะ (หวังว่า) จะตรวจจับการเชื่อมต่อแป้นพิมพ์โดยอัตโนมัติและจัดการสถานะพลังงาน การปิดใช้งานจะช่วยประหยัดแบตเตอรี่และทรัพยากรระบบ \n\nหมายเหตุ: สิ่งนี้แยกจากแป้นพิมพ์ Bluetooth ซึ่งทำงานโดยไม่มีการตั้งค่านี้</string>
+    <string name="keyboard_status_enabled">เปิดใช้งานการตรวจสอบแป้นพิมพ์แล้ว</string>
+    <string name="keyboard_status_disabled">ปิดใช้งานการตรวจสอบแป้นพิมพ์แล้ว</string>
+    <string name="keyboard_footer_status">สถานะ: %s</string>
+
+</resources>

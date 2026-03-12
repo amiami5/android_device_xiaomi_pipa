@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi Periferiya Meneceri</string>
+
+    
+    <string name="stylus_title">Stylus</string>
+    <string name="stylus_summary">Stylus Parametrləri</string>
+    <string name="stylus_switch_title">Stylus rejimi</string>
+    <string name="stylus_tile_label">Stylus rejimi</string>
+    <string name="force_stylus_switch_title">Stylusu zorla tanıyın</string>
+    <string name="force_stylus_switch_summary">Rəsmi stilusun Bluetooth olmadan işləməsinə imkan verir və üçüncü tərəf qələmləri üçün dəstəyi təmin edir. Həmçinin heç bir qələm qoşulmadıqda belə ekranı 60/120 Hz-də işləməyə məcbur edir.</string>
+    <string name="stylus_refresh_rate_title">Yeniləmə dərəcəsi</string>
+    <string name="stylus_refresh_rate_summary">Stylus rejimi üçün ekran yeniləmə sürətini seçin</string>
+    <string name="stylus_more_info">Stylus Rejimi dəstəklənən stilus qoşulduqda qələmə uyğun yeniləmə sürətlərini təmin edir. Ekran yalnız qələm qoşulduqda 60 Hz və ya 120 Hz-ə keçir.</string>
+
+    
+    <string name="refresh_rate_dynamic">Dinamik (60/120Hz)</string>
+    <string name="refresh_rate_60hz">Sabit 60Hz</string>
+    <string name="refresh_rate_120hz">Sabit 120Hz</string>
+
+    
+    <string name="stylus_status_active">Aktiv</string>
+    <string name="stylus_status_inactive">Qeyri-aktiv</string>
+    <string name="stylus_footer_status">Vəziyyət: %s</string>
+    <string name="stylus_footer_refresh_rate">Yeniləmə dərəcəsi: %s</string>
+
+    
+    <string name="lid_title">Ağıllı Qapaq</string>
+    <string name="lid_summary">Ağıllı Qapaq Parametrləri</string>
+    <string name="lid_switch_title">Smart Cover davranışını dəyişin</string>
+    <string name="lid_switch_summary">Bu, ağıllı qapağın davranışını dəyişdirir</string>
+
+    
+    <string name="keyboard_title">Ağıllı klaviatura</string>
+    <string name="keyboard_summary">Ağıllı Klaviatura Parametrləri</string>
+    <string name="keyboard_switch_title">Klaviatura dəstəyi</string>
+    <string name="keyboard_more_info">Bunu yalnız Xiaomi Smart Keyboardunuz varsa aktiv edin. Aktivləşdirildikdə sistem (inşallah) avtomatik olaraq klaviatura bağlantısını aşkarlayacaq və güc vəziyyətlərini idarə edəcək. Bunun söndürülməsi batareyaya və sistem resurslarına qənaət edir.\n\nQeyd: Bu, bu parametr olmadan işləyən Bluetooth klaviaturalarından ayrıdır.</string>
+    <string name="keyboard_status_enabled">Klaviatura monitorinqi aktivləşdirildi</string>
+    <string name="keyboard_status_disabled">Klaviatura monitorinqi deaktiv edilib</string>
+    <string name="keyboard_footer_status">Vəziyyət: %s</string>
+
+</resources>

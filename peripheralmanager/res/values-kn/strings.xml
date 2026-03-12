@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi ಪೆರಿಫೆರಲ್ ಮ್ಯಾನೇಜರ್</string>
+
+    
+    <string name="stylus_title">ಸ್ಟೈಲಸ್</string>
+    <string name="stylus_summary">ಸ್ಟೈಲಸ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳು</string>
+    <string name="stylus_switch_title">ಸ್ಟೈಲಸ್ ಮೋಡ್</string>
+    <string name="stylus_tile_label">ಸ್ಟೈಲಸ್ ಮೋಡ್</string>
+    <string name="force_stylus_switch_title">ಸ್ಟೈಲಸ್ ಅನ್ನು ಬಲವಂತವಾಗಿ ಗುರುತಿಸಿ</string>
+    <string name="force_stylus_switch_summary">ಅಧಿಕೃತ ಸ್ಟೈಲಸ್ ಬ್ಲೂಟೂತ್ ಇಲ್ಲದೆ ಕೆಲಸ ಮಾಡಲು ಅನುಮತಿಸುತ್ತದೆ ಮತ್ತು ಮೂರನೇ ವ್ಯಕ್ತಿಯ ಪೆನ್ನುಗಳಿಗೆ ಬೆಂಬಲವನ್ನು ಸಕ್ರಿಯಗೊಳಿಸುತ್ತದೆ. ಯಾವುದೇ ಪೆನ್ ಸಂಪರ್ಕವಿಲ್ಲದಿದ್ದರೂ ಸಹ 60/120 Hz ನಲ್ಲಿ ಕಾರ್ಯನಿರ್ವಹಿಸಲು ಪ್ರದರ್ಶನವನ್ನು ಒತ್ತಾಯಿಸುತ್ತದೆ.</string>
+    <string name="stylus_refresh_rate_title">ರಿಫ್ರೆಶ್ ದರ</string>
+    <string name="stylus_refresh_rate_summary">ಸ್ಟೈಲಸ್ ಮೋಡ್‌ಗಾಗಿ ಪ್ರದರ್ಶನ ರಿಫ್ರೆಶ್ ದರವನ್ನು ಆಯ್ಕೆಮಾಡಿ</string>
+    <string name="stylus_more_info">ಬೆಂಬಲಿತ ಸ್ಟೈಲಸ್ ಅನ್ನು ಸಂಪರ್ಕಿಸಿದಾಗ ಸ್ಟೈಲಸ್ ಮೋಡ್ ಪೆನ್-ಹೊಂದಾಣಿಕೆಯ ರಿಫ್ರೆಶ್ ದರಗಳನ್ನು ಸಕ್ರಿಯಗೊಳಿಸುತ್ತದೆ. ಪೆನ್ ಸಂಪರ್ಕಗೊಂಡಾಗ ಮಾತ್ರ ಪ್ರದರ್ಶನವು 60 Hz ಅಥವಾ 120 Hz ಗೆ ಬದಲಾಗುತ್ತದೆ.</string>
+
+    
+    <string name="refresh_rate_dynamic">ಡೈನಾಮಿಕ್ (60/120Hz)</string>
+    <string name="refresh_rate_60hz">ಸ್ಥಿರ 60Hz</string>
+    <string name="refresh_rate_120hz">ಸ್ಥಿರ 120Hz</string>
+
+    
+    <string name="stylus_status_active">ಸಕ್ರಿಯ</string>
+    <string name="stylus_status_inactive">ನಿಷ್ಕ್ರಿಯ</string>
+    <string name="stylus_footer_status">ಸ್ಥಿತಿ: %s</string>
+    <string name="stylus_footer_refresh_rate">ರಿಫ್ರೆಶ್ ದರ: %s</string>
+
+    
+    <string name="lid_title">ಸ್ಮಾರ್ಟ್ ಕವರ್</string>
+    <string name="lid_summary">ಸ್ಮಾರ್ಟ್ ಕವರ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳು</string>
+    <string name="lid_switch_title">ಸ್ಮಾರ್ಟ್ ಕವರ್ ನಡವಳಿಕೆಯನ್ನು ಟಾಗಲ್ ಮಾಡಿ</string>
+    <string name="lid_switch_summary">ಇದು ಸ್ಮಾರ್ಟ್ ಮುಚ್ಚಳದ ವರ್ತನೆಯನ್ನು ಟಾಗಲ್ ಮಾಡುತ್ತದೆ</string>
+
+    
+    <string name="keyboard_title">ಸ್ಮಾರ್ಟ್ ಕೀಬೋರ್ಡ್</string>
+    <string name="keyboard_summary">ಸ್ಮಾರ್ಟ್ ಕೀಬೋರ್ಡ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳು</string>
+    <string name="keyboard_switch_title">ಕೀಬೋರ್ಡ್ ಬೆಂಬಲ</string>
+    <string name="keyboard_more_info">ನೀವು Xiaomi ಸ್ಮಾರ್ಟ್ ಕೀಬೋರ್ಡ್ ಹೊಂದಿದ್ದರೆ ಮಾತ್ರ ಇದನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ. ಸಕ್ರಿಯಗೊಳಿಸಿದಾಗ, ಸಿಸ್ಟಮ್ (ಆಶಾದಾಯಕವಾಗಿ) ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಕೀಬೋರ್ಡ್ ಸಂಪರ್ಕವನ್ನು ಪತ್ತೆ ಮಾಡುತ್ತದೆ ಮತ್ತು ಪವರ್ ಸ್ಟೇಟ್ಸ್ ಅನ್ನು ನಿರ್ವಹಿಸುತ್ತದೆ. ಇದನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸುವುದರಿಂದ ಬ್ಯಾಟರಿ ಮತ್ತು ಸಿಸ್ಟಮ್ ಸಂಪನ್ಮೂಲಗಳನ್ನು ಉಳಿಸುತ್ತದೆ.\n\nಗಮನಿಸಿ: ಇದು ಬ್ಲೂಟೂತ್ ಕೀಬೋರ್ಡ್‌ಗಳಿಂದ ಪ್ರತ್ಯೇಕವಾಗಿದೆ, ಇದು ಈ ಸೆಟ್ಟಿಂಗ್ ಇಲ್ಲದೆ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ.</string>
+    <string name="keyboard_status_enabled">ಕೀಬೋರ್ಡ್ ಮೇಲ್ವಿಚಾರಣೆಯನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ</string>
+    <string name="keyboard_status_disabled">ಕೀಬೋರ್ಡ್ ಮೇಲ್ವಿಚಾರಣೆಯನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ</string>
+    <string name="keyboard_footer_status">ಸ್ಥಿತಿ: %s</string>
+
+</resources>

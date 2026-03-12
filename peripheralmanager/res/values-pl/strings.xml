@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Menedżer urządzeń peryferyjnych Xiaomi</string>
+
+    
+    <string name="stylus_title">Igła</string>
+    <string name="stylus_summary">Ustawienia rysika</string>
+    <string name="stylus_switch_title">Tryb rysika</string>
+    <string name="stylus_tile_label">Tryb rysika</string>
+    <string name="force_stylus_switch_title">Wymuś rozpoznanie rysika</string>
+    <string name="force_stylus_switch_summary">Umożliwia pracę oficjalnego rysika bez Bluetootha i obsługę piór innych firm. Wymusza także pracę wyświetlacza przy częstotliwości 60/120 Hz, nawet jeśli nie jest podłączony żaden długopis.</string>
+    <string name="stylus_refresh_rate_title">Częstotliwość odświeżania</string>
+    <string name="stylus_refresh_rate_summary">Wybierz częstotliwość odświeżania wyświetlacza dla trybu rysika</string>
+    <string name="stylus_more_info">Tryb rysika umożliwia uzyskanie częstotliwości odświeżania zgodnych z piórem, gdy podłączony jest obsługiwany rysik. Wyświetlacz przełącza się na 60 Hz lub 120 Hz tylko po podłączeniu pióra.</string>
+
+    
+    <string name="refresh_rate_dynamic">Dynamiczny (60/120 Hz)</string>
+    <string name="refresh_rate_60hz">Stałe 60 Hz</string>
+    <string name="refresh_rate_120hz">Stałe 120 Hz</string>
+
+    
+    <string name="stylus_status_active">Aktywny</string>
+    <string name="stylus_status_inactive">Nieaktywny</string>
+    <string name="stylus_footer_status">Status: %s</string>
+    <string name="stylus_footer_refresh_rate">Częstotliwość odświeżania: %s</string>
+
+    
+    <string name="lid_title">Inteligentna osłona</string>
+    <string name="lid_summary">Ustawienia inteligentnej osłony</string>
+    <string name="lid_switch_title">Przełącz zachowanie Smart Cover</string>
+    <string name="lid_switch_summary">Spowoduje to przełączenie zachowania inteligentnej pokrywy</string>
+
+    
+    <string name="keyboard_title">Inteligentna klawiatura</string>
+    <string name="keyboard_summary">Ustawienia inteligentnej klawiatury</string>
+    <string name="keyboard_switch_title">Obsługa klawiatury</string>
+    <string name="keyboard_more_info">Włącz tę opcję tylko wtedy, gdy posiadasz inteligentną klawiaturę Xiaomi. Po włączeniu system (miejmy nadzieję) automatycznie wykryje połączenie klawiatury i zarządza stanami zasilania. Wyłączenie tej opcji oszczędza baterię i zasoby systemowe.\n\nUwaga: ta funkcja różni się od klawiatur Bluetooth, które działają bez tego ustawienia.</string>
+    <string name="keyboard_status_enabled">Włączono monitorowanie klawiatury</string>
+    <string name="keyboard_status_disabled">Monitorowanie klawiatury wyłączone</string>
+    <string name="keyboard_footer_status">Status: %s</string>
+
+</resources>

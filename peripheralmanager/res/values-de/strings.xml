@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi-Peripheriemanager</string>
+
+    
+    <string name="stylus_title">Stift</string>
+    <string name="stylus_summary">Stifteinstellungen</string>
+    <string name="stylus_switch_title">Stylus-Modus</string>
+    <string name="stylus_tile_label">Stylus-Modus</string>
+    <string name="force_stylus_switch_title">Erzwingen Sie die Erkennung des Stifts</string>
+    <string name="force_stylus_switch_summary">Ermöglicht die Verwendung des offiziellen Stifts ohne Bluetooth und ermöglicht die Unterstützung von Stiften von Drittanbietern. Zwingt das Display außerdem dazu, mit 60/120 Hz zu arbeiten, auch wenn kein Stift angeschlossen ist.</string>
+    <string name="stylus_refresh_rate_title">Aktualisierungsrate</string>
+    <string name="stylus_refresh_rate_summary">Wählen Sie die Anzeigeaktualisierungsrate für den Stiftmodus aus</string>
+    <string name="stylus_more_info">Der Stiftmodus ermöglicht stiftkompatible Bildwiederholraten, wenn ein unterstützter Stift angeschlossen ist. Die Anzeige wechselt nur dann auf 60 Hz oder 120 Hz, wenn der Stift angeschlossen ist.</string>
+
+    
+    <string name="refresh_rate_dynamic">Dynamisch (60/120 Hz)</string>
+    <string name="refresh_rate_60hz">Feste 60Hz</string>
+    <string name="refresh_rate_120hz">Feste 120 Hz</string>
+
+    
+    <string name="stylus_status_active">Aktiv</string>
+    <string name="stylus_status_inactive">Inaktiv</string>
+    <string name="stylus_footer_status">Status: %s</string>
+    <string name="stylus_footer_refresh_rate">Aktualisierungsrate: %s</string>
+
+    
+    <string name="lid_title">Intelligente Abdeckung</string>
+    <string name="lid_summary">Smart Cover-Einstellungen</string>
+    <string name="lid_switch_title">Schalten Sie das Smart Cover-Verhalten um</string>
+    <string name="lid_switch_summary">Dadurch wird das Verhalten des Smart-Deckels umgeschaltet</string>
+
+    
+    <string name="keyboard_title">Intelligente Tastatur</string>
+    <string name="keyboard_summary">Smart Keyboard-Einstellungen</string>
+    <string name="keyboard_switch_title">Tastaturunterstützung</string>
+    <string name="keyboard_more_info">Aktivieren Sie dies nur, wenn Sie das Xiaomi Smart Keyboard besitzen. Wenn diese Option aktiviert ist, erkennt das System (hoffentlich) automatisch die Tastaturverbindung und verwaltet den Energiestatus. Durch Deaktivieren werden Batterie- und Systemressourcen gespart.\n\nHinweis: Dies gilt nicht für Bluetooth-Tastaturen, die ohne diese Einstellung funktionieren.</string>
+    <string name="keyboard_status_enabled">Tastaturüberwachung aktiviert</string>
+    <string name="keyboard_status_disabled">Tastaturüberwachung deaktiviert</string>
+    <string name="keyboard_footer_status">Status: %s</string>
+
+</resources>

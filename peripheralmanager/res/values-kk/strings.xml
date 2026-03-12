@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi перифериялық менеджері</string>
+
+    
+    <string name="stylus_title">Стилус</string>
+    <string name="stylus_summary">Стилус параметрлері</string>
+    <string name="stylus_switch_title">Стилус режимі</string>
+    <string name="stylus_tile_label">Стилус режимі</string>
+    <string name="force_stylus_switch_title">Стилусты тану</string>
+    <string name="force_stylus_switch_summary">Ресми стилусқа Bluetoothсыз жұмыс істеуге мүмкіндік береді және үшінші тарап қаламдарына қолдау көрсетеді. Сондай-ақ, тіпті қалам қосылмаған кезде де дисплейді 60/120 Гц жиілікте жұмыс істеуге мәжбүрлейді.</string>
+    <string name="stylus_refresh_rate_title">Жаңарту жылдамдығы</string>
+    <string name="stylus_refresh_rate_summary">Қалам режимі үшін дисплей жаңарту жиілігін таңдаңыз</string>
+    <string name="stylus_more_info">Стилус режимі қолдау көрсетілетін қалам қосылған кезде қаламмен үйлесімді жаңарту жиілігін қосады. Дисплей қалам жалғанған кезде ғана 60 Гц немесе 120 Гц жиілікке ауысады.</string>
+
+    
+    <string name="refresh_rate_dynamic">Динамикалық (60/120 Гц)</string>
+    <string name="refresh_rate_60hz">Бекітілген 60 Гц</string>
+    <string name="refresh_rate_120hz">Бекітілген 120 Гц</string>
+
+    
+    <string name="stylus_status_active">Белсенді</string>
+    <string name="stylus_status_inactive">Белсенді емес</string>
+    <string name="stylus_footer_status">Күйі: %s</string>
+    <string name="stylus_footer_refresh_rate">Жаңарту жылдамдығы: %s</string>
+
+    
+    <string name="lid_title">Ақылды қақпақ</string>
+    <string name="lid_summary">Smart Cover параметрлері</string>
+    <string name="lid_switch_title">Smart Cover әрекетін қосу/өшіру</string>
+    <string name="lid_switch_summary">Бұл смарт қақпақтың әрекетін ауыстырады</string>
+
+    
+    <string name="keyboard_title">Смарт пернетақта</string>
+    <string name="keyboard_summary">Смарт пернетақта параметрлері</string>
+    <string name="keyboard_switch_title">Пернетақтаны қолдау</string>
+    <string name="keyboard_more_info">Мұны тек Xiaomi Smart пернетақтасы болса ғана қосыңыз. Қосылған кезде жүйе пернетақта қосылымын автоматты түрде анықтайды және қуат күйлерін басқарады (үміттенеміз). Бұны өшіру батарея мен жүйе ресурстарын үнемдейді.\n\nЕскертпе: Бұл параметрдісіз жұмыс істейтін Bluetooth пернетақталарынан бөлек.</string>
+    <string name="keyboard_status_enabled">Пернетақтаны бақылау қосылды</string>
+    <string name="keyboard_status_disabled">Пернетақтаны бақылау өшірілген</string>
+    <string name="keyboard_footer_status">Күйі: %s</string>
+
+</resources>

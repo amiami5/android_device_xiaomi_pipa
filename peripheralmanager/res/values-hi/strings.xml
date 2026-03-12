@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi पेरिफेरल मैनेजर</string>
+
+    
+    <string name="stylus_title">लेखनी</string>
+    <string name="stylus_summary">स्टाइलस सेटिंग्स</string>
+    <string name="stylus_switch_title">स्टाइलस मोड</string>
+    <string name="stylus_tile_label">स्टाइलस मोड</string>
+    <string name="force_stylus_switch_title">स्टाइलस को बलपूर्वक पहचानें</string>
+    <string name="force_stylus_switch_summary">आधिकारिक स्टाइलस को ब्लूटूथ के बिना काम करने की अनुमति देता है और तीसरे पक्ष के पेन के लिए समर्थन सक्षम करता है। कोई पेन कनेक्ट न होने पर भी डिस्प्ले को 60/120 हर्ट्ज पर संचालित करने के लिए बाध्य करता है।</string>
+    <string name="stylus_refresh_rate_title">ताज़ा दर</string>
+    <string name="stylus_refresh_rate_summary">स्टाइलस मोड के लिए डिस्प्ले रिफ्रेश रेट चुनें</string>
+    <string name="stylus_more_info">समर्थित स्टाइलस कनेक्ट होने पर स्टाइलस मोड पेन-संगत ताज़ा दरों को सक्षम करता है। पेन कनेक्ट होने पर ही डिस्प्ले 60 हर्ट्ज या 120 हर्ट्ज पर स्विच होता है।</string>
+
+    
+    <string name="refresh_rate_dynamic">गतिशील (60/120 हर्ट्ज़)</string>
+    <string name="refresh_rate_60hz">स्थिर 60Hz</string>
+    <string name="refresh_rate_120hz">स्थिर 120Hz</string>
+
+    
+    <string name="stylus_status_active">सक्रिय</string>
+    <string name="stylus_status_inactive">निष्क्रिय</string>
+    <string name="stylus_footer_status">स्थिति: %s</string>
+    <string name="stylus_footer_refresh_rate">ताज़ा दर: %s</string>
+
+    
+    <string name="lid_title">स्मार्ट कवर</string>
+    <string name="lid_summary">स्मार्ट कवर सेटिंग्स</string>
+    <string name="lid_switch_title">स्मार्ट कवर व्यवहार टॉगल करें</string>
+    <string name="lid_switch_summary">यह स्मार्ट ढक्कन के व्यवहार को बदल देता है</string>
+
+    
+    <string name="keyboard_title">स्मार्ट कीबोर्ड</string>
+    <string name="keyboard_summary">स्मार्ट कीबोर्ड सेटिंग्स</string>
+    <string name="keyboard_switch_title">कीबोर्ड समर्थन</string>
+    <string name="keyboard_more_info">इसे तभी सक्षम करें जब आपके पास Xiaomi स्मार्ट कीबोर्ड हो। सक्षम होने पर, सिस्टम (उम्मीद है) स्वचालित रूप से कीबोर्ड कनेक्शन का पता लगाएगा और पावर स्थिति प्रबंधित करेगा। इसे अक्षम करने से बैटरी और सिस्टम संसाधनों की बचत होती है।\n\nनोट: यह ब्लूटूथ कीबोर्ड से अलग है, जो इस सेटिंग के बिना काम करते हैं।</string>
+    <string name="keyboard_status_enabled">कीबोर्ड मॉनिटरिंग सक्षम</string>
+    <string name="keyboard_status_disabled">कीबोर्ड मॉनिटरिंग अक्षम</string>
+    <string name="keyboard_footer_status">स्थिति: %s</string>
+
+</resources>

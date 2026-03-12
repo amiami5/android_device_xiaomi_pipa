@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    
+    <string name="app_name">Xiaomi 주변기기 관리자</string>
+
+    
+    <string name="stylus_title">첨필</string>
+    <string name="stylus_summary">스타일러스 설정</string>
+    <string name="stylus_switch_title">스타일러스 모드</string>
+    <string name="stylus_tile_label">스타일러스 모드</string>
+    <string name="force_stylus_switch_title">스타일러스 강제 인식</string>
+    <string name="force_stylus_switch_summary">공식 스타일러스가 Bluetooth 없이 작동할 수 있도록 하고 타사 펜을 지원할 수 있습니다. 또한 펜이 연결되지 않은 경우에도 디스플레이가 60/120Hz에서 작동하도록 강제합니다.</string>
+    <string name="stylus_refresh_rate_title">재생률</string>
+    <string name="stylus_refresh_rate_summary">스타일러스 모드의 디스플레이 새로 고침 빈도 선택</string>
+    <string name="stylus_more_info">스타일러스 모드는 지원되는 스타일러스가 연결된 경우 펜 호환 새로 고침 빈도를 활성화합니다. 펜이 연결되어 있는 동안에만 디스플레이가 60Hz 또는 120Hz로 전환됩니다.</string>
+
+    
+    <string name="refresh_rate_dynamic">동적(60/120Hz)</string>
+    <string name="refresh_rate_60hz">고정 60Hz</string>
+    <string name="refresh_rate_120hz">고정 120Hz</string>
+
+    
+    <string name="stylus_status_active">활동적인</string>
+    <string name="stylus_status_inactive">비활성</string>
+    <string name="stylus_footer_status">상태: %s</string>
+    <string name="stylus_footer_refresh_rate">재생률: %s</string>
+
+    
+    <string name="lid_title">스마트 커버</string>
+    <string name="lid_summary">스마트 커버 설정</string>
+    <string name="lid_switch_title">Smart Cover 동작 전환</string>
+    <string name="lid_switch_summary">이렇게 하면 스마트 덮개의 동작이 전환됩니다.</string>
+
+    
+    <string name="keyboard_title">스마트 키보드</string>
+    <string name="keyboard_summary">스마트 키보드 설정</string>
+    <string name="keyboard_switch_title">키보드 지원</string>
+    <string name="keyboard_more_info">Xiaomi Smart Keyboard를 소유한 경우에만 이 기능을 활성화하세요. 활성화되면 시스템이 자동으로 키보드 연결을 감지하고 전원 상태를 관리합니다. 이 기능을 비활성화하면 배터리와 시스템 리소스가 절약됩니다.\n\n참고: 이 설정 없이 작동하는 블루투스 키보드와는 별개입니다.</string>
+    <string name="keyboard_status_enabled">키보드 모니터링 활성화됨</string>
+    <string name="keyboard_status_disabled">키보드 모니터링이 비활성화되었습니다.</string>
+    <string name="keyboard_footer_status">상태: %s</string>
+
+</resources>
