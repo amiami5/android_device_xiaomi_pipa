@@ -48,4 +48,12 @@
     <string name="keyboard_status_disabled">Keyboard monitoring disabled</string>
     <string name="keyboard_footer_status">Status: %s</string>
 
+    <!-- Bypass Charging -->
+    <string name="bypass_charging_title">Bypass Charging</string>
+    <string name="bypass_charging_summary">Suspend battery input to run directly from the charger</string>
+    <string name="bypass_charging_status_on">Status: Active &#8212; Battery input is suspended</string>
+    <string name="bypass_charging_status_off">Status: Inactive &#8212; Charging normally</string>
+    <string name="bypass_charging_not_supported">Bypass charging is not supported by the current kernel</string>
+    <string name="bypass_charging_footer">When enabled, power flows directly from the charger to the device, bypassing the battery. The battery will not charge while this is active.\n\nThe feature resets automatically on reboot.</string>
+
 </resources>

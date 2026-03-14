@@ -1,0 +1,7 @@
+# system_app — read/write access to sysfs node
+allow system_app vendor_sysfs_battery_supply:dir { open read search };
+allow system_app vendor_sysfs_battery_supply:file { open read write getattr };
+
+# init — chmod/chown/restorecon at boot
+allow init vendor_sysfs_battery_supply:dir { search };
+allow init vendor_sysfs_battery_supply:file { open read write getattr setattr };

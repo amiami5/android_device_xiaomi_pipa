@@ -28,6 +28,12 @@ service xiaomi-keyboard /vendor/bin/xiaomi-keyboard
     group system input
     disabled
 
+# Bypass Charging
+on property:sys.boot_completed=1
+    chmod 0660 /sys/class/power_supply/battery/input_suspend
+    chown system system /sys/class/power_supply/battery/input_suspend
+    restorecon /sys/class/power_supply/battery/input_suspend
+
 # Start keyboard service when user enables it
 on property:persist.vendor.parts.keyboard=1
     start xiaomi-keyboard

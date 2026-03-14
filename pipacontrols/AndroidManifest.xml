@@ -107,5 +107,11 @@
             android:exported="true">
         </activity>
 
+        <activity
+            android:name=".bypasscharging.BypassChargingActivity"
+            android:label="@string/bypass_charging_title"
+            android:theme="@style/Theme.AppSubSettings"
+            android:exported="false">
+        </activity>
     </application>
 </manifest>

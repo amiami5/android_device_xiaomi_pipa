@@ -40,6 +40,12 @@
     <PreferenceCategory
         android:key="category_battery_performance"
         android:title="@string/pipa_category_battery_performance">
+
+        <Preference
+            android:key="pipa_bypass_charging"
+            android:title="@string/bypass_charging_title"
+            android:summary="@string/bypass_charging_summary" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
