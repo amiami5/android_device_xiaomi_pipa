@@ -113,5 +113,12 @@
             android:theme="@style/Theme.AppSubSettings"
             android:exported="false">
         </activity>
+
+        <activity
+            android:name=".saturation.SaturationActivity"
+            android:label="@string/saturation_title"
+            android:theme="@style/Theme.AppSubSettings"
+            android:exported="false">
+        </activity>
     </application>
 </manifest>

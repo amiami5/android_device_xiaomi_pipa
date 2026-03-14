@@ -34,6 +34,12 @@
     <PreferenceCategory
         android:key="category_display"
         android:title="@string/pipa_category_display">
+
+        <Preference
+            android:key="pipa_saturation"
+            android:title="@string/saturation_title"
+            android:summary="@string/saturation_summary" />
+
     </PreferenceCategory>
 
     <!-- Battery and Performance -->
