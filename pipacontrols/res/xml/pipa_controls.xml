@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2026 nullpointer1101
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/pipa_controls_title">
+
+    <!-- Accessories -->
+    <PreferenceCategory
+        android:key="category_accessories"
+        android:title="@string/pipa_category_accessories">
+
+        <Preference
+            android:key="pipa_stylus"
+            android:title="@string/stylus_title"
+            android:summary="@string/stylus_summary" />
+
+        <Preference
+            android:key="pipa_keyboard"
+            android:title="@string/keyboard_title"
+            android:summary="@string/keyboard_summary" />
+
+        <Preference
+            android:key="pipa_lid"
+            android:title="@string/lid_title"
+            android:summary="@string/lid_summary" />
+
+    </PreferenceCategory>
+
+    <!-- Display -->
+    <PreferenceCategory
+        android:key="category_display"
+        android:title="@string/pipa_category_display">
+    </PreferenceCategory>
+
+    <!-- Battery and Performance -->
+    <PreferenceCategory
+        android:key="category_battery_performance"
+        android:title="@string/pipa_category_battery_performance">
+    </PreferenceCategory>
+
+</PreferenceScreen>

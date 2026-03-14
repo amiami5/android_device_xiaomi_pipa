@@ -14,3 +14,24 @@ allow xiaomi_keyboard fwk_sensor_hwservice:hwservice_manager find;
 allow xiaomi_keyboard fwk_sensor_service:service_manager find;
 allow xiaomi_keyboard input_device:dir search;
 allow xiaomi_keyboard servicemanager:binder { call transfer };
+
+# hwservicemanager
+binder_call(hwservicemanager, xiaomi_keyboard)
+
+# servicemanager
+allow servicemanager xiaomi_keyboard:binder call;
+
+# system_server
+binder_call(system_server, xiaomi_keyboard)
+
+# property — pen and keyboard sysprops
+system_public_prop(vendor_pen_prop)
+system_public_prop(vendor_keyboard_prop)
+
+# system_app
+set_prop(system_app, vendor_pen_prop)
+set_prop(system_app, vendor_keyboard_prop)
+
+# vendor_init
+get_prop(vendor_init, vendor_pen_prop)
+get_prop(vendor_init, vendor_keyboard_prop)
