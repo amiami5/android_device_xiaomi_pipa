@@ -15,6 +15,9 @@ import androidx.preference.PreferenceManager;
 import org.lineageos.pipacontrols.apppriority.AppPriorityUtils;
 import org.lineageos.pipacontrols.performance.cpufreqcap.CpuFreqCapUtils;
 import org.lineageos.pipacontrols.performance.cpugovernor.CpuGovernorUtils;
+import org.lineageos.pipacontrols.performance.cpuscheduler.CoreMigrationUtils;
+import org.lineageos.pipacontrols.performance.cpuscheduler.CpuRampSpeedUtils;
+import org.lineageos.pipacontrols.performance.cpuscheduler.PreferBigCoresUtils;
 import org.lineageos.pipacontrols.performance.gpufreqcap.GpuFreqCapUtils;
 import org.lineageos.pipacontrols.performance.gpugovernor.GpuGovernorUtils;
 
@@ -27,6 +30,9 @@ public final class PerformanceResetUtils {
         CpuFreqCapUtils.PREF_KEY,
         GpuGovernorUtils.PREF_KEY,
         GpuFreqCapUtils.PREF_KEY,
+        PreferBigCoresUtils.PREF_KEY,
+        CoreMigrationUtils.PREF_KEY,
+        CpuRampSpeedUtils.PREF_KEY,
         AppPriorityUtils.PREF_KEY,
     };
 
@@ -43,6 +49,9 @@ public final class PerformanceResetUtils {
         CpuFreqCapUtils.apply(CpuFreqCapUtils.CAP_NONE);
         GpuGovernorUtils.apply(GpuGovernorUtils.GOV_ADRENO_TZ);
         GpuFreqCapUtils.apply(GpuFreqCapUtils.CAP_NONE);
+        PreferBigCoresUtils.apply(false);
+        CoreMigrationUtils.apply(CoreMigrationUtils.PRESET_DEFAULT);
+        CpuRampSpeedUtils.apply(CpuRampSpeedUtils.PRESET_DEFAULT);
         AppPriorityUtils.apply(AppPriorityUtils.LEVEL_OFF);
 
         Log.i(TAG, "All performance settings reset to defaults");

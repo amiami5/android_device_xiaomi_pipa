@@ -168,5 +168,26 @@
             android:exported="false">
         </activity>
 
+        <activity
+            android:name=".performance.cpuscheduler.PreferBigCoresActivity"
+            android:label="@string/prefer_big_cores_title"
+            android:theme="@style/Theme.AppSubSettings"
+            android:exported="false">
+        </activity>
+
+        <activity
+            android:name=".performance.cpuscheduler.CoreMigrationActivity"
+            android:label="@string/core_migration_title"
+            android:theme="@style/Theme.AppSubSettings"
+            android:exported="false">
+        </activity>
+
+        <activity
+            android:name=".performance.cpuscheduler.CpuRampSpeedActivity"
+            android:label="@string/cpu_ramp_speed_title"
+            android:theme="@style/Theme.AppSubSettings"
+            android:exported="false">
+        </activity>
+
     </application>
 </manifest>

@@ -1,0 +1,3 @@
+# CPU Scheduler — custom type for /proc/sys/kernel/sched_* nodes
+type pipa_sched_proc, fs_type, proc_type;
+allow system_app pipa_sched_proc:file { open read write getattr };

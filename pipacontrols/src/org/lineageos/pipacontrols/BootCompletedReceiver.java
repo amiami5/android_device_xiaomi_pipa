@@ -21,6 +21,9 @@ import org.lineageos.pipacontrols.apppriority.AppPriorityUtils;
 import org.lineageos.pipacontrols.keyboard.KeyboardUtils;
 import org.lineageos.pipacontrols.performance.cpufreqcap.CpuFreqCapUtils;
 import org.lineageos.pipacontrols.performance.cpugovernor.CpuGovernorUtils;
+import org.lineageos.pipacontrols.performance.cpuscheduler.CoreMigrationUtils;
+import org.lineageos.pipacontrols.performance.cpuscheduler.CpuRampSpeedUtils;
+import org.lineageos.pipacontrols.performance.cpuscheduler.PreferBigCoresUtils;
 import org.lineageos.pipacontrols.performance.gpufreqcap.GpuFreqCapUtils;
 import org.lineageos.pipacontrols.performance.gpugovernor.GpuGovernorUtils;
 import org.lineageos.pipacontrols.stylus.PenUtils;
@@ -74,6 +77,15 @@ public class BootCompletedReceiver extends BroadcastReceiver {
 
         try { GpuFreqCapUtils.restore(context); } catch (Exception e) {
             Log.e(TAG, ts() + "GPU freq cap restore failed: " + e.getMessage()); }
+
+        try { PreferBigCoresUtils.restore(context); } catch (Exception e) {
+            Log.e(TAG, ts() + "Prefer big cores restore failed: " + e.getMessage()); }
+
+        try { CoreMigrationUtils.restore(context); } catch (Exception e) {
+            Log.e(TAG, ts() + "Core migration restore failed: " + e.getMessage()); }
+
+        try { CpuRampSpeedUtils.restore(context); } catch (Exception e) {
+            Log.e(TAG, ts() + "CPU ramp speed restore failed: " + e.getMessage()); }
 
         // App priority — cgroup resets to 0 on every reboot
         try { AppPriorityUtils.restore(context); } catch (Exception e) {

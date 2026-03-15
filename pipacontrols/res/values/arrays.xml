@@ -90,4 +90,28 @@
         <item>305000000</item>
     </string-array>
 
+    <!-- Core Migration Speed -->
+    <string-array name="core_migration_entries">
+        <item>@string/core_migration_conservative</item>
+        <item>@string/core_migration_default</item>
+        <item>@string/core_migration_aggressive</item>
+    </string-array>
+    <string-array name="core_migration_values">
+        <item>conservative</item>
+        <item>default</item>
+        <item>aggressive</item>
+    </string-array>
+
+    <!-- CPU Ramp Speed -->
+    <string-array name="cpu_ramp_speed_entries">
+        <item>@string/cpu_ramp_speed_battery</item>
+        <item>@string/cpu_ramp_speed_default</item>
+        <item>@string/cpu_ramp_speed_responsive</item>
+    </string-array>
+    <string-array name="cpu_ramp_speed_values">
+        <item>battery</item>
+        <item>default</item>
+        <item>responsive</item>
+    </string-array>
+
 </resources>

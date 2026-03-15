@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2026 nullpointer1101
+     SPDX-License-Identifier: Apache-2.0
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/prefer_big_cores_title">
+
+    <SwitchPreference
+        android:key="prefer_big_cores_key"
+        android:title="@string/prefer_big_cores_title"
+        android:defaultValue="false"
+        android:persistent="true" />
+
+    <com.android.settingslib.widget.FooterPreference
+        android:key="prefer_big_cores_footer"
+        android:title="@string/prefer_big_cores_footer"
+        android:selectable="false" />
+
+</PreferenceScreen>

@@ -69,6 +69,21 @@
             android:summary="@string/gpu_freq_cap_summary" />
 
         <Preference
+            android:key="pipa_prefer_big_cores"
+            android:title="@string/prefer_big_cores_title"
+            android:summary="@string/prefer_big_cores_summary" />
+
+        <Preference
+            android:key="pipa_core_migration"
+            android:title="@string/core_migration_title"
+            android:summary="@string/core_migration_summary" />
+
+        <Preference
+            android:key="pipa_cpu_ramp_speed"
+            android:title="@string/cpu_ramp_speed_title"
+            android:summary="@string/cpu_ramp_speed_summary" />
+
+        <Preference
             android:key="pipa_app_priority"
             android:title="@string/app_priority_title"
             android:summary="@string/app_priority_summary" />

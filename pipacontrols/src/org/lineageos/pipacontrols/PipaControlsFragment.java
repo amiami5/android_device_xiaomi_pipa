@@ -27,6 +27,12 @@ import org.lineageos.pipacontrols.performance.cpufreqcap.CpuFreqCapActivity;
 import org.lineageos.pipacontrols.performance.cpufreqcap.CpuFreqCapUtils;
 import org.lineageos.pipacontrols.performance.cpugovernor.CpuGovernorActivity;
 import org.lineageos.pipacontrols.performance.cpugovernor.CpuGovernorUtils;
+import org.lineageos.pipacontrols.performance.cpuscheduler.CoreMigrationActivity;
+import org.lineageos.pipacontrols.performance.cpuscheduler.CoreMigrationUtils;
+import org.lineageos.pipacontrols.performance.cpuscheduler.CpuRampSpeedActivity;
+import org.lineageos.pipacontrols.performance.cpuscheduler.CpuRampSpeedUtils;
+import org.lineageos.pipacontrols.performance.cpuscheduler.PreferBigCoresActivity;
+import org.lineageos.pipacontrols.performance.cpuscheduler.PreferBigCoresUtils;
 import org.lineageos.pipacontrols.performance.gpufreqcap.GpuFreqCapActivity;
 import org.lineageos.pipacontrols.performance.gpufreqcap.GpuFreqCapUtils;
 import org.lineageos.pipacontrols.performance.gpugovernor.GpuGovernorActivity;
@@ -44,53 +50,30 @@ public class PipaControlsFragment extends PreferenceFragmentCompat {
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.pipa_controls);
 
-        wireActivity("pipa_stylus",          StylusSettingsActivity.class);
-        wireActivity("pipa_keyboard",        KeyboardSettingsActivity.class);
-        wireActivity("pipa_lid",             LidSettingsActivity.class);
-        wireActivity("pipa_bypass_charging", BypassChargingActivity.class);
-        wireActivity("pipa_saturation",      SaturationActivity.class);
-        wireActivity("pipa_refresh_rate",    RefreshActivity.class);
-        wireActivity("pipa_app_priority",    AppPriorityActivity.class);
-        wireActivity("pipa_cpu_governor",    CpuGovernorActivity.class);
-        wireActivity("pipa_cpu_freq_cap",    CpuFreqCapActivity.class);
-        wireActivity("pipa_gpu_governor",    GpuGovernorActivity.class);
-        wireActivity("pipa_gpu_freq_cap",    GpuFreqCapActivity.class);
+        wireActivity("pipa_stylus",            StylusSettingsActivity.class);
+        wireActivity("pipa_keyboard",          KeyboardSettingsActivity.class);
+        wireActivity("pipa_lid",               LidSettingsActivity.class);
+        wireActivity("pipa_bypass_charging",   BypassChargingActivity.class);
+        wireActivity("pipa_saturation",        SaturationActivity.class);
+        wireActivity("pipa_refresh_rate",      RefreshActivity.class);
+        wireActivity("pipa_app_priority",      AppPriorityActivity.class);
+        wireActivity("pipa_cpu_governor",      CpuGovernorActivity.class);
+        wireActivity("pipa_cpu_freq_cap",      CpuFreqCapActivity.class);
+        wireActivity("pipa_gpu_governor",      GpuGovernorActivity.class);
+        wireActivity("pipa_gpu_freq_cap",      GpuFreqCapActivity.class);
+        wireActivity("pipa_prefer_big_cores",  PreferBigCoresActivity.class);
+        wireActivity("pipa_core_migration",    CoreMigrationActivity.class);
+        wireActivity("pipa_cpu_ramp_speed",    CpuRampSpeedActivity.class);
 
-        Preference bypassPref = findPreference("pipa_bypass_charging");
-        if (bypassPref != null && !BypassChargingUtils.isSupported()) {
-            bypassPref.setEnabled(false);
-            bypassPref.setSummary(R.string.bypass_charging_not_supported);
-        }
-
-        Preference appPriorityPref = findPreference("pipa_app_priority");
-        if (appPriorityPref != null && !AppPriorityUtils.isSupported()) {
-            appPriorityPref.setEnabled(false);
-            appPriorityPref.setSummary(R.string.app_priority_not_supported);
-        }
-
-        Preference cpuGovPref = findPreference("pipa_cpu_governor");
-        if (cpuGovPref != null && !CpuGovernorUtils.isSupported()) {
-            cpuGovPref.setEnabled(false);
-            cpuGovPref.setSummary(R.string.cpu_governor_not_supported);
-        }
-
-        Preference cpuFreqCapPref = findPreference("pipa_cpu_freq_cap");
-        if (cpuFreqCapPref != null && !CpuFreqCapUtils.isSupported()) {
-            cpuFreqCapPref.setEnabled(false);
-            cpuFreqCapPref.setSummary(R.string.cpu_freq_cap_not_supported);
-        }
-
-        Preference gpuGovPref = findPreference("pipa_gpu_governor");
-        if (gpuGovPref != null && !GpuGovernorUtils.isSupported()) {
-            gpuGovPref.setEnabled(false);
-            gpuGovPref.setSummary(R.string.gpu_governor_not_supported);
-        }
-
-        Preference gpuFreqCapPref = findPreference("pipa_gpu_freq_cap");
-        if (gpuFreqCapPref != null && !GpuFreqCapUtils.isSupported()) {
-            gpuFreqCapPref.setEnabled(false);
-            gpuFreqCapPref.setSummary(R.string.gpu_freq_cap_not_supported);
-        }
+        checkSupported("pipa_bypass_charging", BypassChargingUtils.isSupported(),   R.string.bypass_charging_not_supported);
+        checkSupported("pipa_app_priority",    AppPriorityUtils.isSupported(),      R.string.app_priority_not_supported);
+        checkSupported("pipa_cpu_governor",    CpuGovernorUtils.isSupported(),      R.string.cpu_governor_not_supported);
+        checkSupported("pipa_cpu_freq_cap",    CpuFreqCapUtils.isSupported(),       R.string.cpu_freq_cap_not_supported);
+        checkSupported("pipa_gpu_governor",    GpuGovernorUtils.isSupported(),      R.string.gpu_governor_not_supported);
+        checkSupported("pipa_gpu_freq_cap",    GpuFreqCapUtils.isSupported(),       R.string.gpu_freq_cap_not_supported);
+        checkSupported("pipa_prefer_big_cores",PreferBigCoresUtils.isSupported(),   R.string.prefer_big_cores_not_supported);
+        checkSupported("pipa_core_migration",  CoreMigrationUtils.isSupported(),    R.string.core_migration_not_supported);
+        checkSupported("pipa_cpu_ramp_speed",  CpuRampSpeedUtils.isSupported(),     R.string.cpu_ramp_speed_not_supported);
 
         Preference resetPref = findPreference("pipa_reset_all");
         if (resetPref != null) {
@@ -102,6 +85,15 @@ public class PipaControlsFragment extends PreferenceFragmentCompat {
 
         RefreshUtils.startService(requireContext());
         Log.i(TAG, "Pipa Controls fragment created");
+    }
+
+    private void checkSupported(String key, boolean supported, int fallbackSummary) {
+        if (supported) return;
+        Preference pref = findPreference(key);
+        if (pref != null) {
+            pref.setEnabled(false);
+            pref.setSummary(fallbackSummary);
+        }
     }
 
     private void showResetDialog() {

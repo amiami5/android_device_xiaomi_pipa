@@ -120,6 +120,30 @@
     <string name="gpu_freq_cap_min">Minimum — 305 MHz</string>
     <string name="gpu_freq_cap_footer">Limits the maximum clock speed of the Adreno GPU. Useful for reducing heat and stabilising frame rates during long gaming sessions — a capped GPU running consistently at a lower frequency often feels smoother than one that throttles unpredictably under thermal pressure.\n\n<b>Tip for gaming:</b> Try 490 MHz or 525 MHz for a good balance of stable frame rates and manageable temperatures.\n\n<b>Warning:</b> Setting this too low will cause visible frame drops and stuttering in GPU-heavy games and apps. If graphics feel slow or choppy, raise the cap.\n\nReapplied automatically after reboot.</string>
 
+    <!-- Prefer Big Cores -->
+    <string name="prefer_big_cores_title">Prefer Big Cores</string>
+    <string name="prefer_big_cores_summary">Push tasks toward larger CPU cores</string>
+    <string name="prefer_big_cores_not_supported">Not supported by the current kernel</string>
+    <string name="prefer_big_cores_footer">When enabled, the kernel scheduler actively pushes tasks toward the larger BIG and PRIME CPU cores instead of letting them run on the LITTLE cores.\n\nThis improves sustained performance and reduces the chance of the active app feeling sluggish, but increases power draw since the larger cores consume more energy.\n\nReapplied automatically after reboot.</string>
+
+    <!-- Core Migration Speed -->
+    <string name="core_migration_title">Core Migration Speed</string>
+    <string name="core_migration_summary">Controls how eagerly tasks move between CPU clusters</string>
+    <string name="core_migration_not_supported">Not supported by the current kernel</string>
+    <string name="core_migration_conservative">Conservative</string>
+    <string name="core_migration_default">Default (Recommended)</string>
+    <string name="core_migration_aggressive">Aggressive</string>
+    <string name="core_migration_footer">Controls the CPU load thresholds at which the kernel moves tasks from smaller cores to larger ones and back.\n\n<b>Conservative</b> — Tasks stay on LITTLE cores longer. Saves battery but may feel slightly slower during bursts.\n\n<b>Default</b> — Balanced thresholds. Good for everyday use.\n\n<b>Aggressive</b> — Tasks move to BIG and PRIME cores more readily. Improves responsiveness and reduces micro-stutters but increases battery drain, especially from background apps.\n\n<b>Warning:</b> Aggressive migration may increase background battery drain noticeably.\n\nReapplied automatically after reboot.</string>
+
+    <!-- CPU Ramp Speed -->
+    <string name="cpu_ramp_speed_title">CPU Ramp Speed</string>
+    <string name="cpu_ramp_speed_summary">How quickly the CPU responds to sudden load spikes</string>
+    <string name="cpu_ramp_speed_not_supported">Not supported by the current kernel</string>
+    <string name="cpu_ramp_speed_battery">Battery</string>
+    <string name="cpu_ramp_speed_default">Default (Recommended)</string>
+    <string name="cpu_ramp_speed_responsive">Responsive</string>
+    <string name="cpu_ramp_speed_footer">Tunes the schedutil governor\'s hispeed frequency and load threshold — the frequency the CPU jumps to when it detects a sudden spike in workload.\n\n<b>Battery</b> — Lower hispeed targets. The CPU ramps up more slowly and conserves power. May feel slightly sluggish during short bursts like opening apps.\n\n<b>Default</b> — Balanced hispeed settings. Works well for general use.\n\n<b>Responsive</b> — Higher hispeed targets and a slower downscale rate. The CPU ramps up faster and stays elevated longer after a spike. Reduces stutter during fast interactions and gaming at the cost of slightly more power usage.\n\nOnly takes effect when CPU Governor is set to Smart (schedutil).\n\nReapplied automatically after reboot.</string>
+
     <!-- Global Reset -->
     <string name="reset_all_title">Reset to defaults</string>
     <string name="reset_all_summary">Restore all Performance and Touch settings to their default values</string>
