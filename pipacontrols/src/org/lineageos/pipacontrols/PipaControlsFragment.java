@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2026 The LineageOS Project
+ * Copyright (C) 2023-2026 The LineageOS Project
  * Copyright (C) 2026 nullpointer1101
  *
  * SPDX-License-Identifier: Apache-2.0
@@ -27,6 +27,8 @@ import org.lineageos.pipacontrols.performance.cpufreqcap.CpuFreqCapActivity;
 import org.lineageos.pipacontrols.performance.cpufreqcap.CpuFreqCapUtils;
 import org.lineageos.pipacontrols.performance.cpugovernor.CpuGovernorActivity;
 import org.lineageos.pipacontrols.performance.cpugovernor.CpuGovernorUtils;
+import org.lineageos.pipacontrols.performance.gpugovernor.GpuGovernorActivity;
+import org.lineageos.pipacontrols.performance.gpugovernor.GpuGovernorUtils;
 import org.lineageos.pipacontrols.refreshrate.RefreshActivity;
 import org.lineageos.pipacontrols.refreshrate.RefreshUtils;
 import org.lineageos.pipacontrols.saturation.SaturationActivity;
@@ -49,6 +51,7 @@ public class PipaControlsFragment extends PreferenceFragmentCompat {
         wireActivity("pipa_app_priority",    AppPriorityActivity.class);
         wireActivity("pipa_cpu_governor",    CpuGovernorActivity.class);
         wireActivity("pipa_cpu_freq_cap",    CpuFreqCapActivity.class);
+        wireActivity("pipa_gpu_governor",    GpuGovernorActivity.class);
 
         Preference bypassPref = findPreference("pipa_bypass_charging");
         if (bypassPref != null && !BypassChargingUtils.isSupported()) {
@@ -72,6 +75,12 @@ public class PipaControlsFragment extends PreferenceFragmentCompat {
         if (cpuFreqCapPref != null && !CpuFreqCapUtils.isSupported()) {
             cpuFreqCapPref.setEnabled(false);
             cpuFreqCapPref.setSummary(R.string.cpu_freq_cap_not_supported);
+        }
+
+        Preference gpuGovPref = findPreference("pipa_gpu_governor");
+        if (gpuGovPref != null && !GpuGovernorUtils.isSupported()) {
+            gpuGovPref.setEnabled(false);
+            gpuGovPref.setSummary(R.string.gpu_governor_not_supported);
         }
 
         Preference resetPref = findPreference("pipa_reset_all");

@@ -1,0 +1,3 @@
+# GPU Governor — write access to kgsl devfreq governor
+allow system_app sysfs_kgsl:dir  { open read search };
+allow system_app sysfs_kgsl:file { open read write getattr };

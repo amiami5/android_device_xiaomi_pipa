@@ -44,7 +44,7 @@
         <item>powersave</item>
     </string-array>
 
-    <!-- CPU Frequency Cap — only caps the PRIME core (cpu7) -->
+    <!-- CPU Frequency Cap -->
     <string-array name="cpu_freq_cap_entries">
         <item>@string/cpu_freq_cap_none</item>
         <item>@string/cpu_freq_cap_high</item>
@@ -56,6 +56,20 @@
         <item>2457600</item>
         <item>1632000</item>
         <item>1305600</item>
+    </string-array>
+
+    <!-- GPU Governor -->
+    <string-array name="gpu_governor_entries">
+        <item>@string/gpu_governor_adreno_tz</item>
+        <item>@string/gpu_governor_performance</item>
+        <item>@string/gpu_governor_powersave</item>
+        <item>@string/gpu_governor_simple_ondemand</item>
+    </string-array>
+    <string-array name="gpu_governor_values">
+        <item>msm-adreno-tz</item>
+        <item>performance</item>
+        <item>powersave</item>
+        <item>simple_ondemand</item>
     </string-array>
 
 </resources>

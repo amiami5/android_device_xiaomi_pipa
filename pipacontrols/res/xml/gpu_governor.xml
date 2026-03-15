@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2026 nullpointer1101
+     SPDX-License-Identifier: Apache-2.0
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/gpu_governor_title">
+
+    <ListPreference
+        android:key="gpu_governor_key"
+        android:title="@string/gpu_governor_title"
+        android:entries="@array/gpu_governor_entries"
+        android:entryValues="@array/gpu_governor_values"
+        android:defaultValue="msm-adreno-tz"
+        android:persistent="true" />
+
+    <com.android.settingslib.widget.FooterPreference
+        android:key="gpu_governor_footer"
+        android:title="@string/gpu_governor_footer"
+        android:selectable="false" />
+
+</PreferenceScreen>
