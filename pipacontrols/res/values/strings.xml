@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      Copyright (C) 2023-2026 The LineageOS Project
-
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- App -->
     <string name="pipa_controls_title">Pipa Controls</string>
     <string name="pipa_controls_summary">Device-specific settings</string>
 
     <!-- Category headers -->
     <string name="pipa_category_accessories">Accessories</string>
     <string name="pipa_category_display">Display</string>
-    <string name="pipa_category_battery_performance">Battery and Performance</string>
+    <string name="pipa_category_performance">Performance</string>
+    <string name="pipa_category_touch">Touch &amp; Input</string>
+    <string name="pipa_category_battery">Battery</string>
+    <string name="pipa_category_reset">Reset</string>
 
-    <!-- Stylus settings -->
+    <!-- Stylus -->
     <string name="stylus_title">Stylus</string>
     <string name="stylus_summary">Stylus Settings</string>
     <string name="stylus_switch_title">Stylus Mode</string>
@@ -33,13 +34,13 @@
     <string name="stylus_footer_status">Status: %s</string>
     <string name="stylus_footer_refresh_rate">Refresh Rate: %s</string>
 
-    <!-- Smart Cover settings -->
+    <!-- Smart Cover -->
     <string name="lid_title">Smart Cover</string>
     <string name="lid_summary">Smart cover open and close behavior</string>
     <string name="lid_switch_title">Toggle Smart Cover behavior</string>
     <string name="lid_switch_summary">This toggles the behavior of the smart lid</string>
 
-    <!-- Keyboard settings -->
+    <!-- Keyboard -->
     <string name="keyboard_title">Smart Keyboard</string>
     <string name="keyboard_summary">Smart keyboard connection monitoring</string>
     <string name="keyboard_switch_title">Keyboard Support</string>
@@ -56,7 +57,7 @@
     <string name="bypass_charging_not_supported">Bypass charging is not supported by the current kernel</string>
     <string name="bypass_charging_footer">When enabled, power flows directly from the charger to the device, bypassing the battery. The battery will not charge while this is active.\n\nThe feature resets automatically on reboot.</string>
 
-    <!-- Per-app refresh rate -->
+    <!-- Per-app Refresh Rate -->
     <string name="refresh_title">Per-app Refresh Rate</string>
     <string name="refresh_summary">Set the maximum refresh rate for a specific application</string>
     <string name="refresh_default">Default</string>
@@ -69,6 +70,21 @@
     <string name="saturation_title">Display Saturation</string>
     <string name="saturation_summary">Control the saturation level of the display</string>
     <string name="saturation_footer_summary">Changing the color mode in display settings will override the saturation level, requiring it to be reapplied.</string>
+
+    <!-- App Priority -->
+    <string name="app_priority_title">Foreground App Priority</string>
+    <string name="app_priority_summary">Boost CPU scheduling for the active app</string>
+    <string name="app_priority_not_supported">Not supported by the current kernel</string>
+    <string name="app_priority_high_warning_inline">may increase background app kill rate</string>
+    <string name="app_priority_footer">Raises the CPU scheduling priority of the app currently on screen and, at higher levels, the foreground app stack.\n\n<b>Off</b> — no boost applied (system default).\n<b>Low</b> — mild boost to the top app only.\n<b>Medium</b> — moderate boost to both the top app and foreground apps.\n<b>High</b> — strong boost to the top app and foreground apps. At this level the kernel may reclaim memory from background apps sooner, which can cause apps to reload when you switch back to them.\n\nValues are reapplied automatically after reboot.</string>
+
+    <!-- Global Reset -->
+    <string name="reset_all_title">Reset to defaults</string>
+    <string name="reset_all_summary">Restore all Performance and Touch settings to their default values</string>
+    <string name="reset_all_dialog_title">Reset all settings?</string>
+    <string name="reset_all_dialog_message">All Performance and Touch &amp; Input settings will be restored to defaults. Accessories, Display and Battery settings are not affected.</string>
+    <string name="reset_all_confirm">Reset</string>
+    <string name="reset_all_done">Settings restored to defaults</string>
 
     <!-- Image preview -->
     <string name="image_preview_content_description">Preview</string>

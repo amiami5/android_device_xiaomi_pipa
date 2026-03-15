@@ -7,17 +7,22 @@
 
 package org.lineageos.pipacontrols;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
+import org.lineageos.pipacontrols.apppriority.AppPriorityActivity;
+import org.lineageos.pipacontrols.apppriority.AppPriorityUtils;
 import org.lineageos.pipacontrols.bypasscharging.BypassChargingActivity;
 import org.lineageos.pipacontrols.bypasscharging.BypassChargingUtils;
 import org.lineageos.pipacontrols.keyboard.KeyboardSettingsActivity;
 import org.lineageos.pipacontrols.lid.LidSettingsActivity;
+import org.lineageos.pipacontrols.performance.PerformanceResetUtils;
 import org.lineageos.pipacontrols.refreshrate.RefreshActivity;
 import org.lineageos.pipacontrols.refreshrate.RefreshUtils;
 import org.lineageos.pipacontrols.saturation.SaturationActivity;
@@ -27,34 +32,59 @@ public class PipaControlsFragment extends PreferenceFragmentCompat {
 
     private static final String TAG = "PipaControls";
 
-    private static final String KEY_STYLUS          = "pipa_stylus";
-    private static final String KEY_KEYBOARD        = "pipa_keyboard";
-    private static final String KEY_LID             = "pipa_lid";
-    private static final String KEY_BYPASS_CHARGING = "pipa_bypass_charging";
-    private static final String KEY_SATURATION      = "pipa_saturation";
-    private static final String KEY_REFRESH_RATE    = "pipa_refresh_rate";
-
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.pipa_controls);
 
-        wireActivity(KEY_STYLUS,          StylusSettingsActivity.class);
-        wireActivity(KEY_KEYBOARD,        KeyboardSettingsActivity.class);
-        wireActivity(KEY_LID,             LidSettingsActivity.class);
-        wireActivity(KEY_BYPASS_CHARGING, BypassChargingActivity.class);
-        wireActivity(KEY_SATURATION,      SaturationActivity.class);
-        wireActivity(KEY_REFRESH_RATE,    RefreshActivity.class);
+        wireActivity("pipa_stylus",          StylusSettingsActivity.class);
+        wireActivity("pipa_keyboard",        KeyboardSettingsActivity.class);
+        wireActivity("pipa_lid",             LidSettingsActivity.class);
+        wireActivity("pipa_bypass_charging", BypassChargingActivity.class);
+        wireActivity("pipa_saturation",      SaturationActivity.class);
+        wireActivity("pipa_refresh_rate",    RefreshActivity.class);
+        wireActivity("pipa_app_priority",    AppPriorityActivity.class);
 
-        Preference bypassPref = findPreference(KEY_BYPASS_CHARGING);
+        // Disable bypass charging if kernel node is missing
+        Preference bypassPref = findPreference("pipa_bypass_charging");
         if (bypassPref != null && !BypassChargingUtils.isSupported()) {
             bypassPref.setEnabled(false);
             bypassPref.setSummary(R.string.bypass_charging_not_supported);
         }
 
-        // Start refresh rate service if not already running
-        RefreshUtils.startService(requireContext());
+        // Disable app priority if stune cgroup nodes are missing
+        Preference appPriorityPref = findPreference("pipa_app_priority");
+        if (appPriorityPref != null && !AppPriorityUtils.isSupported()) {
+            appPriorityPref.setEnabled(false);
+            appPriorityPref.setSummary(R.string.app_priority_not_supported);
+        }
 
+        // Global reset — confirmation dialog before wiping anything
+        Preference resetPref = findPreference("pipa_reset_all");
+        if (resetPref != null) {
+            resetPref.setOnPreferenceClickListener(p -> {
+                showResetDialog();
+                return true;
+            });
+        }
+
+        RefreshUtils.startService(requireContext());
         Log.i(TAG, "Pipa Controls fragment created");
+    }
+
+    private void showResetDialog() {
+        new AlertDialog.Builder(requireContext())
+                .setTitle(R.string.reset_all_dialog_title)
+                .setMessage(R.string.reset_all_dialog_message)
+                .setPositiveButton(R.string.reset_all_confirm, (d, w) -> {
+                    new Thread(() -> {
+                        PerformanceResetUtils.resetAll(requireContext());
+                        requireActivity().runOnUiThread(() ->
+                            Toast.makeText(requireContext(),
+                                R.string.reset_all_done, Toast.LENGTH_SHORT).show());
+                    }, "pipa-reset").start();
+                })
+                .setNegativeButton(android.R.string.cancel, null)
+                .show();
     }
 
     private void wireActivity(String key, Class<?> activityClass) {

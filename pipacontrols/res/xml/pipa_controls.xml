@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      Copyright (C) 2026 nullpointer1101
-
      SPDX-License-Identifier: Apache-2.0
 -->
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/pipa_controls_title">
 
-    <!-- Accessories -->
     <PreferenceCategory
         android:key="category_accessories"
         android:title="@string/pipa_category_accessories">
@@ -30,7 +28,6 @@
 
     </PreferenceCategory>
 
-    <!-- Display -->
     <PreferenceCategory
         android:key="category_display"
         android:title="@string/pipa_category_display">
@@ -47,15 +44,42 @@
 
     </PreferenceCategory>
 
-    <!-- Battery and Performance -->
     <PreferenceCategory
-        android:key="category_battery_performance"
-        android:title="@string/pipa_category_battery_performance">
+        android:key="category_performance"
+        android:title="@string/pipa_category_performance">
+
+        <Preference
+            android:key="pipa_app_priority"
+            android:title="@string/app_priority_title"
+            android:summary="@string/app_priority_summary" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="category_touch"
+        android:title="@string/pipa_category_touch">
+        <!-- Touch and Input features will be added here -->
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="category_battery"
+        android:title="@string/pipa_category_battery">
 
         <Preference
             android:key="pipa_bypass_charging"
             android:title="@string/bypass_charging_title"
             android:summary="@string/bypass_charging_summary" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="category_reset"
+        android:title="@string/pipa_category_reset">
+
+        <Preference
+            android:key="pipa_reset_all"
+            android:title="@string/reset_all_title"
+            android:summary="@string/reset_all_summary" />
 
     </PreferenceCategory>
 

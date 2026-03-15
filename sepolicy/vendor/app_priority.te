@@ -1,0 +1,3 @@
+# system_app
+allow system_app cgroup:file { open read write getattr };
+allow system_app cgroup:dir  { open read search getattr };

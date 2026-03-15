@@ -16,6 +16,7 @@ import android.util.Log;
 
 import androidx.preference.PreferenceManager;
 
+import org.lineageos.pipacontrols.apppriority.AppPriorityUtils;
 import org.lineageos.pipacontrols.keyboard.KeyboardUtils;
 import org.lineageos.pipacontrols.stylus.PenUtils;
 
@@ -26,18 +27,13 @@ import java.util.Locale;
 public class BootCompletedReceiver extends BroadcastReceiver {
 
     private static final String TAG = "PipaControls";
-
     private static final long INIT_DELAY_MS = 3000;
-
-    private static final String STYLUS_MODE_KEY     = "stylus_mode_key";
-    private static final String FORCE_RECOGNIZE_KEY = "force_recognize_stylus_key";
-    private static final String KEYBOARD_MODE_KEY   = "keyboard_mode_key";
 
     @Override
     public void onReceive(final Context context, Intent intent) {
         if (!Intent.ACTION_LOCKED_BOOT_COMPLETED.equals(intent.getAction())) return;
 
-        logInfo("Boot completed — scheduling peripheral init in " + INIT_DELAY_MS + " ms");
+        Log.i(TAG, ts() + "Boot completed — init in " + INIT_DELAY_MS + "ms");
 
         final Context appContext = context.getApplicationContext();
         new Handler(Looper.getMainLooper()).postDelayed(
@@ -48,41 +44,23 @@ public class BootCompletedReceiver extends BroadcastReceiver {
     private static void initPeripherals(Context context) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
 
-        boolean stylusEnabled   = prefs.getBoolean(STYLUS_MODE_KEY, false);
-        boolean forceRecognize  = prefs.getBoolean(FORCE_RECOGNIZE_KEY, false);
-        boolean keyboardEnabled = prefs.getBoolean(KEYBOARD_MODE_KEY, false);
+        boolean stylusEnabled   = prefs.getBoolean("stylus_mode_key", false);
+        boolean forceRecognize  = prefs.getBoolean("force_recognize_stylus_key", false);
+        boolean keyboardEnabled = prefs.getBoolean("keyboard_mode_key", false);
 
-        logInfo("Init — stylus=" + stylusEnabled
-                + ", force=" + forceRecognize
-                + ", keyboard=" + keyboardEnabled);
-
-        // Keyboard — skip entirely when user has not enabled it.
         if (keyboardEnabled) {
-            try {
-                KeyboardUtils.setup(context);
-                logInfo("Keyboard service initialized");
-            } catch (Exception e) {
-                logError("Failed to initialize keyboard service: " + e.getMessage());
-            }
-        } else {
-            logInfo("Keyboard service skipped (disabled by user)");
+            try { KeyboardUtils.setup(context); } catch (Exception e) {
+                Log.e(TAG, ts() + "Keyboard init failed: " + e.getMessage()); }
         }
 
-        // Stylus — skip entirely when both stylus mode and force recognize are off.
         if (stylusEnabled || forceRecognize) {
-            try {
-                PenUtils.setup(context);
-                logInfo("Pen service initialized");
-            } catch (Exception e) {
-                logError("Failed to initialize pen service: " + e.getMessage());
-            }
-        } else {
-            logInfo("Pen service skipped (stylus features disabled)");
+            try { PenUtils.setup(context); } catch (Exception e) {
+                Log.e(TAG, ts() + "Pen init failed: " + e.getMessage()); }
         }
-    }
 
-    private static void logInfo(String message)  { Log.i(TAG, ts() + message); }
-    private static void logError(String message) { Log.e(TAG, ts() + message); }
+        try { AppPriorityUtils.restore(context); } catch (Exception e) {
+            Log.e(TAG, ts() + "App priority restore failed: " + e.getMessage()); }
+    }
 
     private static String ts() {
         return "[" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US).format(new Date()) + "] ";

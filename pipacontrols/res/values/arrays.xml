@@ -18,4 +18,19 @@
         <item>60</item>
         <item>120</item>
     </string-array>
+
+    <!-- App Priority Options -->
+    <string-array name="app_priority_entries">
+        <item>Off</item>
+        <item>Low</item>
+        <item>Medium</item>
+        <item>High</item>
+    </string-array>
+
+    <string-array name="app_priority_values">
+        <item>off</item>
+        <item>low</item>
+        <item>medium</item>
+        <item>high</item>
+    </string-array>
 </resources>

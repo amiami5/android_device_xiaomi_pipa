@@ -133,5 +133,13 @@
             android:theme="@style/Theme.AppSubSettings"
             android:exported="false">
         </activity>
+
+        <activity
+            android:name=".apppriority.AppPriorityActivity"
+            android:label="@string/app_priority_title"
+            android:theme="@style/Theme.AppSubSettings"
+            android:exported="false">
+        </activity>
+
     </application>
 </manifest>
