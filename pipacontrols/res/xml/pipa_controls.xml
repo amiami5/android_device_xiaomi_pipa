@@ -36,6 +36,11 @@
         android:title="@string/pipa_category_display">
 
         <Preference
+            android:key="pipa_refresh_rate"
+            android:title="@string/refresh_title"
+            android:summary="@string/refresh_summary" />
+
+        <Preference
             android:key="pipa_saturation"
             android:title="@string/saturation_title"
             android:summary="@string/saturation_summary" />

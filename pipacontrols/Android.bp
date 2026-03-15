@@ -23,6 +23,7 @@ android_app {
         "androidx.core_core",
         "androidx.preference_preference",
         "androidx.viewpager_viewpager",
+        "androidx.recyclerview_recyclerview",
     ],
 
     required: [
