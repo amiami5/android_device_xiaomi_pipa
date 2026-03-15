@@ -11,9 +11,22 @@
 
     <uses-sdk
         android:minSdkVersion="30"
-        android:targetSdkVersion="35" />
+        android:targetSdkVersion="36" />
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+    <uses-permission android:name="android.permission.ACCESS_SURFACE_FLINGER" />
+    <uses-permission android:name="android.permission.BIND_QUICK_SETTINGS_TILE" />
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
+
+    <permission
+        android:name="org.lineageos.pipacontrols.permission.REFRESH_SERVICE"
+        android:protectionLevel="signature" />
 
     <application
+        android:icon="@drawable/ic_pipa_controls"
         android:label="@string/pipa_controls_title"
         android:persistent="true"
         android:defaultToDeviceProtectedStorage="true"
@@ -62,7 +75,7 @@
                 android:resource="@string/pipa_controls_summary" />
             <meta-data
                 android:name="com.android.settings.order"
-                android:value="3" />
+                android:value="-20" />
         </activity>
 
         <activity
@@ -123,7 +136,7 @@
         <service
             android:name=".refreshrate.RefreshService"
             android:exported="false"
-            android:permission="RefreshService">
+            android:permission="org.lineageos.pipacontrols.permission.REFRESH_SERVICE">
         </service>
 
         <activity

@@ -1,0 +1,50 @@
+-keep class org.lineageos.pipacontrols.** {
+  *;
+}
+
+-keep class org.lineageos.pipacontrols.CustomSeekBarPreference {
+  *;
+}
+
+-keep class * extends androidx.preference.PreferenceFragmentCompat {
+  *;
+}
+-keep class * extends androidx.fragment.app.Fragment {
+  *;
+}
+
+-keep class * extends android.content.BroadcastReceiver {
+  *;
+}
+
+-keep class * extends android.app.Service {
+  *;
+}
+
+-keep class * extends android.app.Activity {
+  *;
+}
+
+-keep class * extends android.service.quicksettings.TileService {
+  *;
+}
+
+-keep class com.android.settingslib.applications.ApplicationsState {
+  *;
+}
+-keep class com.android.settingslib.applications.ApplicationsState$* {
+  *;
+}
+
+-keep class com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity {
+  *;
+}
+
+-keep class com.android.settingslib.widget.** {
+  *;
+}
+
+-keepattributes InnerClasses
+-keepattributes EnclosingMethod
+
+-keepattributes SourceFile,LineNumberTable
