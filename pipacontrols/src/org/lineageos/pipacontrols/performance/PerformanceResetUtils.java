@@ -13,12 +13,14 @@ import android.util.Log;
 import androidx.preference.PreferenceManager;
 
 import org.lineageos.pipacontrols.apppriority.AppPriorityUtils;
+import org.lineageos.pipacontrols.performance.cpugovernor.CpuGovernorUtils;
 
 public final class PerformanceResetUtils {
 
     private static final String TAG = "PerformanceReset";
 
     private static final String[] PERF_KEYS = {
+        CpuGovernorUtils.PREF_KEY,
         AppPriorityUtils.PREF_KEY,
     };
 
@@ -28,11 +30,10 @@ public final class PerformanceResetUtils {
         SharedPreferences.Editor editor =
             PreferenceManager.getDefaultSharedPreferences(context).edit();
 
-        for (String key : PERF_KEYS) {
-            editor.remove(key);
-        }
+        for (String key : PERF_KEYS) editor.remove(key);
         editor.apply();
 
+        CpuGovernorUtils.apply(CpuGovernorUtils.GOV_SCHEDUTIL);
         AppPriorityUtils.apply(AppPriorityUtils.LEVEL_OFF);
 
         Log.i(TAG, "All performance settings reset to defaults");

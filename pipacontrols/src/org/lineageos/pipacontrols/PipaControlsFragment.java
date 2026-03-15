@@ -23,6 +23,8 @@ import org.lineageos.pipacontrols.bypasscharging.BypassChargingUtils;
 import org.lineageos.pipacontrols.keyboard.KeyboardSettingsActivity;
 import org.lineageos.pipacontrols.lid.LidSettingsActivity;
 import org.lineageos.pipacontrols.performance.PerformanceResetUtils;
+import org.lineageos.pipacontrols.performance.cpugovernor.CpuGovernorActivity;
+import org.lineageos.pipacontrols.performance.cpugovernor.CpuGovernorUtils;
 import org.lineageos.pipacontrols.refreshrate.RefreshActivity;
 import org.lineageos.pipacontrols.refreshrate.RefreshUtils;
 import org.lineageos.pipacontrols.saturation.SaturationActivity;
@@ -43,22 +45,26 @@ public class PipaControlsFragment extends PreferenceFragmentCompat {
         wireActivity("pipa_saturation",      SaturationActivity.class);
         wireActivity("pipa_refresh_rate",    RefreshActivity.class);
         wireActivity("pipa_app_priority",    AppPriorityActivity.class);
+        wireActivity("pipa_cpu_governor",    CpuGovernorActivity.class);
 
-        // Disable bypass charging if kernel node is missing
         Preference bypassPref = findPreference("pipa_bypass_charging");
         if (bypassPref != null && !BypassChargingUtils.isSupported()) {
             bypassPref.setEnabled(false);
             bypassPref.setSummary(R.string.bypass_charging_not_supported);
         }
 
-        // Disable app priority if stune cgroup nodes are missing
         Preference appPriorityPref = findPreference("pipa_app_priority");
         if (appPriorityPref != null && !AppPriorityUtils.isSupported()) {
             appPriorityPref.setEnabled(false);
             appPriorityPref.setSummary(R.string.app_priority_not_supported);
         }
 
-        // Global reset — confirmation dialog before wiping anything
+        Preference cpuGovPref = findPreference("pipa_cpu_governor");
+        if (cpuGovPref != null && !CpuGovernorUtils.isSupported()) {
+            cpuGovPref.setEnabled(false);
+            cpuGovPref.setSummary(R.string.cpu_governor_not_supported);
+        }
+
         Preference resetPref = findPreference("pipa_reset_all");
         if (resetPref != null) {
             resetPref.setOnPreferenceClickListener(p -> {

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      Copyright (C) 2023-2026 The LineageOS Project
-
      SPDX-License-Identifier: Apache-2.0
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -137,6 +136,13 @@
         <activity
             android:name=".apppriority.AppPriorityActivity"
             android:label="@string/app_priority_title"
+            android:theme="@style/Theme.AppSubSettings"
+            android:exported="false">
+        </activity>
+
+        <activity
+            android:name=".performance.cpugovernor.CpuGovernorActivity"
+            android:label="@string/cpu_governor_title"
             android:theme="@style/Theme.AppSubSettings"
             android:exported="false">
         </activity>

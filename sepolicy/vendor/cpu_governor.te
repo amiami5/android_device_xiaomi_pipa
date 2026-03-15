@@ -1,0 +1,4 @@
+# CPU Governor — write access to scaling_governor for all CPU policies
+
+allow system_app sysfs_devices_system_cpu:dir  { open read search };
+allow system_app sysfs_devices_system_cpu:file { open read write getattr };

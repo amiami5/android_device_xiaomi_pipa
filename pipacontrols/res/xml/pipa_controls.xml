@@ -49,6 +49,11 @@
         android:title="@string/pipa_category_performance">
 
         <Preference
+            android:key="pipa_cpu_governor"
+            android:title="@string/cpu_governor_title"
+            android:summary="@string/cpu_governor_summary" />
+
+        <Preference
             android:key="pipa_app_priority"
             android:title="@string/app_priority_title"
             android:summary="@string/app_priority_summary" />
@@ -58,7 +63,7 @@
     <PreferenceCategory
         android:key="category_touch"
         android:title="@string/pipa_category_touch">
-        <!-- Touch and Input features will be added here -->
+        <!-- Touch and Input features coming soon -->
     </PreferenceCategory>
 
     <PreferenceCategory

@@ -78,6 +78,15 @@
     <string name="app_priority_high_warning_inline">may increase background app kill rate</string>
     <string name="app_priority_footer">Raises the CPU scheduling priority of the app currently on screen and, at higher levels, the foreground app stack.\n\n<b>Off</b> — no boost applied (system default).\n<b>Low</b> — mild boost to the top app only.\n<b>Medium</b> — moderate boost to both the top app and foreground apps.\n<b>High</b> — strong boost to the top app and foreground apps. At this level the kernel may reclaim memory from background apps sooner, which can cause apps to reload when you switch back to them.\n\nValues are reapplied automatically after reboot.</string>
 
+    <!-- CPU Governor -->
+    <string name="cpu_governor_title">CPU Governor</string>
+    <string name="cpu_governor_summary">Controls how the CPU scales its frequency</string>
+    <string name="cpu_governor_not_supported">Not supported by the current kernel</string>
+    <string name="cpu_governor_schedutil">Smart — schedutil (Recommended)</string>
+    <string name="cpu_governor_performance">Performance — always max frequency</string>
+    <string name="cpu_governor_powersave">Power Save — always min frequency</string>
+    <string name="cpu_governor_footer"><b>Smart (schedutil)</b> — Scales CPU frequency based on actual scheduler load. Best balance of performance and battery for everyday use.\n\n<b>Performance</b> — Locks all CPU cores to maximum frequency at all times. Gives the most consistent performance but drains battery faster and runs hotter. Recommended for sustained gaming sessions.\n\n<b>Power Save</b> — Locks all cores to minimum frequency. Significantly reduces battery drain but makes the device feel sluggish. Only useful for very light tasks like reading.\n\nNote: The CPU governor may be temporarily overridden by the system during app launches or touch events. This is normal behaviour.\n\nThis setting is reapplied automatically after reboot.</string>
+
     <!-- Global Reset -->
     <string name="reset_all_title">Reset to defaults</string>
     <string name="reset_all_summary">Restore all Performance and Touch settings to their default values</string>

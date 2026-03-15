@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2023-2026 The LineageOS Project
+ * Copyright (C) 2026 nullpointer1101
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -18,6 +19,7 @@ import androidx.preference.PreferenceManager;
 
 import org.lineageos.pipacontrols.apppriority.AppPriorityUtils;
 import org.lineageos.pipacontrols.keyboard.KeyboardUtils;
+import org.lineageos.pipacontrols.performance.cpugovernor.CpuGovernorUtils;
 import org.lineageos.pipacontrols.stylus.PenUtils;
 
 import java.text.SimpleDateFormat;
@@ -58,6 +60,10 @@ public class BootCompletedReceiver extends BroadcastReceiver {
                 Log.e(TAG, ts() + "Pen init failed: " + e.getMessage()); }
         }
 
+        try { CpuGovernorUtils.restore(context); } catch (Exception e) {
+            Log.e(TAG, ts() + "CPU governor restore failed: " + e.getMessage()); }
+
+        // App priority — cgroup resets to 0 on every reboot
         try { AppPriorityUtils.restore(context); } catch (Exception e) {
             Log.e(TAG, ts() + "App priority restore failed: " + e.getMessage()); }
     }
