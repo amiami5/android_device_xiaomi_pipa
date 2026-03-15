@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2026 nullpointer1101
+     SPDX-License-Identifier: Apache-2.0
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/cpu_freq_cap_title">
+
+    <ListPreference
+        android:key="cpu_freq_cap_key"
+        android:title="@string/cpu_freq_cap_title"
+        android:entries="@array/cpu_freq_cap_entries"
+        android:entryValues="@array/cpu_freq_cap_values"
+        android:defaultValue="none"
+        android:persistent="true" />
+
+    <com.android.settingslib.widget.FooterPreference
+        android:key="cpu_freq_cap_footer"
+        android:title="@string/cpu_freq_cap_footer"
+        android:selectable="false" />
+
+</PreferenceScreen>

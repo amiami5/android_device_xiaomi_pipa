@@ -23,6 +23,8 @@ import org.lineageos.pipacontrols.bypasscharging.BypassChargingUtils;
 import org.lineageos.pipacontrols.keyboard.KeyboardSettingsActivity;
 import org.lineageos.pipacontrols.lid.LidSettingsActivity;
 import org.lineageos.pipacontrols.performance.PerformanceResetUtils;
+import org.lineageos.pipacontrols.performance.cpufreqcap.CpuFreqCapActivity;
+import org.lineageos.pipacontrols.performance.cpufreqcap.CpuFreqCapUtils;
 import org.lineageos.pipacontrols.performance.cpugovernor.CpuGovernorActivity;
 import org.lineageos.pipacontrols.performance.cpugovernor.CpuGovernorUtils;
 import org.lineageos.pipacontrols.refreshrate.RefreshActivity;
@@ -46,6 +48,7 @@ public class PipaControlsFragment extends PreferenceFragmentCompat {
         wireActivity("pipa_refresh_rate",    RefreshActivity.class);
         wireActivity("pipa_app_priority",    AppPriorityActivity.class);
         wireActivity("pipa_cpu_governor",    CpuGovernorActivity.class);
+        wireActivity("pipa_cpu_freq_cap",    CpuFreqCapActivity.class);
 
         Preference bypassPref = findPreference("pipa_bypass_charging");
         if (bypassPref != null && !BypassChargingUtils.isSupported()) {
@@ -63,6 +66,12 @@ public class PipaControlsFragment extends PreferenceFragmentCompat {
         if (cpuGovPref != null && !CpuGovernorUtils.isSupported()) {
             cpuGovPref.setEnabled(false);
             cpuGovPref.setSummary(R.string.cpu_governor_not_supported);
+        }
+
+        Preference cpuFreqCapPref = findPreference("pipa_cpu_freq_cap");
+        if (cpuFreqCapPref != null && !CpuFreqCapUtils.isSupported()) {
+            cpuFreqCapPref.setEnabled(false);
+            cpuFreqCapPref.setSummary(R.string.cpu_freq_cap_not_supported);
         }
 
         Preference resetPref = findPreference("pipa_reset_all");

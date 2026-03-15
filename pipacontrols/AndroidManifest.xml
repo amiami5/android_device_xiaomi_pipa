@@ -147,5 +147,12 @@
             android:exported="false">
         </activity>
 
+        <activity
+            android:name=".performance.cpufreqcap.CpuFreqCapActivity"
+            android:label="@string/cpu_freq_cap_title"
+            android:theme="@style/Theme.AppSubSettings"
+            android:exported="false">
+        </activity>
+
     </application>
 </manifest>

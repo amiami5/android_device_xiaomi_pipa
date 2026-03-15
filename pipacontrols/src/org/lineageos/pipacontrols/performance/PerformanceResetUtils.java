@@ -13,6 +13,7 @@ import android.util.Log;
 import androidx.preference.PreferenceManager;
 
 import org.lineageos.pipacontrols.apppriority.AppPriorityUtils;
+import org.lineageos.pipacontrols.performance.cpufreqcap.CpuFreqCapUtils;
 import org.lineageos.pipacontrols.performance.cpugovernor.CpuGovernorUtils;
 
 public final class PerformanceResetUtils {
@@ -21,6 +22,7 @@ public final class PerformanceResetUtils {
 
     private static final String[] PERF_KEYS = {
         CpuGovernorUtils.PREF_KEY,
+        CpuFreqCapUtils.PREF_KEY,
         AppPriorityUtils.PREF_KEY,
     };
 
@@ -34,6 +36,7 @@ public final class PerformanceResetUtils {
         editor.apply();
 
         CpuGovernorUtils.apply(CpuGovernorUtils.GOV_SCHEDUTIL);
+        CpuFreqCapUtils.apply(CpuFreqCapUtils.CAP_NONE);
         AppPriorityUtils.apply(AppPriorityUtils.LEVEL_OFF);
 
         Log.i(TAG, "All performance settings reset to defaults");

@@ -76,7 +76,7 @@
     <string name="app_priority_summary">Boost CPU scheduling for the active app</string>
     <string name="app_priority_not_supported">Not supported by the current kernel</string>
     <string name="app_priority_high_warning_inline">may increase background app kill rate</string>
-    <string name="app_priority_footer">Raises the CPU scheduling priority of the app currently on screen and, at higher levels, the foreground app stack.\n\n<b>Off</b> — no boost applied (system default).\n<b>Low</b> — mild boost to the top app only.\n<b>Medium</b> — moderate boost to both the top app and foreground apps.\n<b>High</b> — strong boost to the top app and foreground apps. At this level the kernel may reclaim memory from background apps sooner, which can cause apps to reload when you switch back to them.\n\nValues are reapplied automatically after reboot.</string>
+    <string name="app_priority_footer">Raises the CPU scheduling priority of the app currently on screen and, at higher levels, the foreground app stack.\n\n<b>Off</b> — no boost applied (system default).\n<b>Low</b> — mild boost to the top app only.\n<b>Medium</b> — moderate boost to both the top app and foreground apps.\n<b>High</b> — strong boost. At this level the kernel may reclaim memory from background apps sooner, which can cause apps to reload when you switch back to them.\n\nReapplied automatically after reboot.</string>
 
     <!-- CPU Governor -->
     <string name="cpu_governor_title">CPU Governor</string>
@@ -85,7 +85,17 @@
     <string name="cpu_governor_schedutil">Smart — schedutil (Recommended)</string>
     <string name="cpu_governor_performance">Performance — always max frequency</string>
     <string name="cpu_governor_powersave">Power Save — always min frequency</string>
-    <string name="cpu_governor_footer"><b>Smart (schedutil)</b> — Scales CPU frequency based on actual scheduler load. Best balance of performance and battery for everyday use.\n\n<b>Performance</b> — Locks all CPU cores to maximum frequency at all times. Gives the most consistent performance but drains battery faster and runs hotter. Recommended for sustained gaming sessions.\n\n<b>Power Save</b> — Locks all cores to minimum frequency. Significantly reduces battery drain but makes the device feel sluggish. Only useful for very light tasks like reading.\n\nNote: The CPU governor may be temporarily overridden by the system during app launches or touch events. This is normal behaviour.\n\nThis setting is reapplied automatically after reboot.</string>
+    <string name="cpu_governor_footer"><b>Smart (schedutil)</b> — Scales CPU frequency based on actual scheduler load. Best balance of performance and battery for everyday use.\n\n<b>Performance</b> — Locks all CPU cores to maximum frequency at all times. Most consistent performance but drains battery faster and runs hotter. Recommended for sustained gaming.\n\n<b>Power Save</b> — Locks all cores to minimum frequency. Reduces battery drain significantly but makes the device feel sluggish. Only useful for very light tasks.\n\nNote: The governor may be temporarily overridden by the system during app launches or touch events. This is normal.\n\nReapplied automatically after reboot.</string>
+
+    <!-- CPU Frequency Cap -->
+    <string name="cpu_freq_cap_title">CPU Frequency Cap</string>
+    <string name="cpu_freq_cap_summary">Limit the maximum speed of the main CPU core</string>
+    <string name="cpu_freq_cap_not_supported">Not supported by the current kernel</string>
+    <string name="cpu_freq_cap_none">No Cap (Default)</string>
+    <string name="cpu_freq_cap_high">High — 2.4 GHz</string>
+    <string name="cpu_freq_cap_medium">Medium — 1.6 GHz</string>
+    <string name="cpu_freq_cap_low">Low — 1.3 GHz</string>
+    <string name="cpu_freq_cap_footer">Limits the maximum clock speed of the PRIME CPU core (cpu7). Only the top core is capped — LITTLE and BIG cores are unaffected.\n\nUseful for reducing device temperature and battery drain during long gaming or video sessions where peak performance is not needed.\n\n<b>Warning:</b> Setting this too low will cause noticeable performance drops in demanding apps and games. If the device feels sluggish, raise the cap or remove it entirely.\n\nReapplied automatically after reboot.</string>
 
     <!-- Global Reset -->
     <string name="reset_all_title">Reset to defaults</string>
