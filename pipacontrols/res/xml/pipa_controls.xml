@@ -93,7 +93,22 @@
     <PreferenceCategory
         android:key="category_touch"
         android:title="@string/pipa_category_touch">
-        <!-- Touch and Input features coming soon -->
+
+        <Preference
+            android:key="pipa_touch_boost"
+            android:title="@string/touch_boost_title"
+            android:summary="@string/touch_boost_summary" />
+
+        <Preference
+            android:key="pipa_big_cores_touch"
+            android:title="@string/big_cores_touch_title"
+            android:summary="@string/big_cores_touch_summary" />
+
+        <Preference
+            android:key="pipa_boost_duration"
+            android:title="@string/boost_duration_title"
+            android:summary="@string/boost_duration_summary" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

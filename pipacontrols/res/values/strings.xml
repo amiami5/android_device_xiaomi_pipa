@@ -133,7 +133,7 @@
     <string name="core_migration_conservative">Conservative</string>
     <string name="core_migration_default">Default (Recommended)</string>
     <string name="core_migration_aggressive">Aggressive</string>
-    <string name="core_migration_footer">Controls the CPU load thresholds at which the kernel moves tasks from smaller cores to larger ones and back.\n\n<b>Conservative</b> — Tasks stay on LITTLE cores longer. Saves battery but may feel slightly slower during bursts.\n\n<b>Default</b> — Balanced thresholds. Good for everyday use.\n\n<b>Aggressive</b> — Tasks move to BIG and PRIME cores more readily. Improves responsiveness and reduces micro-stutters but increases battery drain, especially from background apps.\n\n<b>Warning:</b> Aggressive migration may increase background battery drain noticeably.\n\nReapplied automatically after reboot.</string>
+    <string name="core_migration_footer"><b>Conservative</b> — Tasks stay on LITTLE cores longer. Saves battery but may feel slightly slower during bursts.\n\n<b>Default</b> — Balanced thresholds. Good for everyday use.\n\n<b>Aggressive</b> — Tasks move to BIG and PRIME cores more readily. Improves responsiveness and reduces micro-stutters but increases battery drain, especially from background apps.\n\n<b>Warning:</b> Aggressive migration may increase background battery drain noticeably.\n\nReapplied automatically after reboot.</string>
 
     <!-- CPU Ramp Speed -->
     <string name="cpu_ramp_speed_title">CPU Ramp Speed</string>
@@ -142,7 +142,29 @@
     <string name="cpu_ramp_speed_battery">Battery</string>
     <string name="cpu_ramp_speed_default">Default (Recommended)</string>
     <string name="cpu_ramp_speed_responsive">Responsive</string>
-    <string name="cpu_ramp_speed_footer">Tunes the schedutil governor\'s hispeed frequency and load threshold — the frequency the CPU jumps to when it detects a sudden spike in workload.\n\n<b>Battery</b> — Lower hispeed targets. The CPU ramps up more slowly and conserves power. May feel slightly sluggish during short bursts like opening apps.\n\n<b>Default</b> — Balanced hispeed settings. Works well for general use.\n\n<b>Responsive</b> — Higher hispeed targets and a slower downscale rate. The CPU ramps up faster and stays elevated longer after a spike. Reduces stutter during fast interactions and gaming at the cost of slightly more power usage.\n\nOnly takes effect when CPU Governor is set to Smart (schedutil).\n\nReapplied automatically after reboot.</string>
+    <string name="cpu_ramp_speed_footer"><b>Battery</b> — Lower hispeed targets. The CPU ramps up more slowly and conserves power. May feel slightly sluggish during short bursts like opening apps.\n\n<b>Default</b> — Balanced hispeed settings. Works well for general use.\n\n<b>Responsive</b> — Higher hispeed targets and a slower downscale rate. The CPU ramps up faster and stays elevated longer after a spike. Reduces stutter during fast interactions and gaming at the cost of slightly more power usage.\n\nOnly takes effect when CPU Governor is set to Smart (schedutil).\n\nReapplied automatically after reboot.</string>
+
+    <!-- Touch Boost -->
+    <string name="touch_boost_title">Touch Boost</string>
+    <string name="touch_boost_summary">Briefly boost CPU speed on screen touches</string>
+    <string name="touch_boost_not_supported">Not supported by the current kernel</string>
+    <string name="touch_boost_footer">When enabled, the CPU briefly ramps up to a higher frequency whenever the screen is touched. This makes taps, swipes and scrolling feel snappier by ensuring the CPU is ready to handle input immediately.\n\nThe boost lasts for the duration set in Boost Duration, then the CPU returns to normal scaling.\n\nReapplied automatically after reboot.</string>
+
+    <!-- Big Cores on Touch -->
+    <string name="big_cores_touch_title">Prioritize Big Cores on Touch</string>
+    <string name="big_cores_touch_summary">Shift tasks to larger cores during touch events</string>
+    <string name="big_cores_touch_not_supported">Not supported by the current kernel</string>
+    <string name="big_cores_touch_footer">When enabled, the scheduler also migrates running tasks toward the BIG and PRIME CPU cores during touch events, on top of any frequency boost.\n\nWorks best when combined with Touch Boost. Improves touch responsiveness in apps that have work queued up at the moment you interact with the screen.\n\nReapplied automatically after reboot.</string>
+
+    <!-- Boost Duration -->
+    <string name="boost_duration_title">Boost Duration</string>
+    <string name="boost_duration_summary">How long the CPU stays boosted after a touch</string>
+    <string name="boost_duration_not_supported">Not supported by the current kernel</string>
+    <string name="boost_duration_short">Short — 40ms</string>
+    <string name="boost_duration_normal">Normal — 80ms</string>
+    <string name="boost_duration_default">Default — 120ms (Recommended)</string>
+    <string name="boost_duration_long">Long — 200ms</string>
+    <string name="boost_duration_footer">Controls how many milliseconds the CPU stays at boosted frequency after a touch event.\n\n<b>Short (40ms)</b> — Minimal boost. Saves battery but may not cover the full response cycle for heavier apps.\n\n<b>Normal (80ms)</b> — A lighter option that still covers most UI interactions.\n\n<b>Default (120ms)</b> — The kernel default. Covers the full UI response cycle for most apps.\n\n<b>Long (200ms)</b> — Extended boost. Useful for apps with slow frame rendering, but increases battery drain noticeably with frequent touch input.\n\nThis setting only takes effect when Touch Boost is enabled.\n\nReapplied automatically after reboot.</string>
 
     <!-- Global Reset -->
     <string name="reset_all_title">Reset to defaults</string>

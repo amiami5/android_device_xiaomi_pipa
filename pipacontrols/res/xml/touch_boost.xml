@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2026 nullpointer1101
+     SPDX-License-Identifier: Apache-2.0
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/touch_boost_title">
+
+    <SwitchPreference
+        android:key="touch_boost_key"
+        android:title="@string/touch_boost_title"
+        android:defaultValue="true"
+        android:persistent="true" />
+
+    <com.android.settingslib.widget.FooterPreference
+        android:key="touch_boost_footer"
+        android:title="@string/touch_boost_footer"
+        android:selectable="false" />
+
+</PreferenceScreen>

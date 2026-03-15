@@ -27,6 +27,9 @@ import org.lineageos.pipacontrols.performance.cpuscheduler.PreferBigCoresUtils;
 import org.lineageos.pipacontrols.performance.gpufreqcap.GpuFreqCapUtils;
 import org.lineageos.pipacontrols.performance.gpugovernor.GpuGovernorUtils;
 import org.lineageos.pipacontrols.stylus.PenUtils;
+import org.lineageos.pipacontrols.touch.BigCoresTouchUtils;
+import org.lineageos.pipacontrols.touch.BoostDurationUtils;
+import org.lineageos.pipacontrols.touch.TouchBoostUtils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -86,6 +89,13 @@ public class BootCompletedReceiver extends BroadcastReceiver {
 
         try { CpuRampSpeedUtils.restore(context); } catch (Exception e) {
             Log.e(TAG, ts() + "CPU ramp speed restore failed: " + e.getMessage()); }
+
+        // Touch Boost restore handles the input_boost_ms write using saved duration
+        try { TouchBoostUtils.restore(context); } catch (Exception e) {
+            Log.e(TAG, ts() + "Touch boost restore failed: " + e.getMessage()); }
+
+        try { BigCoresTouchUtils.restore(context); } catch (Exception e) {
+            Log.e(TAG, ts() + "Big cores on touch restore failed: " + e.getMessage()); }
 
         // App priority — cgroup resets to 0 on every reboot
         try { AppPriorityUtils.restore(context); } catch (Exception e) {

@@ -20,6 +20,9 @@ import org.lineageos.pipacontrols.performance.cpuscheduler.CpuRampSpeedUtils;
 import org.lineageos.pipacontrols.performance.cpuscheduler.PreferBigCoresUtils;
 import org.lineageos.pipacontrols.performance.gpufreqcap.GpuFreqCapUtils;
 import org.lineageos.pipacontrols.performance.gpugovernor.GpuGovernorUtils;
+import org.lineageos.pipacontrols.touch.BigCoresTouchUtils;
+import org.lineageos.pipacontrols.touch.BoostDurationUtils;
+import org.lineageos.pipacontrols.touch.TouchBoostUtils;
 
 public final class PerformanceResetUtils {
 
@@ -34,6 +37,9 @@ public final class PerformanceResetUtils {
         CoreMigrationUtils.PREF_KEY,
         CpuRampSpeedUtils.PREF_KEY,
         AppPriorityUtils.PREF_KEY,
+        TouchBoostUtils.PREF_KEY,
+        BigCoresTouchUtils.PREF_KEY,
+        BoostDurationUtils.PREF_KEY,
     };
 
     private PerformanceResetUtils() {}
@@ -53,7 +59,10 @@ public final class PerformanceResetUtils {
         CoreMigrationUtils.apply(CoreMigrationUtils.PRESET_DEFAULT);
         CpuRampSpeedUtils.apply(CpuRampSpeedUtils.PRESET_DEFAULT);
         AppPriorityUtils.apply(AppPriorityUtils.LEVEL_OFF);
+        // Touch Boost default is on at 120ms — restore writes the default duration
+        TouchBoostUtils.apply(true, context);
+        BigCoresTouchUtils.apply(false);
 
-        Log.i(TAG, "All performance settings reset to defaults");
+        Log.i(TAG, "All performance and touch settings reset to defaults");
     }
 }

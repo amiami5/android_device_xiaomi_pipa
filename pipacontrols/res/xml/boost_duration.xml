@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2026 nullpointer1101
+     SPDX-License-Identifier: Apache-2.0
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/boost_duration_title">
+
+    <ListPreference
+        android:key="boost_duration_key"
+        android:title="@string/boost_duration_title"
+        android:entries="@array/boost_duration_entries"
+        android:entryValues="@array/boost_duration_values"
+        android:defaultValue="120"
+        android:persistent="true" />
+
+    <com.android.settingslib.widget.FooterPreference
+        android:key="boost_duration_footer"
+        android:title="@string/boost_duration_footer"
+        android:selectable="false" />
+
+</PreferenceScreen>

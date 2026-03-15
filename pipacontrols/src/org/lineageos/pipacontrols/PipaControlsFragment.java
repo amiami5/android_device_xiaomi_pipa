@@ -41,6 +41,12 @@ import org.lineageos.pipacontrols.refreshrate.RefreshActivity;
 import org.lineageos.pipacontrols.refreshrate.RefreshUtils;
 import org.lineageos.pipacontrols.saturation.SaturationActivity;
 import org.lineageos.pipacontrols.stylus.StylusSettingsActivity;
+import org.lineageos.pipacontrols.touch.BigCoresTouchActivity;
+import org.lineageos.pipacontrols.touch.BigCoresTouchUtils;
+import org.lineageos.pipacontrols.touch.BoostDurationActivity;
+import org.lineageos.pipacontrols.touch.BoostDurationUtils;
+import org.lineageos.pipacontrols.touch.TouchBoostActivity;
+import org.lineageos.pipacontrols.touch.TouchBoostUtils;
 
 public class PipaControlsFragment extends PreferenceFragmentCompat {
 
@@ -64,16 +70,22 @@ public class PipaControlsFragment extends PreferenceFragmentCompat {
         wireActivity("pipa_prefer_big_cores",  PreferBigCoresActivity.class);
         wireActivity("pipa_core_migration",    CoreMigrationActivity.class);
         wireActivity("pipa_cpu_ramp_speed",    CpuRampSpeedActivity.class);
+        wireActivity("pipa_touch_boost",       TouchBoostActivity.class);
+        wireActivity("pipa_big_cores_touch",   BigCoresTouchActivity.class);
+        wireActivity("pipa_boost_duration",    BoostDurationActivity.class);
 
-        checkSupported("pipa_bypass_charging", BypassChargingUtils.isSupported(),   R.string.bypass_charging_not_supported);
-        checkSupported("pipa_app_priority",    AppPriorityUtils.isSupported(),      R.string.app_priority_not_supported);
-        checkSupported("pipa_cpu_governor",    CpuGovernorUtils.isSupported(),      R.string.cpu_governor_not_supported);
-        checkSupported("pipa_cpu_freq_cap",    CpuFreqCapUtils.isSupported(),       R.string.cpu_freq_cap_not_supported);
-        checkSupported("pipa_gpu_governor",    GpuGovernorUtils.isSupported(),      R.string.gpu_governor_not_supported);
-        checkSupported("pipa_gpu_freq_cap",    GpuFreqCapUtils.isSupported(),       R.string.gpu_freq_cap_not_supported);
-        checkSupported("pipa_prefer_big_cores",PreferBigCoresUtils.isSupported(),   R.string.prefer_big_cores_not_supported);
-        checkSupported("pipa_core_migration",  CoreMigrationUtils.isSupported(),    R.string.core_migration_not_supported);
-        checkSupported("pipa_cpu_ramp_speed",  CpuRampSpeedUtils.isSupported(),     R.string.cpu_ramp_speed_not_supported);
+        checkSupported("pipa_bypass_charging",  BypassChargingUtils.isSupported(),  R.string.bypass_charging_not_supported);
+        checkSupported("pipa_app_priority",     AppPriorityUtils.isSupported(),     R.string.app_priority_not_supported);
+        checkSupported("pipa_cpu_governor",     CpuGovernorUtils.isSupported(),     R.string.cpu_governor_not_supported);
+        checkSupported("pipa_cpu_freq_cap",     CpuFreqCapUtils.isSupported(),      R.string.cpu_freq_cap_not_supported);
+        checkSupported("pipa_gpu_governor",     GpuGovernorUtils.isSupported(),     R.string.gpu_governor_not_supported);
+        checkSupported("pipa_gpu_freq_cap",     GpuFreqCapUtils.isSupported(),      R.string.gpu_freq_cap_not_supported);
+        checkSupported("pipa_prefer_big_cores", PreferBigCoresUtils.isSupported(),  R.string.prefer_big_cores_not_supported);
+        checkSupported("pipa_core_migration",   CoreMigrationUtils.isSupported(),   R.string.core_migration_not_supported);
+        checkSupported("pipa_cpu_ramp_speed",   CpuRampSpeedUtils.isSupported(),    R.string.cpu_ramp_speed_not_supported);
+        checkSupported("pipa_touch_boost",      TouchBoostUtils.isSupported(),      R.string.touch_boost_not_supported);
+        checkSupported("pipa_big_cores_touch",  BigCoresTouchUtils.isSupported(),   R.string.big_cores_touch_not_supported);
+        checkSupported("pipa_boost_duration",   BoostDurationUtils.isSupported(),   R.string.boost_duration_not_supported);
 
         Preference resetPref = findPreference("pipa_reset_all");
         if (resetPref != null) {

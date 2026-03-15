@@ -1,0 +1,3 @@
+# system_app — write access to cpu_boost sysfs nodes
+allow system_app sysfs_devices_system_cpu:dir  { open read search };
+allow system_app sysfs_devices_system_cpu:file { open read write getattr };

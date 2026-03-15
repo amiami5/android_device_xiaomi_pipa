@@ -114,4 +114,18 @@
         <item>responsive</item>
     </string-array>
 
+    <!-- Boost Duration -->
+    <string-array name="boost_duration_entries">
+        <item>@string/boost_duration_short</item>
+        <item>@string/boost_duration_normal</item>
+        <item>@string/boost_duration_default</item>
+        <item>@string/boost_duration_long</item>
+    </string-array>
+    <string-array name="boost_duration_values">
+        <item>40</item>
+        <item>80</item>
+        <item>120</item>
+        <item>200</item>
+    </string-array>
+
 </resources>

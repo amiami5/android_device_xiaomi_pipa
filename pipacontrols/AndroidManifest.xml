@@ -189,5 +189,26 @@
             android:exported="false">
         </activity>
 
+        <activity
+            android:name=".touch.TouchBoostActivity"
+            android:label="@string/touch_boost_title"
+            android:theme="@style/Theme.AppSubSettings"
+            android:exported="false">
+        </activity>
+
+        <activity
+            android:name=".touch.BigCoresTouchActivity"
+            android:label="@string/big_cores_touch_title"
+            android:theme="@style/Theme.AppSubSettings"
+            android:exported="false">
+        </activity>
+
+        <activity
+            android:name=".touch.BoostDurationActivity"
+            android:label="@string/boost_duration_title"
+            android:theme="@style/Theme.AppSubSettings"
+            android:exported="false">
+        </activity>
+
     </application>
 </manifest>
