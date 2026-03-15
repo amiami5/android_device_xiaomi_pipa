@@ -21,6 +21,7 @@ import org.lineageos.pipacontrols.apppriority.AppPriorityUtils;
 import org.lineageos.pipacontrols.keyboard.KeyboardUtils;
 import org.lineageos.pipacontrols.performance.cpufreqcap.CpuFreqCapUtils;
 import org.lineageos.pipacontrols.performance.cpugovernor.CpuGovernorUtils;
+import org.lineageos.pipacontrols.performance.gpufreqcap.GpuFreqCapUtils;
 import org.lineageos.pipacontrols.performance.gpugovernor.GpuGovernorUtils;
 import org.lineageos.pipacontrols.stylus.PenUtils;
 
@@ -70,6 +71,9 @@ public class BootCompletedReceiver extends BroadcastReceiver {
 
         try { GpuGovernorUtils.restore(context); } catch (Exception e) {
             Log.e(TAG, ts() + "GPU governor restore failed: " + e.getMessage()); }
+
+        try { GpuFreqCapUtils.restore(context); } catch (Exception e) {
+            Log.e(TAG, ts() + "GPU freq cap restore failed: " + e.getMessage()); }
 
         // App priority — cgroup resets to 0 on every reboot
         try { AppPriorityUtils.restore(context); } catch (Exception e) {

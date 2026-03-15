@@ -72,4 +72,22 @@
         <item>simple_ondemand</item>
     </string-array>
 
+    <!-- GPU Frequency Cap -->
+    <string-array name="gpu_freq_cap_entries">
+        <item>@string/gpu_freq_cap_none</item>
+        <item>@string/gpu_freq_cap_high</item>
+        <item>@string/gpu_freq_cap_medium</item>
+        <item>@string/gpu_freq_cap_balanced</item>
+        <item>@string/gpu_freq_cap_low</item>
+        <item>@string/gpu_freq_cap_min</item>
+    </string-array>
+    <string-array name="gpu_freq_cap_values">
+        <item>670000000</item>
+        <item>587000000</item>
+        <item>525000000</item>
+        <item>490000000</item>
+        <item>400000000</item>
+        <item>305000000</item>
+    </string-array>
+
 </resources>

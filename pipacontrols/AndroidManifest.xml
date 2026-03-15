@@ -161,5 +161,12 @@
             android:exported="false">
         </activity>
 
+        <activity
+            android:name=".performance.gpufreqcap.GpuFreqCapActivity"
+            android:label="@string/gpu_freq_cap_title"
+            android:theme="@style/Theme.AppSubSettings"
+            android:exported="false">
+        </activity>
+
     </application>
 </manifest>

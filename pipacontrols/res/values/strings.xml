@@ -108,6 +108,18 @@
     <string name="gpu_governor_simple_ondemand">On Demand — simple_ondemand</string>
     <string name="gpu_governor_footer"><b>Smart (msm-adreno-tz)</b> — Qualcomm\'s thermal-aware GPU governor. Scales GPU frequency intelligently based on load and temperature. Best for everyday use and gaming.\n\n<b>Performance</b> — Locks the GPU at maximum frequency (670 MHz) at all times. Delivers the most consistent frame rates but increases heat and battery drain. Best for demanding games where stable GPU performance matters more than temperature.\n\n<b>Power Save</b> — Locks the GPU at minimum frequency (305 MHz). Drastically reduces battery drain but makes any GPU-heavy tasks feel slow. Only suitable for simple 2D tasks.\n\n<b>On Demand</b> — A generic frequency scaling governor. Ramps GPU frequency up quickly on load but without the thermal awareness of msm-adreno-tz.\n\nReapplied automatically after reboot.</string>
 
+    <!-- GPU Frequency Cap -->
+    <string name="gpu_freq_cap_title">GPU Frequency Cap</string>
+    <string name="gpu_freq_cap_summary">Limit the maximum clock speed of the Adreno GPU</string>
+    <string name="gpu_freq_cap_not_supported">Not supported by the current kernel</string>
+    <string name="gpu_freq_cap_none">No Cap — 670 MHz (Default)</string>
+    <string name="gpu_freq_cap_high">High — 587 MHz</string>
+    <string name="gpu_freq_cap_medium">Medium — 525 MHz</string>
+    <string name="gpu_freq_cap_balanced">Balanced — 490 MHz</string>
+    <string name="gpu_freq_cap_low">Low — 400 MHz</string>
+    <string name="gpu_freq_cap_min">Minimum — 305 MHz</string>
+    <string name="gpu_freq_cap_footer">Limits the maximum clock speed of the Adreno GPU. Useful for reducing heat and stabilising frame rates during long gaming sessions — a capped GPU running consistently at a lower frequency often feels smoother than one that throttles unpredictably under thermal pressure.\n\n<b>Tip for gaming:</b> Try 490 MHz or 525 MHz for a good balance of stable frame rates and manageable temperatures.\n\n<b>Warning:</b> Setting this too low will cause visible frame drops and stuttering in GPU-heavy games and apps. If graphics feel slow or choppy, raise the cap.\n\nReapplied automatically after reboot.</string>
+
     <!-- Global Reset -->
     <string name="reset_all_title">Reset to defaults</string>
     <string name="reset_all_summary">Restore all Performance and Touch settings to their default values</string>

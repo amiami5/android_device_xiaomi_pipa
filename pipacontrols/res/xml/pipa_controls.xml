@@ -64,6 +64,11 @@
             android:summary="@string/gpu_governor_summary" />
 
         <Preference
+            android:key="pipa_gpu_freq_cap"
+            android:title="@string/gpu_freq_cap_title"
+            android:summary="@string/gpu_freq_cap_summary" />
+
+        <Preference
             android:key="pipa_app_priority"
             android:title="@string/app_priority_title"
             android:summary="@string/app_priority_summary" />

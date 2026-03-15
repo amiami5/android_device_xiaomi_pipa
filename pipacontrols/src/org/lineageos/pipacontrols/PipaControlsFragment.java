@@ -27,6 +27,8 @@ import org.lineageos.pipacontrols.performance.cpufreqcap.CpuFreqCapActivity;
 import org.lineageos.pipacontrols.performance.cpufreqcap.CpuFreqCapUtils;
 import org.lineageos.pipacontrols.performance.cpugovernor.CpuGovernorActivity;
 import org.lineageos.pipacontrols.performance.cpugovernor.CpuGovernorUtils;
+import org.lineageos.pipacontrols.performance.gpufreqcap.GpuFreqCapActivity;
+import org.lineageos.pipacontrols.performance.gpufreqcap.GpuFreqCapUtils;
 import org.lineageos.pipacontrols.performance.gpugovernor.GpuGovernorActivity;
 import org.lineageos.pipacontrols.performance.gpugovernor.GpuGovernorUtils;
 import org.lineageos.pipacontrols.refreshrate.RefreshActivity;
@@ -52,6 +54,7 @@ public class PipaControlsFragment extends PreferenceFragmentCompat {
         wireActivity("pipa_cpu_governor",    CpuGovernorActivity.class);
         wireActivity("pipa_cpu_freq_cap",    CpuFreqCapActivity.class);
         wireActivity("pipa_gpu_governor",    GpuGovernorActivity.class);
+        wireActivity("pipa_gpu_freq_cap",    GpuFreqCapActivity.class);
 
         Preference bypassPref = findPreference("pipa_bypass_charging");
         if (bypassPref != null && !BypassChargingUtils.isSupported()) {
@@ -81,6 +84,12 @@ public class PipaControlsFragment extends PreferenceFragmentCompat {
         if (gpuGovPref != null && !GpuGovernorUtils.isSupported()) {
             gpuGovPref.setEnabled(false);
             gpuGovPref.setSummary(R.string.gpu_governor_not_supported);
+        }
+
+        Preference gpuFreqCapPref = findPreference("pipa_gpu_freq_cap");
+        if (gpuFreqCapPref != null && !GpuFreqCapUtils.isSupported()) {
+            gpuFreqCapPref.setEnabled(false);
+            gpuFreqCapPref.setSummary(R.string.gpu_freq_cap_not_supported);
         }
 
         Preference resetPref = findPreference("pipa_reset_all");
