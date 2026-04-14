@@ -14,6 +14,7 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
 import org.lineageos.pipacontrols.R;
+import org.lineageos.pipacontrols.utils.KernelExecutor;
 
 public class AppPriorityFragment extends PreferenceFragmentCompat
         implements Preference.OnPreferenceChangeListener {
@@ -42,7 +43,7 @@ public class AppPriorityFragment extends PreferenceFragmentCompat
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         String level = (String) newValue;
-        new Thread(() -> AppPriorityUtils.apply(level), "app-priority-apply").start();
+        KernelExecutor.submit(() -> AppPriorityUtils.apply(level));
         updateSummary(level);
         Log.i(TAG, "Priority changed to: " + level);
         return true;
@@ -51,7 +52,6 @@ public class AppPriorityFragment extends PreferenceFragmentCompat
     private void updateSummary(String level) {
         if (mPriorityPref == null || level == null) return;
         CharSequence entry = mPriorityPref.getEntries()[mPriorityPref.findIndexOfValue(level)];
-        // Append inline warning only when High is selected
         if (AppPriorityUtils.LEVEL_HIGH.equals(level)) {
             mPriorityPref.setSummary(entry + " — " + getString(R.string.app_priority_high_warning_inline));
         } else {

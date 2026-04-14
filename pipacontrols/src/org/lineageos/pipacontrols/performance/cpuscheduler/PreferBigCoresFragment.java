@@ -14,6 +14,7 @@ import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.SwitchPreference;
 
 import org.lineageos.pipacontrols.R;
+import org.lineageos.pipacontrols.utils.KernelExecutor;
 
 public class PreferBigCoresFragment extends PreferenceFragmentCompat
         implements Preference.OnPreferenceChangeListener {
@@ -41,7 +42,7 @@ public class PreferBigCoresFragment extends PreferenceFragmentCompat
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         boolean enabled = (Boolean) newValue;
-        new Thread(() -> PreferBigCoresUtils.apply(enabled), "prefer-big-cores-apply").start();
+        KernelExecutor.submit(() -> PreferBigCoresUtils.apply(enabled));
         Log.i(TAG, "Prefer big cores: " + enabled);
         return true;
     }

@@ -6,6 +6,7 @@
 
 package org.lineageos.pipacontrols.touch;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -14,6 +15,7 @@ import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.SwitchPreference;
 
 import org.lineageos.pipacontrols.R;
+import org.lineageos.pipacontrols.utils.KernelExecutor;
 
 public class TouchBoostFragment extends PreferenceFragmentCompat
         implements Preference.OnPreferenceChangeListener {
@@ -41,8 +43,8 @@ public class TouchBoostFragment extends PreferenceFragmentCompat
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         boolean enabled = (Boolean) newValue;
-        new Thread(() -> TouchBoostUtils.apply(enabled, requireContext()),
-                "touch-boost-apply").start();
+        Context appContext = requireContext().getApplicationContext();
+        KernelExecutor.submit(() -> TouchBoostUtils.apply(enabled, appContext));
         Log.i(TAG, "Touch boost: " + enabled);
         return true;
     }

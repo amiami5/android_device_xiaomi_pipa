@@ -14,6 +14,7 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
 import org.lineageos.pipacontrols.R;
+import org.lineageos.pipacontrols.utils.KernelExecutor;
 
 public class CpuRampSpeedFragment extends PreferenceFragmentCompat
         implements Preference.OnPreferenceChangeListener {
@@ -42,7 +43,7 @@ public class CpuRampSpeedFragment extends PreferenceFragmentCompat
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         String preset = (String) newValue;
-        new Thread(() -> CpuRampSpeedUtils.apply(preset), "cpu-ramp-speed-apply").start();
+        KernelExecutor.submit(() -> CpuRampSpeedUtils.apply(preset));
         updateSummary(preset);
         Log.i(TAG, "CPU ramp speed changed to: " + preset);
         return true;

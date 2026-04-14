@@ -14,6 +14,7 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
 import org.lineageos.pipacontrols.R;
+import org.lineageos.pipacontrols.utils.KernelExecutor;
 
 public class GpuGovernorFragment extends PreferenceFragmentCompat
         implements Preference.OnPreferenceChangeListener {
@@ -42,7 +43,7 @@ public class GpuGovernorFragment extends PreferenceFragmentCompat
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         String governor = (String) newValue;
-        new Thread(() -> GpuGovernorUtils.apply(governor), "gpu-gov-apply").start();
+        KernelExecutor.submit(() -> GpuGovernorUtils.apply(governor));
         updateSummary(governor);
         Log.i(TAG, "GPU governor changed to: " + governor);
         return true;

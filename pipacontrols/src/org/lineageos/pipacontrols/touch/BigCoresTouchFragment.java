@@ -14,6 +14,7 @@ import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.SwitchPreference;
 
 import org.lineageos.pipacontrols.R;
+import org.lineageos.pipacontrols.utils.KernelExecutor;
 
 public class BigCoresTouchFragment extends PreferenceFragmentCompat
         implements Preference.OnPreferenceChangeListener {
@@ -41,7 +42,7 @@ public class BigCoresTouchFragment extends PreferenceFragmentCompat
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         boolean enabled = (Boolean) newValue;
-        new Thread(() -> BigCoresTouchUtils.apply(enabled), "big-cores-touch-apply").start();
+        KernelExecutor.submit(() -> BigCoresTouchUtils.apply(enabled));
         Log.i(TAG, "Big cores on touch: " + enabled);
         return true;
     }

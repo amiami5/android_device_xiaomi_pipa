@@ -1,135 +1,160 @@
 /*
- * Copyright (C) 2020 The LineageOS Project
+ * Copyright (C) 2023-2026 The LineageOS Project
+ * Copyright (C) 2025-2026 nullpointer1101
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.pipacontrols.refreshrate;
+package org.lineageos.pipacontrols.stylus;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.UserHandle;
-
+import android.database.ContentObserver;
+import android.net.Uri;
+import android.os.Handler;
+import android.os.Looper;
 import android.provider.Settings;
-import androidx.preference.PreferenceManager;
+import android.util.Log;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public final class RefreshUtils {
 
-    private static final String REFRESH_CONTROL = "refresh_control";
+    private static final String TAG = "XiaomiRefreshUtils";
 
-    private static float defaultMaxRate;
     private static final String KEY_PEAK_REFRESH_RATE = "peak_refresh_rate";
+    private static final String KEY_MIN_REFRESH_RATE  = "min_refresh_rate";
+    private static final String KEY_USER_REFRESH_RATE = "user_refresh_rate";
+    private static final String KEY_PEN_MODE          = "pen_mode";
+    private static final String PREF_FILE_NAME        = "pen_refresh_prefs";
 
-    private Context mContext;
-    protected static boolean isAppInList = false;
+    private static final float PEN_MIN_RATE = 60f;
+    private static final float PEN_MAX_RATE = 120f;
 
-    protected static final int STATE_DEFAULT  = 0;
-    protected static final int STATE_STANDARD = 1;
-    protected static final int STATE_HIGH     = 2;
-    protected static final int STATE_EXTREME  = 3;
-    protected static final int STATE_ULTRA    = 4;
+    private final Context mContext;
+    private final SharedPreferences mSharedPrefs;
+    private final Handler mHandler;
 
-    private static final float REFRESH_STATE_DEFAULT  = 120f;
-    private static final float REFRESH_STATE_STANDARD = 60f;
-    private static final float REFRESH_STATE_HIGH     = 90f;
-    private static final float REFRESH_STATE_EXTREME  = 120f;
-    private static final float REFRESH_STATE_ULTRA    = 144f;
-
-    private static final String REFRESH_STANDARD = "refresh.standard=";
-    private static final String REFRESH_HIGH     = "refresh.high=";
-    private static final String REFRESH_EXTREME  = "refresh.extreme=";
-    private static final String REFRESH_ULTRA    = "refresh.ultra=";
-
-    private SharedPreferences mSharedPrefs;
+    private ContentObserver mPeakRateObserver;
+    private boolean mObserverRegistered = false;
+    private boolean mPenModeActive      = false;
+    private float   mTargetMinRate      = PEN_MIN_RATE;
+    private float   mTargetMaxRate      = PEN_MAX_RATE;
+    private boolean mSelfWrite          = false;
 
     protected RefreshUtils(Context context) {
-        mSharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-        mContext = context;
+        mContext     = context.getApplicationContext();
+        mSharedPrefs = context.getSharedPreferences(PREF_FILE_NAME, Context.MODE_PRIVATE);
+        mHandler     = new Handler(Looper.getMainLooper());
+        logInfo("RefreshUtils initialized");
     }
 
-    public static void startService(Context context) {
-        context.startServiceAsUser(new Intent(context, RefreshService.class),
-                UserHandle.CURRENT);
-    }
+    private void registerObserver() {
+        if (mObserverRegistered) return;
 
-    private void writeValue(String profiles) {
-        mSharedPrefs.edit().putString(REFRESH_CONTROL, profiles).apply();
-    }
+        mPeakRateObserver = new ContentObserver(mHandler) {
+            @Override
+            public void onChange(boolean selfChange) {
+                if (!mPenModeActive || mSelfWrite) return;
 
-    protected void getOldRate() {
-        defaultMaxRate = Settings.System.getFloat(mContext.getContentResolver(),
-                KEY_PEAK_REFRESH_RATE, REFRESH_STATE_DEFAULT);
-    }
+                float current = Settings.System.getFloat(
+                        mContext.getContentResolver(), KEY_PEAK_REFRESH_RATE, -1f);
 
-    private String getValue() {
-        String value = mSharedPrefs.getString(REFRESH_CONTROL, null);
-
-        if (value == null || value.isEmpty()) {
-            value = REFRESH_STANDARD + ":" + REFRESH_HIGH + ":" + REFRESH_EXTREME + ":" + REFRESH_ULTRA;
-            writeValue(value);
-        }
-        return value;
-    }
-
-    protected void writePackage(String packageName, int mode) {
-        String value = getValue();
-        value = value.replace(packageName + ",", "");
-        String[] modes = value.split(":");
-        String finalString;
-
-        switch (mode) {
-            case STATE_STANDARD:
-                modes[0] = modes[0] + packageName + ",";
-                break;
-            case STATE_HIGH:
-                modes[1] = modes[1] + packageName + ",";
-                break;
-            case STATE_EXTREME:
-                modes[2] = modes[2] + packageName + ",";
-                break;
-            case STATE_ULTRA:
-                modes[3] = modes[3] + packageName + ",";
-                break;
-        }
-
-        finalString = modes[0] + ":" + modes[1] + ":" + modes[2] + ":" + modes[3];
-        writeValue(finalString);
-    }
-
-    protected int getStateForPackage(String packageName) {
-        String value = getValue();
-        String[] modes = value.split(":");
-        int state = STATE_DEFAULT;
-        if (modes[0].contains(packageName + ",")) {
-            state = STATE_STANDARD;
-        } else if (modes[1].contains(packageName + ",")) {
-            state = STATE_HIGH;
-        } else if (modes[2].contains(packageName + ",")) {
-            state = STATE_EXTREME;
-        } else if (modes[3].contains(packageName + ",")) {
-            state = STATE_ULTRA;
-        }
-        return state;
-    }
-
-    protected void setRefreshRate(String packageName) {
-        String value = getValue();
-        float maxrate = defaultMaxRate;
-        isAppInList = false;
-
-        if (value != null) {
-            String[] modes = value.split(":");
-            if (modes[0].contains(packageName + ",")) {
-                maxrate = REFRESH_STATE_STANDARD; isAppInList = true;
-            } else if (modes[1].contains(packageName + ",")) {
-                maxrate = REFRESH_STATE_HIGH;     isAppInList = true;
-            } else if (modes[2].contains(packageName + ",")) {
-                maxrate = REFRESH_STATE_EXTREME;  isAppInList = true;
-            } else if (modes[3].contains(packageName + ",")) {
-                maxrate = REFRESH_STATE_ULTRA;    isAppInList = true;
+                if (Math.abs(current - mTargetMaxRate) > 1f) {
+                    logInfo("peak_refresh_rate overridden to " + current + "Hz, restoring " + mTargetMaxRate + "Hz");
+                    applyRates(mTargetMinRate, mTargetMaxRate);
+                }
             }
+        };
+
+        Uri peakRateUri = Settings.System.getUriFor(KEY_PEAK_REFRESH_RATE);
+        mContext.getContentResolver().registerContentObserver(peakRateUri, false, mPeakRateObserver);
+        mObserverRegistered = true;
+        logInfo("ContentObserver registered on peak_refresh_rate");
+    }
+
+    private void unregisterObserver() {
+        if (!mObserverRegistered || mPeakRateObserver == null) return;
+        mContext.getContentResolver().unregisterContentObserver(mPeakRateObserver);
+        mObserverRegistered = false;
+        logInfo("ContentObserver unregistered");
+    }
+
+    private void applyRates(float minRate, float maxRate) {
+        mSelfWrite = true;
+        try {
+            Settings.System.putFloat(mContext.getContentResolver(), KEY_MIN_REFRESH_RATE, minRate);
+            Settings.System.putFloat(mContext.getContentResolver(), KEY_PEAK_REFRESH_RATE, maxRate);
+            Settings.System.putFloat(mContext.getContentResolver(), KEY_USER_REFRESH_RATE, maxRate);
+            logInfo("Applied refresh rates: min=" + minRate + " peak=" + maxRate);
+        } finally {
+            mHandler.postDelayed(() -> mSelfWrite = false, 300);
         }
-        Settings.System.putFloat(mContext.getContentResolver(), KEY_PEAK_REFRESH_RATE, maxrate);
+    }
+
+    protected void setPenRefreshRate() {
+        setRefreshRateRange(PEN_MIN_RATE, PEN_MAX_RATE);
+    }
+
+    protected void setFixedRefreshRate(float fixedRate) {
+        setRefreshRateRange(fixedRate, fixedRate);
+    }
+
+    private void setRefreshRateRange(float minRate, float maxRate) {
+        mTargetMinRate = minRate;
+        mTargetMaxRate = maxRate;
+
+        if (!mSharedPrefs.getBoolean(KEY_PEN_MODE, false)) {
+            float savedPeak = Settings.System.getFloat(
+                    mContext.getContentResolver(), KEY_PEAK_REFRESH_RATE, 144f);
+            float savedMin  = Settings.System.getFloat(
+                    mContext.getContentResolver(), KEY_MIN_REFRESH_RATE, 144f);
+            float savedUser = Settings.System.getFloat(
+                    mContext.getContentResolver(), KEY_USER_REFRESH_RATE, 0f);
+
+            mSharedPrefs.edit()
+                    .putFloat(KEY_PEAK_REFRESH_RATE, savedPeak)
+                    .putFloat(KEY_MIN_REFRESH_RATE, savedMin)
+                    .putFloat(KEY_USER_REFRESH_RATE, savedUser)
+                    .putBoolean(KEY_PEN_MODE, true)
+                    .apply();
+
+            logInfo("Saved pre-pen rates: peak=" + savedPeak + " min=" + savedMin);
+        }
+
+        mPenModeActive = true;
+        registerObserver();
+        applyRates(minRate, maxRate);
+    }
+
+    protected void setDefaultRefreshRate() {
+        mPenModeActive = false;
+        unregisterObserver();
+
+        float restorePeak = mSharedPrefs.getFloat(KEY_PEAK_REFRESH_RATE, 144f);
+        float restoreMin  = mSharedPrefs.getFloat(KEY_MIN_REFRESH_RATE, 144f);
+        float restoreUser = mSharedPrefs.getFloat(KEY_USER_REFRESH_RATE, 0f);
+
+        mSharedPrefs.edit().putBoolean(KEY_PEN_MODE, false).apply();
+
+        mSelfWrite = true;
+        try {
+            Settings.System.putFloat(mContext.getContentResolver(), KEY_MIN_REFRESH_RATE, restoreMin);
+            Settings.System.putFloat(mContext.getContentResolver(), KEY_PEAK_REFRESH_RATE, restorePeak);
+            Settings.System.putFloat(mContext.getContentResolver(), KEY_USER_REFRESH_RATE, restoreUser);
+            logInfo("Restored refresh rates: peak=" + restorePeak + " min=" + restoreMin);
+        } finally {
+            mHandler.postDelayed(() -> mSelfWrite = false, 300);
+        }
+    }
+
+    protected void cleanup() {
+        unregisterObserver();
+    }
+
+    private void logInfo(String message) {
+        Log.i(TAG, "[" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US).format(new Date()) + "] " + message);
     }
 }

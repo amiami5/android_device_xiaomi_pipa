@@ -23,9 +23,6 @@ import androidx.preference.PreferenceManager;
 
 import org.lineageos.pipacontrols.R;
 
-/**
- * Quick Settings tile for Stylus Mode.
- */
 public class StylusTileService extends TileService {
 
     private static final String TAG = "XiaomiStylusTile";
@@ -38,9 +35,6 @@ public class StylusTileService extends TileService {
 
     private final Handler mHandler = new Handler(Looper.getMainLooper());
 
-    /**
-     * Reads prefs at execution time — never at scheduling time — to avoid stale state.
-     */
     private final Runnable mDelayedUpdateRunnable = () -> {
         boolean current = PreferenceManager
                 .getDefaultSharedPreferences(StylusTileService.this)
@@ -48,10 +42,6 @@ public class StylusTileService extends TileService {
         Log.d(TAG, "Delayed retry — stylus=" + current);
         updateTile(current);
     };
-
-    // -----------------------------------------------------------------------
-    // Sync receiver — updates tile while QS panel is open
-    // -----------------------------------------------------------------------
 
     private final BroadcastReceiver mSettingsReceiver = new BroadcastReceiver() {
         @Override
@@ -64,10 +54,6 @@ public class StylusTileService extends TileService {
             updateTile(active);
         }
     };
-
-    // -----------------------------------------------------------------------
-    // TileService lifecycle
-    // -----------------------------------------------------------------------
 
     @Override
     public void onStartListening() {
@@ -84,8 +70,6 @@ public class StylusTileService extends TileService {
 
         updateTile(active);
 
-        // 350 ms retry for the cold-boot binder window where getQsTile() is
-        // transiently null. Lambda reads current prefs at execution time.
         mHandler.removeCallbacks(mDelayedUpdateRunnable);
         mHandler.postDelayed(mDelayedUpdateRunnable, 350);
     }
@@ -96,10 +80,6 @@ public class StylusTileService extends TileService {
         mHandler.removeCallbacks(mDelayedUpdateRunnable);
         LocalBroadcastManager.getInstance(this).unregisterReceiver(mSettingsReceiver);
     }
-
-    // -----------------------------------------------------------------------
-    // User interaction
-    // -----------------------------------------------------------------------
 
     @Override
     public void onClick() {
@@ -112,7 +92,6 @@ public class StylusTileService extends TileService {
         final boolean newState = (tile.getState() != Tile.STATE_ACTIVE);
         Log.d(TAG, "onClick — newState=" + newState);
 
-        // Immediate visual feedback before any I/O.
         updateTile(newState);
 
         final String refreshRate = PreferenceManager
@@ -124,22 +103,13 @@ public class StylusTileService extends TileService {
                 .putBoolean(STYLUS_MODE_KEY, newState)
                 .apply();
 
-        PenUtils.onStylusModeChanged(newState);
+        PenUtils.onStylusModeChanged(this, newState);
         if (newState) PenUtils.setRefreshRateMode(refreshRate);
 
         LocalBroadcastManager.getInstance(this)
                 .sendBroadcast(new Intent(ACTION_STYLUS_CHANGED));
     }
 
-    // -----------------------------------------------------------------------
-    // Tile rendering
-    // -----------------------------------------------------------------------
-
-    /**
-     * Applies state, icon, and refresh-rate subtitle to the tile.
-     * Reads refresh rate from prefs at call time so the subtitle stays correct
-     * after a refresh-rate change even without a full tile rebind.
-     */
     private void updateTile(boolean active) {
         final Tile tile = getQsTile();
         if (tile == null) {

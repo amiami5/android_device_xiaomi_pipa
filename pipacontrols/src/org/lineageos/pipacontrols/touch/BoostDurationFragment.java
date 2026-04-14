@@ -16,6 +16,7 @@ import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceManager;
 
 import org.lineageos.pipacontrols.R;
+import org.lineageos.pipacontrols.utils.KernelExecutor;
 
 public class BoostDurationFragment extends PreferenceFragmentCompat
         implements Preference.OnPreferenceChangeListener,
@@ -66,12 +67,9 @@ public class BoostDurationFragment extends PreferenceFragmentCompat
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         String duration = (String) newValue;
-        new Thread(() -> {
-            BoostDurationUtils.apply(duration);
-            // Changing duration from UI implicitly enables Touch Boost
-            PreferenceManager.getDefaultSharedPreferences(requireContext())
-                    .edit().putBoolean(TouchBoostUtils.PREF_KEY, true).apply();
-        }, "boost-duration-apply").start();
+        PreferenceManager.getDefaultSharedPreferences(requireContext())
+                .edit().putBoolean(TouchBoostUtils.PREF_KEY, true).apply();
+        KernelExecutor.submit(() -> BoostDurationUtils.apply(duration));
         updateSummary(duration);
         Log.i(TAG, "Boost duration changed to: " + duration + "ms");
         return true;

@@ -14,6 +14,7 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
 import org.lineageos.pipacontrols.R;
+import org.lineageos.pipacontrols.utils.KernelExecutor;
 
 public class CoreMigrationFragment extends PreferenceFragmentCompat
         implements Preference.OnPreferenceChangeListener {
@@ -42,7 +43,7 @@ public class CoreMigrationFragment extends PreferenceFragmentCompat
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         String preset = (String) newValue;
-        new Thread(() -> CoreMigrationUtils.apply(preset), "core-migration-apply").start();
+        KernelExecutor.submit(() -> CoreMigrationUtils.apply(preset));
         updateSummary(preset);
         Log.i(TAG, "Core migration changed to: " + preset);
         return true;

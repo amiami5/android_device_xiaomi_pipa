@@ -44,9 +44,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-/**
- * Settings fragment for stylus/pen configuration.
- */
 public class StylusSettingsFragment extends PreferenceFragmentCompat implements
         SharedPreferences.OnSharedPreferenceChangeListener {
 
@@ -69,12 +66,7 @@ public class StylusSettingsFragment extends PreferenceFragmentCompat implements
 
     private final Handler mHandler = new Handler(Looper.getMainLooper());
 
-    // Per-key re-entry guard
     private String mHandlingKey = null;
-
-    // -----------------------------------------------------------------------
-    // Tile sync receiver — keeps fragment in sync when QS tile is toggled
-    // -----------------------------------------------------------------------
 
     private final BroadcastReceiver mTileChangeReceiver = new BroadcastReceiver() {
         @Override
@@ -83,10 +75,6 @@ public class StylusSettingsFragment extends PreferenceFragmentCompat implements
             mHandler.post(() -> refreshUI());
         }
     };
-
-    // -----------------------------------------------------------------------
-    // Lifecycle
-    // -----------------------------------------------------------------------
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -120,13 +108,9 @@ public class StylusSettingsFragment extends PreferenceFragmentCompat implements
         try {
             LocalBroadcastManager.getInstance(requireContext())
                     .unregisterReceiver(mTileChangeReceiver);
-        } catch (IllegalArgumentException ignored) { /* not registered */ }
+        } catch (IllegalArgumentException ignored) {}
         logInfo("Stylus settings paused");
     }
-
-    // -----------------------------------------------------------------------
-    // SharedPreferences callback
-    // -----------------------------------------------------------------------
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
@@ -140,17 +124,16 @@ public class StylusSettingsFragment extends PreferenceFragmentCompat implements
             if (STYLUS_MODE_KEY.equals(key)) {
                 boolean enabled = prefs.getBoolean(key, false);
                 logInfo("Stylus mode → " + enabled);
-                PenUtils.onStylusModeChanged(enabled);
+                PenUtils.onStylusModeChanged(requireContext(), enabled);
                 if (enabled) {
-                    PenUtils.setRefreshRateMode(
-                            prefs.getString(STYLUS_REFRESH_RATE_KEY, RATE_DYNAMIC));
+                    PenUtils.setRefreshRateMode(prefs.getString(STYLUS_REFRESH_RATE_KEY, RATE_DYNAMIC));
                 }
                 notifyTile();
 
             } else if (FORCE_RECOGNIZE_KEY.equals(key)) {
                 boolean enabled = prefs.getBoolean(key, false);
                 logInfo("Force recognize → " + enabled);
-                PenUtils.onForceRecognizeChanged(enabled);
+                PenUtils.onForceRecognizeChanged(requireContext(), enabled);
                 notifyTile();
 
             } else if (STYLUS_REFRESH_RATE_KEY.equals(key)) {
@@ -159,7 +142,6 @@ public class StylusSettingsFragment extends PreferenceFragmentCompat implements
                 if (prefs.getBoolean(STYLUS_MODE_KEY, false)) {
                     PenUtils.setRefreshRateMode(rate);
                 }
-                // Notify tile so subtitle updates even when QS is closed.
                 notifyTile();
             }
 
@@ -172,25 +154,12 @@ public class StylusSettingsFragment extends PreferenceFragmentCompat implements
         }
     }
 
-    // -----------------------------------------------------------------------
-    // Tile notification — dual channel
-    // -----------------------------------------------------------------------
-
-    /**
-     * LocalBroadcast: instant update if QS panel is currently open.
-     * requestListeningState(): forces onStartListening() if QS is closed so the tile
-     * re-reads prefs and updates icon/subtitle without the user needing to open QS.
-     */
     private void notifyTile() {
         LocalBroadcastManager.getInstance(requireContext())
                 .sendBroadcast(new Intent(StylusTileService.ACTION_STYLUS_CHANGED));
         TileService.requestListeningState(requireContext(),
                 new ComponentName(requireContext(), StylusTileService.class));
     }
-
-    // -----------------------------------------------------------------------
-    // UI refresh
-    // -----------------------------------------------------------------------
 
     private void refreshUI() {
         final boolean stylusMode  = mPrefs.getBoolean(STYLUS_MODE_KEY, false);
@@ -204,8 +173,6 @@ public class StylusSettingsFragment extends PreferenceFragmentCompat implements
             mForceRecognizePref.setChecked(forceRecog);
         }
         if (mRefreshRatePref != null) {
-            // Guard setValue(): calling it unconditionally triggers notifyChanged() →
-            // RecyclerView item-change animation even when the value hasn't changed.
             String current = mRefreshRatePref.getValue();
             if (current == null || !current.equals(refreshRate)) {
                 mRefreshRatePref.setValue(refreshRate);
@@ -249,10 +216,6 @@ public class StylusSettingsFragment extends PreferenceFragmentCompat implements
             default:       return getString(R.string.refresh_rate_dynamic);
         }
     }
-
-    // -----------------------------------------------------------------------
-    // Logging
-    // -----------------------------------------------------------------------
 
     private void logDebug(String msg) { Log.d(TAG, ts() + msg); }
     private void logInfo(String msg)  { Log.i(TAG, ts() + msg); }

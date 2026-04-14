@@ -14,6 +14,7 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
 import org.lineageos.pipacontrols.R;
+import org.lineageos.pipacontrols.utils.KernelExecutor;
 
 public class CpuFreqCapFragment extends PreferenceFragmentCompat
         implements Preference.OnPreferenceChangeListener {
@@ -42,7 +43,7 @@ public class CpuFreqCapFragment extends PreferenceFragmentCompat
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         String cap = (String) newValue;
-        new Thread(() -> CpuFreqCapUtils.apply(cap), "cpu-freq-cap-apply").start();
+        KernelExecutor.submit(() -> CpuFreqCapUtils.apply(cap));
         updateSummary(cap);
         Log.i(TAG, "CPU freq cap changed to: " + cap);
         return true;

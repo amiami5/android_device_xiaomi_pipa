@@ -23,56 +23,40 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-/**
- * Utility class for Xiaomi stylus operations.
- */
 public class PenUtils {
 
     private static final String TAG   = "XiaomiPenUtils";
     private static final boolean DEBUG = SystemProperties.getBoolean(
             "persist.xiaomi.peripherals.debug", false);
 
-    // Xiaomi pen hardware identifiers
     private static final int PEN_VENDOR_ID  = 6421;
     private static final int PEN_PRODUCT_ID = 19841;
 
-    // Preference keys
     private static final String STYLUS_MODE_KEY         = "stylus_mode_key";
     private static final String FORCE_STYLUS_KEY        = "force_recognize_stylus_key";
     private static final String STYLUS_REFRESH_RATE_KEY = "stylus_refresh_rate_key";
 
-    // Static singletons
     private static InputManager      mInputManager;
     private static SharedPreferences mPreferences;
     private static RefreshUtils      mRefreshUtils;
     private static Handler           mHandler;
     private static Context           mContext;
 
-    // State
     private static boolean mPenModeEnabled     = false;
     private static boolean mIsPenConnected     = false;
     private static boolean mListenerRegistered = false;
     private static boolean mIsSetup            = false;
     private static String  mCurrentRefreshMode = "dynamic";
 
-    // -----------------------------------------------------------------------
-    // Initialization
-    // -----------------------------------------------------------------------
-
-    /** @return true if setup() has been called and state is valid. */
     public static boolean isSetup() {
         return mIsSetup;
     }
 
-    /**
-     * Initialize all resources. Called from BootCompletedReceiver (and from
-     * ScreenStateReceiver if the process was killed and restarted).
-     */
     public static void setup(Context context) {
-        mContext      = context;
-        mInputManager = (InputManager) context.getSystemService(Context.INPUT_SERVICE);
-        mPreferences  = PreferenceManager.getDefaultSharedPreferences(context);
-        mRefreshUtils = new RefreshUtils(context);
+        mContext      = context.getApplicationContext();
+        mInputManager = (InputManager) mContext.getSystemService(Context.INPUT_SERVICE);
+        mPreferences  = PreferenceManager.getDefaultSharedPreferences(mContext);
+        mRefreshUtils = new RefreshUtils(mContext);
         mHandler      = new Handler(Looper.getMainLooper());
         mIsSetup      = true;
 
@@ -86,16 +70,10 @@ public class PenUtils {
 
         if (stylusEnabled || forceRecognize) {
             registerInputDeviceListener();
-        } else {
-            logInfo("Stylus features disabled — InputDeviceListener not registered");
         }
 
         refreshPenMode();
     }
-
-    // -----------------------------------------------------------------------
-    // InputDeviceListener management
-    // -----------------------------------------------------------------------
 
     private static void registerInputDeviceListener() {
         if (mListenerRegistered || mInputManager == null) return;
@@ -122,10 +100,6 @@ public class PenUtils {
         }
     }
 
-    // -----------------------------------------------------------------------
-    // Pen mode control
-    // -----------------------------------------------------------------------
-
     public static void enablePenMode() {
         if (mPenModeEnabled) {
             logDebug("Pen mode already enabled");
@@ -139,8 +113,6 @@ public class PenUtils {
                 && mPreferences.getBoolean(STYLUS_MODE_KEY, false);
         if (mRefreshUtils != null && stylusModeEnabled) {
             applyRefreshRateMode(mCurrentRefreshMode);
-        } else {
-            logInfo("Pen hardware enabled without refresh constraints (Stylus Mode off)");
         }
     }
 
@@ -204,7 +176,6 @@ public class PenUtils {
                 mRefreshUtils.setFixedRefreshRate(120f);
                 logInfo("Applied fixed 120Hz");
                 break;
-            case "dynamic":
             default:
                 mRefreshUtils.setPenRefreshRate();
                 logInfo("Applied dynamic 60-120Hz");
@@ -222,26 +193,14 @@ public class PenUtils {
         }
     }
 
-    // -----------------------------------------------------------------------
-    // Settings-change callbacks
-    // -----------------------------------------------------------------------
-
-    public static void onStylusModeChanged(boolean enabled) {
-        logInfo("Stylus mode setting → " + enabled);
-        if (!mIsSetup) {
-            logError("onStylusModeChanged called before setup — ignoring");
-            return;
-        }
+    public static void onStylusModeChanged(Context context, boolean enabled) {
+        if (!mIsSetup) setup(context);
         updateListenerState();
         refreshPenMode();
     }
 
-    public static void onForceRecognizeChanged(boolean enabled) {
-        logInfo("Force recognize setting → " + enabled);
-        if (!mIsSetup) {
-            logError("onForceRecognizeChanged called before setup — ignoring");
-            return;
-        }
+    public static void onForceRecognizeChanged(Context context, boolean enabled) {
+        if (!mIsSetup) setup(context);
         updateListenerState();
         boolean stylusModeEnabled = mPreferences != null
                 && mPreferences.getBoolean(STYLUS_MODE_KEY, false);
@@ -251,10 +210,6 @@ public class PenUtils {
             logInfo("Stylus Mode is off — force recognize change has no pen effect");
         }
     }
-
-    // -----------------------------------------------------------------------
-    // InputDeviceListener
-    // -----------------------------------------------------------------------
 
     private static final InputDeviceListener mInputDeviceListener = new InputDeviceListener() {
         @Override
@@ -282,10 +237,6 @@ public class PenUtils {
         }
     };
 
-    // -----------------------------------------------------------------------
-    // Device identification
-    // -----------------------------------------------------------------------
-
     private static boolean isDeviceXiaomiPen(int id) {
         try {
             InputDevice device = mInputManager.getInputDevice(id);
@@ -300,10 +251,6 @@ public class PenUtils {
         }
     }
 
-    // -----------------------------------------------------------------------
-    // Public state accessors
-    // -----------------------------------------------------------------------
-
     public static boolean isPenConnected()        { return mIsPenConnected; }
     public static boolean isPenModeEnabled()      { return mPenModeEnabled; }
     public static String  getCurrentRefreshMode() { return mCurrentRefreshMode; }
@@ -314,10 +261,6 @@ public class PenUtils {
         mIsSetup = false;
         logInfo("PenUtils cleaned up");
     }
-
-    // -----------------------------------------------------------------------
-    // Logging
-    // -----------------------------------------------------------------------
 
     private static void logDebug(String message) {
         if (DEBUG) Log.d(TAG, ts() + message);

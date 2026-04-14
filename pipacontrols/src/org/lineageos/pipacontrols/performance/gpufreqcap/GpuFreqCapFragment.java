@@ -14,6 +14,7 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
 import org.lineageos.pipacontrols.R;
+import org.lineageos.pipacontrols.utils.KernelExecutor;
 
 public class GpuFreqCapFragment extends PreferenceFragmentCompat
         implements Preference.OnPreferenceChangeListener {
@@ -42,7 +43,7 @@ public class GpuFreqCapFragment extends PreferenceFragmentCompat
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         String freq = (String) newValue;
-        new Thread(() -> GpuFreqCapUtils.apply(freq), "gpu-freq-cap-apply").start();
+        KernelExecutor.submit(() -> GpuFreqCapUtils.apply(freq));
         updateSummary(freq);
         Log.i(TAG, "GPU freq cap changed to: " + freq);
         return true;
