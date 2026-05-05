@@ -32,7 +32,6 @@ vendor.audio.offload.buffer.size.kb=256
 vendor.audio_hal.period_multiplier=3
 
 # Display
-debug.sf.set_idle_timer_ms=1100
 ro.vendor.display.paneltype=2
 vendor.display.defer_fps_frame_count=2
 vendor.display.disable_dynamic_sf_idle=1
