@@ -28,7 +28,7 @@ ro.vendor.audio.spk.stereo=true
 ro.vendor.audio.zoom.support=false
 ro.vendor.audio.zoom.type=1
 vendor.audio.adm.buffering.ms=6
-vendor.audio.offload.buffer.size.kb=32
+vendor.audio.offload.buffer.size.kb=256
 vendor.audio_hal.period_multiplier=3
 
 # Display
