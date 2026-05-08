@@ -127,8 +127,8 @@ setup_firmware() {
     local root_dir
     root_dir=$(pwd)
     local target_dir="${root_dir}/vendor/xiaomi/pipa"
-    local firmware_url="https://github.com/Xiaomi-Pad6/vendor_xiaomi_pipa/releases/download/pipa-2/pipa-2.0.12.0-MI.zip"
-    local tmp_zip="/tmp/pipa-2.0.12.0-MI.zip"
+    local firmware_url="https://github.com/amiami5/android_device_xiaomi_pipa/releases/download/OS2.0.14.0.UMZMIXM/pipa-2.0.14.0-MI.zip"
+    local tmp_zip="/tmp/pipa-2.0.14.0-MI.zip"
     local tmp_extract="/tmp/firmware_extract"
 
     info "Setting up firmware..."
