@@ -15,7 +15,7 @@ $(call inherit-product, vendor/lineage/config/common_full_tablet_wifionly.mk)
 $(call inherit-product, device/xiaomi/pipa/device.mk)
 
 # Inherit keys
-$(call inherit-product, vendor/lineage-priv/keys/keys.mk)
+#$(call inherit-product, vendor/lineage-priv/keys/keys.mk)
 
 # Charging
 BYPASS_CHARGE_SUPPORTED := true
@@ -42,7 +42,7 @@ GPU_MIN_FREQ_PATH := /sys/class/kgsl/kgsl-3d0/min_clock_mhz
 HBM_SUPPORTED := false
 
 # Maintainer
-AXION_MAINTAINER := nullpointer1101
+AXION_MAINTAINER := amisuke
 
 # Power / memory
 TARGET_IS_LOW_RAM ?= false
