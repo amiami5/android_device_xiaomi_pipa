@@ -120,104 +120,6 @@ apply_tablet_patch() {
     cd "$root_dir"
 }
 
-# ──────────────────────────────────────────────────────────────
-# Setup firmware
-# ──────────────────────────────────────────────────────────────
-setup_firmware() {
-    local root_dir
-    root_dir=$(pwd)
-    local target_dir="${root_dir}/vendor/xiaomi/pipa"
-    local firmware_url="https://github.com/amiami5/android_device_xiaomi_pipa/releases/download/OS2.0.14.0.UMZMIXM/pipa-2.0.14.0-MI.zip"
-    local tmp_zip="/tmp/pipa-2.0.14.0-MI.zip"
-    local tmp_extract="/tmp/firmware_extract"
-
-    info "Setting up firmware..."
-
-    mkdir -p "$target_dir" || {
-        error "Failed to create target directory: $target_dir"
-        return 1
-    }
-
-    if [ -d "$target_dir/radio" ]; then
-        warn "Removing existing radio folder..."
-        rm -rf "$target_dir/radio" || {
-            error "Failed to remove existing $target_dir/radio"
-            return 1
-        }
-    fi
-
-    if command -v curl >/dev/null 2>&1; then
-        info "Downloading firmware (curl)..."
-        curl -L --fail -o "$tmp_zip" "$firmware_url" || {
-            error "Failed to download firmware with curl."
-            [ -f "$tmp_zip" ] && rm -f "$tmp_zip"
-            return 1
-        }
-    elif command -v wget >/dev/null 2>&1; then
-        info "Downloading firmware (wget)..."
-        wget -q -O "$tmp_zip" "$firmware_url" || {
-            error "Failed to download firmware with wget."
-            [ -f "$tmp_zip" ] && rm -f "$tmp_zip"
-            return 1
-        }
-    else
-        error "Neither curl nor wget found. Cannot download firmware."
-        return 1
-    fi
-
-    rm -rf "$tmp_extract"
-    mkdir -p "$tmp_extract" || {
-        error "Failed to create temp extract dir: $tmp_extract"
-        rm -f "$tmp_zip"
-        return 1
-    }
-
-    if command -v unzip >/dev/null 2>&1; then
-        info "Extracting firmware into temporary location..."
-        unzip -q -o "$tmp_zip" -d "$tmp_extract" || {
-            error "Extraction failed with unzip."
-            rm -f "$tmp_zip"
-            rm -rf "$tmp_extract"
-            return 1
-        }
-    elif command -v bsdtar >/dev/null 2>&1; then
-        info "Extracting firmware with bsdtar..."
-        bsdtar -xf "$tmp_zip" -C "$tmp_extract" || {
-            error "Extraction failed with bsdtar."
-            rm -f "$tmp_zip"
-            rm -rf "$tmp_extract"
-            return 1
-        }
-    else
-        error "No extractor (unzip or bsdtar) available."
-        rm -f "$tmp_zip"
-        rm -rf "$tmp_extract"
-        return 1
-    fi
-
-    local radio_dir
-    radio_dir=$(find "$tmp_extract" -type d -name radio -print -quit)
-
-    if [ -z "$radio_dir" ]; then
-        error "No 'radio' directory found inside the extracted firmware."
-        rm -f "$tmp_zip"
-        rm -rf "$tmp_extract"
-        return 1
-    fi
-
-    info "Moving radio directory into $target_dir..."
-    mv "$radio_dir" "$target_dir"/ || {
-        error "Failed to move radio directory to $target_dir"
-        rm -f "$tmp_zip"
-        rm -rf "$tmp_extract"
-        return 1
-    }
-
-    rm -f "$tmp_zip"
-    rm -rf "$tmp_extract"
-
-    success "Firmware setup complete: moved 'radio' directory to $target_dir/radio"
-}
 
 # ──────────────────────────────────────────────────────────────
 # Run Patch Setup
@@ -226,7 +128,6 @@ DEVICE_PATH="${ROOT_DIR}/device/xiaomi/pipa"
 mkdir -p "$DEVICE_PATH/patches"
 
 apply_tablet_patch
-setup_firmware
 
 echo "-------------------------------------"
 echo "           Setup complete!           "
