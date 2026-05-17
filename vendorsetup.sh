@@ -1,5 +1,7 @@
 #!/bin/bash
-
+if ! mountpoint -q "$HOME/axion/out"; then
+    sudo mount --bind /mnt/aosp_out "$HOME/axion/out"
+fi
 # ──────────────────────────────────────────────────────────────
 # 🎨 Terminal Colors
 # ──────────────────────────────────────────────────────────────
