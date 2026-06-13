@@ -26,6 +26,10 @@ PERF_GOV_SUPPORTED := true
 PERF_DEFAULT_GOV := schedutil
 PERF_ANIM_OVERRIDE := false
 
+# Debug
+PRODUCT_SYSTEM_PROPERTIES += \
+    persist.sys.ax_debug_enabled=1
+
 # Device  Info
 AXION_CAMERA_REAR_INFO := 13
 AXION_CAMERA_FRONT_INFO := 8
