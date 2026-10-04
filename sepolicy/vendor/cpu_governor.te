@@ -3,5 +3,5 @@ allow system_app sysfs_devices_system_cpu:dir  { open read search };
 allow system_app sysfs_devices_system_cpu:file { open read write getattr };
 
 # CPU Frequency Cap — write access to msm_performance cpu_max_freq
-allow system_app vendor_sysfs_msm_perf:dir  { open read search };
-allow system_app vendor_sysfs_msm_perf:file { open read write getattr };
+allow system_app sysfs_msm_performance:dir  { open read search };
+allow system_app sysfs_msm_performance:file { open read write getattr };
