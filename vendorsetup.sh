@@ -124,12 +124,28 @@ apply_tablet_patch() {
 
 
 # ──────────────────────────────────────────────────────────────
+# Kernel submodules (drivers/kernelsu is a symlink into KernelSU)
+# ──────────────────────────────────────────────────────────────
+update_kernel_submodules() {
+    local kdir="$ROOT_DIR/kernel/xiaomi/sm8250"
+    [ -e "$kdir/.git" ] || return 0
+
+    info "Updating KernelSU submodule..."
+    if git -C "$kdir" submodule update --init KernelSU >/dev/null 2>&1; then
+        success "KernelSU submodule is up to date."
+    else
+        warn "Failed to update KernelSU submodule in $kdir."
+    fi
+}
+
+# ──────────────────────────────────────────────────────────────
 # Run Patch Setup
 # ──────────────────────────────────────────────────────────────
 DEVICE_PATH="${ROOT_DIR}/device/xiaomi/pipa"
 mkdir -p "$DEVICE_PATH/patches"
 
 apply_tablet_patch
+update_kernel_submodules
 
 echo "-------------------------------------"
 echo "           Setup complete!           "
