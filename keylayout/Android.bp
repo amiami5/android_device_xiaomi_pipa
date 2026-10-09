@@ -1,0 +1,11 @@
+//
+// Copyright (C) 2024 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+prebuilt_usr_keylayout {
+    name: "Xiaomi_Smart_Pen_Keyboard.kl",
+    src: "Xiaomi_Smart_Pen_Keyboard.kl",
+    vendor: true,
+}

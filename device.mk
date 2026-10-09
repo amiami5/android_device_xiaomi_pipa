@@ -30,6 +30,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libpiex_shim
 
+# Input
+PRODUCT_PACKAGES += \
+    Xiaomi_Smart_Pen_Keyboard.kl
+
 # MIDL
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/android.hardware.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.midi.xml
