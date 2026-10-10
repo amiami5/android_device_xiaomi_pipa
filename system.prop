@@ -1,5 +1,10 @@
 # Baseband
 gsm.version.baseband?=Wi-Fi Only
 
+# Logd
+persist.logd.logpersistd=logcatd
+persist.logd.logpersistd.buffer=all
+persist.logd.logpersistd.size=32
+
 # Xiaomi
 ro.product.mod_device=pipa_global
