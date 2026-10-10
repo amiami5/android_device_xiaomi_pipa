@@ -51,6 +51,7 @@ public class PenChargeMonitor {
 
     private static final String CHANNEL_STATUS = "pen_charge_status";
     private static final String CHANNEL_ALERT  = "pen_charge_alert";
+    private static final String CHANNEL_START  = "pen_charge_start";
     private static final int ID_STATUS = 0x70656e01;
     private static final int ID_ALERT  = 0x70656e02;
 
@@ -107,6 +108,13 @@ public class PenChargeMonitor {
         mNm.createNotificationChannel(new NotificationChannel(CHANNEL_ALERT,
                 context.getString(R.string.pen_charge_channel_alert),
                 NotificationManager.IMPORTANCE_HIGH));
+        // heads-up only, the sound is reserved for the not-charging warning
+        final NotificationChannel start = new NotificationChannel(CHANNEL_START,
+                context.getString(R.string.pen_charge_channel_start),
+                NotificationManager.IMPORTANCE_HIGH);
+        start.setSound(null, null);
+        start.enableVibration(false);
+        mNm.createNotificationChannel(start);
     }
 
     private void poll() {
@@ -157,7 +165,8 @@ public class PenChargeMonitor {
                     // the state chatters while the pen is being positioned, alert only once
                     if (!mStartAlertShown) {
                         mStartAlertShown = true;
-                        showAlert(mContext.getString(R.string.pen_charge_started_title),
+                        showAlert(CHANNEL_START,
+                                mContext.getString(R.string.pen_charge_started_title),
                                 levelText(socValid ? soc : -1));
                     }
                 }
@@ -184,7 +193,8 @@ public class PenChargeMonitor {
                     if (!mNotChargingAlertShown && !full
                             && now - mNotChargingSince >= NOT_CHARGING_GRACE_MS) {
                         mNotChargingAlertShown = true;
-                        showAlert(mContext.getString(R.string.pen_charge_not_charging_title),
+                        showAlert(CHANNEL_ALERT,
+                                mContext.getString(R.string.pen_charge_not_charging_title),
                                 mContext.getString(R.string.pen_charge_not_charging_text));
                     }
                 }
@@ -223,8 +233,8 @@ public class PenChargeMonitor {
         mNm.notify(ID_STATUS, n);
     }
 
-    private void showAlert(String title, String text) {
-        Notification n = new Notification.Builder(mContext, CHANNEL_ALERT)
+    private void showAlert(String channel, String title, String text) {
+        Notification n = new Notification.Builder(mContext, channel)
                 .setSmallIcon(R.drawable.ic_pen_charging)
                 .setContentTitle(title)
                 .setContentText(text)

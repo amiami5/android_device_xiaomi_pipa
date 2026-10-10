@@ -38,6 +38,7 @@
     <!-- Pen charging -->
     <string name="pen_charge_channel_status">Pen charging status</string>
     <string name="pen_charge_channel_alert">Pen charging alerts</string>
+    <string name="pen_charge_channel_start">Pen charging started</string>
     <string name="pen_charge_status_title">Charging stylus</string>
     <string name="pen_charge_started_title">Stylus charging started</string>
     <string name="pen_charge_level">Battery %d%%</string>
