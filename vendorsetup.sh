@@ -163,8 +163,27 @@ apply_repo_patches() {
 DEVICE_PATH="${ROOT_DIR}/device/xiaomi/pipa"
 mkdir -p "$DEVICE_PATH/patches"
 
+# ──────────────────────────────────────────────────────────────
+# Kernel submodules (KernelSU)
+# drivers/kernelsu is a symlink into KernelSU/, so a missing checkout
+# breaks Kconfig.
+# ──────────────────────────────────────────────────────────────
+setup_kernel_submodules() {
+    local kdir="$ROOT_DIR/kernel/xiaomi/sm8250"
+
+    [ -e "$kdir/.git" ] || return 0
+    [ -f "$kdir/.gitmodules" ] || return 0
+
+    if git -C "$kdir" submodule update --init KernelSU >/dev/null 2>&1; then
+        success "KernelSU submodule is up to date."
+    else
+        error "Failed to update KernelSU submodule in $kdir."
+    fi
+}
+
 apply_tablet_patch
 apply_repo_patches "hardware/google/pixel"
+setup_kernel_submodules
 
 echo "-------------------------------------"
 echo "           Setup complete!           "
