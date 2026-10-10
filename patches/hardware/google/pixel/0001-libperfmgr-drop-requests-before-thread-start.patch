@@ -1,0 +1,51 @@
+From 33ecc16774d72c2f40b5ad5ca8622cc30f3a9eeb Mon Sep 17 00:00:00 2001
+From: ami <github@amisuke.com>
+Date: Fri, 9 Oct 2026 01:42:33 +0900
+Subject: [PATCH] =?UTF-8?q?libperfmgr:=20=E3=82=B9=E3=83=AC=E3=83=83?=
+ =?UTF-8?q?=E3=83=89=E8=B5=B7=E5=8B=95=E5=89=8D=E3=81=AE=E3=83=AA=E3=82=AF?=
+ =?UTF-8?q?=E3=82=A8=E3=82=B9=E3=83=88=E3=82=92=E7=A0=B4=E6=A3=84?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+- NodeLooperThread起動前(vendor.powerhal.init待ち)にRequest/Cancelされると
+  Jobが消費されずに溜まり続けていた
+- vm.max_map_count(65530)に達してpower HALがScudo OOMでabortしていた
+- isRunning()でなければ積まずにfalseを返すように変更
+
+Change-Id: Icccd5c34ced1b9853226738419a1b398a787099d
+---
+ power-libperfmgr/libperfmgr/NodeLooperThread.cc | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+diff --git a/power-libperfmgr/libperfmgr/NodeLooperThread.cc b/power-libperfmgr/libperfmgr/NodeLooperThread.cc
+index 78b23c3c..1f9c9253 100644
+--- a/power-libperfmgr/libperfmgr/NodeLooperThread.cc
++++ b/power-libperfmgr/libperfmgr/NodeLooperThread.cc
+@@ -43,6 +43,11 @@ bool NodeLooperThread::Request(const std::vector<NodeAction>& actions,
+         LOG(WARNING) << "NodeLooperThread is exiting";
+         return false;
+     }
++    // Drop requests until the looper is started, otherwise jobs pile up in
++    // the queue with nobody to consume them and exhaust the process mappings.
++    if (!::android::Thread::isRunning()) {
++        return false;
++    }
+ 
+     Job *job = jobmgr_.getFreeJob();
+     job->is_cancel = false;
+@@ -68,6 +73,11 @@ bool NodeLooperThread::Cancel(const std::vector<NodeAction>& actions,
+         LOG(WARNING) << "NodeLooperThread is exiting";
+         return false;
+     }
++    // Drop requests until the looper is started, otherwise jobs pile up in
++    // the queue with nobody to consume them and exhaust the process mappings.
++    if (!::android::Thread::isRunning()) {
++        return false;
++    }
+ 
+     Job *job = jobmgr_.getFreeJob();
+     job->is_cancel = true;
+-- 
+2.53.0
+
