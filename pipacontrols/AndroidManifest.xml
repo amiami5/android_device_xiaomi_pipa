@@ -20,12 +20,16 @@
     <uses-permission android:name="android.permission.ACCESS_SURFACE_FLINGER" />
     <uses-permission android:name="android.permission.BIND_QUICK_SETTINGS_TILE" />
     <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_PRIVILEGED" />
 
     <permission
         android:name="org.lineageos.pipacontrols.permission.REFRESH_SERVICE"
         android:protectionLevel="signature" />
 
     <application
+        android:name=".PipaControlsApplication"
         android:icon="@drawable/ic_pipa_controls"
         android:label="@string/pipa_controls_title"
         android:persistent="true"

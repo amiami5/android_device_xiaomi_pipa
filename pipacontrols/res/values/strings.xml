@@ -35,6 +35,16 @@
     <string name="stylus_footer_status">Status: %s</string>
     <string name="stylus_footer_refresh_rate">Refresh Rate: %s</string>
 
+    <!-- Pen charging -->
+    <string name="pen_charge_channel_status">Pen charging status</string>
+    <string name="pen_charge_channel_alert">Pen charging alerts</string>
+    <string name="pen_charge_status_title">Charging stylus</string>
+    <string name="pen_charge_started_title">Stylus charging started</string>
+    <string name="pen_charge_level">Battery %d%%</string>
+    <string name="pen_charge_in_progress">Charging</string>
+    <string name="pen_charge_not_charging_title">Stylus is not charging</string>
+    <string name="pen_charge_not_charging_text">The stylus is attached but not charging. Try adjusting its position.</string>
+
     <!-- Smart Cover -->
     <string name="lid_title">Smart Cover</string>
     <string name="lid_summary">Smart cover open and close behavior</string>

@@ -30,6 +30,16 @@
     <string name="stylus_footer_status">状態： %s</string>
     <string name="stylus_footer_refresh_rate">リフレッシュレート: %s</string>
 
+    <!-- Pen charging -->
+    <string name="pen_charge_channel_status">ペンの充電状態</string>
+    <string name="pen_charge_channel_alert">ペンの充電通知</string>
+    <string name="pen_charge_status_title">スタイラスを充電中</string>
+    <string name="pen_charge_started_title">スタイラスの充電を開始しました</string>
+    <string name="pen_charge_level">バッテリー %d%%</string>
+    <string name="pen_charge_in_progress">充電中</string>
+    <string name="pen_charge_not_charging_title">スタイラスが充電されていません</string>
+    <string name="pen_charge_not_charging_text">ペンは付いていますが充電できていません。位置を調整してください。</string>
+
     
     <string name="lid_title">スマートカバー</string>
     <string name="lid_summary">スマートカバーの設定</string>
