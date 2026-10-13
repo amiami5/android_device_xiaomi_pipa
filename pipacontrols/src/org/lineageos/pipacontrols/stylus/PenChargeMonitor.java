@@ -12,6 +12,11 @@ import android.app.NotificationManager;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Typeface;
+import android.graphics.drawable.Icon;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.PowerManager;
@@ -27,7 +32,8 @@ import java.util.Set;
 
 /**
  * Watches the pen's reverse wireless charging state exposed by the nu1665 driver and
- * - shows a persistent status bar notification while the pen is charging
+ * - shows a persistent status bar notification while the pen is charging, with the battery
+ *   level drawn as the status bar icon
  * - shows a heads-up notification when charging starts or the pen is attached but not charging
  * - publishes the precise pen battery level as METADATA_MAIN_BATTERY so that Settings can
  *   show it instead of the 10% steps reported over BLE.
@@ -49,7 +55,10 @@ public class PenChargeMonitor {
 
     private static final String PEN_NAME = "Xiaomi Smart Pen";
 
-    private static final String CHANNEL_STATUS = "pen_charge_status";
+    // silent notifications are hidden from the status bar, so the level icon needs a channel
+    // that is not silent; a channel's importance cannot be raised once created
+    private static final String CHANNEL_STATUS = "pen_charge_level";
+    private static final String CHANNEL_STATUS_OLD = "pen_charge_status";
     private static final String CHANNEL_ALERT  = "pen_charge_alert";
     private static final String CHANNEL_START  = "pen_charge_start";
     private static final int ID_STATUS = 0x70656e01;
@@ -102,9 +111,14 @@ public class PenChargeMonitor {
         thread.start();
         mHandler = new Handler(thread.getLooper());
 
-        mNm.createNotificationChannel(new NotificationChannel(CHANNEL_STATUS,
+        mNm.deleteNotificationChannel(CHANNEL_STATUS_OLD);
+        final NotificationChannel status = new NotificationChannel(CHANNEL_STATUS,
                 context.getString(R.string.pen_charge_channel_status),
-                NotificationManager.IMPORTANCE_LOW));
+                NotificationManager.IMPORTANCE_DEFAULT);
+        status.setSound(null, null);
+        status.enableVibration(false);
+        status.setShowBadge(false);
+        mNm.createNotificationChannel(status);
         mNm.createNotificationChannel(new NotificationChannel(CHANNEL_ALERT,
                 context.getString(R.string.pen_charge_channel_alert),
                 NotificationManager.IMPORTANCE_HIGH));
@@ -162,19 +176,22 @@ public class PenChargeMonitor {
                 if (!mCharging) {
                     mCharging = true;
                     mNm.cancel(ID_ALERT);
-                    // the state chatters while the pen is being positioned, alert only once
+                    // the state chatters while the pen is being positioned, alert only once.
+                    // The status notification itself pops up: a second notification would get
+                    // bundled with it under a generic summary icon in the status bar.
                     if (!mStartAlertShown) {
                         mStartAlertShown = true;
-                        showAlert(CHANNEL_START,
-                                mContext.getString(R.string.pen_charge_started_title),
-                                levelText(socValid ? soc : -1));
+                        showStatus(CHANNEL_START, R.string.pen_charge_started_title,
+                                socValid ? soc : -1);
+                        mLastShownSoc = socValid ? soc : 0;
                     }
                 }
                 if (socValid && soc != mLastShownSoc) {
                     mLastShownSoc = soc;
-                    showStatus(soc);
+                    showStatus(CHANNEL_STATUS, R.string.pen_charge_status_title, soc);
                 } else if (!socValid && mLastShownSoc == -1) {
-                    showStatus(-1);
+                    mLastShownSoc = 0;
+                    showStatus(CHANNEL_STATUS, R.string.pen_charge_status_title, -1);
                 }
             } else {
                 if (mCharging) {
@@ -221,16 +238,38 @@ public class PenChargeMonitor {
                 : mContext.getString(R.string.pen_charge_in_progress);
     }
 
-    private void showStatus(int soc) {
-        Notification n = new Notification.Builder(mContext, CHANNEL_STATUS)
-                .setSmallIcon(R.drawable.ic_pen_charging)
-                .setContentTitle(mContext.getString(R.string.pen_charge_status_title))
+    private void showStatus(String channel, int titleRes, int soc) {
+        Notification n = new Notification.Builder(mContext, channel)
+                .setSmallIcon(levelIcon(soc))
+                .setContentTitle(mContext.getString(titleRes))
                 .setContentText(levelText(soc))
                 .setOngoing(true)
                 .setOnlyAlertOnce(true)
                 .setShowWhen(false)
                 .build();
         mNm.notify(ID_STATUS, n);
+    }
+
+    // the status bar only uses the alpha channel, so draw the number in plain white
+    private Icon levelIcon(int soc) {
+        if (soc <= 0 || soc > 100) {
+            return Icon.createWithResource(mContext, R.drawable.ic_pen_charging);
+        }
+        final int size = 96;
+        final String text = Integer.toString(soc);
+        final Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        paint.setColor(0xFFFFFFFF);
+        paint.setTypeface(Typeface.create("sans-serif-condensed", Typeface.BOLD));
+        paint.setTextAlign(Paint.Align.CENTER);
+        paint.setTextSize(size * 0.8f);
+        final float width = paint.measureText(text);
+        if (width > size) paint.setTextSize(paint.getTextSize() * size / width);
+
+        final Bitmap bitmap = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
+        final Canvas canvas = new Canvas(bitmap);
+        final Paint.FontMetrics fm = paint.getFontMetrics();
+        canvas.drawText(text, size / 2f, (size - fm.ascent - fm.descent) / 2f, paint);
+        return Icon.createWithBitmap(bitmap);
     }
 
     private void showAlert(String channel, String title, String text) {
