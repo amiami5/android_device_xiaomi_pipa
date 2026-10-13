@@ -69,7 +69,7 @@ public class PenChargeMonitor {
     private static final long NOT_CHARGING_GRACE_MS   = 3000;
     private static final long DETACH_DEBOUNCE_MS      = 2000;
     private static final long CHARGE_LOST_DEBOUNCE_MS = 2000;
-    private static final long BLE_LEVEL_RECHECK_MS    = 30000;
+    private static final long BLE_LEVEL_RECHECK_MS    = 60000;
 
     // BLE battery service reports in 10% steps; use the precise value only while it agrees
     private static final int BLE_LEVEL_TOLERANCE = 10;
@@ -143,13 +143,16 @@ public class PenChargeMonitor {
 
     private void evaluate() {
         final long now = SystemClock.elapsedRealtime();
-        final int state = readInt(PATH_STATE, -1);
-        final int soc = readInt(PATH_SOC, -1);
         final int hall3 = readInt(PATH_HALL3, 1);
         final int hall4 = readInt(PATH_HALL4, 1);
 
         // hall gpio is low while the pen is magnetically attached
         final boolean attachedNow = hall3 == 0 || hall4 == 0;
+
+        // while detached the driver only reports its last value and logs on every read
+        final boolean readCharger = attachedNow || mAttached;
+        final int state = readCharger ? readInt(PATH_STATE, -1) : -1;
+        final int soc = readCharger ? readInt(PATH_SOC, -1) : -1;
         final boolean socValid = soc > 0 && soc <= 100;
 
         if (attachedNow) {
