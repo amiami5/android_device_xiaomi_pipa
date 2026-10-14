@@ -1,3 +1,8 @@
 # CPU Scheduler — custom type for /proc/sys/kernel/sched_* nodes
 type pipa_sched_proc, fs_type, proc_type;
 allow system_app pipa_sched_proc:file { open read write getattr };
+
+# The genfscon relabel above hides these nodes from the stock domains that
+# set the tunables at boot (init.qcom.post_boot.sh, vendor_init).
+allow vendor_qti_init_shell pipa_sched_proc:file { open read write getattr };
+allow vendor_init pipa_sched_proc:file { open read write getattr };
