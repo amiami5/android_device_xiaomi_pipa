@@ -164,8 +164,8 @@ DEVICE_PATH="${ROOT_DIR}/device/xiaomi/pipa"
 mkdir -p "$DEVICE_PATH/patches"
 
 # ──────────────────────────────────────────────────────────────
-# Kernel submodules (KernelSU)
-# drivers/kernelsu is a symlink into KernelSU/, so a missing checkout
+# Kernel submodules (KernelSU-Next)
+# drivers/kernelsu is a symlink into KernelSU-Next/, so a missing checkout
 # breaks Kconfig.
 # ──────────────────────────────────────────────────────────────
 setup_kernel_submodules() {
@@ -174,10 +174,10 @@ setup_kernel_submodules() {
     [ -e "$kdir/.git" ] || return 0
     [ -f "$kdir/.gitmodules" ] || return 0
 
-    if git -C "$kdir" submodule update --init KernelSU >/dev/null 2>&1; then
-        success "KernelSU submodule is up to date."
+    if git -C "$kdir" submodule update --init KernelSU-Next >/dev/null 2>&1; then
+        success "KernelSU-Next submodule is up to date."
     else
-        error "Failed to update KernelSU submodule in $kdir."
+        error "Failed to update KernelSU-Next submodule in $kdir."
     fi
 }
 
