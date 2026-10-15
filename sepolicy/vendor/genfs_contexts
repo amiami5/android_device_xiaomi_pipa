@@ -10,3 +10,10 @@ genfscon proc /sys/kernel/sched_upmigrate         u:object_r:pipa_sched_proc:s0
 genfscon proc /sys/kernel/sched_downmigrate       u:object_r:pipa_sched_proc:s0
 genfscon proc /sys/kernel/sched_group_upmigrate   u:object_r:pipa_sched_proc:s0
 genfscon proc /sys/kernel/sched_group_downmigrate u:object_r:pipa_sched_proc:s0
+
+# system_suspend wakeup stats
+genfscon sysfs /devices/platform/soc/988000.i2c/i2c-1/1-004c/wakeup                                 u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/a80000.i2c/i2c-3/3-0041/wakeup                                 u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/a80000.i2c/i2c-3/3-0041/power_supply/fuda/wakeup               u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/888000.i2c/i2c-6/6-0066/wakeup                                 u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/888000.i2c/i2c-6/6-0066/power_supply/bq2597x-standalone/wakeup u:object_r:sysfs_wakeup:s0
