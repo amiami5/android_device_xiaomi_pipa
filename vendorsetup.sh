@@ -160,6 +160,20 @@ apply_repo_patches() {
 # ──────────────────────────────────────────────────────────────
 # Setup llvm-clang (../toolchains/llvm-clang)
 # ──────────────────────────────────────────────────────────────
+_pipa_resolve_tool() {
+    local cmd="$1"
+    local fallback="$2"
+    if command -v "${cmd}" >/dev/null 2>&1; then
+        command -v "${cmd}"
+        return 0
+    fi
+    if [ -n "${fallback}" ] && [ -x "${fallback}" ]; then
+        echo "${fallback}"
+        return 0
+    fi
+    return 1
+}
+
 setup_llvm_clang() {
     local cache_dir="${PIPA_TOOLCHAIN_DIR:-$(dirname "$ROOT_DIR")/toolchains}"
     local src_dir="${cache_dir}/llvm-project"
@@ -176,12 +190,32 @@ setup_llvm_clang() {
         return 0
     fi
 
-    for cmd in git cmake ninja python3; do
-        if ! command -v "${cmd}" >/dev/null 2>&1; then
-            error "Missing required tool '${cmd}' to build llvm-clang."
-            return 1
-        fi
-    done
+    local cmake_bin ninja_bin python3_bin
+    if ! command -v git >/dev/null 2>&1; then
+        error "Missing required tool 'git' to build llvm-clang."
+        return 1
+    fi
+    cmake_bin="$(_pipa_resolve_tool cmake "${ROOT_DIR}/prebuilts/cmake/linux-x86/bin/cmake")" || {
+        error "Missing required tool 'cmake' to build llvm-clang."
+        return 1
+    }
+    ninja_bin="$(_pipa_resolve_tool ninja "${ROOT_DIR}/prebuilts/build-tools/linux-x86/bin/ninja")" || {
+        error "Missing required tool 'ninja' to build llvm-clang."
+        return 1
+    }
+    python3_bin="$(_pipa_resolve_tool python3 "${ROOT_DIR}/prebuilts/build-tools/path/linux-x86/python3")" || {
+        error "Missing required tool 'python3' to build llvm-clang."
+        return 1
+    }
+
+    if [ -z "${CC:-}" ] && ! command -v cc >/dev/null 2>&1 && ! command -v gcc >/dev/null 2>&1 && ! command -v clang >/dev/null 2>&1; then
+        error "Missing host C compiler (install build-essential or clang) to build llvm-clang."
+        return 1
+    fi
+    if [ -z "${CXX:-}" ] && ! command -v c++ >/dev/null 2>&1 && ! command -v g++ >/dev/null 2>&1 && ! command -v clang++ >/dev/null 2>&1; then
+        error "Missing host C++ compiler (install build-essential or clang) to build llvm-clang."
+        return 1
+    fi
 
     mkdir -p "${cache_dir}" || return 1
 
@@ -199,7 +233,9 @@ setup_llvm_clang() {
     fi
 
     info "Configuring llvm-clang in ${build_dir}..."
-    cmake -S "${src_dir}/llvm" -B "${build_dir}" -G Ninja \
+    "${cmake_bin}" -S "${src_dir}/llvm" -B "${build_dir}" -G Ninja \
+        -DCMAKE_MAKE_PROGRAM="${ninja_bin}" \
+        -DPython3_EXECUTABLE="${python3_bin}" \
         -DCMAKE_BUILD_TYPE=Release \
         -DCMAKE_INSTALL_PREFIX="${install_dir}" \
         -DLLVM_ENABLE_PROJECTS="clang;lld" \
@@ -210,13 +246,13 @@ setup_llvm_clang() {
     }
 
     info "Building llvm-clang (this may take a while on first run)..."
-    cmake --build "${build_dir}" -j"$(nproc)" || {
+    "${cmake_bin}" --build "${build_dir}" -j"$(nproc)" || {
         error "Failed to build llvm-clang."
         return 1
     }
 
     info "Installing llvm-clang to ${install_dir}..."
-    cmake --install "${build_dir}" || {
+    "${cmake_bin}" --install "${build_dir}" || {
         error "Failed to install llvm-clang."
         return 1
     }
