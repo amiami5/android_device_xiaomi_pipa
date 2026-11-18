@@ -158,11 +158,78 @@ apply_repo_patches() {
 }
 
 # ──────────────────────────────────────────────────────────────
+# Setup llvm-clang (../toolchains/llvm-clang)
+# ──────────────────────────────────────────────────────────────
+setup_llvm_clang() {
+    local cache_dir="${PIPA_TOOLCHAIN_DIR:-$(dirname "$ROOT_DIR")/toolchains}"
+    local src_dir="${cache_dir}/llvm-project"
+    local build_dir="${src_dir}/build"
+    local install_dir="${cache_dir}/llvm-clang"
+    local llvm_rev="f42c87ba2c70219b1f4ad1f031a5b6a1ea6603fb"
+
+    if [ -x "${install_dir}/bin/clang" ] && [ -x "${install_dir}/bin/ld.lld" ]; then
+        return 0
+    fi
+
+    if [ "${PIPA_SKIP_LLVM_BUILD:-0}" = "1" ]; then
+        warn "Skipping llvm-clang build (PIPA_SKIP_LLVM_BUILD=1)."
+        return 0
+    fi
+
+    for cmd in git cmake ninja python3; do
+        if ! command -v "${cmd}" >/dev/null 2>&1; then
+            error "Missing required tool '${cmd}' to build llvm-clang."
+            return 1
+        fi
+    done
+
+    mkdir -p "${cache_dir}" || return 1
+
+    if [ ! -d "${src_dir}/.git" ]; then
+        info "Fetching llvm-project (${llvm_rev}) to ${src_dir}..."
+        mkdir -p "${src_dir}" || return 1
+        git -C "${src_dir}" init -q || return 1
+        git -C "${src_dir}" remote add origin https://github.com/llvm/llvm-project.git || return 1
+        if ! git -C "${src_dir}" fetch --depth 1 origin "${llvm_rev}"; then
+            error "Failed to fetch llvm-project."
+            rm -rf "${src_dir}"
+            return 1
+        fi
+        git -C "${src_dir}" checkout -q FETCH_HEAD || return 1
+    fi
+
+    info "Configuring llvm-clang in ${build_dir}..."
+    cmake -S "${src_dir}/llvm" -B "${build_dir}" -G Ninja \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_INSTALL_PREFIX="${install_dir}" \
+        -DLLVM_ENABLE_PROJECTS="clang;lld" \
+        -DLLVM_TARGETS_TO_BUILD="AArch64;ARM;X86" \
+        -DLLVM_ENABLE_ASSERTIONS=OFF || {
+        error "Failed to configure llvm-clang."
+        return 1
+    }
+
+    info "Building llvm-clang (this may take a while on first run)..."
+    cmake --build "${build_dir}" -j"$(nproc)" || {
+        error "Failed to build llvm-clang."
+        return 1
+    }
+
+    info "Installing llvm-clang to ${install_dir}..."
+    cmake --install "${build_dir}" || {
+        error "Failed to install llvm-clang."
+        return 1
+    }
+    success "llvm-clang installed to ${install_dir}."
+}
+
+# ──────────────────────────────────────────────────────────────
 # Run Patch Setup
 # ──────────────────────────────────────────────────────────────
 DEVICE_PATH="${ROOT_DIR}/device/xiaomi/pipa"
 mkdir -p "$DEVICE_PATH/patches"
 
+setup_llvm_clang
 apply_tablet_patch
 apply_repo_patches "hardware/google/pixel"
 
