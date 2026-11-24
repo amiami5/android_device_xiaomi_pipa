@@ -28,7 +28,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/camera/camera_cnf.txt:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camera_cnf.txt
 
 PRODUCT_PACKAGES += \
+    libmodemenhance_aidl_client \
     libpiex_shim
+
+$(call inherit-product-if-exists, device/xiaomi/camera/miuicamera.mk)
 
 # Input
 PRODUCT_PACKAGES += \
