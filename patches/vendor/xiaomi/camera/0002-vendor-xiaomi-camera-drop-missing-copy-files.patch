@@ -1,0 +1,16 @@
+diff --git a/camera-vendor.mk b/camera-vendor.mk
+index 99124bb..e2c39a9 100644
+--- a/camera-vendor.mk
++++ b/camera-vendor.mk
+@@ -6,11 +6,6 @@ PRODUCT_SOONG_NAMESPACES += \
+     vendor/xiaomi/camera
+ 
+ PRODUCT_COPY_FILES += \
+-    vendor/xiaomi/camera/proprietary/system/etc/public.libraries-xiaomi.txt:$(TARGET_COPY_OUT_SYSTEM)/etc/public.libraries-xiaomi.txt \
+-    vendor/xiaomi/camera/proprietary/vendor/camera/fonts/FZMiaoWuJW.ttf:$(TARGET_COPY_OUT_VENDOR)/camera/fonts/FZMiaoWuJW.ttf \
+-    vendor/xiaomi/camera/proprietary/vendor/camera/fonts/MFYueYuan-Regular.ttf:$(TARGET_COPY_OUT_VENDOR)/camera/fonts/MFYueYuan-Regular.ttf \
+-    vendor/xiaomi/camera/proprietary/vendor/camera/fonts/MI+LanTing_GB+Outside+YS_V2.3_20160322.ttf:$(TARGET_COPY_OUT_VENDOR)/camera/fonts/MI+LanTing_GB+Outside+YS_V2.3_20160322.ttf \
+-    vendor/xiaomi/camera/proprietary/vendor/camera/fonts/MIUI_Time.ttf:$(TARGET_COPY_OUT_VENDOR)/camera/fonts/MIUI_Time.ttf \
+     vendor/xiaomi/camera/proprietary/vendor/etc/camera/102_SummerDay.png:$(TARGET_COPY_OUT_VENDOR)/etc/camera/102_SummerDay.png \
+     vendor/xiaomi/camera/proprietary/vendor/etc/camera/103_Fantasy.png:$(TARGET_COPY_OUT_VENDOR)/etc/camera/103_Fantasy.png \
+     vendor/xiaomi/camera/proprietary/vendor/etc/camera/104_Meet.png:$(TARGET_COPY_OUT_VENDOR)/etc/camera/104_Meet.png \
