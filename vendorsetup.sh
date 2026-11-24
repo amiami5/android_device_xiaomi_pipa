@@ -124,13 +124,15 @@ apply_tablet_patch() {
 
 
 # ──────────────────────────────────────────────────────────────
-# Apply repo patches (patches/<project path>/*.patch via git am)
+# Apply repo patches (patches/<project path>/*.patch via git apply)
+# The patches are applied to the working tree only, so a repo sync can reset
+# them; they are put back the next time envsetup runs.
 # ──────────────────────────────────────────────────────────────
 apply_repo_patches() {
     local project=$1
     local repo_dir="$ROOT_DIR/$project"
     local patch_dir="$DEVICE_PATH/patches/$project"
-    local patch change_id
+    local tmp_index tree patch
 
     [ -d "$patch_dir" ] || return 0
     [ -e "$repo_dir/.git" ] || {
@@ -138,28 +140,46 @@ apply_repo_patches() {
         return 0
     }
 
+    tmp_index="$(mktemp)"
+    rm -f "$tmp_index"
+    if ! GIT_INDEX_FILE="$tmp_index" git -C "$repo_dir" read-tree HEAD; then
+        rm -f "$tmp_index"
+        return 0
+    fi
+
     for patch in "$patch_dir"/*.patch; do
         [ -f "$patch" ] || continue
-        change_id=$(sed -n 's/^Change-Id: //p' "$patch" | head -n1)
-
-        if [ -n "$change_id" ] && \
-            git -C "$repo_dir" log -n 200 --format=%b HEAD | grep -qx "Change-Id: $change_id"; then
-            warn "$(basename "$patch") already applied to $project; skipping."
-            continue
-        fi
-
-        if git -C "$repo_dir" apply --reverse --check "$patch" >/dev/null 2>&1; then
-            warn "$(basename "$patch") already applied to $project; skipping."
-            continue
-        fi
-
-        if git -C "$repo_dir" am -3 -q "$patch" >/dev/null 2>&1; then
-            success "Applied $(basename "$patch") to $project."
-        else
-            git -C "$repo_dir" am --abort >/dev/null 2>&1 || true
+        if ! GIT_INDEX_FILE="$tmp_index" git -C "$repo_dir" apply --cached "$patch" 2>/dev/null; then
+            if git -C "$repo_dir" apply --reverse --check "$patch" >/dev/null 2>&1; then
+                continue
+            fi
             error "Failed to apply $(basename "$patch") to $project; check if upstream changed."
+            rm -f "$tmp_index"
+            return 0
         fi
     done
+
+    tree="$(GIT_INDEX_FILE="$tmp_index" git -C "$repo_dir" write-tree)"
+    rm -f "$tmp_index"
+
+    if git -C "$repo_dir" diff --quiet "$tree" --; then
+        warn "Patches for $project already applied; skipping."
+        return 0
+    fi
+
+    if ! git -C "$repo_dir" diff --quiet HEAD --; then
+        warn "$project has local changes, not applying patches."
+        return 0
+    fi
+
+    for patch in "$patch_dir"/*.patch; do
+        [ -f "$patch" ] || continue
+        if ! git -C "$repo_dir" apply "$patch"; then
+            error "Failed to apply $(basename "$patch") to $project."
+            return 1
+        fi
+    done
+    success "Applied patches to $project."
 }
 
 # ──────────────────────────────────────────────────────────────
