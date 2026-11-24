@@ -148,6 +148,11 @@ apply_repo_patches() {
             continue
         fi
 
+        if git -C "$repo_dir" apply --reverse --check "$patch" >/dev/null 2>&1; then
+            warn "$(basename "$patch") already applied to $project; skipping."
+            continue
+        fi
+
         if git -C "$repo_dir" am -3 -q "$patch" >/dev/null 2>&1; then
             success "Applied $(basename "$patch") to $project."
         else
@@ -268,6 +273,7 @@ mkdir -p "$DEVICE_PATH/patches"
 setup_llvm_clang
 apply_tablet_patch
 apply_repo_patches "hardware/google/pixel"
+apply_repo_patches "packages/apps/AxionParts"
 
 echo "-------------------------------------"
 echo "           Setup complete!           "
