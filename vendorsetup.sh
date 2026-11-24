@@ -294,6 +294,7 @@ setup_llvm_clang
 apply_tablet_patch
 apply_repo_patches "hardware/google/pixel"
 apply_repo_patches "packages/apps/AxionParts"
+apply_repo_patches "axion_sdk"
 
 echo "-------------------------------------"
 echo "           Setup complete!           "
