@@ -295,6 +295,7 @@ apply_tablet_patch
 apply_repo_patches "hardware/google/pixel"
 apply_repo_patches "packages/apps/AxionParts"
 apply_repo_patches "axion_sdk"
+apply_repo_patches "vendor/xiaomi/camera"
 
 echo "-------------------------------------"
 echo "           Setup complete!           "

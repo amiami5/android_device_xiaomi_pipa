@@ -1,0 +1,16 @@
+diff --git a/Android.bp b/Android.bp
+index be7f222..afd77df 100644
+--- a/Android.bp
++++ b/Android.bp
+@@ -4,9 +4,11 @@
+ 
+ soong_namespace {
+     imports: [
++        "device/xiaomi/pipa",
+         "hardware/qcom-caf/common/libqti-perfd-client",
+         "vendor/qcom/opensource/display",
+         "vendor/xiaomi/pipa",
++        "vendor/xiaomi/sm8250-common",
+     ],
+ }
+ 

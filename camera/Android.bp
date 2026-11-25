@@ -1,0 +1,5 @@
+cc_library_shared {
+    name: "libmodemenhance_aidl_client",
+    srcs: ["libmodemenhance_aidl_client.c"],
+    compile_multilib: "64",
+}

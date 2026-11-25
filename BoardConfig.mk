@@ -12,6 +12,25 @@ DEVICE_PATH := device/xiaomi/pipa
 # Board
 TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
 
+# Camera (Miui/Leica Camera)
+ifneq ($(wildcard device/xiaomi/camera/miuicamera.mk),)
+TARGET_CAMERA_PACKAGE_NAME := com.android.camera
+
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
+    $(DEVICE_PATH)/framework_compatibility_matrix.xml
+
+BOARD_VENDOR_SEPOLICY_DIRS += \
+    device/xiaomi/camera/sepolicy/camera/vendor \
+    device/xiaomi/camera/sepolicy/misys/vendor
+
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
+    device/xiaomi/camera/sepolicy/camera/private \
+    device/xiaomi/camera/sepolicy/misys/private
+
+SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += \
+    device/xiaomi/camera/sepolicy/misys/public
+endif
+
 # Display
 TARGET_SCREEN_DENSITY := 400
 
