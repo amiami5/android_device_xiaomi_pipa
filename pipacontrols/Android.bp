@@ -19,6 +19,8 @@ android_app {
     privileged: true,
     system_ext_specific: true,
 
+    overrides: ["Updater"],
+
     static_libs: [
         "androidx.core_core",
         "androidx.preference_preference",
