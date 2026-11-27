@@ -45,4 +45,25 @@
     <string name="keyboard_status_disabled">Surveillance du clavier désactivée</string>
     <string name="keyboard_footer_status">Statut : %s</string>
 
+
+    <!-- Stylus side buttons -->
+    <string name="stylus_buttons_category">Boutons latéraux</string>
+    <string name="stylus_button_upper_title">Bouton supérieur</string>
+    <string name="stylus_button_lower_title">Bouton inférieur</string>
+    <string name="stylus_button_action_dialog_title">Sélectionner l\'action du bouton</string>
+    <string name="stylus_button_select_app_title">Sélectionner l\'application à lancer</string>
+    <string name="stylus_button_action_none">Désactivé</string>
+    <string name="stylus_button_action_page_up">Page précédente</string>
+    <string name="stylus_button_action_page_down">Page suivante</string>
+    <string name="stylus_button_action_volume_up">Augmenter le volume</string>
+    <string name="stylus_button_action_volume_down">Baisser le volume</string>
+    <string name="stylus_button_action_media_play_pause">Lecture / Pause</string>
+    <string name="stylus_button_action_media_next">Piste suivante</string>
+    <string name="stylus_button_action_media_previous">Piste précédente</string>
+    <string name="stylus_button_action_back">Retour</string>
+    <string name="stylus_button_action_home">Accueil</string>
+    <string name="stylus_button_action_screenshot">Prendre une capture d\'écran</string>
+    <string name="stylus_button_action_launch_app">Lancer une application…</string>
+    <string name="stylus_button_action_launch_app_summary">Lancer %s</string>
+
 </resources>

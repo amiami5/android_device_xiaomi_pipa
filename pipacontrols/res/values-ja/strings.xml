@@ -30,6 +30,26 @@
     <string name="stylus_footer_status">状態： %s</string>
     <string name="stylus_footer_refresh_rate">リフレッシュレート: %s</string>
 
+    <!-- Stylus side buttons -->
+    <string name="stylus_buttons_category">サイドボタン</string>
+    <string name="stylus_button_upper_title">上のボタン</string>
+    <string name="stylus_button_lower_title">下のボタン</string>
+    <string name="stylus_button_action_dialog_title">ボタンの動作を選択</string>
+    <string name="stylus_button_select_app_title">起動するアプリを選択</string>
+    <string name="stylus_button_action_none">無効</string>
+    <string name="stylus_button_action_page_up">Page Up</string>
+    <string name="stylus_button_action_page_down">Page Down</string>
+    <string name="stylus_button_action_volume_up">音量アップ</string>
+    <string name="stylus_button_action_volume_down">音量ダウン</string>
+    <string name="stylus_button_action_media_play_pause">再生 / 一時停止</string>
+    <string name="stylus_button_action_media_next">次のトラック</string>
+    <string name="stylus_button_action_media_previous">前のトラック</string>
+    <string name="stylus_button_action_back">戻る</string>
+    <string name="stylus_button_action_home">ホーム</string>
+    <string name="stylus_button_action_screenshot">スクリーンショット</string>
+    <string name="stylus_button_action_launch_app">アプリを起動…</string>
+    <string name="stylus_button_action_launch_app_summary">起動: %s</string>
+
     <!-- Pen charging -->
     <string name="pen_charge_channel_status">ペンの充電状態</string>
     <string name="pen_charge_channel_alert">ペンの充電通知</string>

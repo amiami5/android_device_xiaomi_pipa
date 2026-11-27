@@ -45,6 +45,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     ApertureOverlayDevice \
     FrameworkResOverlayDevice \
+    LineageSDKOverlayDevice \
     LineageSettingsOverlayDevice \
     LineageSystemUIOverlayDevice \
     SystemUIOverlayDevice

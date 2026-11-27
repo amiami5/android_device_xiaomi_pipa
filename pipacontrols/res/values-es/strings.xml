@@ -45,4 +45,25 @@
     <string name="keyboard_status_disabled">Monitoreo de teclado deshabilitado</string>
     <string name="keyboard_footer_status">Estado: %s</string>
 
+
+    <!-- Stylus side buttons -->
+    <string name="stylus_buttons_category">Botones laterales</string>
+    <string name="stylus_button_upper_title">Botón superior</string>
+    <string name="stylus_button_lower_title">Botón inferior</string>
+    <string name="stylus_button_action_dialog_title">Seleccionar acción del botón</string>
+    <string name="stylus_button_select_app_title">Seleccionar aplicación para abrir</string>
+    <string name="stylus_button_action_none">Desactivado</string>
+    <string name="stylus_button_action_page_up">Re Pág</string>
+    <string name="stylus_button_action_page_down">Av Pág</string>
+    <string name="stylus_button_action_volume_up">Subir volumen</string>
+    <string name="stylus_button_action_volume_down">Bajar volumen</string>
+    <string name="stylus_button_action_media_play_pause">Reproducir / Pausar</string>
+    <string name="stylus_button_action_media_next">Siguiente pista</string>
+    <string name="stylus_button_action_media_previous">Pista anterior</string>
+    <string name="stylus_button_action_back">Atrás</string>
+    <string name="stylus_button_action_home">Inicio</string>
+    <string name="stylus_button_action_screenshot">Tomar captura de pantalla</string>
+    <string name="stylus_button_action_launch_app">Abrir aplicación…</string>
+    <string name="stylus_button_action_launch_app_summary">Abrir %s</string>
+
 </resources>

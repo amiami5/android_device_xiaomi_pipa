@@ -40,4 +40,25 @@
     <string name="keyboard_status_disabled">鍵盤監控已停用</string>
     <string name="keyboard_footer_status">狀態：%s</string>
 
+
+    <!-- Stylus side buttons -->
+    <string name="stylus_buttons_category">側邊按鍵</string>
+    <string name="stylus_button_upper_title">上按鍵</string>
+    <string name="stylus_button_lower_title">下按鍵</string>
+    <string name="stylus_button_action_dialog_title">選擇按鍵動作</string>
+    <string name="stylus_button_select_app_title">選擇要啟動的應用程式</string>
+    <string name="stylus_button_action_none">已停用</string>
+    <string name="stylus_button_action_page_up">向上翻頁</string>
+    <string name="stylus_button_action_page_down">向下翻頁</string>
+    <string name="stylus_button_action_volume_up">調高音量</string>
+    <string name="stylus_button_action_volume_down">調低音量</string>
+    <string name="stylus_button_action_media_play_pause">播放 / 暫停</string>
+    <string name="stylus_button_action_media_next">下一首</string>
+    <string name="stylus_button_action_media_previous">上一首</string>
+    <string name="stylus_button_action_back">返回</string>
+    <string name="stylus_button_action_home">主畫面</string>
+    <string name="stylus_button_action_screenshot">擷取螢幕畫面</string>
+    <string name="stylus_button_action_launch_app">啟動應用程式…</string>
+    <string name="stylus_button_action_launch_app_summary">啟動 %s</string>
+
 </resources>

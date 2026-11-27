@@ -40,4 +40,25 @@
     <string name="keyboard_status_disabled">键盘监控已禁用</string>
     <string name="keyboard_footer_status">状态：%s</string>
 
+
+    <!-- Stylus side buttons -->
+    <string name="stylus_buttons_category">侧边按键</string>
+    <string name="stylus_button_upper_title">上按键</string>
+    <string name="stylus_button_lower_title">下按键</string>
+    <string name="stylus_button_action_dialog_title">选择按键操作</string>
+    <string name="stylus_button_select_app_title">选择要启动的应用</string>
+    <string name="stylus_button_action_none">已禁用</string>
+    <string name="stylus_button_action_page_up">向上翻页</string>
+    <string name="stylus_button_action_page_down">向下翻页</string>
+    <string name="stylus_button_action_volume_up">增大音量</string>
+    <string name="stylus_button_action_volume_down">减小音量</string>
+    <string name="stylus_button_action_media_play_pause">播放 / 暂停</string>
+    <string name="stylus_button_action_media_next">下一曲</string>
+    <string name="stylus_button_action_media_previous">上一曲</string>
+    <string name="stylus_button_action_back">返回</string>
+    <string name="stylus_button_action_home">主屏幕</string>
+    <string name="stylus_button_action_screenshot">截屏</string>
+    <string name="stylus_button_action_launch_app">启动应用…</string>
+    <string name="stylus_button_action_launch_app_summary">启动 %s</string>
+
 </resources>

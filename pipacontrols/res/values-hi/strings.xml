@@ -45,4 +45,25 @@
     <string name="keyboard_status_disabled">कीबोर्ड मॉनिटरिंग अक्षम</string>
     <string name="keyboard_footer_status">स्थिति: %s</string>
 
+
+    <!-- Stylus side buttons -->
+    <string name="stylus_buttons_category">साइड बटन</string>
+    <string name="stylus_button_upper_title">ऊपरी बटन</string>
+    <string name="stylus_button_lower_title">निचला बटन</string>
+    <string name="stylus_button_action_dialog_title">बटन की क्रिया चुनें</string>
+    <string name="stylus_button_select_app_title">लॉन्च करने के लिए ऐप चुनें</string>
+    <string name="stylus_button_action_none">अक्षम</string>
+    <string name="stylus_button_action_page_up">Page Up</string>
+    <string name="stylus_button_action_page_down">Page Down</string>
+    <string name="stylus_button_action_volume_up">आवाज़ बढ़ाएँ</string>
+    <string name="stylus_button_action_volume_down">आवाज़ कम करें</string>
+    <string name="stylus_button_action_media_play_pause">चलाएँ / रोकें</string>
+    <string name="stylus_button_action_media_next">अगला ट्रैक</string>
+    <string name="stylus_button_action_media_previous">पिछला ट्रैक</string>
+    <string name="stylus_button_action_back">वापस</string>
+    <string name="stylus_button_action_home">होम</string>
+    <string name="stylus_button_action_screenshot">स्क्रीनशॉट लें</string>
+    <string name="stylus_button_action_launch_app">ऐप लॉन्च करें…</string>
+    <string name="stylus_button_action_launch_app_summary">%s लॉन्च करें</string>
+
 </resources>

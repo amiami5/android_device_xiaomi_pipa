@@ -17,20 +17,35 @@
 
 package org.lineageos.pipacontrols.stylus;
 
+import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.UserHandle;
+import android.provider.Settings;
 import android.service.quicksettings.TileService;
+import android.text.TextUtils;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.preference.ListPreference;
+import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceManager;
 import androidx.preference.SwitchPreference;
@@ -40,9 +55,15 @@ import com.android.settingslib.widget.MainSwitchPreference;
 
 import org.lineageos.pipacontrols.R;
 
+import java.text.Collator;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Locale;
+import java.util.Set;
 
 public class StylusSettingsFragment extends PreferenceFragmentCompat implements
         SharedPreferences.OnSharedPreferenceChangeListener {
@@ -53,6 +74,10 @@ public class StylusSettingsFragment extends PreferenceFragmentCompat implements
     private static final String FORCE_RECOGNIZE_KEY     = "force_recognize_stylus_key";
     private static final String FOOTER_KEY              = "footer_key";
     private static final String STYLUS_REFRESH_RATE_KEY = "stylus_refresh_rate_key";
+    private static final String BUTTON_UPPER_KEY        = "stylus_button_upper_key";
+    private static final String BUTTON_LOWER_KEY        = "stylus_button_lower_key";
+
+    private static final String ACTION_LAUNCH_APP_MENU  = "__launch_app__";
 
     private static final String RATE_DYNAMIC = "dynamic";
     private static final String RATE_60      = "60";
@@ -62,6 +87,8 @@ public class StylusSettingsFragment extends PreferenceFragmentCompat implements
     private MainSwitchPreference mStylusModePref;
     private SwitchPreference     mForceRecognizePref;
     private ListPreference       mRefreshRatePref;
+    private Preference           mUpperButtonPref;
+    private Preference           mLowerButtonPref;
     private FooterPreference     mFooterPref;
 
     private final Handler mHandler = new Handler(Looper.getMainLooper());
@@ -84,7 +111,28 @@ public class StylusSettingsFragment extends PreferenceFragmentCompat implements
         mStylusModePref     = findPreference(STYLUS_MODE_KEY);
         mForceRecognizePref = findPreference(FORCE_RECOGNIZE_KEY);
         mRefreshRatePref    = findPreference(STYLUS_REFRESH_RATE_KEY);
+        mUpperButtonPref    = findPreference(BUTTON_UPPER_KEY);
+        mLowerButtonPref    = findPreference(BUTTON_LOWER_KEY);
         mFooterPref         = findPreference(FOOTER_KEY);
+
+        if (mUpperButtonPref != null) {
+            mUpperButtonPref.setOnPreferenceClickListener(pref -> {
+                showButtonActionDialog(
+                        PenButtonConstants.SETTING_UPPER_BUTTON,
+                        PenButtonConstants.DEFAULT_UPPER_ACTION,
+                        mUpperButtonPref);
+                return true;
+            });
+        }
+        if (mLowerButtonPref != null) {
+            mLowerButtonPref.setOnPreferenceClickListener(pref -> {
+                showButtonActionDialog(
+                        PenButtonConstants.SETTING_LOWER_BUTTON,
+                        PenButtonConstants.DEFAULT_LOWER_ACTION,
+                        mLowerButtonPref);
+                return true;
+            });
+        }
 
         refreshUI();
         logInfo("Stylus settings created");
@@ -179,7 +227,239 @@ public class StylusSettingsFragment extends PreferenceFragmentCompat implements
             }
         }
 
+        updateButtonSummary(
+                mUpperButtonPref,
+                PenButtonConstants.SETTING_UPPER_BUTTON,
+                PenButtonConstants.DEFAULT_UPPER_ACTION);
+        updateButtonSummary(
+                mLowerButtonPref,
+                PenButtonConstants.SETTING_LOWER_BUTTON,
+                PenButtonConstants.DEFAULT_LOWER_ACTION);
+
         updateFooter(stylusMode, forceRecog, refreshRate);
+    }
+
+    private void updateButtonSummary(Preference pref, String settingKey, String defaultAction) {
+        if (pref == null) {
+            return;
+        }
+        String action = Settings.System.getStringForUser(
+                requireContext().getContentResolver(),
+                settingKey,
+                UserHandle.USER_CURRENT);
+        if (TextUtils.isEmpty(action)) {
+            action = defaultAction;
+        }
+        pref.setSummary(getActionSummary(action));
+    }
+
+    private String getActionSummary(String action) {
+        if (action.startsWith(PenButtonConstants.ACTION_APP_PREFIX)) {
+            String pkg = action.substring(PenButtonConstants.ACTION_APP_PREFIX.length());
+            String appLabel = pkg;
+            try {
+                PackageManager pm = requireContext().getPackageManager();
+                appLabel = pm.getApplicationLabel(pm.getApplicationInfo(pkg, 0)).toString();
+            } catch (PackageManager.NameNotFoundException ignored) {
+            }
+            return getString(R.string.stylus_button_action_launch_app_summary, appLabel);
+        }
+        switch (action) {
+            case PenButtonConstants.ACTION_NONE:
+                return getString(R.string.stylus_button_action_none);
+            case PenButtonConstants.ACTION_PAGE_UP:
+                return getString(R.string.stylus_button_action_page_up);
+            case PenButtonConstants.ACTION_PAGE_DOWN:
+                return getString(R.string.stylus_button_action_page_down);
+            case PenButtonConstants.ACTION_VOLUME_UP:
+                return getString(R.string.stylus_button_action_volume_up);
+            case PenButtonConstants.ACTION_VOLUME_DOWN:
+                return getString(R.string.stylus_button_action_volume_down);
+            case PenButtonConstants.ACTION_MEDIA_PLAY_PAUSE:
+                return getString(R.string.stylus_button_action_media_play_pause);
+            case PenButtonConstants.ACTION_MEDIA_NEXT:
+                return getString(R.string.stylus_button_action_media_next);
+            case PenButtonConstants.ACTION_MEDIA_PREVIOUS:
+                return getString(R.string.stylus_button_action_media_previous);
+            case PenButtonConstants.ACTION_BACK:
+                return getString(R.string.stylus_button_action_back);
+            case PenButtonConstants.ACTION_HOME:
+                return getString(R.string.stylus_button_action_home);
+            case PenButtonConstants.ACTION_SCREENSHOT:
+                return getString(R.string.stylus_button_action_screenshot);
+            default:
+                return action;
+        }
+    }
+
+    private void showButtonActionDialog(
+            String settingKey, String defaultAction, Preference targetPref) {
+        final Context context = requireContext();
+        final String[] actionValues = new String[] {
+            PenButtonConstants.ACTION_NONE,
+            PenButtonConstants.ACTION_PAGE_UP,
+            PenButtonConstants.ACTION_PAGE_DOWN,
+            PenButtonConstants.ACTION_VOLUME_UP,
+            PenButtonConstants.ACTION_VOLUME_DOWN,
+            PenButtonConstants.ACTION_MEDIA_PLAY_PAUSE,
+            PenButtonConstants.ACTION_MEDIA_NEXT,
+            PenButtonConstants.ACTION_MEDIA_PREVIOUS,
+            PenButtonConstants.ACTION_BACK,
+            PenButtonConstants.ACTION_HOME,
+            PenButtonConstants.ACTION_SCREENSHOT,
+            ACTION_LAUNCH_APP_MENU,
+        };
+        final String[] actionLabels = new String[] {
+            context.getString(R.string.stylus_button_action_none),
+            context.getString(R.string.stylus_button_action_page_up),
+            context.getString(R.string.stylus_button_action_page_down),
+            context.getString(R.string.stylus_button_action_volume_up),
+            context.getString(R.string.stylus_button_action_volume_down),
+            context.getString(R.string.stylus_button_action_media_play_pause),
+            context.getString(R.string.stylus_button_action_media_next),
+            context.getString(R.string.stylus_button_action_media_previous),
+            context.getString(R.string.stylus_button_action_back),
+            context.getString(R.string.stylus_button_action_home),
+            context.getString(R.string.stylus_button_action_screenshot),
+            context.getString(R.string.stylus_button_action_launch_app),
+        };
+
+        String current = Settings.System.getStringForUser(
+                context.getContentResolver(), settingKey, UserHandle.USER_CURRENT);
+        if (TextUtils.isEmpty(current)) {
+            current = defaultAction;
+        }
+
+        int checkedItem = -1;
+        if (current.startsWith(PenButtonConstants.ACTION_APP_PREFIX)) {
+            checkedItem = actionValues.length - 1;
+        } else {
+            for (int i = 0; i < actionValues.length; i++) {
+                if (actionValues[i].equals(current)) {
+                    checkedItem = i;
+                    break;
+                }
+            }
+        }
+
+        new AlertDialog.Builder(context)
+                .setTitle(R.string.stylus_button_action_dialog_title)
+                .setSingleChoiceItems(actionLabels, checkedItem, (dialog, which) -> {
+                    dialog.dismiss();
+                    String chosen = actionValues[which];
+                    if (ACTION_LAUNCH_APP_MENU.equals(chosen)) {
+                        showAppPickerDialog(settingKey, defaultAction, targetPref);
+                    } else {
+                        saveButtonAction(settingKey, defaultAction, chosen, targetPref);
+                    }
+                })
+                .setNegativeButton(android.R.string.cancel, null)
+                .show();
+    }
+
+    private void showAppPickerDialog(
+            String settingKey, String defaultAction, Preference targetPref) {
+        Context context = requireContext();
+        PackageManager pm = context.getPackageManager();
+
+        Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
+        mainIntent.addCategory(Intent.CATEGORY_LAUNCHER);
+        List<ResolveInfo> resolveInfos = pm.queryIntentActivities(mainIntent, 0);
+
+        List<AppEntry> apps = new ArrayList<>();
+        Set<String> seenPackages = new HashSet<>();
+        for (ResolveInfo info : resolveInfos) {
+            String pkg = info.activityInfo.packageName;
+            if (!seenPackages.add(pkg)) {
+                continue;
+            }
+            String label = info.loadLabel(pm).toString();
+            Drawable icon = info.loadIcon(pm);
+            apps.add(new AppEntry(pkg, label, icon));
+        }
+
+        Collator collator = Collator.getInstance();
+        apps.sort(Comparator.comparing((AppEntry a) -> a.label, collator));
+
+        AppListAdapter adapter = new AppListAdapter(context, apps);
+        new AlertDialog.Builder(context)
+                .setTitle(R.string.stylus_button_select_app_title)
+                .setAdapter(adapter, (dialog, which) -> {
+                    AppEntry selected = apps.get(which);
+                    saveButtonAction(
+                            settingKey,
+                            defaultAction,
+                            PenButtonConstants.ACTION_APP_PREFIX + selected.packageName,
+                            targetPref);
+                })
+                .setNegativeButton(android.R.string.cancel, null)
+                .show();
+    }
+
+    private void saveButtonAction(
+            String settingKey, String defaultAction, String action, Preference targetPref) {
+        ContentResolver resolver = requireContext().getContentResolver();
+        Settings.System.putStringForUser(
+                resolver, settingKey, action, UserHandle.USER_CURRENT);
+        updateButtonSummary(targetPref, settingKey, defaultAction);
+    }
+
+    private static class AppEntry {
+        final String packageName;
+        final String label;
+        final Drawable icon;
+
+        AppEntry(String packageName, String label, Drawable icon) {
+            this.packageName = packageName;
+            this.label = label;
+            this.icon = icon;
+        }
+    }
+
+    private static class AppListAdapter extends BaseAdapter {
+        private final LayoutInflater mInflater;
+        private final List<AppEntry> mItems;
+
+        AppListAdapter(Context context, List<AppEntry> items) {
+            mInflater = LayoutInflater.from(context);
+            mItems = items;
+        }
+
+        @Override
+        public int getCount() {
+            return mItems.size();
+        }
+
+        @Override
+        public AppEntry getItem(int position) {
+            return mItems.get(position);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            View view = convertView;
+            if (view == null) {
+                view = mInflater.inflate(R.layout.app_list_item, parent, false);
+            }
+            AppEntry item = getItem(position);
+            ImageView iconView = view.findViewById(R.id.app_icon);
+            TextView textView = view.findViewById(R.id.app_label);
+
+            if (item.icon != null) {
+                iconView.setImageDrawable(item.icon);
+                iconView.setVisibility(View.VISIBLE);
+            } else {
+                iconView.setImageDrawable(null);
+                iconView.setVisibility(View.INVISIBLE);
+            }
+            textView.setText(item.label);
+            return view;
+        }
     }
 
     private void updateFooter(boolean stylusMode, boolean forceRecog, String refreshRate) {

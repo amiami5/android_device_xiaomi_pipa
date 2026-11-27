@@ -45,4 +45,25 @@
     <string name="keyboard_status_disabled">Мониторинг клавиатуры отключен</string>
     <string name="keyboard_footer_status">Статус: %s</string>
 
+
+    <!-- Stylus side buttons -->
+    <string name="stylus_buttons_category">Боковые кнопки</string>
+    <string name="stylus_button_upper_title">Верхняя кнопка</string>
+    <string name="stylus_button_lower_title">Нижняя кнопка</string>
+    <string name="stylus_button_action_dialog_title">Выберите действие кнопки</string>
+    <string name="stylus_button_select_app_title">Выберите приложение для запуска</string>
+    <string name="stylus_button_action_none">Отключено</string>
+    <string name="stylus_button_action_page_up">Page Up</string>
+    <string name="stylus_button_action_page_down">Page Down</string>
+    <string name="stylus_button_action_volume_up">Увеличить громкость</string>
+    <string name="stylus_button_action_volume_down">Уменьшить громкость</string>
+    <string name="stylus_button_action_media_play_pause">Воспроизведение / Пауза</string>
+    <string name="stylus_button_action_media_next">Следующий трек</string>
+    <string name="stylus_button_action_media_previous">Предыдущий трек</string>
+    <string name="stylus_button_action_back">Назад</string>
+    <string name="stylus_button_action_home">Домой</string>
+    <string name="stylus_button_action_screenshot">Сделать снимок экрана</string>
+    <string name="stylus_button_action_launch_app">Запустить приложение…</string>
+    <string name="stylus_button_action_launch_app_summary">Запустить %s</string>
+
 </resources>

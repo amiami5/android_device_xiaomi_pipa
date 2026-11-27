@@ -45,4 +45,25 @@
     <string name="keyboard_status_disabled">Tastaturüberwachung deaktiviert</string>
     <string name="keyboard_footer_status">Status: %s</string>
 
+
+    <!-- Stylus side buttons -->
+    <string name="stylus_buttons_category">Seitentasten</string>
+    <string name="stylus_button_upper_title">Obere Taste</string>
+    <string name="stylus_button_lower_title">Untere Taste</string>
+    <string name="stylus_button_action_dialog_title">Tastenaktion auswählen</string>
+    <string name="stylus_button_select_app_title">App zum Starten auswählen</string>
+    <string name="stylus_button_action_none">Deaktiviert</string>
+    <string name="stylus_button_action_page_up">Bild auf</string>
+    <string name="stylus_button_action_page_down">Bild ab</string>
+    <string name="stylus_button_action_volume_up">Lauter</string>
+    <string name="stylus_button_action_volume_down">Leiser</string>
+    <string name="stylus_button_action_media_play_pause">Wiedergabe / Pause</string>
+    <string name="stylus_button_action_media_next">Nächster Titel</string>
+    <string name="stylus_button_action_media_previous">Vorheriger Titel</string>
+    <string name="stylus_button_action_back">Zurück</string>
+    <string name="stylus_button_action_home">Startbildschirm</string>
+    <string name="stylus_button_action_screenshot">Screenshot aufnehmen</string>
+    <string name="stylus_button_action_launch_app">App starten…</string>
+    <string name="stylus_button_action_launch_app_summary">%s starten</string>
+
 </resources>
